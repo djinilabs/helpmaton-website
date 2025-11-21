@@ -67,11 +67,20 @@
         </ul>
       </div>
     </div>
-    <div class="border-t-2 border-black pt-8 text-center">
-      <p class="text-sm opacity-75 mb-2">
+    <div class="border-t-2 border-black pt-8">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
+        <a href="/privacy" class="text-sm hover:text-accent transition-colors">
+          Privacy Statement
+        </a>
+        <span class="hidden md:inline text-sm opacity-60">|</span>
+        <a href="/terms-of-service" class="text-sm hover:text-accent transition-colors">
+          Terms of Service
+        </a>
+      </div>
+      <p class="text-sm opacity-75 mb-2 text-center">
         © {new Date().getFullYear()} Helpmaton. All rights reserved.
       </p>
-      <p class="text-xs opacity-60">
+      <p class="text-xs opacity-60 text-center">
         Made with ❤️ and lots of coffee ☕
       </p>
     </div>

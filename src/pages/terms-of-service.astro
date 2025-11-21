@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactSalesModal from '../components/ContactSalesModal.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Terms of Service - Helpmaton">
+  <Header />
+  <main class="min-h-screen bg-white p-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-2 border-black p-8 mb-8 text-center">
+        <h1 class="text-5xl font-bold uppercase mb-4">TERMS OF SERVICE</h1>
+        <p class="text-sm opacity-60 italic">
+          Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">1. ACCEPTANCE OF TERMS</h2>
+          <p class="mb-4 text-sm opacity-90">
+            By accessing or using Helpmaton ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these Terms, you may not access the Service.
+          </p>
+          <p class="text-sm opacity-90">
+            These Terms apply to all users of the Service, including without limitation users who are browsers, vendors, customers, merchants, and contributors of content.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">2. DESCRIPTION OF SERVICE</h2>
+          <p class="mb-4 text-sm opacity-90">
+            Helpmaton is a workspace-based platform for managing AI agents. The Service allows users to create, configure, and manage AI agents within their workspaces.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">3. USER ACCOUNTS</h2>
+          <p class="mb-4 text-sm opacity-90">
+            To access certain features of the Service, you must register for an account. You agree to:
+          </p>
+          <ul class="list-disc list-inside space-y-1 ml-4 text-sm opacity-90">
+            <li>Provide accurate, current, and complete information</li>
+            <li>Maintain and update your account information</li>
+            <li>Maintain the security of your password and account</li>
+            <li>Accept responsibility for all activities under your account</li>
+            <li>Notify us immediately of any unauthorized use</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">4. ACCEPTABLE USE</h2>
+          <p class="mb-4 text-sm opacity-90">
+            You agree not to use the Service to:
+          </p>
+          <ul class="list-disc list-inside space-y-1 ml-4 text-sm opacity-90">
+            <li>Violate any applicable laws or regulations</li>
+            <li>Infringe upon the rights of others</li>
+            <li>Transmit any harmful, offensive, or illegal content</li>
+            <li>Interfere with or disrupt the Service or servers</li>
+            <li>Attempt to gain unauthorized access to any portion of the Service</li>
+            <li>Use the Service for any fraudulent or malicious purpose</li>
+            <li>Reverse engineer, decompile, or disassemble the Service</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6 bg-accent text-white">
+          <h2 class="text-2xl font-bold uppercase mb-4">5. USER RESPONSIBILITY AND LIABILITY</h2>
+          <p class="mb-4 text-sm opacity-90">
+            <strong class="uppercase">YOU ARE SOLELY RESPONSIBLE FOR ALL USE OF THE SERVICE.</strong> This includes, but is not limited to:
+          </p>
+          <ul class="list-disc list-inside space-y-1 ml-4 text-sm opacity-90">
+            <li>Any actions taken by AI agents you create or configure</li>
+            <li>Any content generated, processed, or transmitted through the Service</li>
+            <li>Any consequences resulting from your use of the Service</li>
+            <li>Compliance with all applicable laws and regulations</li>
+            <li>Any damages, losses, or liabilities arising from your use of the Service</li>
+          </ul>
+          <p class="mt-4 text-sm opacity-90">
+            <strong class="uppercase">WE ARE NOT LIABLE FOR ANY USAGE, MISUSE, OR CONSEQUENCES OF YOUR USE OF THE SERVICE.</strong> You agree to indemnify, defend, and hold harmless Helpmaton and its affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Service or violation of these Terms.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6 bg-accent text-white">
+          <h2 class="text-2xl font-bold uppercase mb-4">6. THIRD-PARTY PROVIDERS AND BILLING</h2>
+          <p class="mb-4 text-sm opacity-90">
+            <strong class="uppercase">IMPORTANT - BILLING AND PROVIDER CHARGES:</strong>
+          </p>
+          <ul class="list-disc list-inside space-y-1 ml-4 text-sm opacity-90">
+            <li>The Service may integrate with third-party providers, including AI service providers, cloud computing services, and other external services</li>
+            <li>You are solely responsible for all charges, fees, bills, and costs incurred from third-party providers</li>
+            <li>We are not responsible for any billing disputes, charges, or fees from third-party providers</li>
+            <li>You agree to pay all charges directly to third-party providers as required by their terms</li>
+            <li>We are not liable for any unexpected charges, overages, or billing issues from third-party providers</li>
+            <li>You are responsible for monitoring your usage and associated costs with third-party providers</li>
+          </ul>
+          <p class="mt-4 text-sm opacity-90">
+            <strong class="uppercase">WE ARE NOT RESPONSIBLE FOR ANY BILLS, CHARGES, OR FEES FROM PROVIDERS.</strong> Any disputes regarding billing must be resolved directly with the respective third-party provider.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">7. INTELLECTUAL PROPERTY</h2>
+          <p class="mb-4 text-sm opacity-90">
+            The Service and its original content, features, and functionality are owned by Helpmaton and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+          </p>
+          <p class="text-sm opacity-90">
+            You retain ownership of any content you create using the Service. However, by using the Service, you grant us a license to use, store, and process your content as necessary to provide the Service.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">8. DISCLAIMER OF WARRANTIES</h2>
+          <p class="mb-4 text-sm opacity-90">
+            THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+          </p>
+          <p class="text-sm opacity-90">
+            We do not warrant that the Service will be uninterrupted, secure, or error-free, or that defects will be corrected.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">9. LIMITATION OF LIABILITY</h2>
+          <p class="mb-4 text-sm opacity-90">
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, HELPMATON SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:
+          </p>
+          <ul class="list-disc list-inside space-y-1 ml-4 text-sm opacity-90">
+            <li>Your use or inability to use the Service</li>
+            <li>Any conduct or content of third parties on the Service</li>
+            <li>Any unauthorized access to or use of our servers</li>
+            <li>Any interruption or cessation of transmission to or from the Service</li>
+            <li>Any bugs, viruses, or other harmful code</li>
+            <li>Any errors or omissions in any content</li>
+            <li>Any loss or damage incurred as a result of your use of the Service</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">10. INDEMNIFICATION</h2>
+          <p class="mb-4 text-sm opacity-90">
+            You agree to defend, indemnify, and hold harmless Helpmaton, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with:
+          </p>
+          <ul class="list-disc list-inside space-y-1 ml-4 text-sm opacity-90">
+            <li>Your access to or use of the Service</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any third-party right, including any intellectual property or privacy right</li>
+            <li>Any content you submit, post, or transmit through the Service</li>
+            <li>Any use of AI agents or content created through the Service</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">11. TERMINATION</h2>
+          <p class="mb-4 text-sm opacity-90">
+            We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason, including if you breach these Terms.
+          </p>
+          <p class="text-sm opacity-90">
+            Upon termination, your right to use the Service will cease immediately. All provisions of these Terms that by their nature should survive termination shall survive termination.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">12. GOVERNING LAW</h2>
+          <p class="mb-4 text-sm opacity-90">
+            These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">13. CHANGES TO TERMS</h2>
+          <p class="mb-4 text-sm opacity-90">
+            We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect.
+          </p>
+          <p class="text-sm opacity-90">
+            Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">14. SEVERABILITY</h2>
+          <p class="mb-4 text-sm opacity-90">
+            If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions will remain in full force and effect.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 mb-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">15. CONTACT INFORMATION</h2>
+          <p class="mb-4 text-sm opacity-90">
+            If you have any questions about these Terms of Service, please contact us at:
+          </p>
+          <p class="text-sm opacity-90">
+            <strong>Email:</strong> legal@helpmaton.com<br />
+            <strong>Address:</strong> [Your Company Address]
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+  <ContactSalesModal />
+</Layout>
+
