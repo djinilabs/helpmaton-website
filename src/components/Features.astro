@@ -1,0 +1,51 @@
+---
+const features = [
+  {
+    title: "WORKSPACES",
+    description: "Organize agents and resources in isolated environments. Each workspace has its own credit balance, spending limits, and team permissions.",
+    icon: "📁",
+  },
+  {
+    title: "AGENTS",
+    description: "Create and configure AI agents with custom system prompts. Define how your agents behave and interact with users through webhooks.",
+    icon: "🤖",
+  },
+  {
+    title: "DOCUMENTS",
+    description: "Upload and manage markdown or text documents for agent context. Organize documents into folders for better knowledge management.",
+    icon: "📄",
+  },
+  {
+    title: "WEBHOOKS",
+    description: "Integrate agents via webhook endpoints. Send messages to agents and receive streaming responses for real-time interactions.",
+    icon: "🔗",
+  },
+  {
+    title: "API",
+    description: "Full REST API for programmatic access. Manage workspaces, agents, documents, and monitor usage with comprehensive API endpoints.",
+    icon: "⚙️",
+  },
+];
+---
+
+<section class="bg-white p-8 py-16">
+  <div class="max-w-6xl mx-auto">
+    <div class="border-2 border-black p-8 mb-12 text-center">
+      <h2 class="text-5xl font-bold uppercase mb-4">FEATURES</h2>
+      <p class="text-lg opacity-75">
+        Everything you need to build and deploy AI agents at scale
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature) => (
+        <div class="border-2 border-black p-6 hover:bg-accent hover:text-white hover:border-accent transition-colors">
+          <div class="text-4xl mb-4">{feature.icon}</div>
+          <h3 class="text-2xl font-bold uppercase mb-3">{feature.title}</h3>
+          <p class="text-sm opacity-90 leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
