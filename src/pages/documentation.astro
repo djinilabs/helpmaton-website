@@ -48,9 +48,13 @@ import '../styles/global.css';
           <p class="mb-4 opacity-90">
             Organize your AI agents into workspaces. Each workspace is like a separate box with its own settings, credits, and team members.
           </p>
+          <p class="mb-4 text-sm opacity-75 italic">
+            Note: Workspace credits are used for AI provider calls (OpenAI, Anthropic, etc.), not for platform subscription costs. You can either provide your own API keys or purchase credits through Helpmaton.
+          </p>
           <ul class="list-disc list-inside space-y-2 text-sm opacity-90 ml-4">
             <li>Creating and managing workspaces</li>
-            <li>Setting spending limits</li>
+            <li>Setting spending limits (for AI provider costs)</li>
+            <li>Adding API keys or purchasing credits</li>
             <li>Team collaboration</li>
             <li>Workspace permissions</li>
           </ul>
@@ -80,6 +84,41 @@ import '../styles/global.css';
             <li>Integration examples</li>
             <li>Troubleshooting webhooks</li>
           </ul>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">💰 Billing & Pricing</h2>
+          <p class="mb-4 opacity-90">
+            Understanding Helpmaton's pricing structure and how costs work.
+          </p>
+          <div class="mb-4 space-y-3 text-sm opacity-90">
+            <div>
+              <h3 class="font-bold uppercase mb-2">What's Included in Your Subscription</h3>
+              <p class="mb-2">
+                Your monthly subscription covers all Helpmaton platform services:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Hosting and infrastructure</li>
+                <li>Agent configuration and management</li>
+                <li>Workspaces and team collaboration</li>
+                <li>Document storage and search</li>
+                <li>All Helpmaton-related API calls</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold uppercase mb-2">AI Provider Calls (Separate)</h3>
+              <p class="mb-2">
+                AI provider calls (OpenAI, Anthropic, etc.) are <strong>not included</strong> in your subscription. You have two options:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li><strong>Use your own API keys:</strong> Connect your AI provider accounts directly - you pay the provider</li>
+                <li><strong>Purchase credits:</strong> Buy credits through Helpmaton to add to your workspace</li>
+              </ul>
+            </div>
+            <p class="text-xs opacity-75 italic mt-3">
+              This separation keeps your platform costs predictable while giving you full control over AI provider spending.
+            </p>
+          </div>
         </section>
 
         <section class="border-2 border-black p-6">
