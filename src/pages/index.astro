@@ -1,16 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import Pricing from '../components/Pricing.astro';
 import Footer from '../components/Footer.astro';
+import ContactSalesModal from '../components/ContactSalesModal.astro';
 import '../styles/global.css';
 ---
 
 <Layout title="Helpmaton - Workspace-based platform for managing AI agents">
+  <Header />
   <Hero />
   <Features />
   <Pricing />
   <Footer />
+  <ContactSalesModal />
 </Layout>
 

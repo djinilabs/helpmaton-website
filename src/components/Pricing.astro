@@ -4,13 +4,14 @@ const plans = [
     name: "STARTER",
     price: "$29",
     period: "/month",
-    description: "Perfect for individuals and small projects",
+    description: "For the curious and the brave. Dip your toes in the AI agent pool.",
+    emoji: "🌱",
     features: [
-      "1 Workspace",
-      "5 Agents",
-      "100 Documents",
+      "1 Workspace (your first box!)",
+      "5 Agents (a small robot family)",
+      "100 Documents (they'll read a lot)",
       "10,000 API calls/month",
-      "Email Support",
+      "Email Support (we'll respond, promise)",
     ],
     cta: "START TRIAL",
     popular: false,
@@ -19,14 +20,15 @@ const plans = [
     name: "PRO",
     price: "$99",
     period: "/month",
-    description: "For growing teams and businesses",
+    description: "For teams that mean business. Go big or go home.",
+    emoji: "🚀",
     features: [
-      "5 Workspaces",
-      "Unlimited Agents",
-      "Unlimited Documents",
+      "5 Workspaces (more boxes!)",
+      "Unlimited Agents (robot army time)",
+      "Unlimited Documents (knowledge is power)",
       "100,000 API calls/month",
-      "Priority Support",
-      "Custom Integrations",
+      "Priority Support (we answer fast)",
+      "Custom Integrations (make it yours)",
     ],
     cta: "START TRIAL",
     popular: true,
@@ -35,16 +37,17 @@ const plans = [
     name: "ENTERPRISE",
     price: "CUSTOM",
     period: "",
-    description: "For large organizations with custom needs",
+    description: "For the big leagues. When you need everything, everywhere, all at once.",
+    emoji: "🏢",
     features: [
-      "Unlimited Workspaces",
-      "Unlimited Agents",
-      "Unlimited Documents",
-      "Unlimited API calls",
-      "Dedicated Support",
-      "Custom Integrations",
-      "SLA Guarantee",
-      "On-premise Options",
+      "Unlimited Workspaces (all the boxes)",
+      "Unlimited Agents (infinite robots)",
+      "Unlimited Documents (library of Alexandria)",
+      "Unlimited API calls (go wild)",
+      "Dedicated Support (your own team)",
+      "Custom Integrations (we'll build it)",
+      "SLA Guarantee (we pinky swear)",
+      "On-premise Options (keep it close)",
     ],
     cta: "CONTACT SALES",
     popular: false,
@@ -56,8 +59,11 @@ const plans = [
   <div class="max-w-6xl mx-auto">
     <div class="border-2 border-black p-8 mb-12 text-center">
       <h2 class="text-5xl font-bold uppercase mb-4">PRICING</h2>
-      <p class="text-lg opacity-75">
-        Choose the plan that fits your needs. All plans include a 7-day free trial.
+      <p class="text-lg opacity-75 mb-2">
+        Pick your poison. All plans include a 7-day free trial (no credit card required, we're not monsters).
+      </p>
+      <p class="text-sm opacity-60 italic">
+        Cancel anytime. No questions asked. Well, maybe one question: "Why?"
       </p>
     </div>
 
@@ -73,11 +79,14 @@ const plans = [
           {plan.popular && (
             <div class="text-center mb-4">
               <span class="inline-block border-2 border-white bg-white text-accent px-4 py-1 font-bold uppercase text-sm">
-                MOST POPULAR
+                ⭐ MOST POPULAR ⭐
               </span>
             </div>
           )}
-          <h3 class="text-3xl font-bold uppercase mb-2">{plan.name}</h3>
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <span class="text-4xl">{plan.emoji}</span>
+            <h3 class="text-3xl font-bold uppercase">{plan.name}</h3>
+          </div>
           <div class="mb-4">
             <span class="text-5xl font-bold">{plan.price}</span>
             <span class="text-lg">{plan.period}</span>
@@ -91,16 +100,29 @@ const plans = [
               </li>
             ))}
           </ul>
-          <a
-            href="#"
-            class={`block text-center border-2 px-6 py-3 font-bold uppercase transition-colors ${
-              plan.popular
-                ? "border-white bg-white text-accent hover:bg-transparent hover:text-white"
-                : "border-black bg-black text-white hover:bg-accent hover:border-accent"
-            }`}
-          >
-            {plan.cta}
-          </a>
+          {plan.name === "ENTERPRISE" ? (
+            <button
+              data-open-sales-modal
+              class={`block w-full text-center border-2 px-6 py-3 font-bold uppercase transition-colors cursor-pointer ${
+                plan.popular
+                  ? "border-white bg-white text-accent hover:bg-transparent hover:text-white"
+                  : "border-black bg-black text-white hover:bg-accent hover:border-accent"
+              }`}
+            >
+              {plan.cta}
+            </button>
+          ) : (
+            <a
+              href="https://app.helpmaton.com"
+              class={`block text-center border-2 px-6 py-3 font-bold uppercase transition-colors ${
+                plan.popular
+                  ? "border-white bg-white text-accent hover:bg-transparent hover:text-white"
+                  : "border-black bg-black text-white hover:bg-accent hover:border-accent"
+              }`}
+            >
+              {plan.cta}
+            </a>
+          )}
         </div>
       ))}
     </div>

@@ -2,28 +2,39 @@
 const features = [
   {
     title: "WORKSPACES",
-    description: "Organize agents and resources in isolated environments. Each workspace has its own credit balance, spending limits, and team permissions.",
+    description: "Think of them as little boxes where your AI agents live. Each box has its own money, rules, and team. It's like apartment buildings, but for robots. 🏢",
     icon: "📁",
+    funFact: "No rent, just credits!",
   },
   {
     title: "AGENTS",
-    description: "Create and configure AI agents with custom system prompts. Define how your agents behave and interact with users through webhooks.",
+    description: "Create AI agents that actually listen to you. Give them a personality, tell them what to do, and watch them work. It's like training a pet, but they never need walks. 🐕",
     icon: "🤖",
+    funFact: "They don't sleep. Ever.",
   },
   {
     title: "DOCUMENTS",
-    description: "Upload and manage markdown or text documents for agent context. Organize documents into folders for better knowledge management.",
+    description: "Feed your agents knowledge. Upload documents, organize them in folders, and watch your agents get smarter. It's like giving them a library card. 📚",
     icon: "📄",
+    funFact: "Unlimited reading material!",
   },
   {
     title: "WEBHOOKS",
-    description: "Integrate agents via webhook endpoints. Send messages to agents and receive streaming responses for real-time interactions.",
+    description: "Connect your agents to the real world. Send messages, get responses, watch the magic happen in real-time. It's like texting, but with AI. 💬",
     icon: "🔗",
+    funFact: "They respond faster than humans!",
   },
   {
     title: "API",
-    description: "Full REST API for programmatic access. Manage workspaces, agents, documents, and monitor usage with comprehensive API endpoints.",
+    description: "For the code-savvy folks. Full REST API to do everything programmatically. Automate, integrate, and make your life easier. It's like having a remote control for your agents. 🎮",
     icon: "⚙️",
+    funFact: "100% API coverage!",
+  },
+  {
+    title: "EXPENSE TRACKING",
+    description: "Keep your wallet happy. Set daily, weekly, or monthly spending limits. Track credits, monitor usage, and never get surprised by a bill. It's like having a financial advisor, but for your AI agents. 💰",
+    icon: "💳",
+    funFact: "No surprise bills, ever!",
   },
 ];
 ---
@@ -32,8 +43,11 @@ const features = [
   <div class="max-w-6xl mx-auto">
     <div class="border-2 border-black p-8 mb-12 text-center">
       <h2 class="text-5xl font-bold uppercase mb-4">FEATURES</h2>
-      <p class="text-lg opacity-75">
+      <p class="text-lg opacity-75 mb-2">
         Everything you need to build and deploy AI agents at scale
+      </p>
+      <p class="text-sm opacity-60 italic">
+        (And have fun while doing it)
       </p>
     </div>
 
@@ -42,7 +56,10 @@ const features = [
         <div class="border-2 border-black p-6 hover:bg-accent hover:text-white hover:border-accent transition-colors">
           <div class="text-4xl mb-4">{feature.icon}</div>
           <h3 class="text-2xl font-bold uppercase mb-3">{feature.title}</h3>
-          <p class="text-sm opacity-90 leading-relaxed">{feature.description}</p>
+          <p class="text-sm opacity-90 leading-relaxed mb-3">{feature.description}</p>
+          <p class="text-xs opacity-75 font-bold uppercase border-t-2 border-current pt-2">
+            {feature.funFact}
+          </p>
         </div>
       ))}
     </div>

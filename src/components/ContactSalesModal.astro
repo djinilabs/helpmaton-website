@@ -1,0 +1,87 @@
+---
+---
+
+<div id="contact-sales-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+  <div class="bg-white border-4 border-black p-8 max-w-md mx-4 relative">
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 text-2xl font-bold hover:text-accent transition-colors"
+      aria-label="Close modal"
+    >
+      ×
+    </button>
+    <h3 class="text-3xl font-bold uppercase mb-4">CONTACT SALES</h3>
+    <p class="text-sm opacity-90 mb-6 leading-relaxed">
+      Ready to take your AI agent operations to the next level? Our sales team is here to help you find the perfect Enterprise solution for your organization.
+    </p>
+    <p class="text-sm opacity-75 mb-4">
+      Reach out to us at:
+    </p>
+    <div class="border-2 border-black p-4 mb-6 bg-accent text-white">
+      <a
+        href="mailto:sales@helpmaton.com"
+        class="text-xl font-bold hover:underline"
+      >
+        sales@helpmaton.com
+      </a>
+    </div>
+    <p class="text-xs opacity-60 italic">
+      We typically respond within 24 hours. Can't wait? We understand the excitement! 🚀
+    </p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('contact-sales-modal');
+  const closeButton = document.getElementById('close-modal');
+  const openButtons = document.querySelectorAll('[data-open-sales-modal]');
+
+  function openModal() {
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  }
+
+  openButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>
+
+<style>
+  #contact-sales-modal {
+    backdrop-filter: blur(2px);
+  }
+</style>
+
