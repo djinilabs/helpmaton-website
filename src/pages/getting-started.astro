@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Getting Started - Helpmaton">
+  <Header />
+  <main class="min-h-screen bg-white p-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-2 border-black p-8 mb-8 text-center">
+        <h1 class="text-5xl font-bold uppercase mb-4">GETTING STARTED</h1>
+        <p class="text-lg opacity-75 mb-2">
+          Your journey to AI agent mastery starts here
+        </p>
+        <p class="text-sm opacity-60 italic">
+          (Don't worry, we'll hold your hand)
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        <section class="border-2 border-black p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">1️⃣</span>
+            <h2 class="text-3xl font-bold uppercase">Create Your Account</h2>
+          </div>
+          <p class="mb-4 opacity-90">
+            First things first - sign up for your free 7-day trial. No credit card required, we're not monsters.
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Click the "START YOUR 7-DAY TRIAL" button on the homepage</li>
+            <li>Enter your email address and create a password</li>
+            <li>Verify your email (check your spam folder, we're friendly!)</li>
+            <li>You're in! Welcome to the future 🚀</li>
+          </ol>
+          <div class="mt-4">
+            <a href="https://app.helpmaton.com" class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm">
+              Sign Up Now →
+            </a>
+          </div>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">2️⃣</span>
+            <h2 class="text-3xl font-bold uppercase">Create Your First Workspace</h2>
+          </div>
+          <p class="mb-4 opacity-90">
+            Workspaces are like boxes where your AI agents live. Each workspace has its own settings, credits, and team members.
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>After logging in, click "Create Workspace"</li>
+            <li>Give it a name (be creative! Or not, we won't judge)</li>
+            <li>Set your spending limits (optional, but recommended)</li>
+            <li>Invite team members if you want (also optional)</li>
+            <li>Click "Create" and boom! You have a workspace 📦</li>
+          </ol>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">3️⃣</span>
+            <h2 class="text-3xl font-bold uppercase">Create Your First Agent</h2>
+          </div>
+          <p class="mb-4 opacity-90">
+            Now for the fun part - creating your first AI agent! This is where the magic happens.
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Navigate to your workspace</li>
+            <li>Click "Create Agent"</li>
+            <li>Give your agent a name and personality</li>
+            <li>Configure what your agent can do (its capabilities)</li>
+            <li>Set up any initial instructions or prompts</li>
+            <li>Click "Create" and watch your agent come to life! 🤖</li>
+          </ol>
+          <p class="mt-4 text-sm opacity-75 italic">
+            Pro tip: Start simple! You can always add more complexity later.
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">4️⃣</span>
+            <h2 class="text-3xl font-bold uppercase">Upload Documents</h2>
+          </div>
+          <p class="mb-4 opacity-90">
+            Give your agents knowledge by uploading documents. They'll read and learn from everything you give them.
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Go to the "Documents" section in your workspace</li>
+            <li>Click "Upload Document"</li>
+            <li>Select your file (PDF, TXT, DOCX, and more)</li>
+            <li>Organize documents into folders if needed</li>
+            <li>Your agents can now access this knowledge! 📚</li>
+          </ol>
+          <p class="mt-4 text-sm opacity-75">
+            Supported formats: PDF, TXT, DOCX, MD, CSV, and more!
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">5️⃣</span>
+            <h2 class="text-3xl font-bold uppercase">Test Your Agent</h2>
+          </div>
+          <p class="mb-4 opacity-90">
+            Time to see your agent in action! Test it out and make sure everything works as expected.
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Go to your agent's page</li>
+            <li>Use the test interface to send a message</li>
+            <li>Watch your agent respond (it's like magic, but real!)</li>
+            <li>Adjust settings if needed</li>
+            <li>Repeat until you're happy ✨</li>
+          </ol>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">6️⃣</span>
+            <h2 class="text-3xl font-bold uppercase">Set Up Webhooks (Optional)</h2>
+          </div>
+          <p class="mb-4 opacity-90">
+            Connect your agent to the real world with webhooks. This lets your agent send and receive messages from external systems.
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Go to "Webhooks" in your workspace settings</li>
+            <li>Click "Create Webhook"</li>
+            <li>Enter your endpoint URL</li>
+            <li>Configure which events should trigger the webhook</li>
+            <li>Test it out! 🔗</li>
+          </ol>
+          <p class="mt-4 text-sm opacity-75 italic">
+            This step is optional - you can always add webhooks later!
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6 bg-accent text-white">
+          <h2 class="text-3xl font-bold uppercase mb-4">🎉 You're All Set!</h2>
+          <p class="mb-4 opacity-90">
+            Congratulations! You've created your first workspace, agent, and uploaded documents. You're officially a Helpmaton pro!
+          </p>
+          <p class="mb-4 opacity-90">
+            Want to learn more? Check out our full documentation or join our community.
+          </p>
+          <div class="flex gap-4 flex-wrap">
+            <a href="/documentation" class="inline-block border-2 border-white bg-white text-accent px-4 py-2 font-bold uppercase hover:bg-transparent hover:text-white transition-colors text-sm">
+              Full Documentation
+            </a>
+            <a href="/api-reference" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-bold uppercase hover:bg-white hover:text-accent transition-colors text-sm">
+              API Reference
+            </a>
+            <a href="https://discord.gg/NrdE8h83W9" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-bold uppercase hover:bg-white hover:text-accent transition-colors text-sm">
+              Join Discord
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+

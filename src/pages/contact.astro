@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactSalesModal from '../components/ContactSalesModal.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Contact Us - Helpmaton">
+  <Header />
+  <main class="min-h-screen bg-white p-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-2 border-black p-8 mb-8 text-center">
+        <h1 class="text-5xl font-bold uppercase mb-4">CONTACT US</h1>
+        <p class="text-lg opacity-75 mb-2">
+          We're here to help! Reach out anytime
+        </p>
+        <p class="text-sm opacity-60 italic">
+          (We promise we're friendly)
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <section class="border-2 border-black p-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">💬 General Support</h2>
+          <p class="mb-4 opacity-90 text-sm">
+            Have questions? Need help? We're here for you!
+          </p>
+          <a
+            href="mailto:support@helpmaton.com"
+            class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm"
+          >
+            support@helpmaton.com
+          </a>
+          <p class="mt-4 text-xs opacity-75">
+            We typically respond within 24 hours
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">💰 Sales & Enterprise</h2>
+          <p class="mb-4 opacity-90 text-sm">
+            Interested in Enterprise plans or custom solutions?
+          </p>
+          <button
+            data-open-sales-modal
+            class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm cursor-pointer"
+          >
+            Contact Sales
+          </button>
+          <p class="mt-4 text-xs opacity-75">
+            Let's discuss your needs
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">🐛 Bug Reports</h2>
+          <p class="mb-4 opacity-90 text-sm">
+            Found a bug? Let us know so we can fix it!
+          </p>
+          <a
+            href="mailto:bugs@helpmaton.com"
+            class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm"
+          >
+            bugs@helpmaton.com
+          </a>
+          <p class="mt-4 text-xs opacity-75">
+            Include as much detail as possible
+          </p>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-2xl font-bold uppercase mb-4">💡 Feature Requests</h2>
+          <p class="mb-4 opacity-90 text-sm">
+            Have an idea? We'd love to hear it!
+          </p>
+          <a
+            href="mailto:features@helpmaton.com"
+            class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm"
+          >
+            features@helpmaton.com
+          </a>
+          <p class="mt-4 text-xs opacity-75">
+            Your feedback shapes our product
+          </p>
+        </section>
+      </div>
+
+      <section class="border-2 border-black p-6 mb-8">
+        <h2 class="text-3xl font-bold uppercase mb-4">🌐 Community</h2>
+        <p class="mb-4 opacity-90">
+          Join our Discord community to connect with other users, get help, and share your experiences!
+        </p>
+        <a
+          href="https://discord.gg/NrdE8h83W9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block border-2 border-black bg-black px-6 py-3 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors"
+        >
+          Join Discord Community →
+        </a>
+      </section>
+
+      <section class="border-2 border-black p-6 bg-accent text-white">
+        <h2 class="text-3xl font-bold uppercase mb-4">📚 Before You Contact Us</h2>
+        <p class="mb-4 opacity-90">
+          Check out these resources - you might find your answer faster!
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="/documentation" class="inline-block border-2 border-white bg-white text-accent px-4 py-2 font-bold uppercase hover:bg-transparent hover:text-white transition-colors text-sm">
+            Documentation
+          </a>
+          <a href="/getting-started" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-bold uppercase hover:bg-white hover:text-accent transition-colors text-sm">
+            Getting Started
+          </a>
+          <a href="/api-reference" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-bold uppercase hover:bg-white hover:text-accent transition-colors text-sm">
+            API Reference
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+  <ContactSalesModal />
+</Layout>
+

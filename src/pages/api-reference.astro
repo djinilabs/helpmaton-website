@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="API Reference - Helpmaton">
+  <Header />
+  <main class="min-h-screen bg-white p-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-2 border-black p-8 mb-8 text-center">
+        <h1 class="text-5xl font-bold uppercase mb-4">API REFERENCE</h1>
+        <p class="text-lg opacity-75 mb-2">
+          Complete REST API documentation for developers
+        </p>
+        <p class="text-sm opacity-60 italic">
+          (For when you want to code, not click)
+        </p>
+      </div>
+
+      <div class="border-2 border-black p-12 text-center">
+        <div class="text-6xl mb-6">🚧</div>
+        <h2 class="text-3xl font-bold uppercase mb-4">COMING SOON</h2>
+        <p class="text-lg opacity-90 mb-4">
+          Our API reference documentation is currently under construction.
+        </p>
+        <p class="text-sm opacity-75 mb-6">
+          We're working hard to bring you comprehensive API documentation. Check back soon!
+        </p>
+        <div class="flex gap-4 justify-center">
+          <a href="/documentation" class="inline-block border-2 border-black bg-black px-6 py-3 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors">
+            View Documentation
+          </a>
+          <a href="/contact" class="inline-block border-2 border-black bg-white px-6 py-3 text-black font-bold uppercase hover:bg-accent hover:text-white hover:border-accent transition-colors">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

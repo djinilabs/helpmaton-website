@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Documentation - Helpmaton">
+  <Header />
+  <main class="min-h-screen bg-white p-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="border-2 border-black p-8 mb-8 text-center">
+        <h1 class="text-5xl font-bold uppercase mb-4">DOCUMENTATION</h1>
+        <p class="text-lg opacity-75 mb-2">
+          Everything you need to know about Helpmaton
+        </p>
+        <p class="text-sm opacity-60 italic">
+          (We promise it's not as scary as it sounds)
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">📚 Getting Started</h2>
+          <p class="mb-4 opacity-90">
+            New to Helpmaton? Start here! We'll guide you through creating your first workspace, setting up agents, and uploading documents.
+          </p>
+          <a href="/getting-started" class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm">
+            Read Getting Started Guide →
+          </a>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">🤖 Working with Agents</h2>
+          <p class="mb-4 opacity-90">
+            Learn how to create, configure, and manage your AI agents. From basic setup to advanced configurations, we've got you covered.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Creating your first agent</li>
+            <li>Configuring agent personalities</li>
+            <li>Setting up agent workflows</li>
+            <li>Managing multiple agents</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">📁 Workspaces</h2>
+          <p class="mb-4 opacity-90">
+            Organize your AI agents into workspaces. Each workspace is like a separate box with its own settings, credits, and team members.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Creating and managing workspaces</li>
+            <li>Setting spending limits</li>
+            <li>Team collaboration</li>
+            <li>Workspace permissions</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">📄 Documents</h2>
+          <p class="mb-4 opacity-90">
+            Upload and organize documents to give your agents knowledge. Learn about supported formats, organization, and best practices.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Uploading documents</li>
+            <li>Organizing with folders</li>
+            <li>Supported file formats</li>
+            <li>Document management tips</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">🔗 Webhooks & Integrations</h2>
+          <p class="mb-4 opacity-90">
+            Connect Helpmaton to your existing tools and workflows. Set up webhooks, integrate with APIs, and automate your processes.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm opacity-90 ml-4">
+            <li>Setting up webhooks</li>
+            <li>Webhook events and payloads</li>
+            <li>Integration examples</li>
+            <li>Troubleshooting webhooks</li>
+          </ul>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">⚙️ API Reference</h2>
+          <p class="mb-4 opacity-90">
+            For developers who want to integrate Helpmaton programmatically. Full REST API documentation with examples and code snippets.
+          </p>
+          <a href="/api-reference" class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm">
+            View API Reference →
+          </a>
+        </section>
+
+        <section class="border-2 border-black p-6">
+          <h2 class="text-3xl font-bold uppercase mb-4">🔓 Self-Hosting</h2>
+          <p class="mb-4 opacity-90">
+            Helpmaton is open source! The source code is available on GitHub, so you can spin up your own instance, customize it to your needs, and run it on your own infrastructure. Full control, zero vendor lock-in.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm opacity-90 ml-4 mb-4">
+            <li>Complete source code available</li>
+            <li>Setup instructions included</li>
+            <li>Customize to your needs</li>
+            <li>Run on your own infrastructure</li>
+          </ul>
+          <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-black bg-black px-4 py-2 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-sm">
+            View on GitHub →
+          </a>
+        </section>
+
+        <section class="border-2 border-black p-6 bg-accent text-white">
+          <h2 class="text-3xl font-bold uppercase mb-4">💡 Need Help?</h2>
+          <p class="mb-4 opacity-90">
+            Can't find what you're looking for? Our support team is here to help!
+          </p>
+          <div class="flex gap-4">
+            <a href="/contact" class="inline-block border-2 border-white bg-white text-accent px-4 py-2 font-bold uppercase hover:bg-transparent hover:text-white transition-colors text-sm">
+              Contact Us
+            </a>
+            <a href="https://discord.gg/NrdE8h83W9" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-bold uppercase hover:bg-white hover:text-accent transition-colors text-sm">
+              Join Discord
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
