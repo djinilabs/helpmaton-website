@@ -1,35 +1,57 @@
 ---
 ---
 
-<section class="min-h-screen bg-white p-8 flex items-center justify-center">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="border-2 border-black p-8 mb-8">
-      <div class="flex items-center justify-center gap-4 mb-6">
-        <img
-          src="/images/helpmaton_logo.svg"
-          alt="Helpmaton Logo"
-          class="w-20 h-20"
-        />
-        <h1 class="text-6xl font-bold uppercase">HELPMATON</h1>
+<section class="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-neutral-50 p-8 flex items-center justify-center relative overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-400 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    <div class="mb-8">
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="relative">
+          <img
+            src="/images/helpmaton_logo.svg"
+            alt="Helpmaton Logo"
+            class="w-20 h-20 drop-shadow-lg"
+          />
+          <div class="absolute inset-0 bg-primary-400 rounded-full blur-xl opacity-30 animate-pulse"></div>
+        </div>
+        <h1 class="text-display-1 font-display bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
+          Helpmaton
+        </h1>
       </div>
-      <p class="text-2xl mb-4 font-bold">
-        Your AI agents, organized. No chaos, just boxes. 📦
+      <p class="text-display-3 mb-6 font-display text-neutral-900">
+        Your AI agents, <span class="text-primary-600">organized</span>. No chaos, just <span class="text-accent-600">workspaces</span>.
       </p>
-      <p class="text-lg opacity-75 mb-4">
-        Give your AI agents a home. Create workspaces, upload documents, and watch them do their thing. It's like having a robot army, but friendlier.
+      <p class="text-xl text-neutral-700 mb-6 max-w-2xl mx-auto leading-relaxed font-medium">
+        Give your AI agents a home. Create workspaces, upload documents, and manage your AI operations at scale. Built for teams that need structure without the complexity.
       </p>
-      <p class="text-sm opacity-60 mb-4 italic">
-        *Warning: May cause excessive productivity*
-      </p>
-      <p class="text-sm opacity-75 mb-8">
-        🔓 Open source - <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent transition-colors">spin up your own instance</a>
-      </p>
-      <a
-        href="https://app.helpmaton.com"
-        class="inline-block border-2 border-black bg-black px-8 py-4 text-white font-bold uppercase hover:bg-accent hover:border-accent transition-colors text-xl"
-      >
-        START YOUR 7-DAY TRIAL 🚀
-      </a>
+      <div class="flex items-center justify-center gap-6 mb-8 flex-wrap">
+        <p class="text-sm text-neutral-600">
+          <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full border border-primary-200">
+            <span class="text-primary-600">🔓</span>
+            <span>Open source</span>
+            <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-semibold underline">deploy your own</a>
+          </span>
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="https://app.helpmaton.com"
+          class="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-colored hover:shadow-large transition-all hover:scale-105 hover:from-primary-700 hover:to-primary-800"
+        >
+          Start Your 7-Day Trial →
+        </a>
+        <a
+          href="/#pricing"
+          class="inline-block border-2 border-primary-600 text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl bg-white/80 backdrop-blur-sm hover:bg-primary-50 transition-all"
+        >
+          View Pricing
+        </a>
+      </div>
     </div>
   </div>
 </section>

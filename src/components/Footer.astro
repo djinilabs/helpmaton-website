@@ -1,30 +1,34 @@
 ---
 ---
 
-<footer class="bg-white border-t-4 border-black p-8">
+<footer class="bg-gradient-to-b from-white to-neutral-50 border-t-2 border-primary-200 p-8">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img
-            src="/images/helpmaton_logo.svg"
-            alt="Helpmaton Logo"
-            class="w-10 h-10"
-          />
-          <span class="text-xl font-bold uppercase">HELPMATON</span>
+          <div class="relative">
+            <img
+              src="/images/helpmaton_logo.svg"
+              alt="Helpmaton Logo"
+              class="w-10 h-10"
+            />
+          </div>
+          <span class="text-lg font-display font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
+            Helpmaton
+          </span>
         </div>
-        <p class="text-sm opacity-75 mb-2">
+        <p class="text-sm text-neutral-700 mb-2 font-medium">
           Workspace-based platform for managing AI agents.
         </p>
-        <p class="text-xs opacity-60 italic">
-          Making AI agents less scary, one box at a time.
+        <p class="text-xs text-neutral-600 mb-4">
+          Organize your AI operations with structure and clarity.
         </p>
         <div class="mt-4">
           <a
             href="https://github.com/djinilabs/helpmaton"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm hover:text-accent transition-colors inline-flex items-center gap-2"
+            class="text-sm text-primary-600 hover:text-primary-700 transition-colors inline-flex items-center gap-2 font-semibold hover:underline"
           >
             <span>🔓</span>
             <span>View on GitHub</span>
@@ -32,56 +36,61 @@
         </div>
       </div>
       <div>
-        <h4 class="text-lg font-bold uppercase mb-4">RESOURCES</h4>
-        <ul class="space-y-2 text-sm">
+        <h4 class="text-base font-bold text-neutral-900 mb-4">Resources</h4>
+        <ul class="space-y-3 text-sm">
           <li>
-            <a href="/documentation" class="hover:text-accent transition-colors">
-              Documentation
+            <a href="/documentation" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium inline-flex items-center gap-2 group">
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <span>Documentation</span>
             </a>
           </li>
           <li>
-            <a href="/api-reference" class="hover:text-accent transition-colors">
-              API Reference
+            <a href="/api-reference" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium inline-flex items-center gap-2 group">
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <span>API Reference</span>
             </a>
           </li>
           <li>
-            <a href="/getting-started" class="hover:text-accent transition-colors">
-              Getting Started
+            <a href="/getting-started" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium inline-flex items-center gap-2 group">
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <span>Getting Started</span>
             </a>
           </li>
         </ul>
       </div>
       <div>
-        <h4 class="text-lg font-bold uppercase mb-4">SUPPORT</h4>
-        <ul class="space-y-2 text-sm">
+        <h4 class="text-base font-bold text-neutral-900 mb-4">Support</h4>
+        <ul class="space-y-3 text-sm">
           <li>
-            <a href="/contact" class="hover:text-accent transition-colors">
-              Contact Us
+            <a href="/contact" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium inline-flex items-center gap-2 group">
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <span>Contact Us</span>
             </a>
           </li>
           <li>
-            <a href="https://discord.gg/NrdE8h83W9" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
-              Help Center
+            <a href="https://discord.gg/NrdE8h83W9" target="_blank" rel="noopener noreferrer" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium inline-flex items-center gap-2 group">
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <span>Discord Community</span>
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="border-t-2 border-black pt-8">
+    <div class="border-t-2 border-primary-200 pt-8">
       <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
-        <a href="/privacy" class="text-sm hover:text-accent transition-colors">
+        <a href="/privacy" class="text-sm text-neutral-700 hover:text-primary-600 transition-colors font-medium">
           Privacy Statement
         </a>
-        <span class="hidden md:inline text-sm opacity-60">|</span>
-        <a href="/terms-of-service" class="text-sm hover:text-accent transition-colors">
+        <span class="hidden md:inline text-sm text-neutral-400">|</span>
+        <a href="/terms-of-service" class="text-sm text-neutral-700 hover:text-primary-600 transition-colors font-medium">
           Terms of Service
         </a>
       </div>
-      <p class="text-sm opacity-75 mb-2 text-center">
+      <p class="text-sm text-neutral-700 mb-2 text-center font-medium">
         © {new Date().getFullYear()} Helpmaton. All rights reserved.
       </p>
-      <p class="text-xs opacity-60 text-center">
-        Made with ❤️ and lots of coffee ☕
+      <p class="text-xs text-neutral-500 text-center">
+        Made with <span class="text-primary-600">❤️</span> and attention to detail
       </p>
     </div>
   </div>
