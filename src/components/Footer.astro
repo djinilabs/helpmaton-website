@@ -6,12 +6,16 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="relative">
+          <div class="relative overflow-hidden">
             <img
               src="/images/helpmaton_logo.svg"
               alt="Helpmaton Logo"
-              class="w-10 h-10"
+              class="w-10 h-10 relative z-10"
             />
+            <div
+              class="manga-shine-overlay absolute inset-0 z-20 pointer-events-none"
+              style="background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 15%, transparent 30%), linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.3) 55%, transparent 75%); width: 200%; height: 200%;"
+            ></div>
           </div>
           <span class="text-lg font-display font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
             Helpmaton

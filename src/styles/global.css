@@ -61,5 +61,23 @@
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
   }
+  
+  @keyframes manga-shine {
+    0% {
+      transform: translateX(-120%) translateY(-120%) rotate(45deg);
+    }
+    15% {
+      transform: translateX(120%) translateY(120%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(120%) translateY(120%) rotate(45deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .manga-shine-overlay {
+      animation: manga-shine 10s infinite;
+    }
+  }
 }
 
