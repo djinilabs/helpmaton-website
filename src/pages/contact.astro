@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ContactSalesModal from '../components/ContactSalesModal.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactSalesModal from "../components/ContactSalesModal.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="Contact Us - Helpmaton">
@@ -11,15 +11,21 @@ import '../styles/global.css';
   <main class="min-h-screen bg-neutral-50 p-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-display-2 font-display text-neutral-900 mb-4">Contact Us</h1>
+        <h1 class="text-display-2 font-display text-neutral-900 mb-4">
+          Contact Us
+        </h1>
         <p class="text-lg text-neutral-600">
           We're here to help! Reach out anytime
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-xl font-semibold text-neutral-900 mb-4">General Support</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-xl font-semibold text-neutral-900 mb-4">
+            General Support
+          </h2>
           <p class="mb-4 text-neutral-600 text-sm">
             Have questions? Need help? We're here for you!
           </p>
@@ -34,8 +40,12 @@ import '../styles/global.css';
           </p>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-xl font-semibold text-neutral-900 mb-4">Sales & Enterprise</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-xl font-semibold text-neutral-900 mb-4">
+            Sales & Enterprise
+          </h2>
           <p class="mb-4 text-neutral-600 text-sm">
             Interested in Enterprise plans or custom solutions?
           </p>
@@ -45,13 +55,15 @@ import '../styles/global.css';
           >
             Contact Sales
           </button>
-          <p class="mt-4 text-xs text-neutral-500">
-            Let's discuss your needs
-          </p>
+          <p class="mt-4 text-xs text-neutral-500">Let's discuss your needs</p>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-xl font-semibold text-neutral-900 mb-4">Bug Reports</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-xl font-semibold text-neutral-900 mb-4">
+            Bug Reports
+          </h2>
           <p class="mb-4 text-neutral-600 text-sm">
             Found a bug? Let us know so we can fix it!
           </p>
@@ -66,8 +78,12 @@ import '../styles/global.css';
           </p>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-xl font-semibold text-neutral-900 mb-4">Feature Requests</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-xl font-semibold text-neutral-900 mb-4">
+            Feature Requests
+          </h2>
           <p class="mb-4 text-neutral-600 text-sm">
             Have an idea? We'd love to hear it!
           </p>
@@ -83,10 +99,13 @@ import '../styles/global.css';
         </section>
       </div>
 
-      <section class="bg-white rounded-lg shadow-soft p-6 mb-8 border border-neutral-200">
+      <section
+        class="bg-white rounded-lg shadow-soft p-6 mb-8 border border-neutral-200"
+      >
         <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Community</h2>
         <p class="mb-4 text-neutral-600">
-          Join our Discord community to connect with other users, get help, and share your experiences!
+          Join our Discord community to connect with other users, get help, and
+          share your experiences!
         </p>
         <a
           href="https://discord.gg/NrdE8h83W9"
@@ -98,19 +117,32 @@ import '../styles/global.css';
         </a>
       </section>
 
-      <section class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white">
+      <section
+        class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white"
+      >
         <h2 class="text-2xl font-semibold mb-4">Before You Contact Us</h2>
         <p class="mb-4 text-white/90">
           Check out these resources - you might find your answer faster!
         </p>
         <div class="flex gap-4 flex-wrap">
-          <a href="/documentation" class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft">
+          <a
+            href="/documentation"
+            class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft"
+          >
             Documentation
           </a>
-          <a href="/getting-started" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm">
+          <a
+            href="/getting-started"
+            class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
+          >
             Getting Started
           </a>
-          <a href="/api-reference" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm">
+          <a
+            href="https://app.helpmaton.com/docs/api"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
+          >
             API Reference
           </a>
         </div>
@@ -120,4 +152,3 @@ import '../styles/global.css';
   <Footer />
   <ContactSalesModal />
 </Layout>
-

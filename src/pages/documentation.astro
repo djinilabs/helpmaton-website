@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="Documentation - Helpmaton">
@@ -10,29 +10,46 @@ import '../styles/global.css';
   <main class="min-h-screen bg-neutral-50 p-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-display-2 font-display text-neutral-900 mb-4">Documentation</h1>
+        <h1 class="text-display-2 font-display text-neutral-900 mb-4">
+          Documentation
+        </h1>
         <p class="text-lg text-neutral-600">
           Everything you need to know about Helpmaton
         </p>
       </div>
 
       <div class="space-y-6">
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Getting Started</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Getting Started
+          </h2>
           <p class="mb-4 text-neutral-600">
-            New to Helpmaton? Start here! We'll guide you through creating your first workspace, setting up agents, and uploading documents.
+            New to Helpmaton? Start here! We'll guide you through creating your
+            first workspace, setting up agents, and uploading documents.
           </p>
-          <a href="/getting-started" class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft">
+          <a
+            href="/getting-started"
+            class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+          >
             Read Getting Started Guide →
           </a>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Working with Agents</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Working with Agents
+          </h2>
           <p class="mb-4 text-neutral-600">
-            Learn how to create, configure, and manage your AI agents. From basic setup to advanced configurations, we've got you covered.
+            Learn how to create, configure, and manage your AI agents. From
+            basic setup to advanced configurations, we've got you covered.
           </p>
-          <ul class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Creating your first agent</li>
             <li>Configuring agent personalities</li>
             <li>Setting up agent workflows</li>
@@ -40,17 +57,28 @@ import '../styles/global.css';
           </ul>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Workspaces</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Workspaces
+          </h2>
           <p class="mb-4 text-neutral-600">
-            Organize your AI agents into workspaces. Each workspace is like a separate container with its own settings, credits, and team members.
+            Organize your AI agents into workspaces. Each workspace is like a
+            separate container with its own settings, credits, and team members.
           </p>
-          <div class="mb-4 p-4 bg-primary-50 border border-primary-200 rounded-lg">
+          <div
+            class="mb-4 p-4 bg-primary-50 border border-primary-200 rounded-lg"
+          >
             <p class="text-sm text-neutral-700">
-              <strong>Note:</strong> Workspace credits are used for AI provider calls (OpenAI, Anthropic, etc.), not for platform subscription costs. You can either provide your own API keys or purchase credits through Helpmaton.
+              <strong>Note:</strong> Workspace credits are used for AI provider calls
+              (OpenAI, Anthropic, etc.), not for platform subscription costs. You
+              can either provide your own API keys or purchase credits through Helpmaton.
             </p>
           </div>
-          <ul class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Creating and managing workspaces</li>
             <li>Setting spending limits (for AI provider costs)</li>
             <li>Adding API keys or purchasing credits</li>
@@ -59,12 +87,19 @@ import '../styles/global.css';
           </ul>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Documents</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Documents
+          </h2>
           <p class="mb-4 text-neutral-600">
-            Upload and organize documents to give your agents knowledge. Learn about supported formats, organization, and best practices.
+            Upload and organize documents to give your agents knowledge. Learn
+            about supported formats, organization, and best practices.
           </p>
-          <ul class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Uploading documents</li>
             <li>Organizing with folders</li>
             <li>Supported file formats</li>
@@ -72,29 +107,66 @@ import '../styles/global.css';
           </ul>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Webhooks & Integrations</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Webhooks & Integrations
+          </h2>
           <p class="mb-4 text-neutral-600">
-            Connect Helpmaton to your existing tools and workflows. Set up webhooks, integrate with APIs, and automate your processes.
+            Connect Helpmaton to your existing tools and workflows. Set up
+            webhooks, integrate with APIs, and automate your processes.
           </p>
-          <ul class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Setting up webhooks</li>
+            <li>Real-time streaming with Server-Sent Events (SSE)</li>
             <li>Webhook events and payloads</li>
             <li>Integration examples</li>
             <li>Troubleshooting webhooks</li>
           </ul>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Billing & Pricing</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            MCP Servers
+          </h2>
+          <p class="mb-4 text-neutral-600">
+            Extend your agents' capabilities with Model Context Protocol (MCP)
+            servers. Connect to external APIs, databases, and custom tools to
+            enable powerful integrations.
+          </p>
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
+            <li>What are MCP servers?</li>
+            <li>Configuring MCP servers</li>
+            <li>Enabling MCP servers for agents</li>
+            <li>Authentication and security</li>
+            <li>Use cases and examples</li>
+          </ul>
+        </section>
+
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Billing & Pricing
+          </h2>
           <p class="mb-4 text-neutral-600">
             Understanding Helpmaton's pricing structure and how costs work.
           </p>
           <div class="mb-4 space-y-4 text-sm text-neutral-600">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">What's Included in Your Subscription</h3>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                What's Included in Your Subscription
+              </h3>
               <p class="mb-2">
-                Your monthly subscription covers all Helpmaton platform services:
+                Your monthly subscription covers all Helpmaton platform
+                services:
               </p>
               <ul class="list-disc list-inside space-y-1 ml-4">
                 <li>Hosting and infrastructure</li>
@@ -105,57 +177,103 @@ import '../styles/global.css';
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">AI Provider Calls (Separate)</h3>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                AI Provider Calls (Separate)
+              </h3>
               <p class="mb-2">
-                AI provider calls (OpenAI, Anthropic, etc.) are <strong>not included</strong> in your subscription. You have two options:
+                AI provider calls (OpenAI, Anthropic, etc.) are <strong
+                  >not included</strong
+                > in your subscription. You have two options:
               </p>
               <ul class="list-disc list-inside space-y-1 ml-4">
-                <li><strong>Use your own API keys:</strong> Connect your AI provider accounts directly - you pay the provider</li>
-                <li><strong>Purchase credits:</strong> Buy credits through Helpmaton to add to your workspace</li>
+                <li>
+                  <strong>Use your own API keys:</strong> Connect your AI provider
+                  accounts directly - you pay the provider
+                </li>
+                <li>
+                  <strong>Purchase credits:</strong> Buy credits through Helpmaton
+                  to add to your workspace
+                </li>
               </ul>
             </div>
             <p class="text-xs text-neutral-500 mt-3">
-              This separation keeps your platform costs predictable while giving you full control over AI provider spending.
+              This separation keeps your platform costs predictable while giving
+              you full control over AI provider spending.
             </p>
           </div>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">API Reference</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            API Reference
+          </h2>
           <p class="mb-4 text-neutral-600">
-            For developers who want to integrate Helpmaton programmatically. Full REST API documentation with examples and code snippets.
+            For developers who want to integrate Helpmaton programmatically.
+            Full REST API documentation with examples and code snippets.
           </p>
-          <a href="/api-reference" class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft">
+          <a
+            href="https://app.helpmaton.com/docs/api"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+          >
             View API Reference →
           </a>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Self-Hosting</h2>
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Self-Hosting
+          </h2>
           <p class="mb-4 text-neutral-600">
-            Helpmaton is open source! The source code is available on GitHub, so you can spin up your own instance, customize it to your needs, and run it on your own infrastructure. Full control, zero vendor lock-in.
+            Helpmaton is open source! The source code is available on GitHub, so
+            you can spin up your own instance, customize it to your needs, and
+            run it on your own infrastructure. Full control, zero vendor
+            lock-in.
           </p>
-          <ul class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4 mb-4">
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4 mb-4"
+          >
             <li>Complete source code available</li>
             <li>Setup instructions included</li>
             <li>Customize to your needs</li>
             <li>Run on your own infrastructure</li>
           </ul>
-          <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft">
+          <a
+            href="https://github.com/djinilabs/helpmaton"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+          >
             View on GitHub →
           </a>
         </section>
 
-        <section class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white">
+        <section
+          class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white"
+        >
           <h2 class="text-2xl font-semibold mb-4">Need Help?</h2>
           <p class="mb-4 text-white/90">
-            Can't find what you're looking for? Our support team is here to help!
+            Can't find what you're looking for? Our support team is here to
+            help!
           </p>
           <div class="flex gap-4">
-            <a href="/contact" class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft">
+            <a
+              href="/contact"
+              class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft"
+            >
               Contact Us
             </a>
-            <a href="https://discord.gg/NrdE8h83W9" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm">
+            <a
+              href="https://discord.gg/NrdE8h83W9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
+            >
               Join Discord
             </a>
           </div>
@@ -165,4 +283,3 @@ import '../styles/global.css';
   </main>
   <Footer />
 </Layout>
-

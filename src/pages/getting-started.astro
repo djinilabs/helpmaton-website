@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="Getting Started - Helpmaton">
@@ -10,73 +10,118 @@ import '../styles/global.css';
   <main class="min-h-screen bg-neutral-50 p-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-display-2 font-display text-neutral-900 mb-4">Getting Started</h1>
+        <h1 class="text-display-2 font-display text-neutral-900 mb-4">
+          Getting Started
+        </h1>
         <p class="text-lg text-neutral-600">
           Your journey to AI agent mastery starts here
         </p>
       </div>
 
       <div class="space-y-6">
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">1</span>
-            <h2 class="text-2xl font-semibold text-neutral-900">Create Your Account</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Create Your Account
+            </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            First things first - sign up for your free 7-day trial. No credit card required.
+            First things first - sign up for your free 7-day trial. No credit
+            card required.
           </p>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Click the "Start Your 7-Day Trial" button on the homepage</li>
             <li>Enter your email address and create a password</li>
             <li>Verify your email (check your spam folder)</li>
             <li>You're in! Welcome to Helpmaton</li>
           </ol>
           <div class="mt-4">
-            <a href="https://app.helpmaton.com" class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft">
+            <a
+              href="https://app.helpmaton.com"
+              class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+            >
               Sign Up Now →
             </a>
           </div>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">2</span>
-            <h2 class="text-2xl font-semibold text-neutral-900">Create Your First Workspace</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Create Your First Workspace
+            </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            Workspaces are containers where your AI agents live. Each workspace has its own settings, credits, and team members.
+            Workspaces are containers where your AI agents live. Each workspace
+            has its own settings, credits, and team members.
           </p>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>After logging in, click "Create Workspace"</li>
             <li>Give it a name</li>
-            <li>Set your spending limits for AI provider calls (optional, but recommended)</li>
+            <li>
+              Set your spending limits for AI provider calls (optional, but
+              recommended)
+            </li>
             <li>Invite team members if needed (optional)</li>
             <li>Click "Create" to finish</li>
           </ol>
-          <div class="mt-4 p-4 bg-primary-50 border border-primary-200 rounded-lg">
-            <p class="text-sm font-semibold text-neutral-900 mb-2">Important: AI Provider Setup</p>
-            <p class="text-sm text-neutral-700 mb-2">
-              To use AI agents, you'll need to handle AI provider costs (OpenAI, Anthropic, etc.). These are <strong>separate from your Helpmaton subscription</strong>. You have two options:
+          <div
+            class="mt-4 p-4 bg-primary-50 border border-primary-200 rounded-lg"
+          >
+            <p class="text-sm font-semibold text-neutral-900 mb-2">
+              Important: AI Provider Setup
             </p>
-            <ul class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4">
-              <li><strong>Add your own API keys:</strong> Connect your AI provider accounts directly in workspace settings</li>
-              <li><strong>Purchase credits:</strong> Buy credits through Helpmaton to add to your workspace</li>
+            <p class="text-sm text-neutral-700 mb-2">
+              To use AI agents, you'll need to handle AI provider costs (OpenAI,
+              Anthropic, etc.). These are <strong
+                >separate from your Helpmaton subscription</strong
+              >. You have two options:
+            </p>
+            <ul
+              class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4"
+            >
+              <li>
+                <strong>Add your own API keys:</strong> Connect your AI provider accounts
+                directly in workspace settings
+              </li>
+              <li>
+                <strong>Purchase credits:</strong> Buy credits through Helpmaton to
+                add to your workspace
+              </li>
             </ul>
             <p class="text-xs text-neutral-600 mt-2">
-              Your Helpmaton subscription covers the platform; AI provider calls are billed separately.
+              Your Helpmaton subscription covers the platform; AI provider calls
+              are billed separately.
             </p>
           </div>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">3</span>
-            <h2 class="text-2xl font-semibold text-neutral-900">Create Your First Agent</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Create Your First Agent
+            </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            Now for the fun part - creating your first AI agent! This is where the magic happens.
+            Now for the fun part - creating your first AI agent! This is where
+            the magic happens.
           </p>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Navigate to your workspace</li>
             <li>Click "Create Agent"</li>
             <li>Give your agent a name and personality</li>
@@ -89,15 +134,22 @@ import '../styles/global.css';
           </p>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">4</span>
-            <h2 class="text-2xl font-semibold text-neutral-900">Upload Documents</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Upload Documents
+            </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            Give your agents knowledge by uploading documents. They'll read and learn from everything you provide.
+            Give your agents knowledge by uploading documents. They'll read and
+            learn from everything you provide.
           </p>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Go to the "Documents" section in your workspace</li>
             <li>Click "Upload Document"</li>
             <li>Select your file (PDF, TXT, DOCX, and more)</li>
@@ -109,15 +161,22 @@ import '../styles/global.css';
           </p>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">5</span>
-            <h2 class="text-2xl font-semibold text-neutral-900">Test Your Agent</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Test Your Agent
+            </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            Time to see your agent in action! Test it out and make sure everything works as expected.
+            Time to see your agent in action! Test it out and make sure
+            everything works as expected.
           </p>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Go to your agent's page</li>
             <li>Use the test interface to send a message</li>
             <li>Watch your agent respond</li>
@@ -126,42 +185,100 @@ import '../styles/global.css';
           </ol>
         </section>
 
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">6</span>
-            <h2 class="text-2xl font-semibold text-neutral-900">Set Up Webhooks (Optional)</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Set Up Webhooks & Streaming (Optional)
+            </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            Connect your agent to the real world with webhooks. This lets your agent send and receive messages from external systems.
+            Connect your agent to the real world with webhooks. This lets your
+            agent send and receive messages from external systems. Use streaming
+            endpoints for real-time responses.
           </p>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4">
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
             <li>Go to "Webhooks" in your workspace settings</li>
-            <li>Click "Create Webhook"</li>
-            <li>Enter your endpoint URL</li>
+            <li>Click "Create Webhook" or set up streaming</li>
+            <li>
+              Enter your endpoint URL (for webhooks) or configure streaming
+            </li>
             <li>Configure which events should trigger the webhook</li>
             <li>Test it out</li>
           </ol>
           <p class="mt-4 text-sm text-neutral-500">
-            This step is optional - you can always add webhooks later!
+            This step is optional - you can always add webhooks and streaming
+            later!
           </p>
         </section>
 
-        <section class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white">
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl font-semibold text-primary-600">7</span>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Extend with MCP Servers (Optional)
+            </h2>
+          </div>
+          <p class="mb-4 text-neutral-600">
+            Power up your agents by connecting them to external tools and
+            services via MCP (Model Context Protocol) servers. Enable your
+            agents to call external APIs, query databases, and execute custom
+            business logic.
+          </p>
+          <ol
+            class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
+            <li>Go to "MCP Servers" in your workspace settings</li>
+            <li>Click "Create MCP Server"</li>
+            <li>Enter the server URL and configure authentication</li>
+            <li>Enable the MCP server for your agents</li>
+            <li>Your agents can now use external tools!</li>
+          </ol>
+          <p class="mt-4 text-sm text-neutral-500">
+            This is an advanced feature - perfect for when you need to integrate
+            with external systems!
+          </p>
+        </section>
+
+        <section
+          class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white"
+        >
           <h2 class="text-2xl font-semibold mb-4">You're All Set!</h2>
           <p class="mb-4 text-white/90">
-            Congratulations! You've created your first workspace, agent, and uploaded documents. You're ready to get started with Helpmaton!
+            Congratulations! You've created your first workspace, agent, and
+            uploaded documents. You're ready to get started with Helpmaton!
           </p>
           <p class="mb-4 text-white/90">
-            Want to learn more? Check out our full documentation or join our community.
+            Want to learn more? Check out our full documentation or join our
+            community.
           </p>
           <div class="flex gap-4 flex-wrap">
-            <a href="/documentation" class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft">
+            <a
+              href="/documentation"
+              class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft"
+            >
               Full Documentation
             </a>
-            <a href="/api-reference" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm">
+            <a
+              href="https://app.helpmaton.com/docs/api"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
+            >
               API Reference
             </a>
-            <a href="https://discord.gg/NrdE8h83W9" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm">
+            <a
+              href="https://discord.gg/NrdE8h83W9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
+            >
               Join Discord
             </a>
           </div>
@@ -171,4 +288,3 @@ import '../styles/global.css';
   </main>
   <Footer />
 </Layout>
-
