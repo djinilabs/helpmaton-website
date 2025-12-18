@@ -29,8 +29,8 @@ import "../styles/global.css";
             </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            First things first - sign up for your free 7-day trial. No credit
-            card required.
+            First things first - sign up for Helpmaton. Start with the free
+            plan, or try paid plans with a 7-day trial. No credit card required.
           </p>
           <ol
             class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
@@ -83,25 +83,27 @@ import "../styles/global.css";
             </p>
             <p class="text-sm text-neutral-700 mb-2">
               To use AI agents, you'll need to handle AI provider costs (OpenAI,
-              Anthropic, etc.). These are <strong
+              Anthropic, Google, etc.). These are <strong
                 >separate from your Helpmaton subscription</strong
-              >. You have two options:
+              >. You have two flexible options:
             </p>
             <ul
-              class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4"
+              class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4 mb-2"
             >
               <li>
-                <strong>Add your own API keys:</strong> Connect your AI provider accounts
-                directly in workspace settings
+                <strong>BYOK (Bring Your Own Key):</strong> Use your own LLM API keys
+                and pay providers directly - you get all Helpmaton features while
+                maintaining direct billing relationships
               </li>
               <li>
-                <strong>Purchase credits:</strong> Buy credits through Helpmaton to
-                add to your workspace
+                <strong>Purchase credits:</strong> Buy credits through Helpmaton for
+                usage-based billing with transparent pricing
               </li>
             </ul>
             <p class="text-xs text-neutral-600 mt-2">
-              Your Helpmaton subscription covers the platform; AI provider calls
-              are billed separately.
+              Your Helpmaton subscription covers the platform (hosting, memory,
+              analytics, etc.); AI provider calls are billed separately. Set
+              spending limits for budget control.
             </p>
           </div>
         </section>
@@ -247,6 +249,40 @@ import "../styles/global.css";
         </section>
 
         <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl font-semibold text-primary-600">8</span>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Explore Memory & Analytics (Automatic)
+            </h2>
+          </div>
+          <p class="mb-4 text-neutral-600">
+            Your agents automatically benefit from advanced features built into
+            Helpmaton. No additional setup required!
+          </p>
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
+            <li>
+              <strong>Agent Memory:</strong> Agents remember facts, people, and events
+              through stratified memory architecture with progressive summarization
+            </li>
+            <li>
+              <strong>Usage Analytics:</strong> Track token usage (prompt, completion,
+              reasoning, cached) with daily/hourly aggregation and historical data
+            </li>
+            <li>
+              <strong>Cost Control:</strong> Set spending limits at workspace and
+              agent levels to maintain budget control
+            </li>
+          </ul>
+          <p class="mt-4 text-sm text-neutral-500">
+            These features work automatically based on your subscription plan!
+          </p>
+        </section>
+
+        <section
           class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white"
         >
           <h2 class="text-2xl font-semibold mb-4">You're All Set!</h2>
@@ -274,7 +310,7 @@ import "../styles/global.css";
               API Reference
             </a>
             <a
-              href="https://discord.gg/NrdE8h83W9"
+              href="https://discord.gg/Zf9Q7GpuKx"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
