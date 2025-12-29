@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="API Reference - Helpmaton">
@@ -10,28 +10,94 @@ import '../styles/global.css';
   <main class="min-h-screen bg-neutral-50 p-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-display-2 font-display text-neutral-900 mb-4">API Reference</h1>
+        <h1 class="text-display-2 font-display text-neutral-900 mb-4">
+          API Reference
+        </h1>
         <p class="text-lg text-neutral-600">
           Complete REST API documentation for developers
         </p>
       </div>
 
-      <div class="bg-white rounded-lg shadow-medium p-12 text-center border border-neutral-200">
-        <div class="text-6xl mb-6">🚧</div>
-        <h2 class="text-3xl font-semibold text-neutral-900 mb-4">Coming Soon</h2>
-        <p class="text-lg text-neutral-600 mb-4">
-          Our API reference documentation is currently under construction.
-        </p>
-        <p class="text-sm text-neutral-500 mb-6">
-          We're working hard to bring you comprehensive API documentation. Check back soon!
-        </p>
-        <div class="flex gap-4 justify-center">
-          <a href="/documentation" class="inline-block bg-primary-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-soft">
-            View Documentation
-          </a>
-          <a href="/contact" class="inline-block border-2 border-primary-600 bg-white text-primary-600 px-6 py-3 font-medium rounded-lg hover:bg-primary-50 transition-colors">
-            Contact Us
-          </a>
+      <div
+        class="bg-white rounded-lg shadow-medium p-12 border border-neutral-200"
+      >
+        <div class="text-center mb-8">
+          <div class="text-6xl mb-6">📚</div>
+          <h2 class="text-3xl font-semibold text-neutral-900 mb-4">
+            API Documentation
+          </h2>
+          <p class="text-lg text-neutral-600 mb-4">
+            Complete REST API documentation with OpenAPI format support
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto space-y-6 text-left">
+          <div class="p-6 bg-primary-50 border border-primary-200 rounded-lg">
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">
+              OpenAPI Documentation
+            </h3>
+            <p class="text-neutral-700 mb-4">
+              Complete API documentation is available in OpenAPI format.
+              Generate client libraries, explore endpoints, and understand
+              request/response schemas.
+            </p>
+            <a
+              href="https://app.helpmaton.com/docs/api"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-primary-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-soft"
+            >
+              View OpenAPI Documentation →
+            </a>
+          </div>
+
+          <div class="p-6 bg-neutral-50 border border-neutral-200 rounded-lg">
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">
+              API Features
+            </h3>
+            <ul class="list-disc list-inside space-y-2 text-neutral-700">
+              <li>Full programmatic access to all platform features</li>
+              <li>Workspace and agent management endpoints</li>
+              <li>Document upload and organization APIs</li>
+              <li>Error tracking and conversation history</li>
+              <li>Usage analytics and monitoring endpoints</li>
+              <li>Notification channel configuration</li>
+              <li>MCP server management</li>
+              <li>Webhook endpoints and streaming support</li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-neutral-50 border border-neutral-200 rounded-lg">
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">
+              Authentication
+            </h3>
+            <p class="text-neutral-700 mb-2">
+              Multiple authentication methods supported:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-neutral-700">
+              <li>Session-based authentication for web users</li>
+              <li>JWT tokens (24-hour expiration) for API access</li>
+              <li>Workspace API keys for programmatic integration</li>
+              <li>OAuth support for email-based login</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <div class="flex gap-4 justify-center flex-wrap">
+            <a
+              href="/documentation"
+              class="inline-block bg-primary-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-soft"
+            >
+              View Full Documentation
+            </a>
+            <a
+              href="/contact"
+              class="inline-block border-2 border-primary-600 bg-white text-primary-600 px-6 py-3 font-medium rounded-lg hover:bg-primary-50 transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
     </div>
