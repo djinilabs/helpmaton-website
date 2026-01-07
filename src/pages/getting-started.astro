@@ -399,6 +399,83 @@ import "../styles/global.css";
         </section>
 
         <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl font-semibold text-primary-600">12</span>
+            <h2 class="text-2xl font-semibold text-neutral-900">
+              Deploy as Slack or Discord Bots (Optional)
+            </h2>
+          </div>
+          <p class="mb-4 text-neutral-600">
+            Deploy your agents as Slack or Discord bots to enable team members
+            and community users to interact with your AI agents directly in
+            their favorite chat platforms.
+          </p>
+          <div class="mb-4 space-y-4">
+            <div>
+              <h3 class="text-lg font-semibold text-neutral-900 mb-2">
+                Slack Integration
+              </h3>
+              <ol
+                class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+              >
+                <li>Go to "Integrations" in your workspace</li>
+                <li>Click "Create Slack Integration"</li>
+                <li>Follow the step-by-step guide with dynamic Slack App Manifest generation</li>
+                <li>Configure webhook handling with signature verification</li>
+                <li>Your agent is now a Slack bot responding to mentions and DMs!</li>
+              </ol>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-neutral-900 mb-2">
+                Discord Integration
+              </h3>
+              <ol
+                class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
+              >
+                <li>Go to "Integrations" in your workspace</li>
+                <li>Click "Create Discord Integration"</li>
+                <li>Follow the step-by-step guide for Discord bot setup</li>
+                <li>Configure Ed25519 signature verification for secure interactions</li>
+                <li>Your agent is now a Discord bot with slash command support!</li>
+              </ol>
+            </div>
+          </div>
+          <div
+            class="mt-4 p-4 bg-primary-50 border border-primary-200 rounded-lg"
+          >
+            <p class="text-sm font-semibold text-neutral-900 mb-2">
+              Key Features
+            </p>
+            <ul
+              class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4"
+            >
+              <li>
+                <strong>Unified Management:</strong> Manage all integrations from
+                a single Integrations page
+              </li>
+              <li>
+                <strong>Secure by Default:</strong> Platform-specific signature
+                verification ensures only legitimate requests are processed
+              </li>
+              <li>
+                <strong>Streaming Simulation:</strong> Throttled message updates
+                provide near-real-time response experience
+              </li>
+              <li>
+                <strong>Full Agent Capabilities:</strong> Bots have access to all
+                agent tools, memory, and knowledge bases
+              </li>
+            </ul>
+          </div>
+          <p class="mt-4 text-sm text-neutral-500">
+            This step is optional - you can always deploy bots later! Perfect for
+            team collaboration and community engagement.
+          </p>
+        </section>
+
+        <section
           class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white"
         >
           <h2 class="text-2xl font-semibold mb-4">You're All Set!</h2>
