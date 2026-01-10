@@ -91,7 +91,7 @@ import "../styles/global.css";
               class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4 mb-2"
             >
               <li>
-                <strong>BYOK (Bring Your Own Key):</strong> Use your own LLM API keys
+                <strong>Use your own API keys:</strong> Connect your own AI provider API keys
                 and pay providers directly - you get all Helpmaton features while
                 maintaining direct billing relationships
               </li>
@@ -193,27 +193,27 @@ import "../styles/global.css";
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">6</span>
             <h2 class="text-2xl font-semibold text-neutral-900">
-              Set Up Webhooks & Streaming (Optional)
+              Connect to Other Apps (Optional)
             </h2>
           </div>
           <p class="mb-4 text-neutral-600">
-            Connect your agent to the real world with webhooks. This lets your
-            agent send and receive messages from external systems. Use streaming
-            endpoints for real-time responses.
+            Connect your agent to other apps and services. This lets your
+            agent send and receive messages from external systems. Get instant
+            responses that update in real-time.
           </p>
           <ol
             class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
           >
-            <li>Go to "Webhooks" in your workspace settings</li>
-            <li>Click "Create Webhook" or set up streaming</li>
+            <li>Go to "Integrations" in your workspace settings</li>
+            <li>Click "Create Connection" or set up real-time updates</li>
             <li>
-              Enter your endpoint URL (for webhooks) or configure streaming
+              Enter your app details or configure real-time responses
             </li>
-            <li>Configure which events should trigger the webhook</li>
+            <li>Configure which events should trigger the connection</li>
             <li>Test it out</li>
           </ol>
           <p class="mt-4 text-sm text-neutral-500">
-            This step is optional - you can always add webhooks and streaming
+            This step is optional - you can always add app connections
             later!
           </p>
         </section>
@@ -224,22 +224,21 @@ import "../styles/global.css";
           <div class="flex items-center gap-3 mb-4">
             <span class="text-2xl font-semibold text-primary-600">7</span>
             <h2 class="text-2xl font-semibold text-neutral-900">
-              Extend with MCP Servers (Optional)
+              Connect External Tools (Optional)
             </h2>
           </div>
           <p class="mb-4 text-neutral-600">
             Power up your agents by connecting them to external tools and
-            services via MCP (Model Context Protocol) servers. Enable your
-            agents to call external APIs, query databases, and execute custom
+            services. Enable your agents to access external APIs, query databases, and execute custom
             business logic.
           </p>
           <ol
             class="list-decimal list-inside space-y-2 text-sm text-neutral-600 ml-4"
           >
-            <li>Go to "MCP Servers" in your workspace settings</li>
-            <li>Click "Create MCP Server"</li>
-            <li>Enter the server URL and configure authentication</li>
-            <li>Enable the MCP server for your agents</li>
+            <li>Go to "Integrations" in your workspace settings</li>
+            <li>Click "Create External Connection"</li>
+            <li>Enter the service URL and configure authentication</li>
+            <li>Enable the connection for your agents</li>
             <li>Your agents can now use external tools!</li>
           </ol>
           <p class="mt-4 text-sm text-neutral-500">
@@ -320,7 +319,7 @@ import "../styles/global.css";
           >
             <li>
               <strong>Agent Memory:</strong> Agents remember facts, people, and events
-              through stratified memory architecture with progressive summarization
+              and organize them over time to provide better answers
             </li>
             <li>
               <strong>Usage Analytics:</strong> Track token usage (prompt, completion,
@@ -328,8 +327,8 @@ import "../styles/global.css";
             </li>
             <li>
               <strong>Error Tracking:</strong> Conversations automatically persist
-              and display errors when LLM calls fail, including detailed error messages,
-              stack traces, and provider information for easy debugging
+              and display errors when AI requests fail, including detailed error messages
+              and provider information for easy debugging
             </li>
             <li>
               <strong>Cost Control:</strong> Set spending limits at workspace and
@@ -360,7 +359,7 @@ import "../styles/global.css";
           >
             <li>Go to "Notification Channels" in your workspace settings</li>
             <li>For Discord: Create a channel with bot token and channel ID</li>
-            <li>For Slack: Use the API to configure Slack webhooks</li>
+            <li>For Slack: Configure Slack connections via the integrations page</li>
             <li>
               Agents can now use the send_notification tool to deliver messages
             </li>
@@ -423,7 +422,7 @@ import "../styles/global.css";
                 <li>Go to "Integrations" in your workspace</li>
                 <li>Click "Create Slack Integration"</li>
                 <li>Follow the step-by-step guide with dynamic Slack App Manifest generation</li>
-                <li>Configure webhook handling with signature verification</li>
+                <li>Configure secure connections with verification</li>
                 <li>Your agent is now a Slack bot responding to mentions and DMs!</li>
               </ol>
             </div>

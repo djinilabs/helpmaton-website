@@ -18,8 +18,8 @@ After signing up, you'll be prompted to create your first workspace. A workspace
     category: "Getting Started",
     question: "What do I need to get started?",
     answer: `<strong>Account setup</strong><br/>
-You need a Helpmaton account and either your own OpenRouter API key (BYOK - Bring Your Own Key) or you can purchase credits through Helpmaton.<br/><br/>
-<strong>OpenRouter keys</strong> are the only supported keys for BYOK. Once you have a workspace, you can start creating agents and uploading documents.<br/><br/>
+You need a Helpmaton account and either your own OpenRouter API key or you can purchase credits through Helpmaton.<br/><br/>
+<strong>OpenRouter keys</strong> are currently the only supported option for using your own API keys. Once you have a workspace, you can start creating agents and uploading documents.<br/><br/>
 For detailed setup instructions, see the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/getting-started.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Getting Started Guide</a>.`
   },
   {
@@ -27,18 +27,32 @@ For detailed setup instructions, see the <a href="https://github.com/djinilabs/h
     question: "How do I create my first agent?",
     answer: `<strong>Agent creation</strong><br/>
 Navigate to your workspace, click 'Create Agent', give it a name and personality/instructions. You can configure tools, memory settings, and other options.<br/><br/>
-<strong>Immediate availability</strong> - Your agent will be ready to use immediately after creation with its own webhook endpoint for easy integration.`
+<strong>Immediate availability</strong> - Your agent will be ready to use immediately after creation. You can connect it to other apps and services right away.`
+  },
+  {
+    category: "Getting Started",
+    question: "What's the difference between a workspace and an agent?",
+    answer: `<strong>Workspaces vs Agents</strong><br/>
+Think of a <strong>workspace</strong> as a folder or project container. It holds your agents, documents, team members, and has its own budget and settings. You might have one workspace for personal projects and another for work.<br/><br/>
+An <strong>agent</strong> is an AI assistant that lives inside a workspace. Each agent has its own personality, memory, and capabilities. You can have multiple agents in one workspace - for example, one agent for customer support and another for research.`
+  },
+  {
+    category: "Getting Started",
+    question: "What is OpenRouter and why do I need it?",
+    answer: `<strong>OpenRouter explained</strong><br/>
+OpenRouter is a service that gives you access to multiple AI providers (like OpenAI, Anthropic, Google) through a single API key. It's like a universal adapter for AI services.<br/><br/>
+<strong>Why it matters</strong> - Helpmaton currently supports using your own API keys through OpenRouter. This lets you pay AI providers directly while using Helpmaton's platform. If you prefer not to manage API keys, you can purchase credits through Helpmaton instead.`
   },
   
   // Agents
   {
     category: "Agents",
     question: "How does agent memory work?",
-    answer: `<strong>Stratified memory architecture</strong><br/>
-Agents use a sophisticated memory system with temporal grains (daily, weekly, monthly, quarterly, yearly). They progressively summarize conversations and use semantic vector search to retrieve relevant memories.<br/><br/>
-<strong>Memory retention</strong> - Free plans retain 48 hours of working memory plus 30 days of summaries, while Pro plans extend to 240 hours plus 120 days. Memories are stored in LanceDB with S3 backend for scalable, distributed storage.<br/><br/>
-<strong>Vector search</strong> enables context-aware responses informed by past interactions through semantic similarity matching.<br/><br/>
-Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/agent-memory-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Agent Memory System documentation</a> and <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/vector-database.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Vector Database guide</a>.`
+    answer: `<strong>How memory works</strong><br/>
+Agents remember important facts, people, and events from your conversations. They organize memories over time (daily, weekly, monthly, etc.) and use smart search to find relevant information from past conversations when answering questions.<br/><br/>
+<strong>Memory retention</strong> - Free plans retain 48 hours of recent memory plus 30 days of summaries, while Pro plans extend to 240 hours plus 120 days. Old memories are automatically cleaned up to save space.<br/><br/>
+<strong>Smart search</strong> helps agents give better answers by finding relevant information from past conversations, making responses more personalized and context-aware.<br/><br/>
+Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/agent-memory-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Agent Memory System documentation</a>.`
   },
   {
     category: "Agents",
@@ -51,15 +65,23 @@ Yes! Agents can delegate tasks to other agents in the same workspace. This enabl
     category: "Agents",
     question: "What tools do agents have access to?",
     answer: `<strong>Built-in tools</strong><br/>
-Agents have comprehensive built-in tools: document search (semantic vector search), memory search (recall past conversations), web search (find current information), web fetch (extract content from URLs), email sending, notification sending (Discord/Slack), and agent delegation.<br/><br/>
-<strong>MCP servers</strong> - You can extend agents with Model Context Protocol (MCP) servers to connect to external APIs, databases, and custom tools. Configure MCP servers with custom authentication and enable them per-agent.`
+Agents have powerful built-in tools: search your documents, recall past conversations, search the web for current information, extract content from web pages, send emails, send notifications to Discord or Slack, and delegate tasks to other agents.<br/><br/>
+<strong>External integrations</strong> - You can connect agents to external tools and services to extend their capabilities. Configure connections with authentication and enable them per-agent.`
   },
   {
     category: "Agents",
     question: "How do I configure an agent's personality?",
     answer: `<strong>Custom instructions</strong><br/>
 When creating or editing an agent, you can set custom instructions that define its personality, behavior, and how it should respond.<br/><br/>
-<strong>System prompts</strong> guide the agent's decision-making and communication style, enabling you to create agents tailored to specific use cases and brand voices.`
+<strong>Personality settings</strong> guide how the agent communicates and makes decisions, enabling you to create agents tailored to specific use cases and brand voices.`
+  },
+  {
+    category: "Agents",
+    question: "What's the difference between web search and content extraction?",
+    answer: `<strong>Web search vs content extraction</strong><br/>
+<strong>Web search</strong> lets your agent search the internet for current information, news, articles, and answers to questions. It's like giving your agent access to Google - perfect for finding the latest information.<br/><br/>
+<strong>Content extraction</strong> lets your agent read and summarize a specific web page when you give it a URL. It extracts the main content and can summarize it for you - perfect for analyzing articles or specific pages.<br/><br/>
+Both features help your agents access real-time information beyond their training data.`
   },
   
   // Workspaces
@@ -73,16 +95,16 @@ Workspace credits are used for AI provider calls (OpenRouter, OpenAI, Anthropic,
   {
     category: "Workspaces",
     question: "Can I use my own API keys?",
-    answer: `<strong>BYOK with OpenRouter</strong><br/>
-Yes! Helpmaton supports BYOK (Bring Your Own Key), but only OpenRouter API keys are currently supported.<br/><br/>
-<strong>Direct billing</strong> - When you add an OpenRouter API key to your workspace, requests use your key and you pay OpenRouter directly. Credit reservation and adjustment are skipped, but spending limits and token usage tracking still apply for analytics and limit enforcement.`
+    answer: `<strong>Using your own API keys</strong><br/>
+Yes! You can use your own OpenRouter API keys, which is currently the only supported option for bringing your own keys.<br/><br/>
+<strong>Direct billing</strong> - When you add an OpenRouter API key to your workspace, requests use your key and you pay OpenRouter directly. Spending limits and usage tracking still apply so you can monitor costs and stay within your budget.`
   },
   {
     category: "Workspaces",
     question: "How do spending limits work?",
     answer: `<strong>Granular control</strong><br/>
-You can set spending limits at both workspace and individual agent levels. Limits can be set for daily, monthly, or yearly periods using rolling windows.<br/><br/>
-<strong>Atomic operations</strong> - The system uses atomic credit reservation with DynamoDB to prevent overspending and race conditions. Limits are checked before credit reservation, and spending is calculated from token usage aggregates.`
+You can set spending limits at both workspace and individual agent levels. Limits can be set for daily, monthly, or yearly periods.<br/><br/>
+<strong>Automatic protection</strong> - The system automatically prevents overspending by checking limits before processing requests. You'll always stay within your budget.`
   },
   {
     category: "Workspaces",
@@ -91,21 +113,28 @@ You can set spending limits at both workspace and individual agent levels. Limit
 Free plans support limited team members, while Pro plans support unlimited managers.<br/><br/>
 <strong>Permission levels</strong> - Team members can have different permission levels: READ (view only), WRITE (can make changes), and OWNER (full control). Pro plan subscriptions support multiple managers with shared access to all workspaces.`
   },
+  {
+    category: "Workspaces",
+    question: "What are external tool connections?",
+    answer: `<strong>External tool connections explained</strong><br/>
+External tool connections let you connect your agents to other apps, services, and tools you already use. For example, you could connect an agent to your calendar app, email service, database, or any other service with an API.<br/><br/>
+<strong>Why it's useful</strong> - This extends what your agents can do. Instead of just answering questions, they can actually interact with your tools - schedule meetings, send emails, look up data, and more. It's like giving your agent hands to actually do things, not just talk.`
+  },
   
   // Billing & Pricing
   {
     category: "Billing & Pricing",
     question: "What's included in my subscription?",
     answer: `<strong>Platform services</strong><br/>
-Your monthly subscription covers all Helpmaton platform services: hosting, infrastructure, agent configuration and management, memory system, analytics, workspaces, team collaboration, document storage, and all Helpmaton-related API calls.<br/><br/>
-<strong>Infrastructure</strong> includes AWS serverless infrastructure (Lambda, DynamoDB, S3, API Gateway, CloudFront), vector database (LanceDB with S3), and all platform features.`
+Your monthly subscription covers all Helpmaton platform services: hosting, agent configuration and management, memory system, analytics, workspaces, team collaboration, document storage, and all Helpmaton platform features.<br/><br/>
+<strong>What's included</strong> - Everything you need to run and manage your AI agents, including secure hosting, reliable infrastructure, and all platform features.`
   },
   {
     category: "Billing & Pricing",
     question: "Are AI provider calls included in my subscription?",
     answer: `<strong>Separate costs</strong><br/>
 No, AI provider calls (OpenRouter, OpenAI, Anthropic, Google, etc.) are separate from your subscription.<br/><br/>
-<strong>Two options</strong> - You can either use your own OpenRouter API key (BYOK) and pay providers directly, or purchase credits through Helpmaton for usage-based billing. Credits are automatically reserved before LLM calls and adjusted after based on actual token usage.`
+<strong>Two options</strong> - You can either use your own OpenRouter API key and pay providers directly, or purchase credits through Helpmaton for usage-based billing. Credits are automatically managed to ensure accurate billing.`
   },
   {
     category: "Billing & Pricing",
@@ -116,44 +145,89 @@ All plans include 10 free web search calls per 24 hours. Additional calls are bi
   },
   {
     category: "Billing & Pricing",
+    question: "What counts as an AI request?",
+    answer: `<strong>Understanding AI requests</strong><br/>
+An AI request is each time your agent processes a message or question. Every conversation turn counts as one request - when you send a message and your agent responds, that's one request.<br/><br/>
+<strong>What's included</strong> - This includes all agent interactions: answering questions, searching documents, recalling memories, web searches, and any other task that requires the AI to process information and respond.`
+  },
+  {
+    category: "Billing & Pricing",
+    question: "What are credits and how do they work?",
+    answer: `<strong>Credits explained</strong><br/>
+Credits are like prepaid currency for AI usage. When you purchase credits through Helpmaton, you're buying a balance that gets used up as your agents make AI requests.<br/><br/>
+<strong>How it works</strong> - Each AI request costs a certain amount of credits based on the complexity and length. You can see exactly how much each request costs in your usage analytics. Credits are automatically deducted from your workspace balance as you use them.`
+  },
+  {
+    category: "Billing & Pricing",
+    question: "Should I use my own API keys or purchase credits?",
+    answer: `<strong>Choosing the right option</strong><br/>
+<strong>Use your own API keys</strong> if you already have accounts with AI providers (like OpenAI or Anthropic) and want to pay them directly. This gives you more control and you can take advantage of any discounts or credits you have with those providers.<br/><br/>
+<strong>Purchase credits</strong> if you want simplicity - just buy credits through Helpmaton and don't worry about managing multiple API keys. This is easier to get started with and you only need one payment method.<br/><br/>
+Both options give you access to all Helpmaton features. The choice is mainly about how you prefer to handle billing.`
+  },
+  {
+    category: "Billing & Pricing",
     question: "How does credit reservation work?",
-    answer: `<strong>Atomic credit management</strong><br/>
-Before making an LLM API call, the system estimates the cost and atomically reserves credits by deducting the estimated amount from your workspace balance.<br/><br/>
-<strong>Post-call adjustment</strong> - After the call completes, the system calculates actual cost from token usage and adjusts the reservation (refunds if actual < reserved, charges additional if actual > reserved). This ensures accurate billing and prevents overspending.<br/><br/>
-Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/credit-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Credit System documentation</a> and <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/pricing-calculation.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Pricing Calculation guide</a>.`
+    answer: `<strong>Automatic credit management</strong><br/>
+Before making an AI request, the system estimates the cost and reserves credits from your workspace balance. After the request completes, it calculates the actual cost and adjusts the reservation automatically.<br/><br/>
+<strong>Accurate billing</strong> - This ensures you're always charged accurately and prevents overspending. If the actual cost is less than estimated, you get a refund. If it's more, you're charged the difference.<br/><br/>
+Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/credit-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Credit System documentation</a>.`
+  },
+  {
+    category: "Billing & Pricing",
+    question: "What does 'subscription sharing' mean?",
+    answer: `<strong>Subscription sharing explained</strong><br/>
+Subscription sharing (available on Pro plans) lets multiple people manage the same Helpmaton account. All managers have access to all workspaces and can create agents, manage settings, and collaborate together.<br/><br/>
+<strong>Why it's useful</strong> - Perfect for teams where multiple people need to manage AI agents. Instead of each person having their own account, you can share one Pro subscription and work together on all your workspaces and agents.`
+  },
+  {
+    category: "Billing & Pricing",
+    question: "What does 'working memory' and 'summaries' mean?",
+    answer: `<strong>Memory types explained</strong><br/>
+<strong>Working memory</strong> is the detailed, recent memory your agent has. It remembers specific facts, conversations, and details from the past 48 hours (Free) or 240 hours (Pro). This is like short-term memory - very detailed but recent.<br/><br/>
+<strong>Summaries</strong> are condensed versions of older memories. After the working memory period, conversations are summarized and kept for 30 days (Free) or 120 days (Pro). These summaries capture the key points but not every detail - like long-term memory.<br/><br/>
+This system helps agents remember important information while keeping storage efficient.`
   },
   
   // API & Integrations
   {
     category: "API & Integrations",
     question: "How do I access the API?",
-    answer: `<strong>REST API</strong><br/>
-Helpmaton provides a comprehensive REST API with OpenAPI documentation. You can authenticate using session-based authentication, JWT tokens (24-hour expiration), workspace API keys, or OAuth.<br/><br/>
-<strong>OpenAPI docs</strong> - Complete API documentation is available in OpenAPI format. Generate client libraries, explore endpoints, and understand request/response schemas at the <a href="https://app.helpmaton.com/docs/api" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">API Reference</a>.<br/><br/>
+    answer: `<strong>API for developers</strong><br/>
+Helpmaton provides a comprehensive API with full documentation. You can authenticate using several methods: web sessions, API tokens, workspace API keys, or OAuth.<br/><br/>
+<strong>Complete documentation</strong> - Full API documentation is available. Generate client libraries, explore endpoints, and understand how to integrate at the <a href="https://app.helpmaton.com/docs/api" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">API Reference</a>.<br/><br/>
 See also the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/api-reference.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">API Reference documentation</a> in the repository.`
   },
   {
     category: "API & Integrations",
     question: "Can I set up webhooks?",
-    answer: `<strong>Webhook endpoints</strong><br/>
-Yes! Every agent exposes a webhook endpoint that accepts HTTP POST requests. Send messages and receive AI-powered responses, making integration with your applications straightforward.<br/><br/>
-<strong>Streaming support</strong> - Supports both synchronous responses and real-time streaming via Server-Sent Events (SSE) or Lambda Function URLs for token-by-token streaming responses.`
+    answer: `<strong>App connections</strong><br/>
+Yes! Every agent can connect to other apps and services. Send messages and receive AI-powered responses, making integration with your applications straightforward.<br/><br/>
+<strong>Real-time responses</strong> - Supports both standard responses and real-time streaming for instant updates as your agent works.`
   },
   {
     category: "API & Integrations",
     question: "What are MCP servers?",
-    answer: `<strong>Model Context Protocol</strong><br/>
-MCP (Model Context Protocol) servers allow you to extend your agents' capabilities by connecting them to external APIs, databases, and custom tools.<br/><br/>
-<strong>Configuration</strong> - Configure MCP servers with custom authentication (none, header, or basic auth) and enable them per-agent. Tools are created dynamically from MCP servers using JSON-RPC 2.0 protocol.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/mcp-servers.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">MCP Servers documentation</a> for detailed setup instructions.`
+    answer: `<strong>External tool connections</strong><br/>
+You can extend your agents' capabilities by connecting them to external tools, databases, and services. This lets your agents access information and perform actions beyond their built-in capabilities.<br/><br/>
+<strong>Configuration</strong> - Configure connections with authentication settings and enable them per-agent. Your agents will automatically have access to the tools you connect.<br/><br/>
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/mcp-servers.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">integration documentation</a> for detailed setup instructions.`
   },
   {
     category: "API & Integrations",
     question: "How do I deploy agents as Slack or Discord bots?",
     answer: `<strong>Chat platform integration</strong><br/>
-Go to the Integrations page in your workspace. For Slack, you can generate a dynamic app manifest for easy setup. For Discord, you'll configure slash commands.<br/><br/>
-<strong>Secure by default</strong> - Both support secure signature verification (Slack webhook signatures, Discord Ed25519 signatures) and provide streaming-like experience with throttled message updates. Bots have access to all agent tools, memory, and knowledge bases.<br/><br/>
+Go to the Integrations page in your workspace. For Slack, you can generate an app configuration for easy setup. For Discord, you'll configure slash commands.<br/><br/>
+<strong>Secure by default</strong> - Both platforms use secure verification to ensure only legitimate requests are processed. Bots provide real-time responses and have access to all agent tools, memory, and knowledge bases.<br/><br/>
 See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/slack-integration.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Slack Integration guide</a> and <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/discord-integration.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Discord Integration guide</a> for detailed setup instructions.`
+  },
+  {
+    category: "API & Integrations",
+    question: "What does it mean to deploy an agent as a Slack or Discord bot?",
+    answer: `<strong>Chat bot deployment explained</strong><br/>
+When you deploy an agent as a Slack or Discord bot, your AI agent becomes a member of your chat channel. Team members can talk to it directly in Slack or Discord, just like messaging a person.<br/><br/>
+<strong>What it enables</strong> - Your team can ask questions, get help, or interact with your agent without leaving Slack or Discord. The agent responds in real-time, remembers conversations, and can use all its tools (search documents, web search, etc.) right in the chat.<br/><br/>
+It's like having an AI assistant that lives in your team's chat room, always available to help.`
   },
   
   // Technical
@@ -161,15 +235,15 @@ See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/slack-int
     category: "Technical",
     question: "How are errors handled?",
     answer: `<strong>Automatic error tracking</strong><br/>
-Conversations automatically persist and display errors when LLM calls fail. You'll see detailed error messages with stack traces, provider information, and metadata.<br/><br/>
-<strong>Error visibility</strong> - Error badges appear in conversation lists for quick identification, and detailed error views help you quickly identify and debug issues. All errors are tracked historically across conversations.`
+When something goes wrong, you'll see it immediately. All conversations are saved and errors are clearly marked with detailed information about what happened.<br/><br/>
+<strong>Error visibility</strong> - Error badges appear in conversation lists for quick identification, and detailed error views help you quickly identify and fix issues. All errors are tracked so you can see patterns over time.`
   },
   {
     category: "Technical",
     question: "What file formats are supported for documents?",
     answer: `<strong>Document management</strong><br/>
 Helpmaton supports markdown and text documents. You can upload documents and organize them in folders.<br/><br/>
-<strong>Semantic search</strong> - Your agents can then search through these documents using semantic vector search to provide informed responses. Documents are stored in S3 with metadata in DynamoDB.`
+<strong>Smart search</strong> - Your agents can search through these documents using intelligent search that understands meaning, not just keywords. This helps them provide better, more informed responses.`
   },
   {
     category: "Technical",
@@ -181,18 +255,18 @@ Agents can search the web for current information, news, and articles using the 
   {
     category: "Technical",
     question: "What infrastructure does Helpmaton use?",
-    answer: `<strong>AWS serverless architecture</strong><br/>
-Helpmaton is built on AWS serverless infrastructure: Lambda functions (Node.js 20.x), DynamoDB (NoSQL database with encryption at rest), S3 (document storage and vector database backend), API Gateway (REST API), CloudFront (CDN and SPA routing), and Route53 (DNS).<br/><br/>
-<strong>Vector database</strong> - LanceDB with S3 backend for agent memory and semantic search. SQS FIFO queues ensure serialized writes per database via message groups.<br/><br/>
-<strong>Region</strong> - Deployed in eu-west-2 (London) with automatic horizontal scaling and high availability.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Architecture Overview</a> and <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/database-schema.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Database Schema</a> documentation for detailed technical information.`
+    answer: `<strong>Reliable cloud infrastructure</strong><br/>
+Helpmaton is built on modern cloud infrastructure designed for reliability, security, and scalability. All data is encrypted and stored securely.<br/><br/>
+<strong>High availability</strong> - The platform automatically scales to handle your usage and is designed for high availability. Your agents are always available when you need them.<br/><br/>
+<strong>Region</strong> - Deployed in London (eu-west-2) with automatic scaling and redundancy built in.<br/><br/>
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Architecture Overview</a> for detailed technical information.`
   },
   {
     category: "Technical",
     question: "How does usage analytics work?",
     answer: `<strong>Comprehensive tracking</strong><br/>
-Helpmaton tracks comprehensive token usage including prompt, completion, reasoning, and cached tokens. Data is aggregated daily and hourly, with historical data available through date range filtering.<br/><br/>
-<strong>Multi-dimensional breakdowns</strong> - You can view breakdowns per-workspace or per-agent. Costs are calculated with support for tiered pricing models, separate reasoning token billing, and cached prompt token tracking.`
+Helpmaton tracks all your AI usage comprehensively. Data is aggregated daily and hourly, with historical data available through date range filtering.<br/><br/>
+<strong>Detailed breakdowns</strong> - You can view usage and costs broken down per-workspace or per-agent. See exactly where your usage is going and optimize accordingly.`
   },
   
   // Self-Hosting & Open Source
@@ -231,11 +305,11 @@ You'll need an AWS account with access to Lambda, DynamoDB, S3, API Gateway, Clo
   {
     category: "Self-Hosting & Open Source",
     question: "How does the vector database work?",
-    answer: `<strong>LanceDB with S3 backend</strong><br/>
-Agent memory uses LanceDB with S3 as the storage backend. Each agent has multiple temporal databases (daily, weekly, monthly, quarterly, yearly) for storing compressed facts.<br/><br/>
-<strong>Write serialization</strong> - SQS FIFO queues ensure write serialization through message groups (one write operation per database at a time), preventing race conditions.<br/><br/>
-<strong>Read access</strong> - Direct query access is available from Lambda functions using the lancedb container image. Vector similarity search enables efficient context retrieval across agent knowledge.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/vector-database.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Vector Database documentation</a> for complete technical details.`
+    answer: `<strong>How memory storage works</strong><br/>
+Agent memory is stored efficiently using specialized databases. Each agent organizes memories by time periods (daily, weekly, monthly, quarterly, yearly) to make searching fast and relevant.<br/><br/>
+<strong>Reliable storage</strong> - The system ensures data is written safely and consistently, preventing any data loss or corruption.<br/><br/>
+<strong>Fast retrieval</strong> - Smart search technology enables agents to quickly find relevant information from past conversations, making responses more context-aware and helpful.<br/><br/>
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/vector-database.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">technical documentation</a> for complete technical details.`
   }
 ];
 
