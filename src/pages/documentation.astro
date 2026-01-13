@@ -453,6 +453,69 @@ import "../styles/global.css";
           class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
         >
           <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Notion Integration
+          </h2>
+          <p class="mb-4 text-neutral-600">
+            Connect your agents to Notion with easy OAuth setup. Just connect your Notion account—no complex configuration or API keys needed. Your agents can read and search pages, create and update content, query databases, and manage your Notion workspace.
+          </p>
+          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Easy OAuth Setup
+              </h3>
+              <p class="mb-2">
+                Setting up Notion integration is simple and secure:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Go to "Integrations" in your workspace settings</li>
+                <li>Create an MCP server and select "Notion"</li>
+                <li>Click "Connect Notion Account" and sign in</li>
+                <li>Grant the necessary permissions</li>
+                <li>Enable the connection for your agents</li>
+              </ul>
+              <p class="mt-2 text-xs text-neutral-500">
+                All connections use secure OAuth authentication to keep your data private and secure.
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Page Management
+              </h3>
+              <p class="mb-2">
+                Agents can read, search, create, and update Notion pages:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Read any page by its ID, including properties, metadata, and content</li>
+                <li>Search for pages, databases, and data sources across your workspace</li>
+                <li>Create new pages with simplified parameters (name and content) or advanced options</li>
+                <li>Update page properties and content</li>
+                <li>Append blocks (paragraphs, headings, lists) to existing pages</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Database Management
+              </h3>
+              <p class="mb-2">
+                Agents can query and manage Notion databases:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Query databases with filters and sorts to find specific records</li>
+                <li>Create new pages in databases with properties matching the schema</li>
+                <li>Update database page properties</li>
+                <li>Perfect for knowledge management, project tracking, and data workflows</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-500 mt-3">
+            Notion integration enables powerful knowledge management workflows where your agents can interact with your Notion workspace seamlessly. Perfect for documentation assistants, knowledge bases, and content management. See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/mcp-servers.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">MCP Servers documentation</a> for detailed setup instructions.
+          </p>
+        </section>
+
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
             Error Tracking
           </h2>
           <p class="mb-4 text-neutral-600">
