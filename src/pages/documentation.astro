@@ -375,6 +375,84 @@ import "../styles/global.css";
           class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
         >
           <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Google Workspace Integration
+          </h2>
+          <p class="mb-4 text-neutral-600">
+            Connect your agents to Gmail, Google Calendar, and Google Drive with easy OAuth setup. Just connect your Google account—no complex configuration or API keys needed. Your agents can manage your calendar, read and search emails, and access Drive files.
+          </p>
+          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Easy OAuth Setup
+              </h3>
+              <p class="mb-2">
+                Setting up Google Workspace integration is simple and secure:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Go to "Integrations" in your workspace settings</li>
+                <li>Create an MCP server for the Google service you want (Gmail, Calendar, or Drive)</li>
+                <li>Click "Connect Google Account" and sign in</li>
+                <li>Grant the necessary permissions</li>
+                <li>Enable the connection for your agents</li>
+              </ul>
+              <p class="mt-2 text-xs text-neutral-500">
+                All connections use secure OAuth 2.0 authentication to keep your data private and secure.
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Gmail Integration
+              </h3>
+              <p class="mb-2">
+                Connect agents to Gmail accounts via OAuth, enabling agents to:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>List and search emails using Gmail's powerful search syntax</li>
+                <li>Read full email content including headers, body, and attachments</li>
+                <li>Search using queries like "from:example@gmail.com", "subject:meeting", "is:unread"</li>
+                <li>Perfect for email management, filtering, and automated email workflows</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Google Calendar Integration
+              </h3>
+              <p class="mb-2">
+                Connect agents to Google Calendar for full calendar management:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>List events and search by query</li>
+                <li>Read event details including attendees, times, and descriptions</li>
+                <li>Create new events and update existing ones</li>
+                <li>Delete events when needed</li>
+                <li>Perfect for scheduling assistants, meeting coordinators, and calendar management workflows</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">
+                Google Drive Integration
+              </h3>
+              <p class="mb-2">
+                Give agents access to files stored in Google Drive:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Read text files and documents</li>
+                <li>Access Google Docs (exported as plain text)</li>
+                <li>Read Google Sheets (exported as CSV)</li>
+                <li>Access Google Slides (exported as plain text)</li>
+                <li>Ideal for document analysis, data extraction, and content management workflows</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-500 mt-3">
+            Google Workspace integrations enable powerful automation workflows where your agents can interact with your Google services seamlessly. See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/mcp-servers.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">MCP Servers documentation</a> for detailed setup instructions.
+          </p>
+        </section>
+
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
             Error Tracking
           </h2>
           <p class="mb-4 text-neutral-600">
