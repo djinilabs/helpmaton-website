@@ -336,39 +336,39 @@ const categories = Array.from(new Set(faqs.map(faq => faq.category)));
 
 <div class="space-y-6">
   <!-- Search Input -->
-  <div class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-    <label for="faq-search" class="block text-sm font-semibold text-neutral-900 mb-3">
+  <div class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20">
+    <label for="faq-search" class="block text-sm font-semibold text-neutral-100 mb-3">
       Search FAQs
     </label>
     <input
       type="text"
       id="faq-search"
       placeholder="Type to search questions and answers..."
-      class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-neutral-900 placeholder:text-neutral-400"
+      class="w-full px-4 py-3 border border-primary-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-neutral-950 text-neutral-100 placeholder:text-neutral-500 focus:border-glow"
     />
   </div>
 
   <!-- No Results Message (hidden by default) -->
-  <div id="no-results" class="hidden bg-white rounded-lg shadow-soft p-6 border border-neutral-200 text-center">
-    <p class="text-neutral-600">No FAQs found matching your search.</p>
+  <div id="no-results" class="hidden bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20 text-center">
+    <p class="text-neutral-400">No FAQs found matching your search.</p>
   </div>
 
   <!-- FAQ Items by Category -->
   {categories.map((category) => (
     <div class="faq-category" data-category={category}>
-      <h2 class="text-2xl font-semibold text-neutral-900 mb-4">{category}</h2>
+      <h2 class="text-2xl font-semibold text-neutral-100 mb-4">{category}</h2>
       <div class="space-y-4">
         {faqs.filter(faq => faq.category === category).map((faq, index) => (
           <div
-            class="faq-item bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+            class="faq-item bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20 hover:border-primary-500/50 transition-colors"
             data-question={faq.question.toLowerCase()}
             data-answer={faq.answer.toLowerCase()}
           >
-            <h3 class="text-lg font-semibold text-neutral-900 mb-3">
+            <h3 class="text-lg font-semibold text-neutral-100 mb-3">
               {faq.question}
             </h3>
             <div
-              class="text-neutral-600 leading-relaxed [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2 [&_a]:text-primary-600 [&_a]:hover:text-primary-700 [&_a]:underline [&_a]:transition-colors"
+              class="text-neutral-400 leading-relaxed [&_strong]:text-primary-400 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2 [&_a]:text-primary-400 [&_a]:hover:text-primary-300 [&_a]:underline [&_a]:transition-colors [&_a]:hover:text-glow"
               set:html={faq.answer}
             />
           </div>

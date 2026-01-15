@@ -3,16 +3,18 @@
 ---
 
 <section
-  class="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-neutral-50 p-8 flex items-center justify-center relative overflow-hidden"
+  class="min-h-screen bg-gradient-tron p-8 flex items-center justify-center relative overflow-hidden bg-grid-pattern"
 >
   <!-- Decorative background elements -->
-  <div class="absolute inset-0 opacity-10">
+  <div class="absolute inset-0 opacity-20">
     <div
-      class="absolute top-20 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"
+      class="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl animate-glow-pulse"
+      style="box-shadow: 0 0 100px rgba(0, 255, 255, 0.5);"
     >
     </div>
     <div
-      class="absolute bottom-20 right-10 w-96 h-96 bg-accent-400 rounded-full blur-3xl"
+      class="absolute bottom-20 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl animate-glow-pulse"
+      style="box-shadow: 0 0 120px rgba(0, 153, 255, 0.5);"
     >
     </div>
   </div>
@@ -24,43 +26,43 @@
           <img
             src="/images/helpmaton_logo.svg"
             alt="Helpmaton Logo"
-            class="w-20 h-20 drop-shadow-lg relative z-10"
+            class="w-20 h-20 drop-shadow-neon relative z-10"
           />
           <div
             class="manga-shine-overlay absolute inset-0 z-20 pointer-events-none"
-            style="background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 15%, transparent 30%), linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.3) 55%, transparent 75%); width: 200%; height: 200%;"
+            style="background: radial-gradient(circle at center, rgba(0, 255, 255, 0.6) 0%, rgba(0, 255, 255, 0.4) 15%, transparent 30%), linear-gradient(45deg, transparent 25%, rgba(0, 255, 255, 0.3) 45%, rgba(0, 255, 255, 0.4) 50%, rgba(0, 255, 255, 0.3) 55%, transparent 75%); width: 200%; height: 200%;"
           >
           </div>
         </div>
         <h1
-          class="text-display-1 font-display bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent"
+          class="text-display-1 font-display bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent text-glow"
         >
           Helpmaton
         </h1>
       </div>
-      <p class="text-display-3 mb-6 font-display text-neutral-900">
-        Your AI agents, <span class="text-primary-600">organized</span>. No
-        chaos, just <span class="text-accent-600">workspaces</span>.
+      <p class="text-display-3 mb-6 font-display text-neutral-100">
+        Your AI agents, <span class="text-primary-400 text-glow">organized</span>. No
+        chaos, just <span class="text-accent-400 text-glow-blue">workspaces</span>.
       </p>
       <p
-        class="text-xl text-neutral-700 mb-6 max-w-2xl mx-auto leading-relaxed font-medium"
+        class="text-xl text-neutral-300 mb-6 max-w-2xl mx-auto leading-relaxed font-medium"
       >
         AI agents that remember and learn from your conversations. Build intelligent assistants that understand your documents, search the web for current information, and connect to your favorite tools. Connect to Gmail, Google Calendar, Google Drive, and Notion with easy OAuth setup—no complex configuration needed. Deploy as Slack or Discord bots for team collaboration and community engagement. Perfect for research assistants, news monitoring, and content analysis. Manage
         your AI operations at scale with instant responses, usage tracking,
         and flexible billing. Structure without complexity.
       </p>
       <div class="flex items-center justify-center gap-6 mb-8 flex-wrap">
-        <p class="text-sm text-neutral-600">
+        <p class="text-sm text-neutral-400">
           <span
-            class="inline-flex items-center gap-2 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full border border-primary-200"
+            class="inline-flex items-center gap-2 px-3 py-1 bg-neutral-900/80 backdrop-blur-sm rounded-full border border-primary-500/50 border-glow"
           >
-            <span class="text-primary-600">🔓</span>
-            <span>Open source</span>
+            <span class="text-primary-400">🔓</span>
+            <span class="text-neutral-300">Open source</span>
             <a
               href="https://github.com/djinilabs/helpmaton"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-primary-600 hover:text-primary-700 font-semibold underline"
+              class="text-primary-400 hover:text-primary-300 font-semibold underline hover:text-glow transition-all"
               >deploy your own</a
             >
           </span>
@@ -69,13 +71,13 @@
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a
           href="https://app.helpmaton.com"
-          class="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-colored hover:shadow-large transition-all hover:scale-105 hover:from-primary-700 hover:to-primary-800"
+          class="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-950 px-8 py-4 text-lg font-semibold rounded-xl shadow-neon hover:shadow-neon-lg transition-all hover:scale-105 hover:from-primary-400 hover:to-primary-500 border border-primary-400/50"
         >
           Get Started Free →
         </a>
         <a
           href="/#pricing"
-          class="inline-block border-2 border-primary-600 text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl bg-white/80 backdrop-blur-sm hover:bg-primary-50 transition-all"
+          class="inline-block border-2 border-primary-500 text-primary-400 px-8 py-4 text-lg font-semibold rounded-xl bg-neutral-900/50 backdrop-blur-sm hover:bg-neutral-800/50 transition-all hover:border-glow hover:text-glow"
         >
           View Pricing
         </a>

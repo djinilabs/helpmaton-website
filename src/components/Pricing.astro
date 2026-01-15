@@ -86,16 +86,18 @@ const plans = [
 
 <section
   id="pricing"
-  class="bg-gradient-to-b from-neutral-50 to-white p-8 py-20 relative overflow-hidden"
+  class="bg-gradient-to-b from-neutral-950 to-neutral-900 p-8 py-20 relative overflow-hidden"
 >
   <!-- Decorative background -->
-  <div class="absolute inset-0 opacity-5">
+  <div class="absolute inset-0 opacity-20">
     <div
-      class="absolute top-0 left-1/4 w-96 h-96 bg-primary-400 rounded-full blur-3xl"
+      class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full blur-3xl animate-glow-pulse"
+      style="box-shadow: 0 0 100px rgba(0, 255, 255, 0.5);"
     >
     </div>
     <div
-      class="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-400 rounded-full blur-3xl"
+      class="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-500 rounded-full blur-3xl animate-glow-pulse"
+      style="box-shadow: 0 0 100px rgba(0, 153, 255, 0.5);"
     >
     </div>
   </div>
@@ -103,14 +105,14 @@ const plans = [
   <div class="max-w-6xl mx-auto relative z-10">
     <div class="mb-16 text-center">
       <div
-        class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4"
+        class="inline-block px-4 py-2 bg-accent-500/20 text-accent-400 rounded-full text-sm font-semibold mb-4 border border-accent-500/30"
       >
         Simple Pricing
       </div>
-      <h2 class="text-display-2 font-display text-neutral-900 mb-4">
-        Choose the plan that <span class="text-primary-600">works</span> for you
+      <h2 class="text-display-2 font-display text-neutral-100 mb-4">
+        Choose the plan that <span class="text-primary-400 text-glow">works</span> for you
       </h2>
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto mb-2">
+      <p class="text-lg text-neutral-400 max-w-2xl mx-auto mb-2">
         Start with our free plan, or try paid plans with a 7-day free trial. No
         credit card required.
       </p>
@@ -120,51 +122,51 @@ const plans = [
     </div>
 
     <div
-      class="bg-gradient-to-br from-primary-50 to-accent-50 border-2 border-primary-200 rounded-xl p-6 mb-12 shadow-soft"
+      class="bg-gradient-to-br from-primary-500/10 to-accent-500/10 border-2 border-primary-500/30 rounded-xl p-6 mb-12 shadow-soft"
     >
-      <h3 class="text-lg font-semibold text-neutral-900 mb-3">
+      <h3 class="text-lg font-semibold text-neutral-100 mb-3">
         What's Included?
       </h3>
-      <p class="text-sm text-neutral-700 mb-3">
-        The prices above cover <strong>Helpmaton platform services only</strong
+      <p class="text-sm text-neutral-300 mb-3">
+        The prices above cover <strong class="text-primary-400">Helpmaton platform services only</strong
         >: hosting, agent configuration, workspaces, teams, document search,
         analytics, memory management, and all Helpmaton platform features.
       </p>
-      <p class="text-sm text-neutral-700 mb-3">
-        <strong>AI provider calls are NOT included</strong> in your subscription.
+      <p class="text-sm text-neutral-300 mb-3">
+        <strong class="text-primary-400">AI provider calls are NOT included</strong> in your subscription.
         For AI provider usage (like OpenAI, Anthropic, Google, etc.), you have two
         flexible options:
       </p>
       <ul
-        class="list-disc list-inside space-y-1 text-sm text-neutral-700 ml-4 mb-3"
+        class="list-disc list-inside space-y-1 text-sm text-neutral-300 ml-4 mb-3"
       >
         <li>
-          <strong>Use your own API keys:</strong> Connect your own AI provider API keys
+          <strong class="text-primary-400">Use your own API keys:</strong> Connect your own AI provider API keys
           and pay providers directly while enjoying all Helpmaton features
         </li>
         <li>
-          <strong>Purchase credits:</strong> Buy credits through Helpmaton for usage-based
+          <strong class="text-primary-400">Purchase credits:</strong> Buy credits through Helpmaton for usage-based
           billing with transparent pricing
         </li>
       </ul>
-      <p class="text-sm text-neutral-700 mb-3">
-        <strong>Web Search & Content Extraction:</strong> All plans include 10 free
+      <p class="text-sm text-neutral-300 mb-3">
+        <strong class="text-primary-400">Web Search & Content Extraction:</strong> All plans include 10 free
         web search calls per 24 hours (shown in plan features). Additional calls beyond
         the free tier are billed separately at $0.008 per call. Perfect for research
         assistants, news monitoring, and content analysis workflows.
       </p>
-      <p class="text-sm text-neutral-700 mb-3">
-        <strong>Subscription Sharing (Pro Plans):</strong> Pro plan subscriptions
+      <p class="text-sm text-neutral-300 mb-3">
+        <strong class="text-primary-400">Subscription Sharing (Pro Plans):</strong> Pro plan subscriptions
         support unlimited managers with shared access to all workspaces. Perfect for
         teams that need collaborative management of AI agents and resources.
       </p>
-      <p class="text-sm text-neutral-700 mb-3">
-        <strong>Memory Retention:</strong> Free plans retain 48 hours of working memory
+      <p class="text-sm text-neutral-300 mb-3">
+        <strong class="text-primary-400">Memory Retention:</strong> Free plans retain 48 hours of working memory
         and 30 days of daily summaries. Pro plans extend to 240 hours of working memory
         and 120 days of daily summaries. Old memories are automatically cleaned up
         to optimize storage.
       </p>
-      <p class="text-xs text-neutral-600">
+      <p class="text-xs text-neutral-500">
         This separation keeps your platform costs predictable while giving you
         complete flexibility in how you handle AI provider costs. Set spending
         limits at workspace and agent levels for budget control.
@@ -177,15 +179,15 @@ const plans = [
           <div
             class={`p-8 rounded-xl shadow-soft transition-all hover:scale-105 ${
               plan.popular
-                ? "bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-colored border-2 border-primary-500 relative overflow-hidden"
-                : "bg-white border border-neutral-200 hover:border-primary-300"
+                ? "bg-gradient-to-br from-primary-500 to-primary-600 text-neutral-950 shadow-neon-lg border-2 border-primary-400 relative overflow-hidden"
+                : "bg-neutral-900 border border-primary-500/20 hover:border-primary-500/60"
             }`}
           >
             {plan.popular && (
               <>
-                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary-400/20 rounded-full blur-2xl animate-glow-pulse" />
                 <div class="text-center mb-4 relative z-10">
-                  <span class="inline-block bg-white text-primary-600 px-4 py-1 font-bold text-sm rounded-full shadow-soft">
+                  <span class="inline-block bg-neutral-950 text-primary-400 px-4 py-1 font-bold text-sm rounded-full shadow-neon border border-primary-400/50">
                     ⭐ Most Popular
                   </span>
                 </div>
@@ -196,25 +198,25 @@ const plans = [
                 {plan.emoji}
               </span>
               <h3
-                class={`text-2xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
+                class={`text-2xl font-bold ${plan.popular ? "text-neutral-950" : "text-neutral-100"}`}
               >
                 {plan.name}
               </h3>
             </div>
             <div class="mb-4 relative z-10">
               <span
-                class={`text-5xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
+                class={`text-5xl font-bold ${plan.popular ? "text-neutral-950" : "text-primary-400 text-glow"}`}
               >
                 {plan.price}
               </span>
               <span
-                class={`text-base ${plan.popular ? "text-white/90" : "text-neutral-600"}`}
+                class={`text-base ${plan.popular ? "text-neutral-800" : "text-neutral-400"}`}
               >
                 {plan.period}
               </span>
             </div>
             <p
-              class={`text-sm mb-6 ${plan.popular ? "text-white/90" : "text-neutral-600"}`}
+              class={`text-sm mb-6 ${plan.popular ? "text-neutral-800" : "text-neutral-400"}`}
             >
               {plan.description}
             </p>
@@ -222,12 +224,12 @@ const plans = [
               {plan.features.map((feature) => (
                 <li class="flex items-start gap-2">
                   <span
-                    class={`font-bold text-lg ${plan.popular ? "text-white" : "text-primary-600"}`}
+                    class={`font-bold text-lg ${plan.popular ? "text-neutral-950" : "text-primary-400"}`}
                   >
                     ✓
                   </span>
                   <span
-                    class={`text-sm ${plan.popular ? "text-white/90" : "text-neutral-700"}`}
+                    class={`text-sm ${plan.popular ? "text-neutral-800" : "text-neutral-300"}`}
                   >
                     {feature}
                   </span>
@@ -239,8 +241,8 @@ const plans = [
                 data-open-sales-modal
                 class={`block w-full text-center px-6 py-3 font-bold rounded-xl transition-all cursor-pointer relative z-10 ${
                   plan.popular
-                    ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
-                    : "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 shadow-soft"
+                    ? "bg-neutral-950 text-primary-400 hover:bg-neutral-900 shadow-neon-lg hover:scale-105 border border-primary-400/50"
+                    : "bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-950 hover:from-primary-400 hover:to-primary-500 shadow-neon border border-primary-400/50"
                 }`}
               >
                 {plan.cta}
@@ -250,8 +252,8 @@ const plans = [
                 href="https://app.helpmaton.com"
                 class={`block text-center px-6 py-3 font-bold rounded-xl transition-all relative z-10 ${
                   plan.popular
-                    ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
-                    : "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 shadow-soft"
+                    ? "bg-neutral-950 text-primary-400 hover:bg-neutral-900 shadow-neon-lg hover:scale-105 border border-primary-400/50"
+                    : "bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-950 hover:from-primary-400 hover:to-primary-500 shadow-neon border border-primary-400/50"
                 }`}
               >
                 {plan.cta}

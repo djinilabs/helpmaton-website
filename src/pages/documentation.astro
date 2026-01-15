@@ -7,13 +7,13 @@ import "../styles/global.css";
 
 <Layout title="Documentation - Helpmaton">
   <Header />
-  <main class="min-h-screen bg-neutral-50 p-8 py-16">
+  <main class="min-h-screen bg-neutral-950 p-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-display-2 font-display text-neutral-900 mb-4">
+        <h1 class="text-display-2 font-display text-neutral-100 mb-4 text-glow">
           Documentation
         </h1>
-        <p class="text-lg text-neutral-600">
+        <p class="text-lg text-neutral-400">
           Everything you need to know about Helpmaton
         </p>
       </div>
@@ -21,20 +21,20 @@ import "../styles/global.css";
       <div class="space-y-6">
         <!-- Prominent FAQ Link -->
         <section
-          class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg shadow-colored p-8 border border-primary-500 text-white"
+          class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg shadow-neon-lg p-8 border border-primary-400/50 text-neutral-950"
         >
           <div class="flex items-start gap-4">
             <div class="text-4xl">❓</div>
             <div class="flex-1">
-              <h2 class="text-2xl font-semibold text-white mb-3">
+              <h2 class="text-2xl font-semibold text-neutral-950 mb-3">
                 Quick Answers to Common Questions
               </h2>
-              <p class="text-white/90 mb-4 text-lg">
+              <p class="text-neutral-800 mb-4 text-lg">
                 Looking for quick answers? Check out our FAQ page covering setup, agents, workspaces, billing, API, and more.
               </p>
               <a
                 href="/faq"
-                class="inline-block bg-white text-primary-600 px-6 py-3 font-semibold rounded-lg hover:bg-neutral-50 transition-colors shadow-soft hover:scale-105 transform transition-transform"
+                class="inline-block bg-neutral-950 text-primary-400 px-6 py-3 font-semibold rounded-lg hover:bg-neutral-900 transition-colors shadow-neon hover:scale-105 transform transition-transform border border-primary-400/50"
               >
                 View FAQ →
               </a>
@@ -43,35 +43,35 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Getting Started
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             New to Helpmaton? Start here! We'll guide you through creating your
             first workspace, setting up agents, and uploading documents.
           </p>
           <a
             href="/getting-started"
-            class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+            class="inline-block bg-primary-500 text-neutral-950 px-4 py-2 font-medium rounded-lg hover:bg-primary-400 transition-colors text-sm shadow-neon border border-primary-400/50"
           >
             Read Getting Started Guide →
           </a>
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Working with Agents
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Learn how to create, configure, and manage your AI agents. From
             basic setup to advanced configurations, we've got you covered.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Creating your first agent</li>
             <li>Configuring agent personalities</li>
@@ -81,18 +81,18 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Agent Memory System
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Agents remember important facts, people, and events from
             conversations through an advanced memory system. This enables context-aware responses informed by past
             interactions.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Advanced memory system organized by time periods</li>
             <li>
@@ -109,12 +109,12 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Workspaces
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Organize your AI agents into workspaces. Each workspace is like a
             separate container with its own settings, credits, and team members.
           </p>
@@ -128,7 +128,7 @@ import "../styles/global.css";
             </p>
           </div>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Creating and managing workspaces</li>
             <li>Setting spending limits (for AI provider costs)</li>
@@ -142,17 +142,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Documents
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Upload and organize documents to give your agents knowledge. Learn
             about supported formats, organization, and best practices.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Uploading documents</li>
             <li>Organizing with folders</li>
@@ -162,18 +162,18 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Usage Analytics & Monitoring
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Comprehensive usage tracking and monitoring tools to help you
             understand and optimize your AI spending. View detailed analytics
             across all dimensions of your usage.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>
               Usage tracking (all AI request types)
@@ -186,19 +186,19 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Web Search & Content Extraction
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Give your agents access to real-time, up-to-date information beyond
             their training data. Enable web search and content extraction tools
             to make your AI assistants more capable and current.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Web Search (search_web)
               </h3>
               <p class="mb-2">
@@ -216,7 +216,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Content Extraction (fetch_web)
               </h3>
               <p class="mb-2">
@@ -233,11 +233,11 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">Pricing</h3>
+              <h3 class="font-semibold text-neutral-100 mb-2">Pricing</h3>
               <p class="mb-2">
-                All plans include <strong
+                All plans include                 <strong class="text-primary-400"
                   >10 free web search calls per 24 hours</strong
-                >. Additional calls are billed at <strong
+                >. Additional calls are billed at <strong class="text-primary-400"
                   >$0.008 per call</strong
                 >. This gives you access to real-time information at a
                 transparent, cost-effective rate.
@@ -255,7 +255,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Enabling Web Search
               </h3>
               <p class="mb-2">
@@ -282,17 +282,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Webhooks & Integrations
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Connect Helpmaton to your existing tools and workflows. Set up
             webhooks, integrate with APIs, and automate your processes.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Setting up webhooks</li>
             <li>Real-time streaming with Server-Sent Events (SSE)</li>
@@ -303,19 +303,19 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Built-in Tools & External Integrations
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Agents come with a comprehensive set of built-in tools and can be
             extended with external integrations to connect to
             external APIs and services.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Built-in Tools
               </h3>
               <p class="mb-2">
@@ -353,7 +353,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 External Integrations (Extensibility)
               </h3>
               <p class="mb-2">
@@ -372,17 +372,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Google Workspace Integration
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Connect your agents to Gmail, Google Calendar, and Google Drive with easy OAuth setup. Just connect your Google account—no complex configuration or API keys needed. Your agents can manage your calendar, read and search emails, and access Drive files.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Easy OAuth Setup
               </h3>
               <p class="mb-2">
@@ -400,7 +400,7 @@ import "../styles/global.css";
               </p>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Gmail Integration
               </h3>
               <p class="mb-2">
@@ -414,7 +414,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Google Calendar Integration
               </h3>
               <p class="mb-2">
@@ -429,7 +429,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Google Drive Integration
               </h3>
               <p class="mb-2">
@@ -450,17 +450,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Notion Integration
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Connect your agents to Notion with easy OAuth setup. Just connect your Notion account—no complex configuration or API keys needed. Your agents can read and search pages, create and update content, query databases, and manage your Notion workspace.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Easy OAuth Setup
               </h3>
               <p class="mb-2">
@@ -478,7 +478,7 @@ import "../styles/global.css";
               </p>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Page Management
               </h3>
               <p class="mb-2">
@@ -493,7 +493,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Database Management
               </h3>
               <p class="mb-2">
@@ -513,18 +513,18 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Error Tracking
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Conversations automatically persist and display errors when AI
             requests fail, making it easy to identify and debug issues in your AI
             agent workflows.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Automatic error persistence in conversations</li>
             <li>Detailed error messages with stack traces</li>
@@ -541,17 +541,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Agent Delegation
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Agents can delegate tasks to other agents in the workspace, enabling
             complex multi-agent workflows and sophisticated task orchestration.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>How agent delegation works</li>
             <li>Setting up multi-agent workflows</li>
@@ -568,17 +568,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Email Sending
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Configure email authentication for your workspace to enable agents
             to send emails using workspace email connections.
           </p>
           <ul
-            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+            class="list-disc list-inside space-y-2 text-sm text-neutral-400 ml-4"
           >
             <li>Configuring workspace email connections</li>
             <li>Setting up SMTP authentication</li>
@@ -589,20 +589,20 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Chat Platform Bot Integration
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Deploy your agents as Slack or Discord bots, enabling team members
             and community users to interact with your AI agents directly in
             their favorite chat platforms. This is different from notification
             channels—bots are interactive agents that respond to user messages.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Slack Bot Integration
               </h3>
               <p class="mb-2">
@@ -623,7 +623,7 @@ import "../styles/global.css";
               </p>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Discord Bot Integration
               </h3>
               <p class="mb-2">
@@ -644,7 +644,7 @@ import "../styles/global.css";
               </p>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Key Features
               </h3>
               <ul class="list-disc list-inside space-y-1 ml-4">
@@ -679,21 +679,21 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Notification Channels
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Configure notification channels for your workspaces to enable agents
             to send messages to external platforms like Discord and Slack. This
             is different from bot deployment—notification channels are
             one-way communication for alerts and updates, while bots are
             interactive agents that respond to user messages.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Discord Integration
               </h3>
               <p class="mb-2">
@@ -708,7 +708,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Slack Integration
               </h3>
               <p class="mb-2">
@@ -729,17 +729,17 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Billing & Pricing
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Understanding Helpmaton's pricing structure and how costs work.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 What's Included in Your Subscription
               </h3>
               <p class="mb-2">
@@ -756,7 +756,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 AI Provider Calls (Separate)
               </h3>
               <p class="mb-2">
@@ -776,7 +776,7 @@ import "../styles/global.css";
               </ul>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Cost Control & Spending Limits
               </h3>
               <p class="mb-2">
@@ -800,18 +800,18 @@ import "../styles/global.css";
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             API Reference (For Developers)
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             For developers who want to integrate Helpmaton programmatically.
             Full API documentation with examples and code snippets.
           </p>
-          <div class="mb-4 space-y-4 text-sm text-neutral-600">
+          <div class="mb-4 space-y-4 text-sm text-neutral-400">
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 OpenAPI Documentation
               </h3>
               <p class="mb-2">
@@ -820,11 +820,11 @@ import "../styles/global.css";
                 request/response schemas.
               </p>
             </div>
-            <div class="p-4 bg-primary-50 border border-primary-200 rounded-lg">
-              <p class="text-sm font-semibold text-neutral-900 mb-2">
-                Flexible Authentication
-              </p>
-              <p class="text-sm text-neutral-700">
+          <div class="p-4 bg-primary-500/10 border border-primary-500/30 rounded-lg">
+            <p class="text-sm font-semibold text-neutral-100 mb-2">
+              Flexible Authentication
+            </p>
+            <p class="text-sm text-neutral-300">
                 Multiple authentication methods to fit your workflow:
                 session-based authentication for web users, JWT tokens (24-hour
                 expiration) for API access, workspace API keys for programmatic
@@ -832,7 +832,7 @@ import "../styles/global.css";
               </p>
             </div>
             <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">
+              <h3 class="font-semibold text-neutral-100 mb-2">
                 Comprehensive API Coverage
               </h3>
               <p class="mb-2">
@@ -853,19 +853,19 @@ import "../styles/global.css";
             href="https://app.helpmaton.com/docs/api"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+            class="inline-block bg-primary-500 text-neutral-950 px-4 py-2 font-medium rounded-lg hover:bg-primary-400 transition-colors text-sm shadow-neon border border-primary-400/50"
           >
             View API Reference →
           </a>
         </section>
 
         <section
-          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+          class="bg-neutral-900 rounded-lg shadow-soft p-6 border border-primary-500/20"
         >
-          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 mb-4">
             Self-Hosting
           </h2>
-          <p class="mb-4 text-neutral-600">
+          <p class="mb-4 text-neutral-400">
             Helpmaton is open source! The source code is available on GitHub, so
             you can spin up your own instance, customize it to your needs, and
             run it on your own infrastructure. Full control, zero vendor
@@ -883,24 +883,24 @@ import "../styles/global.css";
             href="https://github.com/djinilabs/helpmaton"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
+            class="inline-block bg-primary-500 text-neutral-950 px-4 py-2 font-medium rounded-lg hover:bg-primary-400 transition-colors text-sm shadow-neon border border-primary-400/50"
           >
             View on GitHub →
           </a>
         </section>
 
         <section
-          class="bg-gradient-primary rounded-lg shadow-colored p-6 text-white"
+          class="bg-gradient-primary rounded-lg shadow-neon-lg p-6 text-neutral-950 border border-primary-400/50"
         >
           <h2 class="text-2xl font-semibold mb-4">Need Help?</h2>
-          <p class="mb-4 text-white/90">
+          <p class="mb-4 text-neutral-800">
             Can't find what you're looking for? Our support team is here to
             help!
           </p>
           <div class="flex gap-4">
             <a
               href="/contact"
-              class="inline-block bg-white text-primary-600 px-4 py-2 font-medium rounded-lg hover:bg-neutral-50 transition-colors text-sm shadow-soft"
+              class="inline-block bg-neutral-950 text-primary-400 px-4 py-2 font-medium rounded-lg hover:bg-neutral-900 transition-colors text-sm shadow-neon border border-primary-400/50"
             >
               Contact Us
             </a>
@@ -908,7 +908,7 @@ import "../styles/global.css";
               href="https://discord.gg/Zf9Q7GpuKx"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block border-2 border-white bg-transparent text-white px-4 py-2 font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-colors text-sm"
+              class="inline-block border-2 border-neutral-950 bg-transparent text-neutral-950 px-4 py-2 font-medium rounded-lg hover:bg-neutral-950 hover:text-primary-400 transition-colors text-sm"
             >
               Join Discord
             </a>

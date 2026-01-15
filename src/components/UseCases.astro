@@ -284,20 +284,20 @@ Deploy agents as Discord bots with slash command support. Enable community users
 
 <section
   id="use-cases"
-  class="bg-gradient-to-b from-neutral-50 to-white p-8 py-20"
+  class="bg-gradient-to-b from-neutral-900 to-neutral-950 p-8 py-20"
 >
   <div class="max-w-6xl mx-auto">
     <div class="mb-16 text-center">
       <div
-        class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4"
+        class="inline-block px-4 py-2 bg-accent-500/20 text-accent-400 rounded-full text-sm font-semibold mb-4 border border-accent-500/30"
       >
         Use Cases
       </div>
-      <h2 class="text-display-2 font-display text-neutral-900 mb-4">
-        Endless possibilities for <span class="text-primary-600">AI agents</span
+      <h2 class="text-display-2 font-display text-neutral-100 mb-4">
+        Endless possibilities for <span class="text-primary-400 text-glow">AI agents</span
         >
       </h2>
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+      <p class="text-lg text-neutral-400 max-w-2xl mx-auto">
         From personal assistants to enterprise automation, see how Helpmaton
         powers intelligent agents across industries
       </p>
@@ -306,27 +306,27 @@ Deploy agents as Discord bots with slash command support. Enable community users
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         useCases.map((useCase, index) => (
-          <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-accent-300 hover:-translate-y-1 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
+          <div class="group bg-neutral-900 p-6 rounded-xl shadow-soft hover:shadow-neon transition-all border border-accent-500/20 hover:border-accent-500/60 hover:-translate-y-1 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-500/20 to-primary-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
             <div class="relative z-10">
               <div class="flex items-center gap-3 mb-4">
                 <div class="text-4xl transform group-hover:scale-110 transition-transform">
                   {useCase.icon}
                 </div>
-                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-700 to-transparent group-hover:via-accent-500 transition-colors" />
               </div>
-              <h3 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-accent-600 transition-colors">
+              <h3 class="text-xl font-semibold text-neutral-100 mb-3 group-hover:text-accent-400 transition-colors">
                 {useCase.title}
               </h3>
               <div
-                class="text-base text-neutral-600 leading-relaxed mb-4 [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
+                class="text-base text-neutral-400 leading-relaxed mb-4 [&_strong]:text-primary-400 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
                 set:html={useCase.description}
               />
-              <div class="pt-4 mt-4 border-t border-neutral-200 group-hover:border-accent-200 transition-colors">
+              <div class="pt-4 mt-4 border-t border-accent-500/20 group-hover:border-accent-500/50 transition-colors">
                 <div class="flex items-center gap-2">
-                  <span class="text-accent-500">▸</span>
-                  <p class="text-xs text-accent-600 font-semibold uppercase tracking-wide">
+                  <span class="text-accent-400">▸</span>
+                  <p class="text-xs text-accent-400 font-semibold uppercase tracking-wide">
                     {useCase.highlight}
                   </p>
                 </div>
@@ -337,10 +337,10 @@ Deploy agents as Discord bots with slash command support. Enable community users
       }
       <!-- Custom Use Case Card -->
       <div
-        class="group bg-gradient-to-br from-primary-50 via-accent-50 to-primary-50 p-6 rounded-xl shadow-soft hover:shadow-large transition-all border-2 border-dashed border-primary-300 hover:border-primary-500 hover:-translate-y-1 relative overflow-hidden"
+        class="group bg-gradient-to-br from-primary-500/10 via-accent-500/10 to-primary-500/10 p-6 rounded-xl shadow-soft hover:shadow-neon transition-all border-2 border-dashed border-primary-500/40 hover:border-primary-500/80 hover:-translate-y-1 relative overflow-hidden"
       >
         <div
-          class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity"
+          class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/30 to-accent-500/30 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity"
         >
         </div>
         <div
@@ -355,40 +355,40 @@ Deploy agents as Discord bots with slash command support. Enable community users
               ✨
             </div>
             <div
-              class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-300 to-transparent group-hover:via-accent-400 transition-colors"
+              class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent group-hover:via-accent-500 transition-colors"
             >
             </div>
           </div>
           <h3
-            class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-primary-700 transition-colors"
+            class="text-xl font-semibold text-neutral-100 mb-3 group-hover:text-primary-400 transition-colors"
           >
             Your Custom Use Case
           </h3>
-          <div class="text-base text-neutral-700 leading-relaxed mb-4">
+          <div class="text-base text-neutral-300 leading-relaxed mb-4">
             <p class="mb-3">
-              <strong class="text-primary-700">🎯 Build what you need</strong
+              <strong class="text-primary-400">🎯 Build what you need</strong
               ><br />
               Create AI agents tailored to your unique business requirements and workflows.
             </p>
             <p class="mb-3">
-              <strong class="text-primary-700">🔧 Full flexibility</strong><br
+              <strong class="text-primary-400">🔧 Full flexibility</strong><br
               />
               With Helpmaton's powerful features—workspaces, memory, integrations,
               and more—the possibilities are endless.
             </p>
             <p>
-              <strong class="text-primary-700">🚀 Get started today</strong><br
+              <strong class="text-primary-400">🚀 Get started today</strong><br
               />
               Start building your custom AI agent solution with our comprehensive
               platform.
             </p>
           </div>
           <div
-            class="pt-4 mt-4 border-t border-primary-200 group-hover:border-primary-300 transition-colors"
+            class="pt-4 mt-4 border-t border-primary-500/30 group-hover:border-primary-500/60 transition-colors"
           >
             <a
               href="https://app.helpmaton.com"
-              class="inline-flex items-center gap-2 text-sm text-primary-700 font-semibold hover:text-primary-800 transition-colors group/link"
+              class="inline-flex items-center gap-2 text-sm text-primary-400 font-semibold hover:text-primary-300 transition-colors group/link hover:text-glow"
             >
               <span>Create your use case</span>
               <span
