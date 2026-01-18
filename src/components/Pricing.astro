@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const plans = [
   {
     name: "Free",
@@ -6,7 +8,7 @@ const plans = [
     period: "",
     description:
       "Great for trying Helpmaton. Start free.",
-    emoji: "🎁",
+    icon: "heroicons:gift",
     features: [
       "1 Workspace",
       "1 Agent",
@@ -27,7 +29,7 @@ const plans = [
     period: "/month",
     description:
       "Great for individuals and small projects.",
-    emoji: "🌱",
+    icon: "heroicons:sparkles",
     features: [
       "1 Workspace",
       "5 Agents",
@@ -48,7 +50,7 @@ const plans = [
     period: "/month",
     description:
       "For teams that need more room to grow.",
-    emoji: "🚀",
+    icon: "heroicons:rocket-launch",
     features: [
       "5 Workspaces",
       "50 Agents",
@@ -70,7 +72,7 @@ const plans = [
     period: "",
     description:
       "For larger organizations with advanced needs.",
-    emoji: "🏢",
+    icon: "heroicons:building-office",
     features: [
       "Unlimited Workspaces",
       "Unlimited Agents",
@@ -196,8 +198,12 @@ const plans = [
               </>
             )}
             <div class="flex items-center justify-center gap-2 mb-3 relative z-10">
-              <span class="text-4xl transform hover:scale-110 transition-transform">
-                {plan.emoji}
+              <span class="transform hover:scale-110 transition-transform">
+                <Icon
+                  name={plan.icon}
+                  class={`w-10 h-10 ${plan.popular ? "text-white" : "text-primary-600"}`}
+                  aria-hidden="true"
+                />
               </span>
               <h3
                 class={`text-2xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
@@ -225,11 +231,11 @@ const plans = [
             <ul class="space-y-3 mb-8 relative z-10">
               {plan.features.map((feature) => (
                 <li class="flex items-start gap-2">
-                  <span
-                    class={`font-bold text-lg ${plan.popular ? "text-white" : "text-primary-600"}`}
-                  >
-                    ✓
-                  </span>
+                  <Icon
+                    name="heroicons:check"
+                    class={`w-5 h-5 mt-0.5 shrink-0 ${plan.popular ? "text-white" : "text-primary-600"}`}
+                    aria-hidden="true"
+                  />
                   <span
                     class={`text-sm ${plan.popular ? "text-white/90" : "text-neutral-700"}`}
                   >
