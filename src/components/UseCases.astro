@@ -1,272 +1,58 @@
 ---
 const useCases = [
   {
-    title: "Executive Assistants",
-    description: `<strong>✨ Intelligent calendar management</strong><br/>
-Create assistants that manage calendars, schedule meetings, and coordinate with teams.<br/><br/>
-<strong>🧠 Memory</strong> remembers your preferences and routines over time.<br/><br/>
-<strong>📅 Google Calendar</strong> connects in a few clicks. <strong>📁 Workspaces</strong> keep budgets separate.`,
-    icon: "👔",
-    highlight: "Always on",
-  },
-  {
-    title: "Scheduling Assistants",
-    description: `<strong>🌍 Cross-timezone coordination</strong><br/>
-Build agents that coordinate meetings and handle rescheduling automatically.<br/><br/>
-<strong>⚡ Fast replies</strong> keep everyone informed. <strong>📅 Google Calendar</strong> connects in a few clicks.<br/><br/>
-<strong>📁 Workspaces</strong> separate teams with their own budgets.`,
-    icon: "📅",
-    highlight: "Easy scheduling",
-  },
-  {
-    title: "Research Assistants",
-    description: `<strong>📚 Comprehensive research</strong><br/>
-Deploy agents that gather information, review documents, and share insights.<br/><br/>
-<strong>🌐 Web search</strong> finds the latest info. <strong>💾 Unlimited storage</strong> keeps sources together. <strong>🔍 Smart search</strong> finds what you need fast.<br/><br/>
-<strong>🔌 Connects</strong> to other tools. <strong>📊 Analytics</strong> show costs per project.`,
-    icon: "🔍",
-    highlight: "Fresh research",
-  },
-  {
-    title: "News Monitoring",
-    description: `<strong>📰 Real-time news tracking</strong><br/>
-Create agents that monitor news, track industry changes, and send updates.<br/><br/>
-<strong>🌐 Web search</strong> finds the latest articles. <strong>🧠 Memory</strong> tracks trends over time.<br/><br/>
-<strong>💬 Discord</strong> sends alerts. <strong>📊 Analytics</strong> track costs. <strong>📁 Workspaces</strong> organize by topic.`,
-    icon: "📰",
-    highlight: "Live updates",
-  },
-  {
-    title: "Content Analysis",
-    description: `<strong>📄 Web content extraction</strong><br/>
-Deploy agents that extract and summarize content from web pages and articles.<br/><br/>
-<strong>🌐 Web fetch</strong> reads any URL. <strong>💾 Document management</strong> stores summaries.<br/><br/>
-<strong>🧠 Memory</strong> learns preferences. <strong>📊 Analytics</strong> track usage. <strong>📁 Workspaces</strong> organize by project.`,
-    icon: "📄",
-    highlight: "Quick summaries",
-  },
-  {
-    title: "Email Management",
-    description: `<strong>📬 Smart email handling</strong><br/>
-Create agents that filter, prioritize, and respond based on your preferences.<br/><br/>
-<strong>🧠 Memory</strong> remembers patterns and important contacts.<br/><br/>
-<strong>📧 Gmail</strong> connects in a few clicks so agents can search, read, and manage emails. <strong>📁 Workspaces</strong> keep agents organized.`,
-    icon: "📧",
-    highlight: "Inbox help",
-  },
-  {
-    title: "Google Workspace Automation",
-    description: `<strong>🔗 Complete Google Workspace integration</strong><br/>
-Connect Gmail, Google Calendar, and Google Drive in a few clicks.<br/><br/>
-<strong>📧 Gmail</strong> for email. <strong>📅 Google Calendar</strong> for schedules. <strong>📁 Google Drive</strong> for files and docs.<br/><br/>
-<strong>🔐 Secure sign-in</strong> keeps data private. <strong>🧠 Memory</strong> learns your workflow. <strong>📁 Workspaces</strong> organize teams.`,
-    icon: "🔗",
-    highlight: "Quick setup",
-  },
-  {
-    title: "Notion Knowledge Assistants",
-    description: `<strong>📝 Notion workspace integration</strong><br/>
-Connect Notion in a few clicks. Agents can read and update pages, search content, and manage databases.<br/><br/>
-<strong>📚 Knowledge help</strong> - Find and read pages fast. <strong>✍️ Content updates</strong> - Create pages and add notes. <strong>🗄️ Database help</strong> - Search and update records.<br/><br/>
-<strong>🔐 Secure sign-in</strong> keeps data private. <strong>🧠 Memory</strong> learns your style. <strong>📁 Workspaces</strong> organize by team.`,
-    icon: "📝",
-    highlight: "Quick setup",
+    title: "Agent Evaluation (Judge Evals)",
+    description: `<strong>✅ Quality, in a couple of clicks</strong><br/>
+Run judge evaluations to score conversations, validate outcomes, and catch regressions after changes.<br/><br/>
+<strong>🎛️ Sampling controls</strong> help balance insight and cost. <strong>📊 Analytics</strong> track results over time.`,
+    icon: "✅",
+    highlight: "Prove quality fast",
   },
   {
     title: "Customer Support Agents",
     description: `<strong>💬 Intelligent support</strong><br/>
-Build agents that handle questions, troubleshoot issues, and hand off cases. Use them in Slack or Discord for direct support chats.<br/><br/>
-<strong>🧠 Memory</strong> keeps conversation context and customer history.<br/><br/>
-<strong>💾 Unlimited storage</strong> for docs. <strong>🔌 Connects</strong> to ticketing tools. <strong>📊 Analytics</strong> track costs.`,
+Handle questions, troubleshoot issues, and hand off cases. Use them in Slack or Discord for direct support chats.<br/><br/>
+<strong>📄 Documents</strong> keep answers consistent. <strong>📎 Attachments</strong> help with screenshots and files.`,
     icon: "🎧",
     highlight: "Helpful support",
   },
   {
-    title: "FAQ Bots",
-    description: `<strong>⚡ Instant answers</strong><br/>
-Deploy FAQ agents in Slack or Discord to answer questions quickly and learn from use.<br/><br/>
-<strong>⚡ Fast replies</strong> keep users happy. <strong>💾 Document management</strong> stores FAQ content.<br/><br/>
-<strong>💬 Chat access</strong> for teams and communities. <strong>📊 Analytics</strong> show popular questions. <strong>💰 Spending limits</strong> per agent.`,
-    icon: "❓",
-    highlight: "Quick answers",
-  },
-  {
-    title: "Ticket Routing",
-    description: `<strong>🎯 Smart routing</strong><br/>
-Create agents that review tickets, tag issues, and prioritize by urgency.<br/><br/>
-<strong>🔌 Connects</strong> to ticketing systems. <strong>🔗 App connections</strong> keep updates moving.<br/><br/>
-<strong>💾 Document management</strong> stores routing rules. <strong>📁 Workspaces</strong> separate product lines.`,
-    icon: "🎫",
-    highlight: "Clean routing",
-  },
-  {
-    title: "Order Tracking",
-    description: `<strong>📦 Real-time tracking</strong><br/>
-Build agents that share order updates and notify customers.<br/><br/>
-<strong>🔗 Connects</strong> to order systems. <strong>🔌 Works with</strong> shipping services.<br/><br/>
-<strong>🧠 Memory</strong> remembers preferences. <strong>💬 Discord</strong> sends team updates.`,
-    icon: "📦",
-    highlight: "Proactive updates",
-  },
-  {
-    title: "System Health Monitors",
-    description: `<strong>💚 Health monitoring</strong><br/>
-Deploy agents that track metrics, spot issues, and alert on thresholds.<br/><br/>
-<strong>🔌 Connects</strong> to monitoring tools. <strong>🔗 Receives</strong> real-time alerts.<br/><br/>
-<strong>💬 Discord</strong> sends notifications. <strong>📁 Workspaces</strong> separate environments.`,
-    icon: "💚",
-    highlight: "Live monitoring",
-  },
-  {
-    title: "Security Alert Agents",
-    description: `<strong>🔒 Threat detection</strong><br/>
-Create agents that monitor logs, flag threats, and trigger responses.<br/><br/>
-<strong>🔌 Connects</strong> to security systems. <strong>🔗 App connections</strong> handle updates fast.<br/><br/>
-<strong>🧠 Memory</strong> learns patterns. <strong>💬 Discord</strong> sends critical alerts.`,
-    icon: "🔒",
-    highlight: "Threat alerts",
-  },
-  {
-    title: "Performance Trackers",
-    description: `<strong>⚡ Performance insights</strong><br/>
-Build agents that monitor performance, track KPIs, and spot bottlenecks.<br/><br/>
-<strong>🔌 Connects</strong> to monitoring tools. <strong>💾 Document management</strong> stores baselines and targets.<br/><br/>
-<strong>📊 Analytics</strong> track costs per app. <strong>📁 Workspaces</strong> separate services.`,
-    icon: "⚡",
-    highlight: "Performance insights",
-  },
-  {
-    title: "Anomaly Detectors",
-    description: `<strong>🚨 Pattern recognition</strong><br/>
-Deploy agents that learn normal patterns and flag unusual changes.<br/><br/>
-<strong>🧠 Memory</strong> learns over time. <strong>🔍 Smart search</strong> finds past issues.<br/><br/>
-<strong>🔌 Connects</strong> to data sources. <strong>💬 Discord</strong> notifies teams instantly.`,
-    icon: "🚨",
-    highlight: "Spot anomalies",
-  },
-  {
-    title: "Content Writers",
-    description: `<strong>✍️ Brand-consistent content</strong><br/>
-Create agents that draft blog posts, social content, and marketing copy.<br/><br/>
-<strong>💾 Document management</strong> stores brand guidelines and style notes.<br/><br/>
-<strong>🧠 Memory</strong> remembers brand voice. <strong>📁 Workspaces</strong> organize by channel. <strong>🔌 Connects</strong> to content tools.`,
-    icon: "✍️",
-    highlight: "On-brand writing",
-  },
-  {
-    title: "Data Analysts",
-    description: `<strong>📈 Automated insights</strong><br/>
-Build agents that analyze data, create reports, and share insights.<br/><br/>
-<strong>🔌 Connects</strong> to databases and analytics tools.<br/><br/>
-<strong>💾 Document management</strong> stores past reports. <strong>🧠 Memory</strong> remembers key metrics. <strong>📁 Workspaces</strong> organize by team.`,
-    icon: "📈",
-    highlight: "Helpful insights",
-  },
-  {
-    title: "Summarization Agents",
-    description: `<strong>📝 Key point extraction</strong><br/>
-Deploy agents that summarize documents, notes, and reports.<br/><br/>
-<strong>💾 Unlimited storage</strong> keeps source files organized. <strong>🧠 Memory</strong> learns your preferences.<br/><br/>
-<strong>📁 Workspaces</strong> separate projects. <strong>📊 Analytics</strong> track costs. <strong>🔌 Connects</strong> to your data sources.`,
-    icon: "📝",
-    highlight: "Key takeaways",
-  },
-  {
-    title: "Lead Qualification",
-    description: `<strong>🎯 Automated qualification</strong><br/>
-Create agents that engage leads, score prospects, and route to sales.<br/><br/>
-<strong>🧠 Memory</strong> remembers lead history. <strong>🔌 Connects</strong> to CRM systems.<br/><br/>
-<strong>🔗 App connections</strong> keep updates fast. <strong>📁 Workspaces</strong> separate regions. <strong>💬 Discord</strong> sends leads.`,
-    icon: "🎯",
-    highlight: "Lead routing",
-  },
-  {
-    title: "Invoice Processors",
-    description: `<strong>🧾 Automated processing</strong><br/>
-Build agents that extract invoice data, validate details, and route approvals.<br/><br/>
-<strong>💾 Document management</strong> stores templates and rules. <strong>🔌 Connects</strong> to accounting systems.<br/><br/>
-<strong>🧠 Memory</strong> learns vendor patterns. <strong>📁 Workspaces</strong> organize by team. <strong>💰 Spending limits</strong> control costs.`,
-    icon: "🧾",
-    highlight: "Faster approvals",
-  },
-  {
-    title: "Compliance Checkers",
-    description: `<strong>✅ Proactive compliance</strong><br/>
-Deploy agents that review documents and processes for compliance.<br/><br/>
-<strong>💾 Document management</strong> stores rules and policies. <strong>🧠 Memory</strong> remembers patterns.<br/><br/>
-<strong>🔌 Connects</strong> to compliance databases. <strong>💬 Discord</strong> alerts teams.`,
-    icon: "✅",
-    highlight: "Compliance checks",
-  },
-  {
     title: "Workflow Automators",
     description: `<strong>⚙️ End-to-end automation</strong><br/>
-Create agents that coordinate workflows, systems, and approvals.<br/><br/>
-<strong>🔌 Connects</strong> to business tools. <strong>🔗 App connections</strong> trigger updates in real time.<br/><br/>
-<strong>🧠 Memory</strong> keeps workflow state. <strong>📁 Workspaces</strong> organize by team. <strong>🔧 API</strong> for custom control.`,
+Coordinate workflows, systems, and approvals with integrations and webhooks.<br/><br/>
+<strong>🔄 Agent delegation</strong> routes tasks. <strong>📧 Notifications</strong> share results.`,
     icon: "⚙️",
     highlight: "End-to-end automation",
   },
   {
-    title: "Code Review Assistants",
-    description: `<strong>👨‍💻 Quality assurance</strong><br/>
-Build agents that review code, suggest improvements, and follow standards.<br/><br/>
-<strong>🔌 Connects</strong> to GitHub and GitLab. <strong>💾 Document management</strong> stores coding standards.<br/><br/>
-<strong>🧠 Memory</strong> learns team patterns. <strong>📁 Workspaces</strong> organize by repository. <strong>💬 Discord</strong> sends notifications.`,
-    icon: "👨‍💻",
-    highlight: "Code quality",
+    title: "Research Assistants",
+    description: `<strong>📚 Comprehensive research</strong><br/>
+Gather information, review documents, and share insights across your team.<br/><br/>
+<strong>🌐 Web search</strong> finds the latest info. <strong>📄 Document management</strong> keeps sources together.`,
+    icon: "🔍",
+    highlight: "Fresh research",
   },
   {
-    title: "Documentation Generators",
-    description: `<strong>📚 Auto-generated docs</strong><br/>
-Deploy agents that generate docs, code comments, and user guides.<br/><br/>
-<strong>💾 Document management</strong> stores templates. <strong>🔌 Connects</strong> to codebases and schemas.<br/><br/>
-<strong>🧠 Memory</strong> learns style. <strong>📁 Workspaces</strong> organize by project. <strong>🔧 API</strong> for custom integrations.`,
-    icon: "📚",
-    highlight: "Auto docs",
+    title: "Scheduled Reports & Monitoring",
+    description: `<strong>⏰ Proactive reporting</strong><br/>
+Run agents on a schedule to generate reports, monitor updates, and alert teams before issues escalate.<br/><br/>
+<strong>⏰ Agent schedules</strong> automate runs. <strong>📧 Notifications</strong> deliver results.`,
+    icon: "⏰",
+    highlight: "Proactive updates",
   },
   {
-    title: "Deployment Monitors",
-    description: `<strong>🚀 Release safety</strong><br/>
-Create agents that monitor deployments, track status, and alert on failures.<br/><br/>
-<strong>🔌 Connects</strong> to CI/CD tools. <strong>🔗 Receives</strong> real-time events.<br/><br/>
-<strong>🧠 Memory</strong> remembers release patterns. <strong>📁 Workspaces</strong> separate environments. <strong>💬 Discord</strong> sends alerts.`,
-    icon: "🚀",
-    highlight: "Release safety",
-  },
-  {
-    title: "Bug Reporters",
-    description: `<strong>🐛 Automated reporting</strong><br/>
-Build agents that detect errors, analyze logs, and create bug reports.<br/><br/>
-<strong>🔌 Connects</strong> to error tracking tools. <strong>🧠 Memory</strong> learns bug patterns.<br/><br/>
-<strong>💾 Document management</strong> stores templates. <strong>🔗 App connections</strong> spot issues quickly. <strong>💬 Discord</strong> sends alerts.`,
-    icon: "🐛",
-    highlight: "Bug reporting",
-  },
-  {
-    title: "Multi-Agent Workflows",
-    description: `<strong>🔄 Complex orchestration</strong><br/>
-Create workflows where agents hand off tasks to specialists and work together on complex projects.<br/><br/>
-<strong>🔄 Agent delegation</strong> moves work around. <strong>🧠 Memory</strong> keeps shared context.<br/><br/>
-<strong>📁 Workspaces</strong> organize teams. <strong>📊 Analytics</strong> track performance. <strong>🔗 App connections</strong> coordinate work.`,
-    icon: "🔄",
-    highlight: "Teamwork between agents",
-  },
-  {
-    title: "Specialized Agent Teams",
-    description: `<strong>👥 Domain expertise</strong><br/>
-Deploy teams of specialized agents where each handles a specific area. Agents pass tasks to the right expert when needed.<br/><br/>
-<strong>🔄 Agent delegation</strong> routes tasks to specialists. <strong>🧠 Memory</strong> shares knowledge across the team.<br/><br/>
-<strong>📁 Workspaces</strong> organize by expertise. <strong>💾 Document management</strong> stores domain knowledge. <strong>📊 Analytics</strong> track team efficiency.`,
-    icon: "👥",
-    highlight: "Expert teams",
+    title: "Streaming Chat Interfaces",
+    description: `<strong>⚡ Real-time responses</strong><br/>
+Build chat experiences with streaming updates so users see answers as they’re generated.<br/><br/>
+<strong>⚡ Streaming</strong> for fast UX. <strong>🔗 Webhooks</strong> for easy integration.`,
+    icon: "⚡",
+    highlight: "Real-time UX",
   },
   {
     title: "Slack Team Bots",
     description: `<strong>💼 Team collaboration</strong><br/>
 Deploy agents as Slack bots that respond to mentions and direct messages, right in your team chat.<br/><br/>
-<strong>🔐 Secure by default</strong> with verification. <strong>⚡ Fast replies</strong> that feel natural. <strong>📋 Easy setup</strong> with step-by-step guides.<br/><br/>
-<strong>🧠 Memory</strong> keeps conversation context. <strong>📁 Workspaces</strong> organize by team. <strong>📊 Analytics</strong> track usage.`,
+<strong>🔐 Secure by default</strong> with verification. <strong>⚡ Fast replies</strong> that feel natural.`,
     icon: "💼",
     highlight: "Team chat help",
   },
@@ -274,10 +60,217 @@ Deploy agents as Slack bots that respond to mentions and direct messages, right 
     title: "Discord Community Bots",
     description: `<strong>🌐 Community engagement</strong><br/>
 Deploy agents as Discord bots with slash commands so communities can chat with them directly.<br/><br/>
-<strong>🔐 Secure verification</strong> keeps interactions safe. <strong>⚡ Fast replies</strong> that feel natural. <strong>🎯 Full support</strong> for Discord features.<br/><br/>
-<strong>🧠 Memory</strong> remembers community needs. <strong>📁 Workspaces</strong> organize by server. <strong>📊 Analytics</strong> track engagement.`,
+<strong>🔐 Secure verification</strong> keeps interactions safe. <strong>⚡ Fast replies</strong> that feel natural.`,
     icon: "🌐",
     highlight: "Community help",
+  },
+  {
+    title: "Google Workspace Automation",
+    description: `<strong>🔗 Complete Google Workspace integration</strong><br/>
+Connect Gmail, Google Calendar, and Google Drive in a few clicks.<br/><br/>
+<strong>📧 Gmail</strong> for email. <strong>📅 Google Calendar</strong> for schedules. <strong>📁 Google Drive</strong> for files.`,
+    icon: "🔗",
+    highlight: "Quick setup",
+  },
+  {
+    title: "Notion Knowledge Assistants",
+    description: `<strong>📝 Notion workspace integration</strong><br/>
+Connect Notion in a few clicks. Agents can read and update pages, search content, and manage databases.<br/><br/>
+<strong>📚 Knowledge help</strong> for docs. <strong>🗄️ Database help</strong> for records and tracking.`,
+    icon: "📝",
+    highlight: "Quick setup",
+  },
+  {
+    title: "Executive Assistants",
+    description: `<strong>✨ Intelligent calendar management</strong><br/>
+Create assistants that manage calendars, schedule meetings, and coordinate with teams.<br/><br/>
+<strong>🧠 Memory</strong> remembers your preferences and routines over time.`,
+    icon: "👔",
+    highlight: "Always on",
+  },
+  {
+    title: "Scheduling Assistants",
+    description: `<strong>🌍 Cross-timezone coordination</strong><br/>
+Build agents that coordinate meetings and handle rescheduling automatically.<br/><br/>
+<strong>⚡ Fast replies</strong> keep everyone informed. <strong>📅 Google Calendar</strong> connects in a few clicks.`,
+    icon: "📅",
+    highlight: "Easy scheduling",
+  },
+  {
+    title: "Email Management",
+    description: `<strong>📬 Smart email handling</strong><br/>
+Create agents that filter, prioritize, and respond based on your preferences.<br/><br/>
+<strong>📧 Gmail</strong> connects in a few clicks so agents can search and manage emails.`,
+    icon: "📧",
+    highlight: "Inbox help",
+  },
+  {
+    title: "Content Analysis",
+    description: `<strong>📄 Web content extraction</strong><br/>
+Deploy agents that extract and summarize content from web pages and articles.<br/><br/>
+<strong>🌐 Web fetch</strong> reads any URL. <strong>📄 Document management</strong> stores summaries.`,
+    icon: "📄",
+    highlight: "Quick summaries",
+  },
+  {
+    title: "News Monitoring",
+    description: `<strong>📰 Real-time news tracking</strong><br/>
+Create agents that monitor news, track industry changes, and send updates.<br/><br/>
+<strong>🌐 Web search</strong> finds the latest articles. <strong>💬 Discord</strong> sends alerts.`,
+    icon: "📰",
+    highlight: "Live updates",
+  },
+  {
+    title: "FAQ Bots",
+    description: `<strong>⚡ Instant answers</strong><br/>
+Deploy FAQ agents in Slack or Discord to answer questions quickly and learn from use.<br/><br/>
+<strong>📄 Document management</strong> stores FAQ content. <strong>💰 Spending limits</strong> per agent.`,
+    icon: "❓",
+    highlight: "Quick answers",
+  },
+  {
+    title: "Ticket Routing",
+    description: `<strong>🎯 Smart routing</strong><br/>
+Create agents that review tickets, tag issues, and prioritize by urgency.<br/><br/>
+<strong>🔌 Connects</strong> to ticketing systems. <strong>📄 Document management</strong> stores routing rules.`,
+    icon: "🎫",
+    highlight: "Clean routing",
+  },
+  {
+    title: "Order Tracking",
+    description: `<strong>📦 Real-time tracking</strong><br/>
+Build agents that share order updates and notify customers.<br/><br/>
+<strong>🔗 Connects</strong> to order systems. <strong>💬 Discord</strong> sends team updates.`,
+    icon: "📦",
+    highlight: "Proactive updates",
+  },
+  {
+    title: "System Health Monitors",
+    description: `<strong>💚 Health monitoring</strong><br/>
+Deploy agents that track metrics, spot issues, and alert on thresholds.<br/><br/>
+<strong>🔌 Connects</strong> to monitoring tools. <strong>💬 Discord</strong> sends notifications.`,
+    icon: "💚",
+    highlight: "Live monitoring",
+  },
+  {
+    title: "Security Alert Agents",
+    description: `<strong>🔒 Threat detection</strong><br/>
+Create agents that monitor logs, flag threats, and trigger responses.<br/><br/>
+<strong>🔌 Connects</strong> to security systems. <strong>💬 Discord</strong> sends critical alerts.`,
+    icon: "🔒",
+    highlight: "Threat alerts",
+  },
+  {
+    title: "Performance Trackers",
+    description: `<strong>⚡ Performance insights</strong><br/>
+Build agents that monitor performance, track KPIs, and spot bottlenecks.<br/><br/>
+<strong>🔌 Connects</strong> to monitoring tools. <strong>📄 Document management</strong> stores baselines.`,
+    icon: "⚡",
+    highlight: "Performance insights",
+  },
+  {
+    title: "Anomaly Detectors",
+    description: `<strong>🚨 Pattern recognition</strong><br/>
+Deploy agents that learn normal patterns and flag unusual changes.<br/><br/>
+<strong>🧠 Memory</strong> learns over time. <strong>💬 Discord</strong> notifies teams instantly.`,
+    icon: "🚨",
+    highlight: "Spot anomalies",
+  },
+  {
+    title: "Content Writers",
+    description: `<strong>✍️ Brand-consistent content</strong><br/>
+Create agents that draft blog posts, social content, and marketing copy.<br/><br/>
+<strong>📄 Document management</strong> stores brand guidelines and style notes.`,
+    icon: "✍️",
+    highlight: "On-brand writing",
+  },
+  {
+    title: "Data Analysts",
+    description: `<strong>📈 Automated insights</strong><br/>
+Build agents that analyze data, create reports, and share insights.<br/><br/>
+<strong>🔌 Connects</strong> to databases and analytics tools.`,
+    icon: "📈",
+    highlight: "Helpful insights",
+  },
+  {
+    title: "Summarization Agents",
+    description: `<strong>📝 Key point extraction</strong><br/>
+Deploy agents that summarize documents, notes, and reports.<br/><br/>
+<strong>📄 Document management</strong> keeps source files organized.`,
+    icon: "📝",
+    highlight: "Key takeaways",
+  },
+  {
+    title: "Lead Qualification",
+    description: `<strong>🎯 Automated qualification</strong><br/>
+Create agents that engage leads, score prospects, and route to sales.<br/><br/>
+<strong>🔌 Connects</strong> to CRM systems. <strong>🔗 App connections</strong> keep updates fast.`,
+    icon: "🎯",
+    highlight: "Lead routing",
+  },
+  {
+    title: "Invoice Processors",
+    description: `<strong>🧾 Automated processing</strong><br/>
+Build agents that extract invoice data, validate details, and route approvals.<br/><br/>
+<strong>📄 Document management</strong> stores templates and rules. <strong>💰 Spending limits</strong> control costs.`,
+    icon: "🧾",
+    highlight: "Faster approvals",
+  },
+  {
+    title: "Compliance Checkers",
+    description: `<strong>✅ Proactive compliance</strong><br/>
+Deploy agents that review documents and processes for compliance.<br/><br/>
+<strong>📄 Document management</strong> stores rules and policies. <strong>💬 Discord</strong> alerts teams.`,
+    icon: "✅",
+    highlight: "Compliance checks",
+  },
+  {
+    title: "Code Review Assistants",
+    description: `<strong>👨‍💻 Quality assurance</strong><br/>
+Build agents that review code, suggest improvements, and follow standards.<br/><br/>
+<strong>🔌 Connects</strong> to GitHub and GitLab. <strong>📄 Document management</strong> stores coding standards.`,
+    icon: "👨‍💻",
+    highlight: "Code quality",
+  },
+  {
+    title: "Documentation Generators",
+    description: `<strong>📚 Auto-generated docs</strong><br/>
+Deploy agents that generate docs, code comments, and user guides.<br/><br/>
+<strong>📄 Document management</strong> stores templates. <strong>🔌 Connects</strong> to codebases and schemas.`,
+    icon: "📚",
+    highlight: "Auto docs",
+  },
+  {
+    title: "Deployment Monitors",
+    description: `<strong>🚀 Release safety</strong><br/>
+Create agents that monitor deployments, track status, and alert on failures.<br/><br/>
+<strong>🔌 Connects</strong> to CI/CD tools. <strong>💬 Discord</strong> sends alerts.`,
+    icon: "🚀",
+    highlight: "Release safety",
+  },
+  {
+    title: "Bug Reporters",
+    description: `<strong>🐛 Automated reporting</strong><br/>
+Build agents that detect errors, analyze logs, and create bug reports.<br/><br/>
+<strong>🔌 Connects</strong> to error tracking tools. <strong>💬 Discord</strong> sends alerts.`,
+    icon: "🐛",
+    highlight: "Bug reporting",
+  },
+  {
+    title: "Multi-Agent Workflows",
+    description: `<strong>🔄 Complex orchestration</strong><br/>
+Create workflows where agents hand off tasks to specialists and work together on complex projects.<br/><br/>
+<strong>🔄 Agent delegation</strong> moves work around. <strong>📊 Analytics</strong> track performance.`,
+    icon: "🔄",
+    highlight: "Teamwork between agents",
+  },
+  {
+    title: "Specialized Agent Teams",
+    description: `<strong>👥 Domain expertise</strong><br/>
+Deploy teams of specialized agents where each handles a specific area. Agents pass tasks to the right expert when needed.<br/><br/>
+<strong>🔄 Agent delegation</strong> routes tasks to specialists. <strong>📄 Document management</strong> stores domain knowledge.`,
+    icon: "👥",
+    highlight: "Expert teams",
   },
 ];
 ---
@@ -373,7 +366,7 @@ Deploy agents as Discord bots with slash commands so communities can chat with t
             <p class="mb-3">
               <strong class="text-primary-700">🔧 Full flexibility</strong><br
               />
-              With workspaces, memory, and integrations, you can shape it to fit.
+              With workspaces, memory, schedules, and integrations, you can shape it to fit.
             </p>
             <p>
               <strong class="text-primary-700">🚀 Get started today</strong><br

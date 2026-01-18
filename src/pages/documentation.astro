@@ -84,6 +84,26 @@ import "../styles/global.css";
           class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
         >
           <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Evaluation & Quality Control (Judge Evals)
+          </h2>
+          <p class="mb-4 text-neutral-600">
+            Use judge evaluations to score conversations, validate outcomes, and
+            catch regressions after you change prompts, tools, or integrations.
+          </p>
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
+            <li>Run evals with just a couple of clicks</li>
+            <li>Score outcomes and track quality over time</li>
+            <li>Use sampling to balance insight and cost</li>
+            <li>Validate behavior before shipping changes</li>
+          </ul>
+        </section>
+
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
             Agent Memory System
           </h2>
           <p class="mb-4 text-neutral-600">
@@ -95,6 +115,7 @@ import "../styles/global.css";
           >
             <li>Memory grouped by time periods</li>
             <li>Summaries created over time (daily, weekly, monthly, etc.)</li>
+            <li>Custom summarization prompts per agent and time grain</li>
             <li>Smart search to find past details</li>
             <li>
               Memory length depends on your plan (Free: 48h + 30d summaries,
@@ -128,6 +149,7 @@ import "../styles/global.css";
           >
             <li>Creating and managing workspaces</li>
             <li>Setting spending limits for AI usage</li>
+            <li>Agent-specific limits with daily, monthly, or yearly caps</li>
             <li>Using your own API keys or buying credits</li>
             <li>
               Team collaboration and shared access (Pro plans support unlimited
@@ -144,16 +166,45 @@ import "../styles/global.css";
             Documents
           </h2>
           <p class="mb-4 text-neutral-600">
-            Upload and organize documents so your agents can use them. Learn
-            about supported formats and simple organization tips.
+            Upload and organize documents so your agents can use them as a
+            knowledge base.
           </p>
+          <div
+            class="mb-4 p-4 bg-primary-50 border border-primary-200 rounded-lg"
+          >
+            <p class="text-sm text-neutral-700">
+              <strong>Document formats:</strong> Knowledge base documents support
+              <strong>Markdown and text</strong>. For other file types and
+              images, use <strong>conversation attachments</strong>.
+            </p>
+          </div>
           <ul
             class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
           >
             <li>Uploading documents</li>
             <li>Organizing with folders</li>
-            <li>Supported file formats</li>
+            <li>Supported formats: Markdown + text</li>
             <li>Document management tips</li>
+          </ul>
+        </section>
+
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Conversation Attachments
+          </h2>
+          <p class="mb-4 text-neutral-600">
+            Attach files and images directly to a conversation to give your
+            agent richer context for troubleshooting, review, and multi-modal
+            workflows.
+          </p>
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
+            <li>Attach files and images while chatting</li>
+            <li>Great for screenshots, reports, and file reviews</li>
+            <li>Different from knowledge base documents</li>
           </ul>
         </section>
 
@@ -270,12 +321,31 @@ import "../styles/global.css";
           >
             <li>Setting up webhooks</li>
             <li>Real-time updates</li>
+            <li>Streaming responses (SSE) for chat-like experiences</li>
             <li>Webhook events and payloads</li>
             <li>Integration examples</li>
             <li>Troubleshooting</li>
           </ul>
         </section>
 
+        <section
+          class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 mb-4">
+            Agent Schedules
+          </h2>
+          <p class="mb-4 text-neutral-600">
+            Automate agent runs with cron-based schedules. Perfect for recurring
+            reports, proactive monitoring, and routine operational tasks.
+          </p>
+          <ul
+            class="list-disc list-inside space-y-2 text-sm text-neutral-600 ml-4"
+          >
+            <li>Run agents on a schedule with cron expressions</li>
+            <li>Send results to email or notification channels</li>
+            <li>Combine schedules with web search and integrations</li>
+          </ul>
+        </section>
         <section
           class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
         >

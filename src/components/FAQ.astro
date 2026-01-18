@@ -12,38 +12,38 @@ const faqs: FAQItem[] = [
     question: "How do I create my first workspace?",
     answer: `<strong>Workspace creation</strong><br/>
 After signing up, you'll be asked to create your first workspace. A workspace is a separate space for your agents, documents, and team members.<br/><br/>
-<strong>Multiple workspaces</strong> let you keep projects or clients separate, each with its own budget and access.`
+<strong>Multiple workspaces</strong> let you keep projects or clients separate, each with its own budget and access.`,
   },
   {
     category: "Getting Started",
     question: "What do I need to get started?",
     answer: `<strong>Account setup</strong><br/>
-You need a Helpmaton account and either your own OpenRouter key or credits you buy through Helpmaton.<br/><br/>
-<strong>OpenRouter keys</strong> are currently the only way to use your own API keys. Once you have a workspace, you can create agents and upload documents.<br/><br/>
-For detailed setup instructions, see the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/getting-started.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Getting Started Guide</a>.`
+You need a Helpmaton account and either your own key (currently via OpenRouter) or credits you buy through Helpmaton.<br/><br/>
+<strong>Bring your own key</strong> is currently supported via OpenRouter. Once you have a workspace, you can create agents and upload documents.<br/><br/>
+For detailed setup instructions, see the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/getting-started.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Getting Started Guide</a>.`,
   },
   {
     category: "Getting Started",
     question: "How do I create my first agent?",
     answer: `<strong>Agent creation</strong><br/>
 Open your workspace, click "Create Agent", then give it a name and instructions. You can choose tools and memory options, too.<br/><br/>
-<strong>Ready right away</strong> - Your agent is available as soon as you create it, and you can connect other apps whenever you want.`
+<strong>Ready right away</strong> - Your agent is available as soon as you create it, and you can connect other apps whenever you want.`,
   },
   {
     category: "Getting Started",
     question: "What's the difference between a workspace and an agent?",
     answer: `<strong>Workspaces vs Agents</strong><br/>
 Think of a <strong>workspace</strong> as a folder for a project. It holds your agents, documents, team members, budget, and settings. You might keep one workspace for personal projects and another for work.<br/><br/>
-An <strong>agent</strong> is the AI assistant inside a workspace. Each agent has its own instructions, memory, and skills. You can have several agents in one workspace.`
+An <strong>agent</strong> is the AI assistant inside a workspace. Each agent has its own instructions, memory, and skills. You can have several agents in one workspace.`,
   },
   {
     category: "Getting Started",
     question: "What is OpenRouter and why do I need it?",
     answer: `<strong>OpenRouter explained</strong><br/>
 OpenRouter lets you access multiple AI providers (like OpenAI, Anthropic, Google) with a single key.<br/><br/>
-<strong>Why it matters</strong> - If you want to use your own API keys, Helpmaton currently does that through OpenRouter. You can also skip keys and buy credits through Helpmaton instead.`
+<strong>Why it matters</strong> - If you want to use your own API keys, Helpmaton currently does that through OpenRouter. You can also skip keys and buy credits through Helpmaton instead.`,
   },
-  
+
   // Agents
   {
     category: "Agents",
@@ -52,110 +52,148 @@ OpenRouter lets you access multiple AI providers (like OpenAI, Anthropic, Google
 Agents remember important details from your conversations and use them to answer better over time.<br/><br/>
 <strong>Memory retention</strong> - Free plans keep 48 hours of detailed memory plus 30 days of summaries, while Pro plans keep 240 hours plus 120 days. Older memories are cleaned up automatically.<br/><br/>
 <strong>Smart search</strong> helps agents find the right past details when responding.<br/><br/>
-Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/agent-memory-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Agent Memory System documentation</a>.`
+Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/agent-memory-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Agent Memory System documentation</a>.`,
   },
   {
     category: "Agents",
     question: "Can agents work together?",
     answer: `<strong>Agent delegation</strong><br/>
 Yes. Agents can pass tasks to other agents in the same workspace so work gets shared.<br/><br/>
-<strong>Multi-agent collaboration</strong> - You can set up teams of agents that handle different parts of a task and track who did what.`
+<strong>Multi-agent collaboration</strong> - You can set up teams of agents that handle different parts of a task and track who did what.`,
   },
   {
     category: "Agents",
     question: "What tools do agents have access to?",
     answer: `<strong>Built-in tools</strong><br/>
 Agents have built-in tools like document search, memory search, web search, web page reading, email sending, notifications, and task handoffs.<br/><br/>
-<strong>External integrations</strong> - You can connect more tools and services, then enable them per agent.`
+<strong>External integrations</strong> - You can connect more tools and services, then enable them per agent.`,
   },
   {
     category: "Agents",
     question: "How do I configure an agent's personality?",
     answer: `<strong>Custom instructions</strong><br/>
 When you create or edit an agent, add instructions that guide its tone and behavior.<br/><br/>
-<strong>Personality settings</strong> help you match the agent to a specific role or brand voice.`
+<strong>Personality settings</strong> help you match the agent to a specific role or brand voice.`,
   },
   {
     category: "Agents",
-    question: "What's the difference between web search and content extraction?",
+    question:
+      "What's the difference between web search and content extraction?",
     answer: `<strong>Web search vs content extraction</strong><br/>
 <strong>Web search</strong> lets your agent look up current information and articles, like using a search engine.<br/><br/>
 <strong>Content extraction</strong> lets your agent read and summarize a specific page when you give it a URL.<br/><br/>
-Both help your agents use up-to-date information.`
+Both help your agents use up-to-date information.`,
   },
-  
+  {
+    category: "Agents",
+    question: "Can I customize how memory summaries are written?",
+    answer: `<strong>Custom summarization prompts</strong><br/>
+Yes. You can set per-agent prompts for each time grain (daily, weekly, monthly, quarterly, yearly) so summaries match your workflow.<br/><br/>
+<strong>Why it matters</strong> - Different agents can retain and summarize context in different ways.`,
+  },
+  {
+    category: "Agents",
+    question: "Can agents run on a schedule?",
+    answer: `<strong>Agent schedules</strong><br/>
+Yes. You can set cron-based schedules so agents run automatically for reports, monitoring, and recurring tasks.<br/><br/>
+<strong>Use cases</strong> - Weekly summaries, daily monitoring, and proactive alerts.`,
+  },
+
+  // Evaluation & Quality
+  {
+    category: "Evaluation & Quality",
+    question: "What are Judge evals?",
+    answer: `<strong>Evaluation made simple</strong><br/>
+Judge evals score conversations so you can measure quality, validate outcomes, and catch regressions after changes.<br/><br/>
+<strong>Why it helps</strong> - It provides quick feedback before you ship updates.`,
+  },
+  {
+    category: "Evaluation & Quality",
+    question: "How does evaluation sampling work?",
+    answer: `<strong>Sampling controls</strong><br/>
+You can evaluate a subset of traffic instead of everything, which keeps costs predictable while still giving you reliable insight.<br/><br/>
+<strong>Balance</strong> - More sampling equals deeper insight; less sampling equals lower cost.`,
+  },
+
   // Workspaces
   {
     category: "Workspaces",
     question: "What are workspace credits used for?",
     answer: `<strong>AI provider costs</strong><br/>
 Workspace credits are for AI provider usage (OpenRouter, OpenAI, Anthropic, Google, etc.), not for your Helpmaton subscription.<br/><br/>
-<strong>Flexible billing</strong> - Use your own OpenRouter key and pay providers directly, or buy credits through Helpmaton.`
+<strong>Flexible billing</strong> - Use your own OpenRouter key and pay providers directly, or buy credits through Helpmaton.`,
   },
   {
     category: "Workspaces",
     question: "Can I use my own API keys?",
     answer: `<strong>Using your own API keys</strong><br/>
 Yes. You can use your own OpenRouter API key, which is currently the only supported option for bringing your own key.<br/><br/>
-<strong>Direct billing</strong> - When you add a key, requests use it and you pay OpenRouter directly. Spending limits and usage tracking still apply.`
+<strong>Direct billing</strong> - When you add a key, requests use it and you pay OpenRouter directly. Spending limits and usage tracking still apply.`,
   },
   {
     category: "Workspaces",
     question: "How do spending limits work?",
     answer: `<strong>Granular control</strong><br/>
 You can set spending limits for a workspace or a specific agent, for daily, monthly, or yearly periods.<br/><br/>
-<strong>Automatic protection</strong> - The system checks limits before each request, so you stay within budget.`
+<strong>Automatic protection</strong> - The system checks limits before each request, so you stay within budget.`,
+  },
+  {
+    category: "Workspaces",
+    question: "Can I set limits for individual agents?",
+    answer: `<strong>Agent-level caps</strong><br/>
+Yes. You can set separate limits for individual agents so high-traffic agents don’t impact the rest of your workspace.<br/><br/>
+<strong>Flexible time spans</strong> - Choose daily, monthly, or yearly limits per agent.`,
   },
   {
     category: "Workspaces",
     question: "How many team members can I add?",
     answer: `<strong>Team collaboration</strong><br/>
 Free plans support limited team members, while Pro plans include unlimited managers.<br/><br/>
-<strong>Permission levels</strong> - Team members can have different access: View, Edit, and Owner. Pro plans support multiple managers with shared access to all workspaces.`
+<strong>Permission levels</strong> - Team members can have different access: View, Edit, and Owner. Pro plans support multiple managers with shared access to all workspaces.`,
   },
   {
     category: "Workspaces",
     question: "What are external tool connections?",
     answer: `<strong>External tool connections explained</strong><br/>
 External tool connections let you connect agents to other apps and services you already use, like calendars, email, or databases.<br/><br/>
-<strong>Why it's useful</strong> - Agents can do real work, not just answer questions. They can schedule meetings, send emails, look up data, and more.`
+<strong>Why it's useful</strong> - Agents can do real work, not just answer questions. They can schedule meetings, send emails, look up data, and more.`,
   },
-  
+
   // Billing & Pricing
   {
     category: "Billing & Pricing",
     question: "What's included in my subscription?",
     answer: `<strong>Platform services</strong><br/>
 Your monthly subscription covers the Helpmaton platform: hosting, agent setup and management, memory, usage tracking, workspaces, team collaboration, document storage, and core features.<br/><br/>
-<strong>What's included</strong> - Everything you need to run and manage your AI agents on the Helpmaton platform.`
+<strong>What's included</strong> - Everything you need to run and manage your AI agents on the Helpmaton platform.`,
   },
   {
     category: "Billing & Pricing",
     question: "Are AI provider calls included in my subscription?",
     answer: `<strong>Separate costs</strong><br/>
 No. AI provider calls (OpenRouter, OpenAI, Anthropic, Google, etc.) are separate from your subscription.<br/><br/>
-<strong>Two options</strong> - Use your own OpenRouter key and pay providers directly, or buy credits through Helpmaton for pay-as-you-go billing.`
+<strong>Two options</strong> - Use your own OpenRouter key and pay providers directly, or buy credits through Helpmaton for pay-as-you-go billing.`,
   },
   {
     category: "Billing & Pricing",
     question: "How much do web searches cost?",
     answer: `<strong>Free daily allowance</strong><br/>
 All plans include 10 free web searches per 24 hours. Additional searches are billed at $0.008 each.<br/><br/>
-<strong>Transparent pricing</strong> - This keeps costs predictable for research and monitoring.`
+<strong>Transparent pricing</strong> - This keeps costs predictable for research and monitoring.`,
   },
   {
     category: "Billing & Pricing",
     question: "What counts as an AI request?",
     answer: `<strong>Understanding AI requests</strong><br/>
 An AI request is each time your agent processes a message. One message and one reply count as a single request.<br/><br/>
-<strong>What's included</strong> - This covers all agent work like answering questions, searching documents, recalling memory, and web searches.`
+<strong>What's included</strong> - This covers all agent work like answering questions, searching documents, recalling memory, and web searches.`,
   },
   {
     category: "Billing & Pricing",
     question: "What are credits and how do they work?",
     answer: `<strong>Credits explained</strong><br/>
 Credits are a prepaid balance for AI usage. When you buy credits, that balance goes down as your agents make AI requests.<br/><br/>
-<strong>How it works</strong> - Each request costs a small amount based on the work done. You can see costs in your usage reports, and credits are deducted automatically.`
+<strong>How it works</strong> - Each request costs a small amount based on the work done. You can see costs in your usage reports, and credits are deducted automatically.`,
   },
   {
     category: "Billing & Pricing",
@@ -163,7 +201,7 @@ Credits are a prepaid balance for AI usage. When you buy credits, that balance g
     answer: `<strong>Choosing the right option</strong><br/>
 <strong>Use your own API keys</strong> if you already pay AI providers directly and want to keep it that way.<br/><br/>
 <strong>Purchase credits</strong> if you want the simplest setup with one payment method.<br/><br/>
-Both options give you access to all Helpmaton features. Choose the billing style you prefer.`
+Both options give you access to all Helpmaton features. Choose the billing style you prefer.`,
   },
   {
     category: "Billing & Pricing",
@@ -171,14 +209,14 @@ Both options give you access to all Helpmaton features. Choose the billing style
     answer: `<strong>Automatic credit management</strong><br/>
 Before an AI request, the system estimates the cost and sets aside credits. After the request finishes, it adjusts to the real cost automatically.<br/><br/>
 <strong>Accurate billing</strong> - If the actual cost is lower, you get a refund. If it's higher, you pay the difference.<br/><br/>
-Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/credit-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Credit System documentation</a>.`
+Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/credit-system.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Credit System documentation</a>.`,
   },
   {
     category: "Billing & Pricing",
     question: "What does 'subscription sharing' mean?",
     answer: `<strong>Subscription sharing explained</strong><br/>
 Subscription sharing (on Pro plans) lets multiple people manage the same Helpmaton account. All managers can access all workspaces and work together.<br/><br/>
-<strong>Why it's useful</strong> - It’s great for teams that want to share one Pro subscription.`
+<strong>Why it's useful</strong> - It’s great for teams that want to share one Pro subscription.`,
   },
   {
     category: "Billing & Pricing",
@@ -186,9 +224,9 @@ Subscription sharing (on Pro plans) lets multiple people manage the same Helpmat
     answer: `<strong>Memory types explained</strong><br/>
 <strong>Working memory</strong> is the detailed, recent memory your agent keeps. It remembers the last 48 hours (Free) or 240 hours (Pro).<br/><br/>
 <strong>Summaries</strong> are shorter notes from older conversations. They are kept for 30 days (Free) or 120 days (Pro).<br/><br/>
-This keeps agents helpful without storing everything forever.`
+This keeps agents helpful without storing everything forever.`,
   },
-  
+
   // API & Integrations
   {
     category: "API & Integrations",
@@ -196,14 +234,21 @@ This keeps agents helpful without storing everything forever.`
     answer: `<strong>API for developers</strong><br/>
 Helpmaton offers a full API with documentation. You can sign in with web sessions, API tokens, workspace API keys, or secure sign-in (OAuth).<br/><br/>
 <strong>Complete documentation</strong> - See the <a href="https://app.helpmaton.com/docs/api" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">API Reference</a> for details and examples.<br/><br/>
-See also the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/api-reference.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">API Reference documentation</a> in the repository.`
+See also the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/api-reference.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">API Reference documentation</a> in the repository.`,
   },
   {
     category: "API & Integrations",
     question: "Can I set up webhooks?",
     answer: `<strong>App connections</strong><br/>
 Yes. Every agent can connect to other apps and services. You can send messages and receive AI-powered responses.<br/><br/>
-<strong>Real-time responses</strong> - Supports standard replies and live updates while the agent works.`
+<strong>Real-time responses</strong> - Supports standard replies and live updates while the agent works.`,
+  },
+  {
+    category: "API & Integrations",
+    question: "Do you support streaming responses?",
+    answer: `<strong>Streaming support</strong><br/>
+Yes. Helpmaton supports streaming responses (SSE) so you can build fast, real-time chat experiences.<br/><br/>
+<strong>Best for</strong> - Interactive UIs and tools that show answers as they are generated.`,
   },
   {
     category: "API & Integrations",
@@ -211,16 +256,17 @@ Yes. Every agent can connect to other apps and services. You can send messages a
     answer: `<strong>External tool connections</strong><br/>
 MCP servers are connections to external tools, databases, and services. They let agents access information and take actions beyond built-in tools.<br/><br/>
 <strong>Configuration</strong> - Set up authentication, then enable the connection per agent. Your agents can use the tools you connect.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/mcp-servers.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">integration documentation</a> for detailed setup instructions.`
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/mcp-servers.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">integration documentation</a> for detailed setup instructions.`,
   },
   {
     category: "API & Integrations",
-    question: "How do I connect my agents to Gmail, Google Calendar, or Google Drive?",
+    question:
+      "How do I connect my agents to Gmail, Google Calendar, or Google Drive?",
     answer: `<strong>Easy secure sign-in</strong><br/>
 Connect Google services in a few clicks. No complex setup—just connect your Google account.<br/><br/>
 <strong>Setup process</strong> - Go to "Integrations" in your workspace, create a connection for Gmail, Calendar, or Drive, click "Connect Google Account", sign in, and grant permissions. Enable the connection for your agents and you're done.<br/><br/>
 <strong>What agents can do</strong> - Gmail: search and read emails. Google Calendar: manage events and schedules. Google Drive: read files, Docs, Sheets, and Slides.<br/><br/>
-<strong>Secure by default</strong> - All connections use secure sign-in to keep your data private.`
+<strong>Secure by default</strong> - All connections use secure sign-in to keep your data private.`,
   },
   {
     category: "API & Integrations",
@@ -229,7 +275,7 @@ Connect Google services in a few clicks. No complex setup—just connect your Go
 Connect Notion in a few clicks. No complex setup—just connect your Notion account.<br/><br/>
 <strong>Setup process</strong> - Go to "Integrations" in your workspace, create a connection for Notion, click "Connect Notion Account", sign in, and grant permissions. Enable the connection for your agents and you're done.<br/><br/>
 <strong>What agents can do</strong> - Read and search pages, create and update content, and work with databases. Great for knowledge and documentation workflows.<br/><br/>
-<strong>Secure by default</strong> - All connections use secure sign-in to keep your data private.`
+<strong>Secure by default</strong> - All connections use secure sign-in to keep your data private.`,
   },
   {
     category: "API & Integrations",
@@ -237,7 +283,7 @@ Connect Notion in a few clicks. No complex setup—just connect your Notion acco
     answer: `<strong>Chat platform integration</strong><br/>
 Go to the Integrations page in your workspace. For Slack, you can generate an app configuration. For Discord, you set up slash commands.<br/><br/>
 <strong>Secure by default</strong> - Both platforms use verification to ensure only valid requests are processed. Bots respond in real time and can use the agent’s tools and memory.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/slack-integration.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Slack Integration guide</a> and <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/discord-integration.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Discord Integration guide</a> for detailed setup instructions.`
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/slack-integration.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Slack Integration guide</a> and <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/discord-integration.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Discord Integration guide</a> for detailed setup instructions.`,
   },
   {
     category: "API & Integrations",
@@ -245,30 +291,37 @@ See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/slack-int
     answer: `<strong>Chat bot deployment explained</strong><br/>
 When you deploy an agent as a Slack or Discord bot, it joins your chat and people can talk to it there, like messaging a teammate.<br/><br/>
 <strong>What it enables</strong> - Your team can ask questions and get help without leaving Slack or Discord. The agent replies quickly, remembers context, and can use its tools right in chat.<br/><br/>
-It’s like having an assistant in your chat room.`
+It’s like having an assistant in your chat room.`,
   },
-  
+
   // Technical
   {
     category: "Technical",
     question: "How are errors handled?",
     answer: `<strong>Automatic error tracking</strong><br/>
 When something goes wrong, you’ll see it right away. Conversations are saved and errors are clearly marked with details.<br/><br/>
-<strong>Error visibility</strong> - Error badges make problems easy to spot, and detailed views help you fix issues faster.`
+<strong>Error visibility</strong> - Error badges make problems easy to spot, and detailed views help you fix issues faster.`,
   },
   {
     category: "Technical",
     question: "What file formats are supported for documents?",
     answer: `<strong>Document management</strong><br/>
-Helpmaton supports markdown and text documents. You can upload files and organize them in folders.<br/><br/>
-<strong>Smart search</strong> - Agents can search by meaning, not just keywords, to give better answers.`
+Helpmaton supports markdown and text documents for knowledge bases. You can upload files and organize them in folders.<br/><br/>
+<strong>Smart search</strong> - Agents can search by meaning, not just keywords, to give better answers.`,
   },
   {
     category: "Technical",
     question: "How does web search work?",
     answer: `<strong>Real-time information access</strong><br/>
 Agents can search the web for current information and summarize specific pages when you give a URL.<br/><br/>
-<strong>Easy enablement</strong> - You can turn these features on per agent with simple toggles.`
+<strong>Easy enablement</strong> - You can turn these features on per agent with simple toggles.`,
+  },
+  {
+    category: "Technical",
+    question: "What are conversation attachments?",
+    answer: `<strong>Files and images in chat</strong><br/>
+Conversation attachments let you add files and images to a specific conversation so the agent can use them as context.<br/><br/>
+<strong>Different from documents</strong> - Knowledge base documents are Markdown/text; attachments are for per-chat files.`,
   },
   {
     category: "Technical",
@@ -277,67 +330,70 @@ Agents can search the web for current information and summarize specific pages w
 Helpmaton runs on modern cloud infrastructure built for reliability and security. Data is encrypted and stored securely.<br/><br/>
 <strong>High availability</strong> - The platform scales with your usage so agents stay available when you need them.<br/><br/>
 <strong>Region</strong> - Deployed in London (eu-west-2) with built-in redundancy.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Architecture Overview</a> for detailed technical information.`
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Architecture Overview</a> for detailed technical information.`,
   },
   {
     category: "Technical",
     question: "How does usage analytics work?",
     answer: `<strong>Comprehensive tracking</strong><br/>
 Helpmaton tracks your AI usage and aggregates it by day and hour. You can filter by date ranges to see history.<br/><br/>
-<strong>Detailed breakdowns</strong> - View usage and costs by workspace or agent to see where time and spend go.`
+<strong>Detailed breakdowns</strong> - View usage and costs by workspace or agent to see where time and spend go.`,
   },
-  
-  // Self-Hosting & Open Source
+
+  // Self-Hosting & Source-Available
   {
-    category: "Self-Hosting & Open Source",
-    question: "Is Helpmaton open source?",
+    category: "Self-Hosting & Source-Available",
+    question: "Is Helpmaton open source or source-available?",
     answer: `<strong>Source-available license</strong><br/>
 Yes. Helpmaton uses the Business Source License 1.1, which makes the source code available for evaluation, internal use, and contribution.<br/><br/>
 <strong>License terms</strong> - It remains source-available until November 1st, 2029, when it converts to Apache License 2.0. You can view and contribute on <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">GitHub</a>.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">LICENSE file</a> for full license terms.`
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">LICENSE file</a> for full license terms.`,
   },
   {
-    category: "Self-Hosting & Open Source",
+    category: "Self-Hosting & Source-Available",
     question: "What license does Helpmaton use?",
     answer: `<strong>Business Source License 1.1</strong><br/>
 Helpmaton uses the Business Source License 1.1, which makes the software source-available while protecting commercial hosting rights until the Change Date.<br/><br/>
 <strong>Change Date</strong> - On November 1st, 2029, the license converts to Apache License 2.0. Until then, you can use it internally or self-host for your own business, but you cannot offer it as a hosted service to others.<br/><br/>
-Read the full license terms in the <a href="https://github.com/djinilabs/helpmaton/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">LICENSE.md file</a>.`
+Read the full license terms in the <a href="https://github.com/djinilabs/helpmaton/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">LICENSE.md file</a>.`,
   },
   {
-    category: "Self-Hosting & Open Source",
+    category: "Self-Hosting & Source-Available",
     question: "Can I self-host Helpmaton?",
     answer: `<strong>Full self-hosting support</strong><br/>
 Yes. The full source code is available on <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">GitHub</a>, so you can run your own instance and customize it.<br/><br/>
 <strong>Infrastructure requirements</strong> - You’ll need an AWS account with services like Lambda, DynamoDB, S3, API Gateway, CloudFront, and Route53. The platform uses Architect Framework for deployment. See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/deployment.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">deployment documentation</a> for setup steps.<br/><br/>
-<strong>Full control</strong> - Self-hosting gives you full control of your data and infrastructure.`
+<strong>Full control</strong> - Self-hosting gives you full control of your data and infrastructure.`,
   },
   {
-    category: "Self-Hosting & Open Source",
+    category: "Self-Hosting & Source-Available",
     question: "What do I need to self-host Helpmaton?",
     answer: `<strong>Infrastructure setup</strong><br/>
 You’ll need an AWS account with services like Lambda, DynamoDB, S3, API Gateway, CloudFront, Route53, and ACM for SSL certificates. The platform is designed for AWS serverless infrastructure.<br/><br/>
 <strong>Development setup</strong> - Local development uses Architect Sandbox (DynamoDB emulator) and s3rver (local S3). See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/development-setup.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">development setup guide</a> for details.<br/><br/>
-<strong>Deployment</strong> - Deploy via GitHub Actions or manually with Architect Framework. Required environment variables and secrets are listed in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/deployment.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">deployment guide</a>.`
+<strong>Deployment</strong> - Deploy via GitHub Actions or manually with Architect Framework. Required environment variables and secrets are listed in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/deployment.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">deployment guide</a>.`,
   },
   {
-    category: "Self-Hosting & Open Source",
+    category: "Self-Hosting & Source-Available",
     question: "How does the vector database work?",
     answer: `<strong>How memory storage works</strong><br/>
 Agent memory is stored in specialized databases. Each agent organizes memory by time periods to make searching fast and relevant.<br/><br/>
 <strong>Reliable storage</strong> - Data is written safely and consistently to avoid loss or corruption.<br/><br/>
 <strong>Fast retrieval</strong> - Smart search helps agents quickly find relevant details from past conversations.<br/><br/>
-See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/vector-database.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">technical documentation</a> for complete technical details.`
-  }
+See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/vector-database.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">technical documentation</a> for complete technical details.`,
+  },
 ];
 
-const categories = Array.from(new Set(faqs.map(faq => faq.category)));
+const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
 ---
 
 <div class="space-y-6">
   <!-- Search Input -->
   <div class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-    <label for="faq-search" class="block text-sm font-semibold text-neutral-900 mb-3">
+    <label
+      for="faq-search"
+      class="block text-sm font-semibold text-neutral-900 mb-3"
+    >
       Search FAQs
     </label>
     <input
@@ -349,40 +405,47 @@ const categories = Array.from(new Set(faqs.map(faq => faq.category)));
   </div>
 
   <!-- No Results Message (hidden by default) -->
-  <div id="no-results" class="hidden bg-white rounded-lg shadow-soft p-6 border border-neutral-200 text-center">
+  <div
+    id="no-results"
+    class="hidden bg-white rounded-lg shadow-soft p-6 border border-neutral-200 text-center"
+  >
     <p class="text-neutral-600">No FAQs found matching your search.</p>
   </div>
 
   <!-- FAQ Items by Category -->
-  {categories.map((category) => (
-    <div class="faq-category" data-category={category}>
-      <h2 class="text-2xl font-semibold text-neutral-900 mb-4">{category}</h2>
-      <div class="space-y-4">
-        {faqs.filter(faq => faq.category === category).map((faq, index) => (
-          <div
-            class="faq-item bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
-            data-question={faq.question.toLowerCase()}
-            data-answer={faq.answer.toLowerCase()}
-          >
-            <h3 class="text-lg font-semibold text-neutral-900 mb-3">
-              {faq.question}
-            </h3>
-            <div
-              class="text-neutral-600 leading-relaxed [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2 [&_a]:text-primary-600 [&_a]:hover:text-primary-700 [&_a]:underline [&_a]:transition-colors"
-              set:html={faq.answer}
-            />
-          </div>
-        ))}
+  {
+    categories.map((category) => (
+      <div class="faq-category" data-category={category}>
+        <h2 class="text-2xl font-semibold text-neutral-900 mb-4">{category}</h2>
+        <div class="space-y-4">
+          {faqs
+            .filter((faq) => faq.category === category)
+            .map((faq, index) => (
+              <div
+                class="faq-item bg-white rounded-lg shadow-soft p-6 border border-neutral-200"
+                data-question={faq.question.toLowerCase()}
+                data-answer={faq.answer.toLowerCase()}
+              >
+                <h3 class="text-lg font-semibold text-neutral-900 mb-3">
+                  {faq.question}
+                </h3>
+                <div
+                  class="text-neutral-600 leading-relaxed [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2 [&_a]:text-primary-600 [&_a]:hover:text-primary-700 [&_a]:underline [&_a]:transition-colors"
+                  set:html={faq.answer}
+                />
+              </div>
+            ))}
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </div>
 
 <script>
-  const searchInput = document.getElementById('faq-search');
-  const faqItems = document.querySelectorAll('.faq-item');
-  const faqCategories = document.querySelectorAll('.faq-category');
-  const noResults = document.getElementById('no-results');
+  const searchInput = document.getElementById("faq-search");
+  const faqItems = document.querySelectorAll(".faq-item");
+  const faqCategories = document.querySelectorAll(".faq-category");
+  const noResults = document.getElementById("no-results");
 
   function filterFAQs(searchTerm) {
     const term = searchTerm.toLowerCase().trim();
@@ -390,45 +453,46 @@ const categories = Array.from(new Set(faqs.map(faq => faq.category)));
 
     // Filter FAQ items
     faqItems.forEach((item) => {
-      const question = item.getAttribute('data-question') || '';
-      const answer = item.getAttribute('data-answer') || '';
-      const matches = term === '' || question.includes(term) || answer.includes(term);
-      
+      const question = item.getAttribute("data-question") || "";
+      const answer = item.getAttribute("data-answer") || "";
+      const matches =
+        term === "" || question.includes(term) || answer.includes(term);
+
       if (matches) {
-        item.style.display = '';
+        item.style.display = "";
         hasResults = true;
       } else {
-        item.style.display = 'none';
+        item.style.display = "none";
       }
     });
 
     // Show/hide categories based on whether they have visible items
     faqCategories.forEach((category) => {
-      const items = category.querySelectorAll('.faq-item');
+      const items = category.querySelectorAll(".faq-item");
       let categoryHasVisibleItems = false;
-      
+
       items.forEach((item) => {
-        if (item.style.display !== 'none') {
+        if (item.style.display !== "none") {
           categoryHasVisibleItems = true;
         }
       });
-      
+
       if (categoryHasVisibleItems) {
-        category.style.display = '';
+        category.style.display = "";
       } else {
-        category.style.display = 'none';
+        category.style.display = "none";
       }
     });
 
     // Show/hide no results message
-    if (hasResults || term === '') {
-      noResults?.classList.add('hidden');
+    if (hasResults || term === "") {
+      noResults?.classList.add("hidden");
     } else {
-      noResults?.classList.remove('hidden');
+      noResults?.classList.remove("hidden");
     }
   }
 
-  searchInput?.addEventListener('input', (e) => {
+  searchInput?.addEventListener("input", (e) => {
     filterFAQs(e.target.value);
   });
 
@@ -437,6 +501,6 @@ const categories = Array.from(new Set(faqs.map(faq => faq.category)));
     const hash = decodeURIComponent(window.location.hash.substring(1));
     searchInput.value = hash;
     filterFAQs(hash);
-    searchInput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    searchInput.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 </script>

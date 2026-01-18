@@ -3,9 +3,16 @@ const features = [
   {
     title: "Workspaces",
     description:
-      "Organize your AI agents into dedicated spaces. Each workspace has its own budget, access, and team members. Great for separate projects or clients.",
+      "Organize your AI agents into dedicated spaces. Each workspace has its own access, settings, and team members.",
     icon: "📁",
-    highlight: "Separate budgets per workspace",
+    highlight: "Clear separation by project",
+  },
+  {
+    title: "Budget Control",
+    description:
+      "Set agent-specific spending limits with daily, monthly, or yearly caps to keep costs predictable.",
+    icon: "🧮",
+    highlight: "Agent-level limits",
   },
   {
     title: "AI Agents",
@@ -15,6 +22,13 @@ const features = [
     highlight: "Always available",
   },
   {
+    title: "Judge Evals",
+    description:
+      "Evaluate agent conversations to score quality, validate behavior, and catch regressions with just a couple of clicks.",
+    icon: "✅",
+    highlight: "Prove quality fast",
+  },
+  {
     title: "Agent Memory",
     description:
       "Agents remember key details from your conversations and use them to give better, more personal answers.",
@@ -22,32 +36,60 @@ const features = [
     highlight: "Remembers what matters",
   },
   {
-    title: "Usage Analytics",
+    title: "Custom Summaries",
     description:
-      "Track how much you use your agents. See usage by day, workspace, or agent and keep an eye on costs.",
-    icon: "📊",
-    highlight: "Clear usage reports",
+      "Tailor memory summaries per agent and time grain (daily, weekly, monthly, quarterly, yearly).",
+    icon: "🗂️",
+    highlight: "Summaries you control",
+  },
+  {
+    title: "Agent Schedules",
+    description:
+      "Run agents on a schedule with cron-based prompts for recurring reports and proactive monitoring.",
+    icon: "⏰",
+    highlight: "Automate recurring work",
   },
   {
     title: "Document Management",
     description:
-      "Upload and organize documents in folders. Your agents can use them to answer questions and help you faster.",
+      "Upload Markdown and text documents to build knowledge bases your agents can search and use.",
     icon: "📄",
-    highlight: "Unlimited document storage",
+    highlight: "Reliable knowledge base",
+  },
+  {
+    title: "Conversation Attachments",
+    description:
+      "Attach files and images directly to conversations for richer context and multi-modal help.",
+    icon: "📎",
+    highlight: "Files + images in chat",
   },
   {
     title: "Web Search & Content Extraction",
     description:
-      "Let your agents look up current information and summarize web pages. Great for research, monitoring updates, and content reviews.",
+      "Let your agents look up current information and summarize web pages. Great for research and monitoring updates.",
     icon: "🌐",
     highlight: "Up-to-date info",
   },
   {
-    title: "App Connections & Instant Responses",
+    title: "Streaming Responses",
     description:
-      "Connect your agents to the apps you already use. Send messages, get replies, and keep workflows moving with fast updates.",
+      "Stream responses token-by-token (SSE) for fast, real-time chat experiences.",
+    icon: "⚡",
+    highlight: "Real-time UX",
+  },
+  {
+    title: "Webhooks & API",
+    description:
+      "Every agent exposes webhook endpoints so you can send messages and receive AI-powered responses.",
     icon: "🔗",
-    highlight: "Fast, connected replies",
+    highlight: "Integrate anywhere",
+  },
+  {
+    title: "Built-in Tools & Integrations",
+    description:
+      "Agents come with built-in tools like document search, memory, web search, email, and notifications. Add more tools when you need them.",
+    icon: "🔌",
+    highlight: "Tools included",
   },
   {
     title: "Google Workspace Integration",
@@ -64,13 +106,6 @@ const features = [
     highlight: "Quick Notion connect",
   },
   {
-    title: "Built-in Tools & Integrations",
-    description:
-      "Agents come with built-in tools like document search, memory, web search, email, and notifications. Add more tools whenever you need them.",
-    icon: "🔌",
-    highlight: "Tools included",
-  },
-  {
     title: "Chat Platform Bot Integration",
     description:
       "Use your agents in Slack or Discord so your team can chat with them directly. Easy setup with quick, natural replies.",
@@ -85,11 +120,18 @@ const features = [
     highlight: "Team updates",
   },
   {
-    title: "API for Developers",
+    title: "Usage Analytics",
     description:
-      "For developers: full API access to build custom workflows and integrations.",
-    icon: "⚙️",
-    highlight: "Developer API access",
+      "Track how much you use your agents. See usage by day, workspace, or agent and keep an eye on costs.",
+    icon: "📊",
+    highlight: "Clear usage reports",
+  },
+  {
+    title: "Error Tracking",
+    description:
+      "See problems right away. Conversations are saved and errors are clearly marked so you can fix issues fast.",
+    icon: "🐛",
+    highlight: "Easy to spot issues",
   },
   {
     title: "Team Collaboration",
@@ -101,16 +143,9 @@ const features = [
   {
     title: "Cost Management & Flexible Billing",
     description:
-      "Buy credits or use your own provider keys. Set spending limits by workspace or agent to stay on budget.",
+      "Buy credits or use your own key (currently via OpenRouter). Spending limits still apply.",
     icon: "💳",
     highlight: "Flexible billing",
-  },
-  {
-    title: "Error Tracking",
-    description:
-      "See problems right away. Conversations are saved and errors are clearly marked so you can fix issues fast.",
-    icon: "🐛",
-    highlight: "Easy to spot issues",
   },
   {
     title: "Agent Delegation",
@@ -120,11 +155,11 @@ const features = [
     highlight: "Agents work together",
   },
   {
-    title: "Open Source",
+    title: "Source-Available",
     description:
-      "Host it yourself with full source code access. Customize it and keep control of your data.",
-    icon: "🔓",
-    highlight: "Source code included",
+      "Source-available under the Business Source License 1.1, converting to Apache 2.0 on 2029-11-01.",
+    icon: "🧩",
+    highlight: "Self-host when you need",
   },
 ];
 ---
