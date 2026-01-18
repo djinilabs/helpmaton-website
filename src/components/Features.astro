@@ -1,164 +1,166 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const features = [
   {
     title: "Workspaces",
     description:
       "Organize your AI agents into dedicated spaces. Each workspace has its own access, settings, and team members.",
-    icon: "📁",
+    icon: "heroicons:squares-2x2",
     highlight: "Clear separation by project",
   },
   {
     title: "Budget Control",
     description:
       "Set agent-specific spending limits with daily, monthly, or yearly caps to keep costs predictable.",
-    icon: "🧮",
+    icon: "heroicons:calculator",
     highlight: "Agent-level limits",
   },
   {
     title: "AI Agents",
     description:
       "Create AI agents with clear roles and instructions. Use them across your workspaces and let them handle tasks on their own.",
-    icon: "🤖",
+    icon: "heroicons:cpu-chip",
     highlight: "Always available",
   },
   {
     title: "Judge Evals",
     description:
       "Evaluate agent conversations to score quality, validate behavior, and catch regressions with just a couple of clicks.",
-    icon: "✅",
+    icon: "heroicons:check-badge",
     highlight: "Prove quality fast",
   },
   {
     title: "Agent Memory",
     description:
       "Agents remember key details from your conversations and use them to give better, more personal answers.",
-    icon: "🧠",
+    icon: "heroicons:bookmark-square",
     highlight: "Remembers what matters",
   },
   {
     title: "Custom Summaries",
     description:
       "Tailor memory summaries per agent and time grain (daily, weekly, monthly, quarterly, yearly).",
-    icon: "🗂️",
+    icon: "heroicons:document-text",
     highlight: "Summaries you control",
   },
   {
     title: "Agent Schedules",
     description:
       "Run agents on a schedule with cron-based prompts for recurring reports and proactive monitoring.",
-    icon: "⏰",
+    icon: "heroicons:clock",
     highlight: "Automate recurring work",
   },
   {
     title: "Document Management",
     description:
       "Upload Markdown and text documents to build knowledge bases your agents can search and use.",
-    icon: "📄",
+    icon: "heroicons:folder-open",
     highlight: "Reliable knowledge base",
   },
   {
     title: "Conversation Attachments",
     description:
       "Attach files and images directly to conversations for richer context and multi-modal help.",
-    icon: "📎",
+    icon: "heroicons:paper-clip",
     highlight: "Files + images in chat",
   },
   {
     title: "Web Search & Content Extraction",
     description:
       "Let your agents look up current information and summarize web pages. Great for research and monitoring updates.",
-    icon: "🌐",
+    icon: "heroicons:globe-alt",
     highlight: "Up-to-date info",
   },
   {
     title: "Streaming Responses",
     description:
       "Stream responses token-by-token (SSE) for fast, real-time chat experiences.",
-    icon: "⚡",
+    icon: "heroicons:bolt",
     highlight: "Real-time UX",
   },
   {
     title: "Webhooks & API",
     description:
       "Every agent exposes webhook endpoints so you can send messages and receive AI-powered responses.",
-    icon: "🔗",
+    icon: "heroicons:link",
     highlight: "Integrate anywhere",
   },
   {
     title: "Built-in Tools & Integrations",
     description:
       "Agents come with built-in tools like document search, memory, web search, email, and notifications. Add more tools when you need them.",
-    icon: "🔌",
+    icon: "heroicons:puzzle-piece",
     highlight: "Tools included",
   },
   {
     title: "Google Workspace Integration",
     description:
       "Connect Gmail, Google Calendar, and Google Drive in a few clicks. Agents can manage schedules, read and search emails, and access Drive files.",
-    icon: "📅",
+    icon: "heroicons:calendar-days",
     highlight: "Quick Google connect",
   },
   {
     title: "Notion Integration",
     description:
       "Connect Notion in a few clicks. Agents can read and update pages, search content, and manage databases for docs and knowledge.",
-    icon: "📝",
+    icon: "heroicons:document",
     highlight: "Quick Notion connect",
   },
   {
     title: "Chat Platform Bot Integration",
     description:
       "Use your agents in Slack or Discord so your team can chat with them directly. Easy setup with quick, natural replies.",
-    icon: "💬",
+    icon: "heroicons:chat-bubble-left-right",
     highlight: "Chat with your agent",
   },
   {
     title: "Notifications & Email",
     description:
       "Send updates to Slack or Discord channels and deliver emails when needed. Keep your team in the loop automatically.",
-    icon: "📧",
+    icon: "heroicons:envelope",
     highlight: "Team updates",
   },
   {
     title: "Usage Analytics",
     description:
       "Track how much you use your agents. See usage by day, workspace, or agent and keep an eye on costs.",
-    icon: "📊",
+    icon: "heroicons:chart-bar",
     highlight: "Clear usage reports",
   },
   {
     title: "Error Tracking",
     description:
       "See problems right away. Conversations are saved and errors are clearly marked so you can fix issues fast.",
-    icon: "🐛",
+    icon: "heroicons:bug-ant",
     highlight: "Easy to spot issues",
   },
   {
     title: "Team Collaboration",
     description:
       "Invite teammates and set simple access levels. Share workspaces and work together smoothly.",
-    icon: "🤝",
+    icon: "heroicons:user-group",
     highlight: "Shared access",
   },
   {
     title: "Cost Management & Flexible Billing",
     description:
       "Buy credits or use your own key (currently via OpenRouter). Spending limits still apply.",
-    icon: "💳",
+    icon: "heroicons:credit-card",
     highlight: "Flexible billing",
   },
   {
     title: "Agent Delegation",
     description:
       "Agents can hand off tasks to other agents in the same workspace so work keeps moving.",
-    icon: "🔄",
+    icon: "heroicons:arrow-path",
     highlight: "Agents work together",
   },
   {
     title: "Source-Available",
     description:
       "Source-available under the Business Source License 1.1, converting to Apache 2.0 on 2029-11-01.",
-    icon: "🧩",
+    icon: "heroicons:code-bracket-square",
     highlight: "Self-host when you need",
   },
 ];
@@ -188,8 +190,12 @@ const features = [
           <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-primary-300 hover:-translate-y-1 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
             <div class="relative z-10">
-              <div class="text-4xl mb-4 transform group-hover:scale-110 transition-transform">
-                {feature.icon}
+              <div class="mb-4 transform group-hover:scale-110 transition-transform">
+                <Icon
+                  name={feature.icon}
+                  class="w-10 h-10 text-primary-600"
+                  aria-hidden="true"
+                />
               </div>
               <h3 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
                 {feature.title}

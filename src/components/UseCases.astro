@@ -1,11 +1,13 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const useCases = [
   {
     title: "Agent Evaluation (Judge Evals)",
     description: `<strong>✅ Quality, in a couple of clicks</strong><br/>
 Run judge evaluations to score conversations, validate outcomes, and catch regressions after changes.<br/><br/>
 <strong>🎛️ Sampling controls</strong> help balance insight and cost. <strong>📊 Analytics</strong> track results over time.`,
-    icon: "✅",
+    icon: "heroicons:check-badge",
     highlight: "Prove quality fast",
   },
   {
@@ -13,7 +15,7 @@ Run judge evaluations to score conversations, validate outcomes, and catch regre
     description: `<strong>💬 Intelligent support</strong><br/>
 Handle questions, troubleshoot issues, and hand off cases. Use them in Slack or Discord for direct support chats.<br/><br/>
 <strong>📄 Documents</strong> keep answers consistent. <strong>📎 Attachments</strong> help with screenshots and files.`,
-    icon: "🎧",
+    icon: "heroicons:lifebuoy",
     highlight: "Helpful support",
   },
   {
@@ -21,7 +23,7 @@ Handle questions, troubleshoot issues, and hand off cases. Use them in Slack or 
     description: `<strong>⚙️ End-to-end automation</strong><br/>
 Coordinate workflows, systems, and approvals with integrations and webhooks.<br/><br/>
 <strong>🔄 Agent delegation</strong> routes tasks. <strong>📧 Notifications</strong> share results.`,
-    icon: "⚙️",
+    icon: "heroicons:cog-6-tooth",
     highlight: "End-to-end automation",
   },
   {
@@ -29,7 +31,7 @@ Coordinate workflows, systems, and approvals with integrations and webhooks.<br/
     description: `<strong>📚 Comprehensive research</strong><br/>
 Gather information, review documents, and share insights across your team.<br/><br/>
 <strong>🌐 Web search</strong> finds the latest info. <strong>📄 Document management</strong> keeps sources together.`,
-    icon: "🔍",
+    icon: "heroicons:magnifying-glass",
     highlight: "Fresh research",
   },
   {
@@ -37,7 +39,7 @@ Gather information, review documents, and share insights across your team.<br/><
     description: `<strong>⏰ Proactive reporting</strong><br/>
 Run agents on a schedule to generate reports, monitor updates, and alert teams before issues escalate.<br/><br/>
 <strong>⏰ Agent schedules</strong> automate runs. <strong>📧 Notifications</strong> deliver results.`,
-    icon: "⏰",
+    icon: "heroicons:clock",
     highlight: "Proactive updates",
   },
   {
@@ -45,7 +47,7 @@ Run agents on a schedule to generate reports, monitor updates, and alert teams b
     description: `<strong>⚡ Real-time responses</strong><br/>
 Build chat experiences with streaming updates so users see answers as they’re generated.<br/><br/>
 <strong>⚡ Streaming</strong> for fast UX. <strong>🔗 Webhooks</strong> for easy integration.`,
-    icon: "⚡",
+    icon: "heroicons:bolt",
     highlight: "Real-time UX",
   },
   {
@@ -53,7 +55,7 @@ Build chat experiences with streaming updates so users see answers as they’re 
     description: `<strong>💼 Team collaboration</strong><br/>
 Deploy agents as Slack bots that respond to mentions and direct messages, right in your team chat.<br/><br/>
 <strong>🔐 Secure by default</strong> with verification. <strong>⚡ Fast replies</strong> that feel natural.`,
-    icon: "💼",
+    icon: "heroicons:briefcase",
     highlight: "Team chat help",
   },
   {
@@ -61,7 +63,7 @@ Deploy agents as Slack bots that respond to mentions and direct messages, right 
     description: `<strong>🌐 Community engagement</strong><br/>
 Deploy agents as Discord bots with slash commands so communities can chat with them directly.<br/><br/>
 <strong>🔐 Secure verification</strong> keeps interactions safe. <strong>⚡ Fast replies</strong> that feel natural.`,
-    icon: "🌐",
+    icon: "heroicons:globe-alt",
     highlight: "Community help",
   },
   {
@@ -69,7 +71,7 @@ Deploy agents as Discord bots with slash commands so communities can chat with t
     description: `<strong>🔗 Complete Google Workspace integration</strong><br/>
 Connect Gmail, Google Calendar, and Google Drive in a few clicks.<br/><br/>
 <strong>📧 Gmail</strong> for email. <strong>📅 Google Calendar</strong> for schedules. <strong>📁 Google Drive</strong> for files.`,
-    icon: "🔗",
+    icon: "heroicons:link",
     highlight: "Quick setup",
   },
   {
@@ -77,7 +79,7 @@ Connect Gmail, Google Calendar, and Google Drive in a few clicks.<br/><br/>
     description: `<strong>📝 Notion workspace integration</strong><br/>
 Connect Notion in a few clicks. Agents can read and update pages, search content, and manage databases.<br/><br/>
 <strong>📚 Knowledge help</strong> for docs. <strong>🗄️ Database help</strong> for records and tracking.`,
-    icon: "📝",
+    icon: "heroicons:document",
     highlight: "Quick setup",
   },
   {
@@ -85,7 +87,7 @@ Connect Notion in a few clicks. Agents can read and update pages, search content
     description: `<strong>✨ Intelligent calendar management</strong><br/>
 Create assistants that manage calendars, schedule meetings, and coordinate with teams.<br/><br/>
 <strong>🧠 Memory</strong> remembers your preferences and routines over time.`,
-    icon: "👔",
+    icon: "heroicons:user-circle",
     highlight: "Always on",
   },
   {
@@ -93,7 +95,7 @@ Create assistants that manage calendars, schedule meetings, and coordinate with 
     description: `<strong>🌍 Cross-timezone coordination</strong><br/>
 Build agents that coordinate meetings and handle rescheduling automatically.<br/><br/>
 <strong>⚡ Fast replies</strong> keep everyone informed. <strong>📅 Google Calendar</strong> connects in a few clicks.`,
-    icon: "📅",
+    icon: "heroicons:calendar-days",
     highlight: "Easy scheduling",
   },
   {
@@ -101,7 +103,7 @@ Build agents that coordinate meetings and handle rescheduling automatically.<br/
     description: `<strong>📬 Smart email handling</strong><br/>
 Create agents that filter, prioritize, and respond based on your preferences.<br/><br/>
 <strong>📧 Gmail</strong> connects in a few clicks so agents can search and manage emails.`,
-    icon: "📧",
+    icon: "heroicons:envelope",
     highlight: "Inbox help",
   },
   {
@@ -109,7 +111,7 @@ Create agents that filter, prioritize, and respond based on your preferences.<br
     description: `<strong>📄 Web content extraction</strong><br/>
 Deploy agents that extract and summarize content from web pages and articles.<br/><br/>
 <strong>🌐 Web fetch</strong> reads any URL. <strong>📄 Document management</strong> stores summaries.`,
-    icon: "📄",
+    icon: "heroicons:document-magnifying-glass",
     highlight: "Quick summaries",
   },
   {
@@ -117,7 +119,7 @@ Deploy agents that extract and summarize content from web pages and articles.<br
     description: `<strong>📰 Real-time news tracking</strong><br/>
 Create agents that monitor news, track industry changes, and send updates.<br/><br/>
 <strong>🌐 Web search</strong> finds the latest articles. <strong>💬 Discord</strong> sends alerts.`,
-    icon: "📰",
+    icon: "heroicons:newspaper",
     highlight: "Live updates",
   },
   {
@@ -125,7 +127,7 @@ Create agents that monitor news, track industry changes, and send updates.<br/><
     description: `<strong>⚡ Instant answers</strong><br/>
 Deploy FAQ agents in Slack or Discord to answer questions quickly and learn from use.<br/><br/>
 <strong>📄 Document management</strong> stores FAQ content. <strong>💰 Spending limits</strong> per agent.`,
-    icon: "❓",
+    icon: "heroicons:question-mark-circle",
     highlight: "Quick answers",
   },
   {
@@ -133,7 +135,7 @@ Deploy FAQ agents in Slack or Discord to answer questions quickly and learn from
     description: `<strong>🎯 Smart routing</strong><br/>
 Create agents that review tickets, tag issues, and prioritize by urgency.<br/><br/>
 <strong>🔌 Connects</strong> to ticketing systems. <strong>📄 Document management</strong> stores routing rules.`,
-    icon: "🎫",
+    icon: "heroicons:ticket",
     highlight: "Clean routing",
   },
   {
@@ -141,7 +143,7 @@ Create agents that review tickets, tag issues, and prioritize by urgency.<br/><b
     description: `<strong>📦 Real-time tracking</strong><br/>
 Build agents that share order updates and notify customers.<br/><br/>
 <strong>🔗 Connects</strong> to order systems. <strong>💬 Discord</strong> sends team updates.`,
-    icon: "📦",
+    icon: "heroicons:truck",
     highlight: "Proactive updates",
   },
   {
@@ -149,7 +151,7 @@ Build agents that share order updates and notify customers.<br/><br/>
     description: `<strong>💚 Health monitoring</strong><br/>
 Deploy agents that track metrics, spot issues, and alert on thresholds.<br/><br/>
 <strong>🔌 Connects</strong> to monitoring tools. <strong>💬 Discord</strong> sends notifications.`,
-    icon: "💚",
+    icon: "heroicons:heart",
     highlight: "Live monitoring",
   },
   {
@@ -157,7 +159,7 @@ Deploy agents that track metrics, spot issues, and alert on thresholds.<br/><br/
     description: `<strong>🔒 Threat detection</strong><br/>
 Create agents that monitor logs, flag threats, and trigger responses.<br/><br/>
 <strong>🔌 Connects</strong> to security systems. <strong>💬 Discord</strong> sends critical alerts.`,
-    icon: "🔒",
+    icon: "heroicons:lock-closed",
     highlight: "Threat alerts",
   },
   {
@@ -165,7 +167,7 @@ Create agents that monitor logs, flag threats, and trigger responses.<br/><br/>
     description: `<strong>⚡ Performance insights</strong><br/>
 Build agents that monitor performance, track KPIs, and spot bottlenecks.<br/><br/>
 <strong>🔌 Connects</strong> to monitoring tools. <strong>📄 Document management</strong> stores baselines.`,
-    icon: "⚡",
+    icon: "heroicons:chart-bar",
     highlight: "Performance insights",
   },
   {
@@ -173,7 +175,7 @@ Build agents that monitor performance, track KPIs, and spot bottlenecks.<br/><br
     description: `<strong>🚨 Pattern recognition</strong><br/>
 Deploy agents that learn normal patterns and flag unusual changes.<br/><br/>
 <strong>🧠 Memory</strong> learns over time. <strong>💬 Discord</strong> notifies teams instantly.`,
-    icon: "🚨",
+    icon: "heroicons:exclamation-triangle",
     highlight: "Spot anomalies",
   },
   {
@@ -181,7 +183,7 @@ Deploy agents that learn normal patterns and flag unusual changes.<br/><br/>
     description: `<strong>✍️ Brand-consistent content</strong><br/>
 Create agents that draft blog posts, social content, and marketing copy.<br/><br/>
 <strong>📄 Document management</strong> stores brand guidelines and style notes.`,
-    icon: "✍️",
+    icon: "heroicons:pencil-square",
     highlight: "On-brand writing",
   },
   {
@@ -189,7 +191,7 @@ Create agents that draft blog posts, social content, and marketing copy.<br/><br
     description: `<strong>📈 Automated insights</strong><br/>
 Build agents that analyze data, create reports, and share insights.<br/><br/>
 <strong>🔌 Connects</strong> to databases and analytics tools.`,
-    icon: "📈",
+    icon: "heroicons:chart-bar-square",
     highlight: "Helpful insights",
   },
   {
@@ -197,7 +199,7 @@ Build agents that analyze data, create reports, and share insights.<br/><br/>
     description: `<strong>📝 Key point extraction</strong><br/>
 Deploy agents that summarize documents, notes, and reports.<br/><br/>
 <strong>📄 Document management</strong> keeps source files organized.`,
-    icon: "📝",
+    icon: "heroicons:document-text",
     highlight: "Key takeaways",
   },
   {
@@ -205,7 +207,7 @@ Deploy agents that summarize documents, notes, and reports.<br/><br/>
     description: `<strong>🎯 Automated qualification</strong><br/>
 Create agents that engage leads, score prospects, and route to sales.<br/><br/>
 <strong>🔌 Connects</strong> to CRM systems. <strong>🔗 App connections</strong> keep updates fast.`,
-    icon: "🎯",
+    icon: "heroicons:cursor-arrow-rays",
     highlight: "Lead routing",
   },
   {
@@ -213,7 +215,7 @@ Create agents that engage leads, score prospects, and route to sales.<br/><br/>
     description: `<strong>🧾 Automated processing</strong><br/>
 Build agents that extract invoice data, validate details, and route approvals.<br/><br/>
 <strong>📄 Document management</strong> stores templates and rules. <strong>💰 Spending limits</strong> control costs.`,
-    icon: "🧾",
+    icon: "heroicons:document-currency-dollar",
     highlight: "Faster approvals",
   },
   {
@@ -221,7 +223,7 @@ Build agents that extract invoice data, validate details, and route approvals.<b
     description: `<strong>✅ Proactive compliance</strong><br/>
 Deploy agents that review documents and processes for compliance.<br/><br/>
 <strong>📄 Document management</strong> stores rules and policies. <strong>💬 Discord</strong> alerts teams.`,
-    icon: "✅",
+    icon: "heroicons:shield-check",
     highlight: "Compliance checks",
   },
   {
@@ -229,7 +231,7 @@ Deploy agents that review documents and processes for compliance.<br/><br/>
     description: `<strong>👨‍💻 Quality assurance</strong><br/>
 Build agents that review code, suggest improvements, and follow standards.<br/><br/>
 <strong>🔌 Connects</strong> to GitHub and GitLab. <strong>📄 Document management</strong> stores coding standards.`,
-    icon: "👨‍💻",
+    icon: "heroicons:code-bracket",
     highlight: "Code quality",
   },
   {
@@ -237,7 +239,7 @@ Build agents that review code, suggest improvements, and follow standards.<br/><
     description: `<strong>📚 Auto-generated docs</strong><br/>
 Deploy agents that generate docs, code comments, and user guides.<br/><br/>
 <strong>📄 Document management</strong> stores templates. <strong>🔌 Connects</strong> to codebases and schemas.`,
-    icon: "📚",
+    icon: "heroicons:book-open",
     highlight: "Auto docs",
   },
   {
@@ -245,7 +247,7 @@ Deploy agents that generate docs, code comments, and user guides.<br/><br/>
     description: `<strong>🚀 Release safety</strong><br/>
 Create agents that monitor deployments, track status, and alert on failures.<br/><br/>
 <strong>🔌 Connects</strong> to CI/CD tools. <strong>💬 Discord</strong> sends alerts.`,
-    icon: "🚀",
+    icon: "heroicons:rocket-launch",
     highlight: "Release safety",
   },
   {
@@ -253,7 +255,7 @@ Create agents that monitor deployments, track status, and alert on failures.<br/
     description: `<strong>🐛 Automated reporting</strong><br/>
 Build agents that detect errors, analyze logs, and create bug reports.<br/><br/>
 <strong>🔌 Connects</strong> to error tracking tools. <strong>💬 Discord</strong> sends alerts.`,
-    icon: "🐛",
+    icon: "heroicons:bug-ant",
     highlight: "Bug reporting",
   },
   {
@@ -261,7 +263,7 @@ Build agents that detect errors, analyze logs, and create bug reports.<br/><br/>
     description: `<strong>🔄 Complex orchestration</strong><br/>
 Create workflows where agents hand off tasks to specialists and work together on complex projects.<br/><br/>
 <strong>🔄 Agent delegation</strong> moves work around. <strong>📊 Analytics</strong> track performance.`,
-    icon: "🔄",
+    icon: "heroicons:arrow-path",
     highlight: "Teamwork between agents",
   },
   {
@@ -269,7 +271,7 @@ Create workflows where agents hand off tasks to specialists and work together on
     description: `<strong>👥 Domain expertise</strong><br/>
 Deploy teams of specialized agents where each handles a specific area. Agents pass tasks to the right expert when needed.<br/><br/>
 <strong>🔄 Agent delegation</strong> routes tasks to specialists. <strong>📄 Document management</strong> stores domain knowledge.`,
-    icon: "👥",
+    icon: "heroicons:users",
     highlight: "Expert teams",
   },
 ];
@@ -304,8 +306,12 @@ Deploy teams of specialized agents where each handles a specific area. Agents pa
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
             <div class="relative z-10">
               <div class="flex items-center gap-3 mb-4">
-                <div class="text-4xl transform group-hover:scale-110 transition-transform">
-                  {useCase.icon}
+                <div class="transform group-hover:scale-110 transition-transform">
+                  <Icon
+                    name={useCase.icon}
+                    class="w-10 h-10 text-accent-600"
+                    aria-hidden="true"
+                  />
                 </div>
                 <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
               </div>
