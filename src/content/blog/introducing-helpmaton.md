@@ -1,9 +1,9 @@
 ---
 title: "Introducing Helpmaton: Your Gateway to Running AI Agents with Ease"
 description: >
-  Discover how Helpmaton makes it simple for hobbyists, enthusiasts, and curious builders 
-  to create, deploy, and improve AI agents—from simple chat assistants to powerful 
-  automation workflows.
+  Discover how Helpmaton makes it simple to create, test, deploy, and improve AI agents—from 
+  simple chat assistants to powerful automation workflows. Provider-agnostic platform perfect 
+  for experimentation, production deployments, and everything in between.
 pubDate: "2026-01-23"
 author: "Pedro Teixeira, founder and CEO"
 image: "/images/welcome.jpg"
@@ -12,7 +12,7 @@ tags: ["Product", "Getting Started", "AI Agents", "Automation"]
 
 ![Welcome](/images/welcome.jpg)
 
-Have you ever wanted to build your own AI agent? Maybe you've imagined a personal assistant that remembers your preferences, a research bot that monitors topics you care about, or an automation workflow that handles repetitive tasks while you focus on what matters. If you're a hobbyist, enthusiast, or just curious about what's possible with AI agents, Helpmaton might be what you're looking for.
+Have you ever wanted to build your own AI agent? Maybe you've imagined a personal assistant that remembers your preferences, a research bot that monitors topics you care about, or an automation workflow that handles repetitive tasks while you focus on what matters. Whether you're experimenting with AI, building production systems, or somewhere in between, Helpmaton provides a platform to test, deploy, and improve your agents.
 
 ## What is Helpmaton?
 
@@ -20,16 +20,28 @@ Helpmaton is a platform for creating, deploying, and improving AI agents. Whethe
 
 Think of Helpmaton as a workspace for your AI agents. You organize agents into dedicated workspaces, each with its own settings, team members, and access controls. Within each workspace, you can create multiple agents, each with a specific role and purpose. What's nice is that these agents don't just chat—they can perform work autonomously, communicate with you through external channels when needed, and even be embedded directly into your products.
 
-## Getting Started: Your First Agent 🚀
+## Provider-Agnostic: Use Any AI Model You Want 🎯
 
-Getting started with Helpmaton is pretty straightforward. You don't need to be an AI expert or have a background in machine learning. Here's how it works:
+One of Helpmaton's key features is that it's completely provider-agnostic. You're not locked into a single AI provider—you can use any model from any provider you prefer. Whether you want to use OpenAI, Anthropic, Google, or any other provider, Helpmaton gives you the flexibility to choose what works best for your use case and budget.
+
+This means you can:
+- **Compare models** – Test different providers and models to see which works best for your agents
+- **Optimize costs** – Use different providers for different agents based on cost and performance needs
+- **Avoid vendor lock-in** – Switch providers or models whenever you need to, without rebuilding your agents
+- **Use your own API keys** – Bring your own keys from any provider (currently via OpenRouter)
+
+Your agents work the same way regardless of which provider you choose, so you can focus on building great agents rather than managing provider-specific integrations.
+
+## Getting Started: Build, Test, and Deploy 🚀
+
+Getting started with Helpmaton is straightforward. You don't need to be an AI expert or manage complex infrastructure. Here's how it works:
 
 1. **Create a workspace** – Organize your agents by project or purpose
 2. **Build your first agent** – Give it a name, role, and clear instructions
-3. **Start chatting** – Test it out right away in the web interface
-4. **Connect it to the world** – Add integrations, tools, or webhooks as needed
+3. **Test it out** – Chat with it right away in the web interface, iterate on prompts, and refine behavior
+4. **Deploy it** – Connect integrations, tools, or webhooks to put it to work
 
-You can have a working agent pretty quickly. The platform handles the infrastructure, API management, and deployment stuff so you can focus on what your agent should do, not how to make it work.
+You can have a working agent quickly, test different approaches, and deploy when you're ready. The platform handles the infrastructure, API management, and deployment complexity so you can focus on what your agent should do, not how to make it work.
 
 ## Beyond Chat: Agents That Actually Work
 
@@ -63,13 +75,13 @@ Agents can coordinate workflows, make decisions, and handle multi-step processes
 
 So it's not just about answering questions—it's about agents that can actually do work for you.
 
-## Improving Your Agents: Evals, Knowledge, and Tools
+## Testing and Iterating: Make Your Agents Better
 
-Once you have a basic agent working, there are several ways to make it better:
+Helpmaton is built for testing and iteration. Once you have a basic agent working, you can test changes, measure quality, and deploy with confidence:
 
-### Judge Evals: Check Quality ✅
+### Judge Evals: Test Quality Before Deploying ✅
 
-How do you know if your agent is actually good? Judge evaluations let you score conversations, validate behavior, and catch regressions with just a couple of clicks. After you make changes to prompts or instructions, run evals to make sure quality hasn't slipped. Sampling controls help you balance insight and cost, while analytics track results over time.
+How do you know if your agent is actually good? Judge evaluations let you score conversations, validate behavior, and catch regressions with just a couple of clicks. Test different prompts, compare results, and make sure quality hasn't slipped before deploying changes. Sampling controls help you balance insight and cost, while analytics track results over time. This makes it easy to iterate safely and deploy with confidence.
 
 ### Knowledge Bases: Give Agents Context 📚
 
@@ -90,16 +102,17 @@ Agents remember key details from your conversations and use them to give better,
 
 Every agent comes with built-in tools like document search, memory access, web search, email, and notifications. When you need more, you can add custom tools and integrations. The platform supports webhooks, API connections, and direct integrations with popular services.
 
-## Embedding Agents in Your Products 🔌
+## Deploying Agents: From Testing to Production 🔌
 
-You can embed chat-based agents directly into your products. Every agent exposes webhook endpoints, and responses can be streamed token-by-token (SSE) for real-time chat experiences. This means you can:
+Helpmaton makes it easy to move from testing to deployment. Every agent exposes webhook endpoints, and responses can be streamed token-by-token (SSE) for real-time chat experiences. You can:
 
-- Add AI-powered support to your website
-- Create assistants in your applications
-- Build custom chat interfaces that connect to your agents
-- Provide real-time, streaming responses
+- **Test in the web interface** – Iterate on prompts and behavior before deploying
+- **Deploy via webhooks** – Integrate agents into any system or application
+- **Embed in products** – Add AI-powered support to your website or application
+- **Connect to external channels** – Deploy to Slack, Discord, or other platforms
+- **Stream responses** – Provide real-time, streaming responses for better UX
 
-The webhook API makes integration straightforward, whether you're building a simple chat widget or a more complex application that needs AI capabilities.
+The webhook API makes integration straightforward, whether you're building a simple chat widget or a complex application. Test your agents thoroughly, then deploy them where they're needed.
 
 ![Welcome](/images/group-photo.jpg)
 
@@ -117,14 +130,15 @@ Here are a few ways people use Helpmaton:
 
 ## Cost Control and Flexibility 💰
 
-Cost matters, especially for hobbyists and enthusiasts. You can:
+Cost control matters whether you're experimenting or running production systems. Since Helpmaton is provider-agnostic, you have even more flexibility:
 
-- Set agent-specific spending limits (daily, monthly, or yearly)
-- Buy credits or use your own API key (currently via OpenRouter)
-- Track usage by day, workspace, or agent
-- Keep an eye on costs with clear analytics
+- **Use any provider** – Choose the provider and model that fits your budget
+- **Set agent-specific spending limits** – Daily, monthly, or yearly caps per agent
+- **Bring your own keys** – Use your own API keys from any provider (currently via OpenRouter)
+- **Track usage** – See usage by day, workspace, or agent with clear analytics
+- **Compare costs** – Test different providers to find the best price-to-performance ratio
 
-This gives you control over spending while still having the flexibility to scale when needed.
+This gives you control over spending while still having the flexibility to scale when needed. Perfect for testing different approaches and providers without worrying about unexpected costs.
 
 ## Source-Available and Self-Hostable 📦
 
@@ -132,23 +146,23 @@ Helpmaton is source-available under the Business Source License 1.1, converting 
 
 ## Getting Started
 
-Ready to build your first agent? Here's what to do:
+Ready to build, test, and deploy your first agent? Here's what to do:
 
 1. **Sign up** at [app.helpmaton.com](https://app.helpmaton.com) – It's free to get started
 2. **Create a workspace** – Give it a name that makes sense for your project
 3. **Build your first agent** – Start simple with a clear role and instructions
-4. **Test it out** – Chat with it, see how it responds
+4. **Test it out** – Chat with it, see how it responds, iterate on prompts
 5. **Add knowledge** – Upload documents to give it context
-6. **Connect integrations** – Add Slack, Discord, Google Workspace, or Notion if needed
-7. **Set up automation** – Create schedules for background work
-8. **Run evals** – Test quality and iterate
+6. **Run evals** – Test quality and catch regressions before deploying
+7. **Connect integrations** – Add Slack, Discord, Google Workspace, or Notion if needed
+8. **Deploy** – Use webhooks to integrate into your systems or deploy to external channels
 
-The platform is designed to grow with you. Start simple, then add complexity as you learn what works best for your use case.
+The platform is designed to support you from experimentation to production. Start simple, test thoroughly, then deploy when you're ready.
 
 ## What's Next?
 
-Helpmaton is built for people who want to move fast without sacrificing quality. Whether you're building a personal project, experimenting with AI, or creating production workflows, the platform brings together what you need: workspaces, agents, memory, integrations, and evaluation tools.
+Helpmaton is built for people who want to move fast without sacrificing quality. Whether you're experimenting with AI, building production systems, or testing new approaches, the platform brings together what you need: workspaces, agents, memory, integrations, and evaluation tools—all while giving you the freedom to use any AI provider you want.
 
-We'd love to see what you build. Start creating AI agents that actually work for you—not just chat with you, but perform real work, communicate where you need them, and improve over time.
+The workflow is simple: build, test with evals, iterate, and deploy. You can experiment freely with different providers and models, validate quality before deploying, and scale when you're ready. Start creating AI agents that actually work for you—not just chat with you, but perform real work, communicate where you need them, and improve over time.
 
 Ready to get started? [Create your first agent](https://app.helpmaton.com).
