@@ -41,30 +41,43 @@ const formatDate = (date: Date) =>
       ) : (
         <div class="space-y-6">
           {sortedPosts.map((post) => (
-            <article class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200">
-              <div class="mb-3 text-sm text-neutral-500">
-                {formatDate(post.data.pubDate)}
-              </div>
-              <h2 class="text-2xl font-semibold text-neutral-900 mb-2">
-                <a
-                  href={`/blog/${post.slug}`}
-                  class="hover:text-primary-600 transition-colors"
-                >
-                  {post.data.title}
-                </a>
-              </h2>
-              <p class="text-neutral-600 mb-4">
-                {post.data.description}
-              </p>
-              {post.data.tags?.length ? (
-                <div class="flex flex-wrap gap-2">
-                  {post.data.tags.map((tag) => (
-                    <span class="text-xs font-semibold px-2 py-1 rounded-full bg-primary-50 text-primary-700">
-                      {tag}
-                    </span>
-                  ))}
+            <article class="bg-white rounded-lg shadow-soft border border-neutral-200 overflow-hidden md:flex">
+              <a
+                href={`/blog/${post.slug}`}
+                class="block md:w-64 md:flex-shrink-0"
+              >
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="h-48 w-full object-cover md:h-full"
+                  loading="lazy"
+                />
+              </a>
+              <div class="p-6 md:flex-1">
+                <div class="mb-3 text-sm text-neutral-500">
+                  {formatDate(post.data.pubDate)}
                 </div>
-              ) : null}
+                <h2 class="text-2xl font-semibold text-neutral-900 mb-2">
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="hover:text-primary-600 transition-colors"
+                  >
+                    {post.data.title}
+                  </a>
+                </h2>
+                <p class="text-neutral-600 mb-4">
+                  {post.data.description}
+                </p>
+                {post.data.tags?.length ? (
+                  <div class="flex flex-wrap gap-2">
+                    {post.data.tags.map((tag) => (
+                      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-primary-50 text-primary-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>

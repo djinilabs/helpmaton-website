@@ -6,6 +6,7 @@ description: >
   automation workflows.
 pubDate: "2026-01-23"
 author: "Pedro Teixeira, founder and CEO"
+image: "/images/welcome.jpg"
 tags: ["Product", "Getting Started", "AI Agents", "Automation"]
 ---
 

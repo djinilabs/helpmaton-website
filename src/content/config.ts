@@ -7,6 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     author: z.string().default("Helpmaton Team"),
+    image: z.string(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
   }),
