@@ -1,172 +1,185 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const features = [
+const coreFeatures = [
   {
     title: "Workspaces",
     description:
-      "Organize your AI agents into dedicated spaces. Each workspace has its own access, settings, and team members.",
+      "Keep projects separated so teams, access, and budgets never collide.",
     icon: "heroicons:squares-2x2",
-    highlight: "Clear separation by project",
-  },
-  {
-    title: "Budget Control",
-    description:
-      "Set agent-specific spending limits with daily, monthly, or yearly caps to keep costs predictable.",
-    icon: "heroicons:calculator",
-    highlight: "Agent-level limits",
-  },
-  {
-    title: "AI Agents",
-    description:
-      "Create AI agents with clear roles and instructions. Use them across your workspaces and let them handle tasks on their own.",
-    icon: "heroicons:cpu-chip",
-    highlight: "Always available",
-  },
-  {
-    title: "Judge Evals",
-    description:
-      "Evaluate agent conversations to score quality, validate behavior, and catch regressions with just a couple of clicks.",
-    icon: "heroicons:check-badge",
-    highlight: "Prove quality fast",
+    highlight: "Keep projects separate",
   },
   {
     title: "Agent Memory",
     description:
-      "Agents remember key details from your conversations and use them to give better, more personal answers.",
+      "Agents remember key details from conversations so answers get sharper over time.",
     icon: "heroicons:bookmark-square",
-    highlight: "Remembers what matters",
+    highlight: "Context that sticks",
   },
   {
-    title: "Custom Summaries",
+    title: "Budget Control",
     description:
-      "Tailor memory summaries per agent and time grain (daily, weekly, monthly, quarterly, yearly).",
-    icon: "heroicons:document-text",
-    highlight: "Summaries you control",
+      "Set daily, monthly, or yearly limits per agent and avoid surprise spend.",
+    icon: "heroicons:calculator",
+    highlight: "Predictable costs",
+  },
+  {
+    title: "Quick Integrations",
+    description:
+      "Connect Gmail, Google Calendar, Notion, Slack, or Discord in minutes.",
+    icon: "heroicons:puzzle-piece",
+    highlight: "Connect in minutes",
+  },
+  {
+    title: "Team Collaboration",
+    description:
+      "Invite teammates, set roles, and share workspaces without permission chaos.",
+    icon: "heroicons:user-group",
+    highlight: "Clear access control",
+  },
+  {
+    title: "Judge Evals",
+    description:
+      "Automatically review conversations to improve quality and spot issues early. No human review needed.",
+    icon: "heroicons:check-badge",
+    highlight: "Quality you can measure",
+  },
+];
+
+const moreFeatures = [
+  {
+    title: "AI Agents",
+    description:
+      "Give each agent a clear role so tasks get handled consistently and quickly.",
+    icon: "heroicons:cpu-chip",
+    highlight: "Always on",
   },
   {
     title: "Agent Schedules",
     description:
-      "Run agents on a schedule with cron-based prompts for recurring reports and proactive monitoring.",
+      "Run recurring reports and monitoring on a schedule with cron prompts.",
     icon: "heroicons:clock",
     highlight: "Automate recurring work",
   },
   {
+    title: "Custom Summaries",
+    description:
+      "Control how agents summarize memory by day, week, month, or quarter.",
+    icon: "heroicons:document-text",
+    highlight: "Summaries you control",
+  },
+  {
     title: "Document Management",
     description:
-      "Upload Markdown and text documents to build knowledge bases your agents can search and use.",
+      "Upload Markdown or text files so agents have a reliable knowledge base.",
     icon: "heroicons:folder-open",
     highlight: "Reliable knowledge base",
   },
   {
     title: "Conversation Attachments",
     description:
-      "Attach files and images directly to conversations for richer context and multi-modal help.",
+      "Drop files and images into chat to give agents richer context.",
     icon: "heroicons:paper-clip",
-    highlight: "Files + images in chat",
+    highlight: "Files in chat",
   },
   {
     title: "Web Search & Content Extraction",
     description:
-      "Let your agents look up current information and summarize web pages. Great for research and monitoring updates.",
+      "Pull in current information and summarize pages when you need fresh context.",
     icon: "heroicons:globe-alt",
     highlight: "Up-to-date info",
   },
   {
     title: "Streaming Responses",
     description:
-      "Stream responses token-by-token (SSE) for fast, real-time chat experiences.",
+      "Show answers as they arrive for a fast, real-time chat experience.",
     icon: "heroicons:bolt",
     highlight: "Real-time UX",
   },
   {
     title: "Webhooks & API",
     description:
-      "Every agent exposes webhook endpoints so you can send messages and receive AI-powered responses.",
+      "Send messages by webhook and receive AI-powered responses anywhere.",
     icon: "heroicons:link",
     highlight: "Integrate anywhere",
   },
   {
-    title: "Built-in Tools & Integrations",
+    title: "Built-in Tools",
     description:
-      "Agents come with built-in tools like document search, memory, web search, email, and notifications. Add more tools when you need them.",
+      "Use document search, memory, web search, email, and notifications out of the box.",
     icon: "heroicons:puzzle-piece",
     highlight: "Tools included",
   },
   {
     title: "Google Workspace Integration",
     description:
-      "Connect Gmail, Google Calendar, and Google Drive in a few clicks. Agents can manage schedules, read and search emails, and access Drive files.",
+      "Let agents read Gmail, manage calendars, and access Drive files.",
     icon: "heroicons:calendar-days",
-    highlight: "Quick Google connect",
+    highlight: "Google in minutes",
   },
   {
     title: "Notion Integration",
     description:
-      "Connect Notion in a few clicks. Agents can read and update pages, search content, and manage databases for docs and knowledge.",
+      "Search, update, and manage Notion pages and databases with a few clicks.",
     icon: "heroicons:document",
-    highlight: "Quick Notion connect",
+    highlight: "Notion in minutes",
   },
   {
-    title: "Chat Platform Bot Integration",
+    title: "Chat Platform Bots",
     description:
-      "Use your agents in Slack or Discord so your team can chat with them directly. Easy setup with quick, natural replies.",
+      "Deploy agents in Slack or Discord so teams can chat with them directly.",
     icon: "heroicons:chat-bubble-left-right",
-    highlight: "Chat with your agent",
+    highlight: "Chat-first support",
   },
   {
     title: "Notifications & Email",
     description:
-      "Send updates to Slack or Discord channels and deliver emails when needed. Keep your team in the loop automatically.",
+      "Send updates to Slack or Discord and deliver emails when it matters.",
     icon: "heroicons:envelope",
     highlight: "Team updates",
   },
   {
     title: "Usage Analytics",
     description:
-      "Track how much you use your agents. See usage by day, workspace, or agent and keep an eye on costs.",
+      "Track usage by day, workspace, or agent to keep costs visible.",
     icon: "heroicons:chart-bar",
     highlight: "Clear usage reports",
   },
   {
     title: "Error Tracking",
     description:
-      "See problems right away. Conversations are saved and errors are clearly marked so you can fix issues fast.",
+      "See failures instantly with saved conversations and clear error markers.",
     icon: "heroicons:bug-ant",
-    highlight: "Easy to spot issues",
-  },
-  {
-    title: "Team Collaboration",
-    description:
-      "Invite teammates and set simple access levels. Share workspaces and work together smoothly.",
-    icon: "heroicons:user-group",
-    highlight: "Shared access",
+    highlight: "Spot issues fast",
   },
   {
     title: "Cost Management & Flexible Billing",
     description:
-      "Buy credits or use your own key (currently via OpenRouter). Spending limits still apply.",
+      "Use your own key or credits while limits keep spend under control.",
     icon: "heroicons:credit-card",
     highlight: "Flexible billing",
   },
   {
     title: "Agent Delegation",
     description:
-      "Agents can hand off tasks to other agents in the same workspace so work keeps moving.",
+      "Hand off tasks between agents so work keeps moving without bottlenecks.",
     icon: "heroicons:arrow-path",
     highlight: "Agents work together",
   },
   {
     title: "Source-Available",
     description:
-      "Source-available under the Business Source License 1.1, converting to Apache 2.0 on 2029-11-01.",
+      "Run it yourself when needed with source-available licensing.",
     icon: "heroicons:code-bracket-square",
-    highlight: "Self-host when you need",
+    highlight: "Self-host when needed",
   },
 ];
 ---
 
-<section class="bg-gradient-to-b from-white to-neutral-50 p-8 py-20">
+<section
+  id="features"
+  class="bg-gradient-to-b from-white to-neutral-50 p-8 py-20"
+>
   <div class="max-w-6xl mx-auto">
     <div class="mb-16 text-center">
       <div
@@ -175,18 +188,61 @@ const features = [
         Powerful Features
       </div>
       <h2 class="text-display-2 font-display text-neutral-900 mb-4">
-        Everything you need to <span class="text-primary-600">build</span> and <span
-          class="text-accent-600">deploy</span
-        > AI agents
+        Everything you need to run <span class="text-primary-600">AI agents</span>
+        at scale
       </h2>
       <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-        A complete platform designed for scale, collaboration, and control
+        Focus on outcomes with clear control, reliable context, and fast setup
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
-        features.map((feature, index) => (
+        coreFeatures.map((feature, index) => (
+          <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-primary-300 hover:-translate-y-1 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
+            <div class="relative z-10">
+              <div class="mb-4 transform group-hover:scale-110 transition-transform">
+                <Icon
+                  name={feature.icon}
+                  class="w-10 h-10 text-primary-600"
+                  aria-hidden="true"
+                />
+              </div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
+                {feature.title}
+              </h3>
+              <p class="text-sm text-neutral-600 leading-relaxed mb-4">
+                {feature.description}
+              </p>
+              <div class="pt-3 border-t border-neutral-200">
+                <p class="text-xs text-primary-600 font-semibold uppercase tracking-wide">
+                  {feature.highlight}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="mt-10 text-center">
+      <button
+        type="button"
+        data-toggle-features
+        aria-expanded="false"
+        aria-controls="more-features"
+        class="inline-flex items-center gap-2 border-2 border-primary-600 text-primary-700 px-6 py-3 text-sm font-semibold rounded-xl bg-white hover:bg-primary-50 transition-all"
+      >
+        <span data-toggle-features-label>Show More Features</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </div>
+    <div
+      id="more-features"
+      class="hidden mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {
+        moreFeatures.map((feature, index) => (
           <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-primary-300 hover:-translate-y-1 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
             <div class="relative z-10">
@@ -215,3 +271,21 @@ const features = [
     </div>
   </div>
 </section>
+
+<script>
+  const toggleButton = document.querySelector("[data-toggle-features]");
+  const toggleLabel = document.querySelector("[data-toggle-features-label]");
+  const moreFeatures = document.getElementById("more-features");
+
+  if (toggleButton && toggleLabel && moreFeatures) {
+    toggleButton.addEventListener("click", () => {
+      const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+      toggleButton.setAttribute("aria-expanded", (!isExpanded).toString());
+      toggleLabel.textContent = isExpanded
+        ? "Show More Features"
+        : "Show Less Features";
+      moreFeatures.classList.toggle("hidden");
+      moreFeatures.classList.toggle("grid");
+    });
+  }
+</script>

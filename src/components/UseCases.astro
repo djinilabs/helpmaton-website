@@ -1,276 +1,287 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const useCases = [
-  {
-    title: "Agent Evaluation (Judge Evals)",
-    description: `<strong>✅ Quality, in a couple of clicks</strong><br/>
-Run judge evaluations to score conversations, validate outcomes, and catch regressions after changes.<br/><br/>
-<strong>🎛️ Sampling controls</strong> help balance insight and cost. <strong>📊 Analytics</strong> track results over time.`,
-    icon: "heroicons:check-badge",
-    highlight: "Prove quality fast",
-  },
+const coreUseCases = [
   {
     title: "Customer Support Agents",
-    description: `<strong>💬 Intelligent support</strong><br/>
-Handle questions, troubleshoot issues, and hand off cases. Use them in Slack or Discord for direct support chats.<br/><br/>
-<strong>📄 Documents</strong> keep answers consistent. <strong>📎 Attachments</strong> help with screenshots and files.`,
+    description: `<strong>Stop repeating answers</strong><br/>
+Deploy support agents in Slack or Discord that use your docs to reply consistently.<br/><br/>
+<strong>Outcome:</strong> Faster responses and fewer repetitive tickets.`,
     icon: "heroicons:lifebuoy",
-    highlight: "Helpful support",
-  },
-  {
-    title: "Workflow Automators",
-    description: `<strong>⚙️ End-to-end automation</strong><br/>
-Coordinate workflows, systems, and approvals with integrations and webhooks.<br/><br/>
-<strong>🔄 Agent delegation</strong> routes tasks. <strong>📧 Notifications</strong> share results.`,
-    icon: "heroicons:cog-6-tooth",
-    highlight: "End-to-end automation",
+    highlight: "Consistent support",
   },
   {
     title: "Research Assistants",
-    description: `<strong>📚 Comprehensive research</strong><br/>
-Gather information, review documents, and share insights across your team.<br/><br/>
-<strong>🌐 Web search</strong> finds the latest info. <strong>📄 Document management</strong> keeps sources together.`,
+    description: `<strong>Reduce manual research</strong><br/>
+Gather information from the web and your documents in one place.<br/><br/>
+<strong>Outcome:</strong> Share insights quickly without context switching.`,
     icon: "heroicons:magnifying-glass",
-    highlight: "Fresh research",
+    highlight: "Faster research",
   },
   {
     title: "Scheduled Reports & Monitoring",
-    description: `<strong>⏰ Proactive reporting</strong><br/>
-Run agents on a schedule to generate reports, monitor updates, and alert teams before issues escalate.<br/><br/>
-<strong>⏰ Agent schedules</strong> automate runs. <strong>📧 Notifications</strong> deliver results.`,
+    description: `<strong>Get ahead of issues</strong><br/>
+Run agents on a schedule to generate reports and monitor updates automatically.<br/><br/>
+<strong>Outcome:</strong> Alerts arrive before problems escalate.`,
     icon: "heroicons:clock",
     highlight: "Proactive updates",
   },
   {
+    title: "Workflow Automators",
+    description: `<strong>Cut manual handoffs</strong><br/>
+Coordinate workflows and approvals with integrations and webhooks.<br/><br/>
+<strong>Outcome:</strong> Work moves forward without follow-ups.`,
+    icon: "heroicons:cog-6-tooth",
+    highlight: "End-to-end automation",
+  },
+  {
+    title: "Team Chat Bots",
+    description: `<strong>Help inside chat</strong><br/>
+Deploy agents in Slack or Discord so teams can ask questions directly.<br/><br/>
+<strong>Outcome:</strong> Faster answers without leaving chat.`,
+    icon: "heroicons:chat-bubble-left-right",
+    highlight: "Chat-first help",
+  },
+];
+
+const moreUseCases = [
+  {
+    title: "Agent Evaluation (Judge Evals)",
+    description: `<strong>Measure quality fast</strong><br/>
+Score conversations to validate outcomes and catch regressions after changes.<br/><br/>
+<strong>Outcome:</strong> Clear quality signals without heavy setup.`,
+    icon: "heroicons:check-badge",
+    highlight: "Prove quality fast",
+  },
+  {
     title: "Streaming Chat Interfaces",
-    description: `<strong>⚡ Real-time responses</strong><br/>
-Build chat experiences with streaming updates so users see answers as they’re generated.<br/><br/>
-<strong>⚡ Streaming</strong> for fast UX. <strong>🔗 Webhooks</strong> for easy integration.`,
+    description: `<strong>Keep users engaged</strong><br/>
+Stream responses so people see answers as they arrive in real time.<br/><br/>
+<strong>Outcome:</strong> Faster perceived response time.`,
     icon: "heroicons:bolt",
     highlight: "Real-time UX",
   },
   {
     title: "Slack Team Bots",
-    description: `<strong>💼 Team collaboration</strong><br/>
-Deploy agents as Slack bots that respond to mentions and direct messages, right in your team chat.<br/><br/>
-<strong>🔐 Secure by default</strong> with verification. <strong>⚡ Fast replies</strong> that feel natural.`,
+    description: `<strong>Support in Slack</strong><br/>
+Respond to mentions and DMs with verified requests and secure setup.<br/><br/>
+<strong>Outcome:</strong> Helpful replies right where teams work.`,
     icon: "heroicons:briefcase",
     highlight: "Team chat help",
   },
   {
     title: "Discord Community Bots",
-    description: `<strong>🌐 Community engagement</strong><br/>
-Deploy agents as Discord bots with slash commands so communities can chat with them directly.<br/><br/>
-<strong>🔐 Secure verification</strong> keeps interactions safe. <strong>⚡ Fast replies</strong> that feel natural.`,
+    description: `<strong>Community Q&A</strong><br/>
+Answer questions with slash commands and real-time replies in Discord.<br/><br/>
+<strong>Outcome:</strong> Engaged communities with less manual effort.`,
     icon: "heroicons:globe-alt",
     highlight: "Community help",
   },
   {
     title: "Google Workspace Automation",
-    description: `<strong>🔗 Complete Google Workspace integration</strong><br/>
-Connect Gmail, Google Calendar, and Google Drive in a few clicks.<br/><br/>
-<strong>📧 Gmail</strong> for email. <strong>📅 Google Calendar</strong> for schedules. <strong>📁 Google Drive</strong> for files.`,
+    description: `<strong>Connect Google quickly</strong><br/>
+Let agents read Gmail, manage calendars, and access Drive files.<br/><br/>
+<strong>Outcome:</strong> Less manual admin work.`,
     icon: "heroicons:link",
     highlight: "Quick setup",
   },
   {
     title: "Notion Knowledge Assistants",
-    description: `<strong>📝 Notion workspace integration</strong><br/>
-Connect Notion in a few clicks. Agents can read and update pages, search content, and manage databases.<br/><br/>
-<strong>📚 Knowledge help</strong> for docs. <strong>🗄️ Database help</strong> for records and tracking.`,
+    description: `<strong>Make Notion usable</strong><br/>
+Search, update, and manage pages and databases from your agents.<br/><br/>
+<strong>Outcome:</strong> Faster knowledge retrieval.`,
     icon: "heroicons:document",
     highlight: "Quick setup",
   },
   {
     title: "Executive Assistants",
-    description: `<strong>✨ Intelligent calendar management</strong><br/>
-Create assistants that manage calendars, schedule meetings, and coordinate with teams.<br/><br/>
-<strong>🧠 Memory</strong> remembers your preferences and routines over time.`,
+    description: `<strong>Protect your schedule</strong><br/>
+Coordinate meetings and manage calendars with remembered preferences.<br/><br/>
+<strong>Outcome:</strong> Fewer scheduling back-and-forths.`,
     icon: "heroicons:user-circle",
     highlight: "Always on",
   },
   {
     title: "Scheduling Assistants",
-    description: `<strong>🌍 Cross-timezone coordination</strong><br/>
-Build agents that coordinate meetings and handle rescheduling automatically.<br/><br/>
-<strong>⚡ Fast replies</strong> keep everyone informed. <strong>📅 Google Calendar</strong> connects in a few clicks.`,
+    description: `<strong>Handle rescheduling</strong><br/>
+Coordinate meetings across time zones with fast replies.<br/><br/>
+<strong>Outcome:</strong> Smooth scheduling without delays.`,
     icon: "heroicons:calendar-days",
     highlight: "Easy scheduling",
   },
   {
     title: "Email Management",
-    description: `<strong>📬 Smart email handling</strong><br/>
-Create agents that filter, prioritize, and respond based on your preferences.<br/><br/>
-<strong>📧 Gmail</strong> connects in a few clicks so agents can search and manage emails.`,
+    description: `<strong>Calm your inbox</strong><br/>
+Filter, prioritize, and respond with agents tuned to your preferences.<br/><br/>
+<strong>Outcome:</strong> Less inbox triage.`,
     icon: "heroicons:envelope",
     highlight: "Inbox help",
   },
   {
     title: "Content Analysis",
-    description: `<strong>📄 Web content extraction</strong><br/>
-Deploy agents that extract and summarize content from web pages and articles.<br/><br/>
-<strong>🌐 Web fetch</strong> reads any URL. <strong>📄 Document management</strong> stores summaries.`,
+    description: `<strong>Extract what matters</strong><br/>
+Summarize pages and articles, then store them for quick reference.<br/><br/>
+<strong>Outcome:</strong> Faster synthesis of content.`,
     icon: "heroicons:document-magnifying-glass",
     highlight: "Quick summaries",
   },
   {
     title: "News Monitoring",
-    description: `<strong>📰 Real-time news tracking</strong><br/>
-Create agents that monitor news, track industry changes, and send updates.<br/><br/>
-<strong>🌐 Web search</strong> finds the latest articles. <strong>💬 Discord</strong> sends alerts.`,
+    description: `<strong>Track changes</strong><br/>
+Monitor news and send updates to your team automatically.<br/><br/>
+<strong>Outcome:</strong> Stay informed without constant checking.`,
     icon: "heroicons:newspaper",
     highlight: "Live updates",
   },
   {
     title: "FAQ Bots",
-    description: `<strong>⚡ Instant answers</strong><br/>
-Deploy FAQ agents in Slack or Discord to answer questions quickly and learn from use.<br/><br/>
-<strong>📄 Document management</strong> stores FAQ content. <strong>💰 Spending limits</strong> per agent.`,
+    description: `<strong>Answer instantly</strong><br/>
+Deploy FAQ agents in Slack or Discord that learn from use.<br/><br/>
+<strong>Outcome:</strong> Fewer repetitive questions.`,
     icon: "heroicons:question-mark-circle",
     highlight: "Quick answers",
   },
   {
     title: "Ticket Routing",
-    description: `<strong>🎯 Smart routing</strong><br/>
-Create agents that review tickets, tag issues, and prioritize by urgency.<br/><br/>
-<strong>🔌 Connects</strong> to ticketing systems. <strong>📄 Document management</strong> stores routing rules.`,
+    description: `<strong>Sort tickets fast</strong><br/>
+Review, tag, and prioritize issues by urgency with clear rules.<br/><br/>
+<strong>Outcome:</strong> Faster triage and handoffs.`,
     icon: "heroicons:ticket",
     highlight: "Clean routing",
   },
   {
     title: "Order Tracking",
-    description: `<strong>📦 Real-time tracking</strong><br/>
-Build agents that share order updates and notify customers.<br/><br/>
-<strong>🔗 Connects</strong> to order systems. <strong>💬 Discord</strong> sends team updates.`,
+    description: `<strong>Share updates</strong><br/>
+Notify customers and teams about order status automatically.<br/><br/>
+<strong>Outcome:</strong> Proactive communication.`,
     icon: "heroicons:truck",
     highlight: "Proactive updates",
   },
   {
     title: "System Health Monitors",
-    description: `<strong>💚 Health monitoring</strong><br/>
-Deploy agents that track metrics, spot issues, and alert on thresholds.<br/><br/>
-<strong>🔌 Connects</strong> to monitoring tools. <strong>💬 Discord</strong> sends notifications.`,
+    description: `<strong>Spot issues early</strong><br/>
+Track metrics, alert on thresholds, and keep teams informed.<br/><br/>
+<strong>Outcome:</strong> Fewer surprise outages.`,
     icon: "heroicons:heart",
     highlight: "Live monitoring",
   },
   {
     title: "Security Alert Agents",
-    description: `<strong>🔒 Threat detection</strong><br/>
-Create agents that monitor logs, flag threats, and trigger responses.<br/><br/>
-<strong>🔌 Connects</strong> to security systems. <strong>💬 Discord</strong> sends critical alerts.`,
+    description: `<strong>Catch threats</strong><br/>
+Monitor logs, flag anomalies, and trigger responses quickly.<br/><br/>
+<strong>Outcome:</strong> Faster incident response.`,
     icon: "heroicons:lock-closed",
     highlight: "Threat alerts",
   },
   {
     title: "Performance Trackers",
-    description: `<strong>⚡ Performance insights</strong><br/>
-Build agents that monitor performance, track KPIs, and spot bottlenecks.<br/><br/>
-<strong>🔌 Connects</strong> to monitoring tools. <strong>📄 Document management</strong> stores baselines.`,
+    description: `<strong>See bottlenecks</strong><br/>
+Track KPIs and performance trends with automated checks.<br/><br/>
+<strong>Outcome:</strong> Faster optimization cycles.`,
     icon: "heroicons:chart-bar",
     highlight: "Performance insights",
   },
   {
     title: "Anomaly Detectors",
-    description: `<strong>🚨 Pattern recognition</strong><br/>
-Deploy agents that learn normal patterns and flag unusual changes.<br/><br/>
-<strong>🧠 Memory</strong> learns over time. <strong>💬 Discord</strong> notifies teams instantly.`,
+    description: `<strong>Flag unusual behavior</strong><br/>
+Learn normal patterns and alert teams when things drift.<br/><br/>
+<strong>Outcome:</strong> Issues caught earlier.`,
     icon: "heroicons:exclamation-triangle",
     highlight: "Spot anomalies",
   },
   {
     title: "Content Writers",
-    description: `<strong>✍️ Brand-consistent content</strong><br/>
-Create agents that draft blog posts, social content, and marketing copy.<br/><br/>
-<strong>📄 Document management</strong> stores brand guidelines and style notes.`,
+    description: `<strong>Draft faster</strong><br/>
+Write blogs and social posts using your brand guidelines.<br/><br/>
+<strong>Outcome:</strong> More content with less effort.`,
     icon: "heroicons:pencil-square",
     highlight: "On-brand writing",
   },
   {
     title: "Data Analysts",
-    description: `<strong>📈 Automated insights</strong><br/>
-Build agents that analyze data, create reports, and share insights.<br/><br/>
-<strong>🔌 Connects</strong> to databases and analytics tools.`,
+    description: `<strong>Summarize data</strong><br/>
+Analyze datasets, create reports, and share insights quickly.<br/><br/>
+<strong>Outcome:</strong> Decisions backed by data.`,
     icon: "heroicons:chart-bar-square",
     highlight: "Helpful insights",
   },
   {
     title: "Summarization Agents",
-    description: `<strong>📝 Key point extraction</strong><br/>
-Deploy agents that summarize documents, notes, and reports.<br/><br/>
-<strong>📄 Document management</strong> keeps source files organized.`,
+    description: `<strong>Extract key points</strong><br/>
+Summarize documents and reports into clear takeaways.<br/><br/>
+<strong>Outcome:</strong> Faster understanding.`,
     icon: "heroicons:document-text",
     highlight: "Key takeaways",
   },
   {
     title: "Lead Qualification",
-    description: `<strong>🎯 Automated qualification</strong><br/>
-Create agents that engage leads, score prospects, and route to sales.<br/><br/>
-<strong>🔌 Connects</strong> to CRM systems. <strong>🔗 App connections</strong> keep updates fast.`,
+    description: `<strong>Qualify at scale</strong><br/>
+Engage leads, score prospects, and route to sales teams.<br/><br/>
+<strong>Outcome:</strong> Cleaner handoffs.`,
     icon: "heroicons:cursor-arrow-rays",
     highlight: "Lead routing",
   },
   {
     title: "Invoice Processors",
-    description: `<strong>🧾 Automated processing</strong><br/>
-Build agents that extract invoice data, validate details, and route approvals.<br/><br/>
-<strong>📄 Document management</strong> stores templates and rules. <strong>💰 Spending limits</strong> control costs.`,
+    description: `<strong>Speed approvals</strong><br/>
+Extract invoice data, validate details, and route approvals.\n<br/><br/>
+<strong>Outcome:</strong> Faster billing cycles.`,
     icon: "heroicons:document-currency-dollar",
     highlight: "Faster approvals",
   },
   {
     title: "Compliance Checkers",
-    description: `<strong>✅ Proactive compliance</strong><br/>
-Deploy agents that review documents and processes for compliance.<br/><br/>
-<strong>📄 Document management</strong> stores rules and policies. <strong>💬 Discord</strong> alerts teams.`,
+    description: `<strong>Stay compliant</strong><br/>
+Review documents and processes against your policies.\n<br/><br/>
+<strong>Outcome:</strong> Fewer compliance gaps.`,
     icon: "heroicons:shield-check",
     highlight: "Compliance checks",
   },
   {
     title: "Code Review Assistants",
-    description: `<strong>👨‍💻 Quality assurance</strong><br/>
-Build agents that review code, suggest improvements, and follow standards.<br/><br/>
-<strong>🔌 Connects</strong> to GitHub and GitLab. <strong>📄 Document management</strong> stores coding standards.`,
+    description: `<strong>Raise code quality</strong><br/>
+Review code, suggest improvements, and follow standards.\n<br/><br/>
+<strong>Outcome:</strong> Cleaner, safer merges.`,
     icon: "heroicons:code-bracket",
     highlight: "Code quality",
   },
   {
     title: "Documentation Generators",
-    description: `<strong>📚 Auto-generated docs</strong><br/>
-Deploy agents that generate docs, code comments, and user guides.<br/><br/>
-<strong>📄 Document management</strong> stores templates. <strong>🔌 Connects</strong> to codebases and schemas.`,
+    description: `<strong>Ship docs faster</strong><br/>
+Generate docs, comments, and guides with templates.\n<br/><br/>
+<strong>Outcome:</strong> Docs that keep up with code.`,
     icon: "heroicons:book-open",
     highlight: "Auto docs",
   },
   {
     title: "Deployment Monitors",
-    description: `<strong>🚀 Release safety</strong><br/>
-Create agents that monitor deployments, track status, and alert on failures.<br/><br/>
-<strong>🔌 Connects</strong> to CI/CD tools. <strong>💬 Discord</strong> sends alerts.`,
+    description: `<strong>Protect releases</strong><br/>
+Track deployments and alert on failures automatically.\n<br/><br/>
+<strong>Outcome:</strong> Faster recovery from issues.`,
     icon: "heroicons:rocket-launch",
     highlight: "Release safety",
   },
   {
     title: "Bug Reporters",
-    description: `<strong>🐛 Automated reporting</strong><br/>
-Build agents that detect errors, analyze logs, and create bug reports.<br/><br/>
-<strong>🔌 Connects</strong> to error tracking tools. <strong>💬 Discord</strong> sends alerts.`,
+    description: `<strong>Catch bugs early</strong><br/>
+Detect errors, analyze logs, and create bug reports.\n<br/><br/>
+<strong>Outcome:</strong> Faster fixes.`,
     icon: "heroicons:bug-ant",
     highlight: "Bug reporting",
   },
   {
     title: "Multi-Agent Workflows",
-    description: `<strong>🔄 Complex orchestration</strong><br/>
-Create workflows where agents hand off tasks to specialists and work together on complex projects.<br/><br/>
-<strong>🔄 Agent delegation</strong> moves work around. <strong>📊 Analytics</strong> track performance.`,
+    description: `<strong>Orchestrate work</strong><br/>
+Hand off tasks between specialists and track performance.\n<br/><br/>
+<strong>Outcome:</strong> Complex workflows without chaos.`,
     icon: "heroicons:arrow-path",
-    highlight: "Teamwork between agents",
+    highlight: "Agents in sync",
   },
   {
     title: "Specialized Agent Teams",
-    description: `<strong>👥 Domain expertise</strong><br/>
-Deploy teams of specialized agents where each handles a specific area. Agents pass tasks to the right expert when needed.<br/><br/>
-<strong>🔄 Agent delegation</strong> routes tasks to specialists. <strong>📄 Document management</strong> stores domain knowledge.`,
+    description: `<strong>Match expertise</strong><br/>
+Route tasks to agents with specific domain knowledge.\n<br/><br/>
+<strong>Outcome:</strong> Better answers, faster.`,
     icon: "heroicons:users",
     highlight: "Expert teams",
   },
@@ -279,7 +290,7 @@ Deploy teams of specialized agents where each handles a specific area. Agents pa
 
 <section
   id="use-cases"
-  class="bg-gradient-to-b from-neutral-50 to-white p-8 py-20"
+  class="bg-gradient-to-b from-neutral-100 to-neutral-50 p-8 py-20"
 >
   <div class="max-w-6xl mx-auto">
     <div class="mb-16 text-center">
@@ -289,18 +300,16 @@ Deploy teams of specialized agents where each handles a specific area. Agents pa
         Use Cases
       </div>
       <h2 class="text-display-2 font-display text-neutral-900 mb-4">
-        Many ways to use <span class="text-primary-600">AI agents</span
-        >
+        See how teams use <span class="text-primary-600">Helpmaton</span>
       </h2>
       <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-        From personal help to team workflows, see how Helpmaton supports
-        different kinds of work
+        Pick the workflow that fits and expand when you need more ideas
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
-        useCases.map((useCase, index) => (
+        coreUseCases.map((useCase, index) => (
           <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-accent-300 hover:-translate-y-1 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -397,5 +406,81 @@ Deploy teams of specialized agents where each handles a specific area. Agents pa
         </div>
       </div>
     </div>
+    <div class="mt-10 text-center">
+      <button
+        type="button"
+        data-toggle-use-cases
+        aria-expanded="false"
+        aria-controls="more-use-cases"
+        class="inline-flex items-center gap-2 border-2 border-primary-600 text-primary-700 px-6 py-3 text-sm font-semibold rounded-xl bg-white hover:bg-primary-50 transition-all"
+      >
+        <span data-toggle-use-cases-label>Show More Use Cases</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </div>
+    <div
+      id="more-use-cases"
+      class="hidden mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {
+        moreUseCases.map((useCase, index) => (
+          <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-accent-300 hover:-translate-y-1 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="transform group-hover:scale-110 transition-transform">
+                  <Icon
+                    name={useCase.icon}
+                    class="w-10 h-10 text-accent-600"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
+              </div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-accent-600 transition-colors">
+                {useCase.title}
+              </h3>
+              <div
+                class="text-base text-neutral-600 leading-relaxed mb-4 [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
+                set:html={useCase.description}
+              />
+              <div class="pt-4 mt-4 border-t border-neutral-200 group-hover:border-accent-200 transition-colors">
+                <div class="flex items-center gap-2">
+                  <span class="text-accent-500">▸</span>
+                  <p class="text-xs text-accent-600 font-semibold uppercase tracking-wide">
+                    {useCase.highlight}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
+
+<script>
+  const toggleUseCasesButton = document.querySelector("[data-toggle-use-cases]");
+  const toggleUseCasesLabel = document.querySelector(
+    "[data-toggle-use-cases-label]"
+  );
+  const moreUseCases = document.getElementById("more-use-cases");
+
+  if (toggleUseCasesButton && toggleUseCasesLabel && moreUseCases) {
+    toggleUseCasesButton.addEventListener("click", () => {
+      const isExpanded =
+        toggleUseCasesButton.getAttribute("aria-expanded") === "true";
+      toggleUseCasesButton.setAttribute(
+        "aria-expanded",
+        (!isExpanded).toString()
+      );
+      toggleUseCasesLabel.textContent = isExpanded
+        ? "Show More Use Cases"
+        : "Show Less Use Cases";
+      moreUseCases.classList.toggle("hidden");
+      moreUseCases.classList.toggle("grid");
+    });
+  }
+</script>

@@ -18,9 +18,23 @@ After signing up, you'll be asked to create your first workspace. A workspace is
     category: "Getting Started",
     question: "What do I need to get started?",
     answer: `<strong>Account setup</strong><br/>
-You need a Helpmaton account and either your own key (currently via OpenRouter) or credits you buy through Helpmaton.<br/><br/>
-<strong>Bring your own key</strong> is currently supported via OpenRouter. Once you have a workspace, you can create agents and upload documents.<br/><br/>
+All you need is a Helpmaton account and a way to cover AI usage. You can either bring your own key (via OpenRouter) or buy credits through Helpmaton.<br/><br/>
+Once you create a workspace, you can set up agents and upload documents right away.<br/><br/>
 For detailed setup instructions, see the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/getting-started.md" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Getting Started Guide</a>.`,
+  },
+  {
+    category: "Getting Started",
+    question: "Is Helpmaton right for my team size?",
+    answer: `<strong>Built for individuals and teams</strong><br/>
+Helpmaton works for solo builders and growing teams. Start with one workspace and one agent, then add more as you scale.<br/><br/>
+<strong>Flexible plans</strong> let you move up when you need more workspaces, agents, or collaboration features.`,
+  },
+  {
+    category: "Getting Started",
+    question: "How is this different from building my own AI agents?",
+    answer: `<strong>Less infrastructure, more outcomes</strong><br/>
+Helpmaton gives you workspaces, memory, usage tracking, and integrations without building it yourself.<br/><br/>
+<strong>Faster time to value</strong> - You can launch agents in minutes instead of weeks of setup and maintenance.`,
   },
   {
     category: "Getting Started",
@@ -40,8 +54,8 @@ An <strong>agent</strong> is the AI assistant inside a workspace. Each agent has
     category: "Getting Started",
     question: "What is OpenRouter and why do I need it?",
     answer: `<strong>OpenRouter explained</strong><br/>
-OpenRouter lets you access multiple AI providers (like OpenAI, Anthropic, Google) with a single key.<br/><br/>
-<strong>Why it matters</strong> - If you want to use your own API keys, Helpmaton currently does that through OpenRouter. You can also skip keys and buy credits through Helpmaton instead.`,
+OpenRouter gives you one key to access multiple AI providers (OpenAI, Anthropic, Google, and more).<br/><br/>
+<strong>Why it matters</strong> - If you bring your own API keys, Helpmaton connects through OpenRouter. You can also skip keys and buy credits through Helpmaton instead.`,
   },
 
   // Agents
@@ -127,7 +141,7 @@ Workspace credits are for AI provider usage (OpenRouter, OpenAI, Anthropic, Goog
     category: "Workspaces",
     question: "Can I use my own API keys?",
     answer: `<strong>Using your own API keys</strong><br/>
-Yes. You can use your own OpenRouter API key, which is currently the only supported option for bringing your own key.<br/><br/>
+Yes. You can use your own OpenRouter API key (the current supported option for bringing your own key).<br/><br/>
 <strong>Direct billing</strong> - When you add a key, requests use it and you pay OpenRouter directly. Spending limits and usage tracking still apply.`,
   },
   {
@@ -166,6 +180,13 @@ External tool connections let you connect agents to other apps and services you 
     answer: `<strong>Platform services</strong><br/>
 Your monthly subscription covers the Helpmaton platform: hosting, agent setup and management, memory, usage tracking, workspaces, team collaboration, document storage, and core features.<br/><br/>
 <strong>What's included</strong> - Everything you need to run and manage your AI agents on the Helpmaton platform.`,
+  },
+  {
+    category: "Billing & Pricing",
+    question: "What if I need more than what's in my plan?",
+    answer: `<strong>Upgrade anytime</strong><br/>
+You can move to a higher plan as soon as you need more workspaces, agents, or usage limits.<br/><br/>
+<strong>Flexible scaling</strong> - Start small, then expand when your workflows grow.`,
   },
   {
     category: "Billing & Pricing",
@@ -442,12 +463,14 @@ const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
 </div>
 
 <script>
-  const searchInput = document.getElementById("faq-search");
-  const faqItems = document.querySelectorAll(".faq-item");
-  const faqCategories = document.querySelectorAll(".faq-category");
-  const noResults = document.getElementById("no-results");
+  const searchInput = document.getElementById("faq-search") as
+    | HTMLInputElement
+    | null;
+  const faqItems = document.querySelectorAll<HTMLElement>(".faq-item");
+  const faqCategories = document.querySelectorAll<HTMLElement>(".faq-category");
+  const noResults = document.getElementById("no-results") as HTMLElement | null;
 
-  function filterFAQs(searchTerm) {
+  function filterFAQs(searchTerm: string) {
     const term = searchTerm.toLowerCase().trim();
     let hasResults = false;
 
@@ -468,7 +491,7 @@ const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
 
     // Show/hide categories based on whether they have visible items
     faqCategories.forEach((category) => {
-      const items = category.querySelectorAll(".faq-item");
+      const items = category.querySelectorAll<HTMLElement>(".faq-item");
       let categoryHasVisibleItems = false;
 
       items.forEach((item) => {
@@ -493,11 +516,15 @@ const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
   }
 
   searchInput?.addEventListener("input", (e) => {
-    filterFAQs(e.target.value);
+    const target = e.target as HTMLInputElement | null;
+    if (!target) {
+      return;
+    }
+    filterFAQs(target.value);
   });
 
   // Handle URL hash for direct linking to specific FAQs
-  if (window.location.hash) {
+  if (window.location.hash && searchInput) {
     const hash = decodeURIComponent(window.location.hash.substring(1));
     searchInput.value = hash;
     filterFAQs(hash);
