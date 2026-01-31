@@ -1,27 +1,145 @@
 ---
 import { Icon } from "astro-icon/components";
 
+const planNames = ["Free", "Starter", "Pro", "Enterprise"] as const;
+type PlanName = (typeof planNames)[number];
+type FeatureValue = string | boolean;
+type FeatureMap = Partial<Record<PlanName, FeatureValue>>;
+
+const coreFeatures = [
+  "Workspace organization",
+  "AI agent management",
+  "Document management",
+  "Conversation attachments",
+  "Agent memory system",
+  "Custom summarization prompts",
+  "Agent schedules",
+  "Web search & content extraction tools",
+  "Tool integration via MCP servers",
+  "Built-in tools (document search, memory search, web search, web fetch, email, notifications, delegation)",
+  "Google Workspace integrations",
+  "Additional MCP integrations (GitHub, Slack, Linear, HubSpot, PostHog, Salesforce, Notion, Shopify, Intercom, Todoist, Zendesk, Stripe)",
+  "Cost management & billing",
+  "Usage analytics & monitoring",
+  "Evaluation & quality control",
+  "Flexible authentication",
+  "Streaming support",
+  "Webhook API",
+  "Chat platform bot integrations (Slack, Discord)",
+  "Notification channels",
+  "Team collaboration (workspace permissions)",
+  "REST API + OpenAPI documentation",
+];
+
+const cappedFeatures: { label: string; values: FeatureMap }[] = [
+  {
+    label: "Workspaces",
+    values: {
+      Free: "1 Workspace",
+      Starter: "1 Workspace",
+      Pro: "5 Workspaces",
+      Enterprise: "Unlimited Workspaces",
+    },
+  },
+  {
+    label: "Agents",
+    values: {
+      Free: "1 Agent",
+      Starter: "5 Agents",
+      Pro: "50 Agents",
+      Enterprise: "Unlimited Agents",
+    },
+  },
+  {
+    label: "Documents",
+    values: {
+      Free: "10 Documents (1 MB total)",
+      Starter: "100 Documents (10 MB total)",
+      Pro: "1,000 Documents (100 MB total)",
+      Enterprise: "Unlimited Documents",
+    },
+  },
+  {
+    label: "AI messages per day",
+    values: {
+      Free: "50 AI messages per day",
+      Starter: "2,500 AI messages per day",
+      Pro: "25,000 AI messages per day",
+      Enterprise: "Unlimited AI messages per day",
+    },
+  },
+  {
+    label: "Web searches per day",
+    values: {
+      Free: "10 free web searches/day",
+      Starter: "10 free web searches/day",
+      Pro: "10 free web searches/day",
+      Enterprise: "10 free web searches/day",
+    },
+  },
+  {
+    label: "App connections",
+    values: {
+      Free: "2 app connections",
+      Starter: "10 app connections",
+      Pro: "50 app connections",
+      Enterprise: "Unlimited app connections",
+    },
+  },
+  {
+    label: "Agent limits (daily/monthly/yearly)",
+    values: {
+      Free: true,
+      Starter: true,
+      Pro: true,
+      Enterprise: true,
+    },
+  },
+  {
+    label: "Memory retention",
+    values: {
+      Free: "48h detailed memory, 30d summaries",
+      Starter: "Longer memory history",
+      Pro: "240h detailed memory, 120d summaries",
+    },
+  },
+  {
+    label: "Managers (shared access)",
+    values: {
+      Pro: "Unlimited managers (shared access)",
+    },
+  },
+  {
+    label: "Support",
+    values: {
+      Starter: "Email Support",
+      Pro: "Priority Support",
+      Enterprise: "Dedicated Support",
+    },
+  },
+  {
+    label: "SLA Guarantee",
+    values: {
+      Enterprise: "SLA Guarantee",
+    },
+  },
+  {
+    label: "No credit card required",
+    values: {
+      Free: true,
+    },
+  },
+];
+
 const plans = [
   {
     name: "Free",
     price: "$0",
     period: "",
     description:
-      "Perfect for evaluating Helpmaton with 7-day access.",
+      "Perfect for evaluating Helpmaton with free access.",
     icon: "heroicons:gift",
-    badge: "7-day access",
-    features: [
-      "1 Workspace",
-      "1 Agent",
-      "7-day access",
-      "10 Documents (1 MB total)",
-      "50 AI messages per day",
-      "10 free web searches/day",
-      "2 app connections",
-      "Agent limits (daily/monthly/yearly)",
-      "48h detailed memory, 30d summaries",
-      "No credit card required",
-    ],
+    badge: "Free forever",
     cta: "Get Started",
     popular: false,
   },
@@ -32,18 +150,6 @@ const plans = [
     description:
       "For individuals and small projects. Create up to 5 agents and manage one workspace.",
     icon: "heroicons:sparkles",
-    features: [
-      "1 Workspace",
-      "5 Agents",
-      "100 Documents (10 MB total)",
-      "2,500 AI messages per day",
-      "10 free web searches/day",
-      "10 app connections",
-      "Agent limits (daily/monthly/yearly)",
-      "Longer memory history",
-      "Email Support",
-      "No credit card required",
-    ],
     cta: "Start Trial",
     popular: false,
   },
@@ -54,18 +160,6 @@ const plans = [
     description:
       "For teams that need multiple workspaces and more agents. Includes unlimited team members.",
     icon: "heroicons:rocket-launch",
-    features: [
-      "5 Workspaces",
-      "50 Agents",
-      "1,000 Documents (100 MB total)",
-      "25,000 AI messages per day",
-      "10 free web searches/day",
-      "50 app connections",
-      "Agent limits (daily/monthly/yearly)",
-      "Unlimited managers (shared access)",
-      "240h detailed memory, 120d summaries",
-      "Priority Support",
-    ],
     cta: "Start Trial",
     popular: true,
   },
@@ -76,17 +170,6 @@ const plans = [
     description:
       "For organizations that need custom limits, dedicated support, and SLA guarantees.",
     icon: "heroicons:building-office",
-    features: [
-      "Unlimited Workspaces",
-      "Unlimited Agents",
-      "Unlimited Documents",
-      "Unlimited AI messages per day",
-      "10 free web searches/day",
-      "Unlimited app connections",
-      "Agent limits (daily/monthly/yearly)",
-      "Dedicated Support",
-      "SLA Guarantee",
-    ],
     cta: "Contact Sales",
     popular: false,
   },
@@ -180,75 +263,171 @@ const plans = [
             }`}
           >
             {plan.popular && (
-              <>
-                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-                <div class="text-center mb-4 relative z-10">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+            )}
+            <div class="relative z-10 min-h-[220px] flex flex-col">
+              <div class="text-center mb-4 min-h-[28px]">
+                {plan.popular ? (
                   <span class="inline-block bg-white text-primary-600 px-4 py-1 font-bold text-sm rounded-full shadow-soft">
                     ⭐ Most Popular
                   </span>
-                </div>
-              </>
-            )}
-            <div class="flex items-center justify-center gap-2 mb-3 relative z-10">
-              <span class="transform hover:scale-110 transition-transform">
-                <Icon
-                  name={plan.icon}
-                  class={`w-10 h-10 ${plan.popular ? "text-white" : "text-primary-600"}`}
-                  aria-hidden="true"
-                />
-              </span>
-              <h3
-                class={`text-2xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
-              >
-                {plan.name}
-              </h3>
-            </div>
-            {plan.badge && (
-              <div class="text-center mb-3 relative z-10">
-                <span
-                  class={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
-                    plan.popular
-                      ? "bg-white/20 text-white"
-                      : "bg-primary-100 text-primary-700"
-                  }`}
+                ) : (
+                  <span class="inline-block px-4 py-1 text-sm opacity-0 select-none">
+                    Most Popular
+                  </span>
+                )}
+              </div>
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="transform hover:scale-110 transition-transform">
+                  <Icon
+                    name={plan.icon}
+                    class={`w-10 h-10 ${plan.popular ? "text-white" : "text-primary-600"}`}
+                    aria-hidden="true"
+                  />
+                </span>
+                <h3
+                  class={`text-2xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
                 >
-                  {plan.badge}
+                  {plan.name}
+                </h3>
+              </div>
+              <div class="text-center mb-3 min-h-[24px]">
+                {plan.badge ? (
+                  <span
+                    class={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
+                      plan.popular
+                        ? "bg-white/20 text-white"
+                        : "bg-primary-100 text-primary-700"
+                    }`}
+                  >
+                    {plan.badge}
+                  </span>
+                ) : (
+                  <span class="inline-block px-3 py-1 text-xs opacity-0 select-none">
+                    Badge
+                  </span>
+                )}
+              </div>
+              <div class="mb-4">
+                <span
+                  class={`text-5xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
+                >
+                  {plan.price}
+                </span>
+                <span
+                  class={`text-base ${plan.popular ? "text-white/90" : "text-neutral-600"}`}
+                >
+                  {plan.period}
                 </span>
               </div>
-            )}
-            <div class="mb-4 relative z-10">
-              <span
-                class={`text-5xl font-bold ${plan.popular ? "text-white" : "text-neutral-900"}`}
+              <p
+                class={`text-sm mb-6 ${
+                  plan.popular ? "text-white/90" : "text-neutral-600"
+                }`}
               >
-                {plan.price}
-              </span>
-              <span
-                class={`text-base ${plan.popular ? "text-white/90" : "text-neutral-600"}`}
-              >
-                {plan.period}
-              </span>
+                {plan.description}
+              </p>
             </div>
-            <p
-              class={`text-sm mb-6 ${plan.popular ? "text-white/90" : "text-neutral-600"}`}
-            >
-              {plan.description}
-            </p>
-            <ul class="space-y-3 mb-8 relative z-10">
-              {plan.features.map((feature) => (
-                <li class="flex items-start gap-2">
+            <ul class="grid gap-y-3 mb-6 relative z-10">
+              {cappedFeatures.map((feature) => {
+                const planName = plan.name as PlanName;
+                const value = feature.values[planName];
+                const isAvailable = Boolean(value);
+                const showValue = value !== true && value !== undefined;
+                const isCreditCardFeature = feature.label === "No credit card required";
+                const showCreditCardRequired = isCreditCardFeature && !isAvailable;
+                const iconName = showCreditCardRequired
+                  ? "heroicons:check"
+                  : isAvailable
+                    ? "heroicons:check"
+                    : "heroicons:x-mark";
+                return (
+                <li class="grid grid-cols-[20px,1fr] items-start gap-2">
                   <Icon
-                    name="heroicons:check"
-                    class={`w-5 h-5 mt-0.5 shrink-0 ${plan.popular ? "text-white" : "text-primary-600"}`}
+                    name={iconName}
+                    class={`w-5 h-5 mt-0.5 shrink-0 ${
+                      isAvailable || showCreditCardRequired
+                        ? plan.popular
+                          ? "text-white"
+                          : "text-primary-600"
+                        : plan.popular
+                          ? "text-white/60"
+                          : "text-neutral-400"
+                    }`}
                     aria-hidden="true"
                   />
                   <span
-                    class={`text-sm ${plan.popular ? "text-white/90" : "text-neutral-700"}`}
+                    class={`text-sm ${
+                      isAvailable
+                        ? plan.popular
+                          ? "text-white/90"
+                          : "text-neutral-700"
+                        : plan.popular
+                          ? "text-white/70"
+                          : "text-neutral-500"
+                    }`}
                   >
-                    {feature}
+                    {showCreditCardRequired ? "Credit card required" : feature.label}
+                    {isAvailable && showValue ? ` — ${value}` : ""}
+                    {!isAvailable && !showCreditCardRequired ? " — Not included" : ""}
                   </span>
                 </li>
-              ))}
+              )})}
             </ul>
+            <div class="relative z-10 mb-8">
+              {plan.name === "Enterprise" ? (
+                <button
+                  data-open-sales-modal
+                  class={`block w-full text-center px-6 py-3 font-bold rounded-xl transition-all cursor-pointer ${
+                    plan.popular
+                      ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
+                      : "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 shadow-soft"
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              ) : (
+                <a
+                  href="https://app.helpmaton.com"
+                  class={`block text-center px-6 py-3 font-bold rounded-xl transition-all ${
+                    plan.popular
+                      ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
+                      : "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 shadow-soft"
+                  }`}
+                >
+                  Get Started
+                </a>
+              )}
+            </div>
+            <div class="relative z-10 mb-8">
+              <div
+                class={`text-xs font-semibold uppercase tracking-wide mb-3 ${
+                  plan.popular ? "text-white/80" : "text-neutral-500"
+                }`}
+              >
+                Included on all plans
+              </div>
+              <ul class="space-y-2">
+                {coreFeatures.map((feature) => (
+                  <li class="flex items-start gap-2">
+                    <Icon
+                      name="heroicons:check-badge"
+                      class={`w-4 h-4 mt-0.5 shrink-0 ${
+                        plan.popular ? "text-white/80" : "text-neutral-400"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span
+                      class={`text-xs ${
+                        plan.popular ? "text-white/80" : "text-neutral-500"
+                      }`}
+                    >
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             {plan.name === "Enterprise" ? (
               <button
                 data-open-sales-modal
