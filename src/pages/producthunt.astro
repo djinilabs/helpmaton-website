@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Logo from "../components/Logo.astro";
+import "../styles/global.css";
+---
+
+<Layout
+  title="Helpmaton is live on Product Hunt"
+  description="Simple workspaces for managing AI agents. We're live on Product Hunt — support us and try Helpmaton free."
+>
+  <div class="min-h-screen bg-neutral-50 flex flex-col">
+    <!-- Minimal header -->
+    <header class="border-b border-neutral-200 bg-white/90 backdrop-blur-sm sticky top-0 z-50">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Logo class="w-9 h-9" />
+          <span class="text-lg font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
+            Helpmaton
+          </span>
+        </a>
+        <a
+          href="/"
+          class="text-sm font-semibold text-neutral-600 hover:text-primary-600 transition-colors"
+        >
+          ← Main site
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="flex-1 flex items-center justify-center px-6 py-16 sm:py-24">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Product Hunt badge -->
+        <a
+          href="https://www.producthunt.com/posts/helpmaton"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-producthunt text-white text-sm font-semibold shadow-lg hover:bg-producthunt-700 transition-all hover:scale-105 mb-8"
+          id="ph-cta"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13.604 9.4h-3.405v3.2h3.405a1.6 1.6 0 1 0 0-3.2zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.405V18H7.801V6h5.803a4.399 4.399 0 1 1 0 8.4z"/>
+          </svg>
+          We're live on Product Hunt
+        </a>
+
+        <h1 class="text-4xl sm:text-5xl font-bold text-neutral-900 tracking-tight mb-4">
+          Simple workspaces for
+          <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">managing AI agents</span>
+        </h1>
+        <p class="text-xl text-neutral-600 mb-8 leading-relaxed">
+          Create AI assistants that remember your conversations, connect to your tools, and run on a schedule. Launch in minutes with Gmail, Calendar, Notion, Slack, and Discord.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://www.producthunt.com/posts/helpmaton"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-producthunt hover:bg-producthunt-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+            id="ph-vote"
+          >
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.604 9.4h-3.405v3.2h3.405a1.6 1.6 0 1 0 0-3.2zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.405V18H7.801V6h5.803a4.399 4.399 0 1 1 0 8.4z"/>
+            </svg>
+            Support us on Product Hunt
+          </a>
+          <a
+            href="https://app.helpmaton.com"
+            class="w-full sm:w-auto inline-flex items-center justify-center border-2 border-primary-600 text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl bg-white hover:bg-primary-50 transition-all"
+          >
+            Try Helpmaton free
+          </a>
+        </div>
+
+        <p class="mt-8 text-sm text-neutral-500">
+          Source-available · Self-host when you need to ·
+          <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline font-medium">GitHub</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- Minimal footer -->
+    <footer class="border-t border-neutral-200 py-6">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <p class="text-sm text-neutral-500">
+          © {new Date().getFullYear()} Helpmaton
+        </p>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  document.querySelectorAll('#ph-cta, #ph-vote').forEach((el) => {
+    el?.addEventListener('click', () => {
+      if (window.posthog) {
+        window.posthog.capture('producthunt_click');
+      }
+    });
+  });
+</script>
