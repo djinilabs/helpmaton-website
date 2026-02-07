@@ -378,6 +378,7 @@ const plans = [
               {plan.name === "Enterprise" ? (
                 <button
                   data-open-sales-modal
+                  data-source="pricing"
                   class={`block w-full text-center px-6 py-3 font-bold rounded-xl transition-all cursor-pointer ${
                     plan.popular
                       ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
@@ -389,6 +390,8 @@ const plans = [
               ) : (
                 <a
                   href="https://app.helpmaton.com"
+                  data-track="get_started"
+                  data-plan={plan.name}
                   class={`block text-center px-6 py-3 font-bold rounded-xl transition-all ${
                     plan.popular
                       ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
@@ -431,6 +434,7 @@ const plans = [
             {plan.name === "Enterprise" ? (
               <button
                 data-open-sales-modal
+                data-source="pricing"
                 class={`block w-full text-center px-6 py-3 font-bold rounded-xl transition-all cursor-pointer relative z-10 ${
                   plan.popular
                     ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
@@ -442,6 +446,8 @@ const plans = [
             ) : (
               <a
                 href="https://app.helpmaton.com"
+                data-track="get_started"
+                data-plan={plan.name}
                 class={`block text-center px-6 py-3 font-bold rounded-xl transition-all relative z-10 ${
                   plan.popular
                     ? "bg-white text-primary-600 hover:bg-neutral-50 shadow-large hover:scale-105"
@@ -457,3 +463,17 @@ const plans = [
     </div>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('a[data-track="get_started"]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const plan = (e.currentTarget as HTMLElement).getAttribute('data-plan');
+      if (window.posthog) {
+        window.posthog.capture('get_started_clicked', { plan: plan ?? undefined });
+      }
+      const href = (e.currentTarget as HTMLAnchorElement).href;
+      e.preventDefault();
+      setTimeout(() => { window.location.href = href; }, 150);
+    });
+  });
+</script>

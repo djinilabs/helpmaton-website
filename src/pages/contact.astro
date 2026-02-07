@@ -30,6 +30,7 @@ import "../styles/global.css";
             Have questions or need help? We're here for you.
           </p>
           <a
+            id="contact-support-email"
             href="mailto:support@helpmaton.com"
             class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
           >
@@ -51,6 +52,7 @@ import "../styles/global.css";
           </p>
           <button
             data-open-sales-modal
+            data-source="contact"
             class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm cursor-pointer shadow-soft"
           >
             Contact Sales
@@ -68,6 +70,7 @@ import "../styles/global.css";
             Found a bug? Tell us so we can fix it.
           </p>
           <a
+            id="contact-bugs-email"
             href="mailto:bugs@helpmaton.com"
             class="inline-block bg-primary-600 text-white px-4 py-2 font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm shadow-soft"
           >
@@ -151,3 +154,12 @@ import "../styles/global.css";
   <Footer />
   <ContactSalesModal />
 </Layout>
+
+<script>
+  document.getElementById('contact-support-email')?.addEventListener('click', () => {
+    if (window.posthog) window.posthog.capture('contact_email_clicked', { type: 'support' });
+  });
+  document.getElementById('contact-bugs-email')?.addEventListener('click', () => {
+    if (window.posthog) window.posthog.capture('contact_email_clicked', { type: 'bugs' });
+  });
+</script>

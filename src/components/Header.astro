@@ -51,6 +51,7 @@ import Logo from "./Logo.astro";
           Blog
         </a>
         <a
+          id="header-login"
           href="https://app.helpmaton.com"
           class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 transition-all rounded-lg shadow-soft hover:shadow-colored hover:scale-105"
         >
@@ -60,3 +61,14 @@ import Logo from "./Logo.astro";
     </div>
   </div>
 </header>
+
+<script>
+  document.getElementById('header-login')?.addEventListener('click', (e) => {
+    if (window.posthog) {
+      window.posthog.capture('login_clicked');
+    }
+    const href = (e.currentTarget as HTMLAnchorElement).href;
+    e.preventDefault();
+    setTimeout(() => { window.location.href = href; }, 150);
+  });
+</script>

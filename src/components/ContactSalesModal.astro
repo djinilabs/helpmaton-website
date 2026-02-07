@@ -24,6 +24,7 @@
     </p>
     <div class="bg-gradient-to-br from-primary-50 to-accent-50 border-2 border-primary-200 rounded-lg p-4 mb-6 shadow-soft">
       <a
+        id="contact-sales-email-link"
         href="mailto:sales@helpmaton.com"
         class="text-lg font-bold text-primary-700 hover:text-primary-800 transition-colors inline-flex items-center gap-2"
       >
@@ -43,7 +44,13 @@
   const closeButton = document.getElementById('close-modal');
   const openButtons = document.querySelectorAll('[data-open-sales-modal]');
 
-  function openModal() {
+  function openModal(source?: string) {
+    if (window.posthog) {
+      window.posthog.capture('contact_sales_opened');
+      if (source) {
+        window.posthog.capture('contact_sales_clicked', { source });
+      }
+    }
     if (modal) {
       modal.classList.remove('hidden');
       modal.classList.add('flex');
@@ -62,8 +69,15 @@
   openButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
-      openModal();
+      const source = (e.currentTarget as HTMLElement).getAttribute('data-source') ?? undefined;
+      openModal(source);
     });
+  });
+
+  document.getElementById('contact-sales-email-link')?.addEventListener('click', () => {
+    if (window.posthog) {
+      window.posthog.capture('contact_sales_email_clicked');
+    }
   });
 
   if (closeButton) {
