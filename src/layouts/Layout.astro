@@ -8,10 +8,16 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  /** Recommended: 1200 for OG/Twitter card */
+  imageWidth?: number;
+  /** Recommended: 630 for OG/Twitter card */
+  imageHeight?: number;
+  /** Alt text for the OG image (accessibility and some platforms) */
+  imageAlt?: string;
   type?: string;
 }
 
-const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, type = "website" } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, imageWidth = 1200, imageHeight = 630, imageAlt, type = "website" } = Astro.props;
 
 const imagePath = image.startsWith("http") ? image : image.startsWith("/") ? image : `/${image}`;
 const imageUrl = Astro.site ? new URL(imagePath, Astro.site).href : null;
@@ -39,11 +45,15 @@ const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro
     <meta property="og:type" content={type} />
     {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
     {imageUrl && <meta property="og:image" content={imageUrl} />}
+    {imageUrl && <meta property="og:image:width" content={String(imageWidth)} />}
+    {imageUrl && <meta property="og:image:height" content={String(imageHeight)} />}
+    {imageUrl && imageAlt && <meta property="og:image:alt" content={imageAlt} />}
     {/* Twitter Card */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    {imageUrl && imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
     <PostHog />
   </head>
   <body>
