@@ -1,18 +1,28 @@
 ---
 import PostHog from "../components/posthog.astro";
 
+const DEFAULT_DESCRIPTION = "Helpmaton - Simple workspaces for managing AI agents";
+const DEFAULT_IMAGE = "/images/hero.jpg";
+
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  type?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, type = "website" } = Astro.props;
+
+const imagePath = image.startsWith("http") ? image : image.startsWith("/") ? image : `/${image}`;
+const imageUrl = Astro.site ? new URL(imagePath, Astro.site).href : null;
+const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Helpmaton - Simple workspaces for managing AI agents" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +33,17 @@ const { title } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    {/* Open Graph */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    {/* Twitter Card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
     <PostHog />
   </head>
   <body>
