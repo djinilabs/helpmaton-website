@@ -5,21 +5,21 @@ import Logo from "./Logo.astro";
 <header
   class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-medium border-b border-neutral-200"
 >
-  <div class="max-w-6xl mx-auto px-8 py-4">
-    <div class="flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-4 sm:px-8 py-4">
+    <div class="flex items-center justify-between gap-2 min-w-0">
       <a
         href="/"
-        class="flex items-center gap-3 hover:opacity-80 transition-opacity group"
+        class="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity group min-w-0 flex-shrink"
       >
-        <Logo class="w-10 h-10 group-hover:scale-110 transition-transform" />
+        <Logo class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 group-hover:scale-110 transition-transform" />
         <span
-          class="text-xl font-display font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent"
+          class="text-lg sm:text-xl font-display font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent truncate"
         >
           Helpmaton
         </span>
       </a>
 
-      <nav class="flex items-center gap-2">
+      <nav class="hidden md:flex items-center gap-2">
         <a
           href="/#use-cases"
           class="px-4 py-2 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-primary-50"
@@ -51,9 +51,68 @@ import Logo from "./Logo.astro";
           Blog
         </a>
         <a
-          id="header-login"
+          class="header-login px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 transition-all rounded-lg shadow-soft hover:shadow-colored hover:scale-105"
           href="https://app.helpmaton.com"
-          class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 transition-all rounded-lg shadow-soft hover:shadow-colored hover:scale-105"
+        >
+          Login
+        </a>
+      </nav>
+
+      <button
+        type="button"
+        class="flex md:hidden items-center justify-center w-10 h-10 rounded-lg text-neutral-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+        id="mobile-menu-button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        <span class="mobile-menu-icon flex flex-col gap-1.5" aria-hidden="true">
+          <span class="block w-5 h-0.5 bg-current rounded-full origin-center transition-transform duration-200"></span>
+          <span class="block w-5 h-0.5 bg-current rounded-full transition-opacity duration-200"></span>
+          <span class="block w-5 h-0.5 bg-current rounded-full origin-center transition-transform duration-200"></span>
+        </span>
+      </button>
+    </div>
+
+    <div
+      id="mobile-menu"
+      role="navigation"
+      class="mobile-menu-panel md:hidden overflow-hidden max-h-0 transition-all duration-200 ease-in-out border-t border-neutral-200 -mx-4 sm:-mx-8 px-4 sm:px-8 bg-white/80"
+    >
+      <nav class="flex flex-col py-4 gap-1">
+        <a
+          href="/#use-cases"
+          class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        >
+          Use Cases
+        </a>
+        <a
+          href="/#pricing"
+          class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        >
+          Pricing
+        </a>
+        <a
+          href="/documentation"
+          class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        >
+          Documentation
+        </a>
+        <a
+          href="/case-studies"
+          class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        >
+          Case Studies
+        </a>
+        <a
+          href="/blog"
+          class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        >
+          Blog
+        </a>
+        <a
+          class="header-login mobile-menu-link block text-center px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 transition-all rounded-lg shadow-soft hover:shadow-colored mt-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          href="https://app.helpmaton.com"
         >
           Login
         </a>
@@ -62,13 +121,64 @@ import Logo from "./Logo.astro";
   </div>
 </header>
 
+<style>
+  .mobile-menu-panel.open {
+    max-height: 80vh;
+  }
+  .mobile-menu-button-open .mobile-menu-icon span:first-child {
+    transform: translateY(2px) rotate(45deg);
+  }
+  .mobile-menu-button-open .mobile-menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu-button-open .mobile-menu-icon span:last-child {
+    transform: translateY(-2px) rotate(-45deg);
+  }
+</style>
+
 <script>
-  document.getElementById('header-login')?.addEventListener('click', (e) => {
-    if (window.posthog) {
-      window.posthog.capture('login_clicked');
-    }
-    const href = (e.currentTarget as HTMLAnchorElement).href;
-    e.preventDefault();
-    setTimeout(() => { window.location.href = href; }, 150);
+  document.querySelectorAll('.header-login').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      if (window.posthog) {
+        window.posthog.capture('login_clicked');
+      }
+      const href = (e.currentTarget as HTMLAnchorElement).href;
+      e.preventDefault();
+      setTimeout(() => { window.location.href = href; }, 150);
+    });
   });
+
+  const menuButton = document.getElementById('mobile-menu-button');
+  const menuPanel = document.getElementById('mobile-menu');
+  if (menuButton && menuPanel) {
+    const btn = menuButton;
+    const panel = menuPanel;
+    const openClass = 'open';
+    const buttonOpenClass = 'mobile-menu-button-open';
+
+    function setOpen(open: boolean) {
+      panel.classList.toggle(openClass, open);
+      btn.classList.toggle(buttonOpenClass, open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    function closeMenu() {
+      setOpen(false);
+    }
+
+    btn.addEventListener('click', () => {
+      setOpen(!panel.classList.contains(openClass));
+    });
+
+    panel.querySelectorAll('.mobile-menu-link').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && panel.classList.contains(openClass)) {
+        closeMenu();
+      }
+    });
+  }
 </script>
