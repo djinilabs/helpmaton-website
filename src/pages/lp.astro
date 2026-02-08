@@ -1,0 +1,315 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Logo from "../components/Logo.astro";
+import Footer from "../components/Footer.astro";
+import ContactSalesModal from "../components/ContactSalesModal.astro";
+import { Icon } from "astro-icon/components";
+import "../styles/global.css";
+
+const featureHighlights = [
+  { title: "Workspaces", desc: "Keep projects and teams separate.", icon: "heroicons:squares-2x2" },
+  { title: "Agent Memory", desc: "Agents remember context so answers improve over time.", icon: "heroicons:bookmark-square" },
+  { title: "Budget Control", desc: "Daily, monthly, or yearly limits per agent.", icon: "heroicons:calculator" },
+  { title: "Quick Integrations", desc: "Gmail, Calendar, Notion, Slack, Discord in minutes.", icon: "heroicons:puzzle-piece" },
+];
+
+const useCaseHighlights = [
+  { title: "Customer Support", desc: "Deploy agents in Slack or Discord with your docs.", link: "/#use-cases" },
+  { title: "Research & Reports", desc: "Gather info and run scheduled reports automatically.", link: "/#use-cases" },
+  { title: "Team Chat Bots", desc: "Let teams ask questions directly in chat.", link: "/#use-cases" },
+];
+
+const plansSummary = [
+  { name: "Free", price: "$0", cta: "Get Started" },
+  { name: "Starter", price: "$29/mo", cta: "Start Trial" },
+  { name: "Pro", price: "$99/mo", cta: "Start Trial", popular: true },
+  { name: "Enterprise", price: "Custom", cta: "Contact Sales" },
+];
+---
+
+<Layout title="Helpmaton - AI Agents That Stay Organized" description="Create AI assistants that remember context, connect to your tools, and run on a schedule. Start free in minutes.">
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="min-h-[70vh] bg-gradient-to-br from-primary-50 via-accent-50 to-neutral-50 px-4 sm:px-8 py-16 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-400 rounded-full blur-3xl"></div>
+      </div>
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <Logo class="w-12 h-12 sm:w-14 sm:h-14 drop-shadow-lg" />
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-display bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent font-bold">
+            Helpmaton
+          </h1>
+        </div>
+        <p class="text-xl sm:text-2xl font-display text-neutral-900 mb-4">
+          <span class="text-primary-600">Organized</span> workspaces for AI agents that actually work.
+        </p>
+        <p class="text-base sm:text-lg text-neutral-700 mb-8 max-w-2xl mx-auto">
+          Create AI assistants that remember conversations, connect to Gmail, Calendar, Notion, Slack, and Discord—no complex setup. Launch in minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://app.helpmaton.com"
+            class="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-colored hover:shadow-large transition-all hover:scale-105"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="/#features"
+            class="inline-block border-2 border-primary-600 text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl bg-white/80 backdrop-blur-sm hover:bg-primary-50 transition-all"
+          >
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features summary -->
+    <section id="features" class="bg-white py-16 px-4 sm:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-3">Features</span>
+          <h2 class="text-display-2 font-display text-neutral-900 mb-2">Everything you need to run AI agents at scale</h2>
+          <p class="text-neutral-600 max-w-xl mx-auto">Workspaces, memory, budget control, and integrations—without the chaos.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {
+            featureHighlights.map((f) => (
+              <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-5 hover:border-primary-300 transition-colors">
+                <Icon name={f.icon} class="w-9 h-9 text-primary-600 mb-3" aria-hidden="true" />
+                <h3 class="font-semibold text-neutral-900 mb-1">{f.title}</h3>
+                <p class="text-sm text-neutral-600">{f.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-center">
+          <a href="/#features" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold">
+            See all features <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Use cases summary -->
+    <section id="use-cases" class="bg-gradient-to-b from-neutral-50 to-white py-16 px-4 sm:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-3">Use Cases</span>
+          <h2 class="text-display-2 font-display text-neutral-900 mb-2">See how teams use Helpmaton</h2>
+          <p class="text-neutral-600 max-w-xl mx-auto">Support bots, research assistants, scheduled reports, and more.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {
+            useCaseHighlights.map((u) => (
+              <a href={u.link} class="block bg-white border border-neutral-200 rounded-xl p-6 hover:border-accent-300 hover:shadow-soft transition-all group">
+                <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-accent-600">{u.title}</h3>
+                <p class="text-sm text-neutral-600 mb-3">{u.desc}</p>
+                <span class="text-sm text-accent-600 font-semibold">Learn more →</span>
+              </a>
+            ))
+          }
+        </div>
+        <p class="text-center">
+          <a href="/#use-cases" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold">
+            Explore all use cases <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Helpmaton: comparison with others -->
+    <section id="compare" class="bg-white py-16 px-4 sm:px-8 border-t border-neutral-200">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-3">Why Helpmaton</span>
+          <h2 class="text-display-2 font-display text-neutral-900 mb-4">A simpler way to run AI agents</h2>
+          <p class="text-neutral-600 max-w-2xl mx-auto mb-2">
+            Compare Helpmaton to other platforms or building it yourself. You get <strong class="text-primary-700">freedom of choice</strong>—your keys or credits, evals to measure quality, and <strong class="text-primary-700">agent memory</strong> that actually sticks.
+          </p>
+          <p class="text-sm text-neutral-500 max-w-xl mx-auto">
+            No lock-in. Bring your own API keys, use credits, or self-host when you need to.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border-2 border-neutral-200 shadow-soft">
+          <table class="w-full text-left border-collapse" role="grid">
+            <thead>
+              <tr class="bg-neutral-50 border-b-2 border-neutral-200">
+                <th scope="col" class="py-4 px-4 text-sm font-bold text-neutral-900 w-[22%]">What matters</th>
+                <th scope="col" class="py-4 px-4 text-sm font-bold text-primary-700 bg-primary-50/50">Helpmaton</th>
+                <th scope="col" class="py-4 px-4 text-sm font-bold text-neutral-700">Build it yourself</th>
+                <th scope="col" class="py-4 px-4 text-sm font-bold text-neutral-700">Other agent platforms</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Time to launch</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Minutes</td>
+                <td class="py-3 px-4 text-neutral-600">Weeks or months</td>
+                <td class="py-3 px-4 text-neutral-600">Hours to days</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Freedom of choice</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Your API keys or credits; self-host when needed (source-available)</td>
+                <td class="py-3 px-4 text-neutral-600">You build it</td>
+                <td class="py-3 px-4 text-neutral-600">Often vendor lock-in; their billing only</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Judge evals & quality</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Built-in: score conversations, catch regressions, sample traffic to control cost</td>
+                <td class="py-3 px-4 text-neutral-600">Custom build</td>
+                <td class="py-3 px-4 text-neutral-600">Rare or basic</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Agent memory & summaries</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Included: detailed memory + configurable summaries (day/week/month/quarter)</td>
+                <td class="py-3 px-4 text-neutral-600">Custom build</td>
+                <td class="py-3 px-4 text-neutral-600">Basic or limited</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Workspaces & access</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Built in: teams, roles, clear access control</td>
+                <td class="py-3 px-4 text-neutral-600">Custom build</td>
+                <td class="py-3 px-4 text-neutral-600">Often limited</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Budget control</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Agent-level limits (daily/monthly/yearly); predictable spend</td>
+                <td class="py-3 px-4 text-neutral-600">Custom build</td>
+                <td class="py-3 px-4 text-neutral-600">Often missing</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Integrations</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Gmail, Calendar, Drive, Notion, Slack, Discord—connect in minutes</td>
+                <td class="py-3 px-4 text-neutral-600">Build each one</td>
+                <td class="py-3 px-4 text-neutral-600">Limited set</td>
+              </tr>
+              <tr class="border-b border-neutral-200 hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Schedules & automation</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Built in: recurring reports, monitoring, simple rules</td>
+                <td class="py-3 px-4 text-neutral-600">Custom build</td>
+                <td class="py-3 px-4 text-neutral-600">Often missing</td>
+              </tr>
+              <tr class="hover:bg-neutral-50/50">
+                <td class="py-3 px-4 font-semibold text-neutral-900">Ongoing upkeep</td>
+                <td class="py-3 px-4 text-primary-700 font-medium">Managed platform; you focus on outcomes</td>
+                <td class="py-3 px-4 text-neutral-600">You maintain everything</td>
+                <td class="py-3 px-4 text-neutral-600">Partial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-8 text-center text-neutral-600 mb-6">
+          Get the control of a custom build with the speed of a platform—and keep your choice of providers and billing.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://app.helpmaton.com"
+            class="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 font-semibold rounded-xl shadow-soft hover:from-primary-700 hover:to-primary-800 transition-all"
+          >
+            Start Free Trial
+          </a>
+          <a href="/" class="inline-block border-2 border-primary-600 text-primary-700 px-6 py-3 font-semibold rounded-xl hover:bg-primary-50 transition-all">
+            Full comparison on homepage
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing summary -->
+    <section id="pricing" class="bg-gradient-to-b from-neutral-50 to-white py-16 px-4 sm:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-3">Pricing</span>
+          <h2 class="text-display-2 font-display text-neutral-900 mb-2">Plans that scale with you</h2>
+          <p class="text-neutral-600 max-w-xl mx-auto">Start free. Upgrade when you need more.</p>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {
+            plansSummary.map((plan) => (
+              <div
+                class={`rounded-xl p-6 text-center border-2 transition-all ${
+                  plan.popular
+                    ? "bg-gradient-to-br from-primary-600 to-primary-700 text-white border-primary-500 shadow-colored"
+                    : "bg-white border-neutral-200 hover:border-primary-300"
+                }`}
+              >
+                {plan.popular && <span class="block text-xs font-bold text-white/90 mb-2">Most Popular</span>}
+                <h3 class={`text-lg font-bold mb-1 ${plan.popular ? "text-white" : "text-neutral-900"}`}>{plan.name}</h3>
+                <p class={`text-2xl font-bold mb-4 ${plan.popular ? "text-white" : "text-neutral-900"}`}>{plan.price}</p>
+                {plan.cta === "Contact Sales" ? (
+                  <button
+                    data-open-sales-modal
+                    data-source="lp-pricing"
+                    class={`w-full py-3 font-semibold rounded-xl transition-all ${
+                      plan.popular ? "bg-white text-primary-600 hover:bg-neutral-50" : "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800"
+                    }`}
+                  >
+                    {plan.cta}
+                  </button>
+                ) : (
+                  <a
+                    href="https://app.helpmaton.com"
+                    class={`block w-full py-3 font-semibold rounded-xl text-center transition-all ${
+                      plan.popular ? "bg-white text-primary-600 hover:bg-neutral-50" : "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800"
+                    }`}
+                  >
+                    {plan.cta}
+                  </a>
+                )}
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-center">
+          <a href="/#pricing" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold">
+            View full pricing & features <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="bg-gradient-to-br from-primary-600 to-primary-700 py-16 px-4 sm:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-4">Ready to get organized?</h2>
+        <p class="text-white/90 mb-8">Start your free trial in minutes. No credit card required for the Free plan.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://app.helpmaton.com"
+            class="inline-block bg-white text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl shadow-large hover:scale-105 transition-all"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="/documentation"
+            class="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-xl hover:bg-white/10 transition-all"
+          >
+            Read Documentation
+          </a>
+          <button
+            data-open-sales-modal
+            data-source="lp-final"
+            class="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-xl hover:bg-white/10 transition-all"
+          >
+            Contact Sales
+          </button>
+        </div>
+        <p class="mt-6 text-sm text-white/80">
+          <a href="/faq" class="underline hover:text-white">FAQ</a>
+          <span class="mx-2">·</span>
+          <a href="/getting-started" class="underline hover:text-white">Getting Started</a>
+          <span class="mx-2">·</span>
+          <a href="/case-studies" class="underline hover:text-white">Case Studies</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ContactSalesModal />
+</Layout>
