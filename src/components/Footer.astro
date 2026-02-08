@@ -143,13 +143,20 @@ import Logo from "./Logo.astro";
     </div>
     <div class="border-t-2 border-primary-200 pt-8">
       <div
-        class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4"
+        class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4 flex-wrap"
       >
         <a
           href="/privacy"
           class="text-sm text-neutral-700 hover:text-primary-600 transition-colors font-medium"
         >
           Privacy Statement
+        </a>
+        <span class="hidden md:inline text-sm text-neutral-400">|</span>
+        <a
+          href="/privacy#cookie-preferences"
+          class="text-sm text-neutral-700 hover:text-primary-600 transition-colors font-medium"
+        >
+          Cookie preferences
         </a>
         <span class="hidden md:inline text-sm text-neutral-400">|</span>
         <a
