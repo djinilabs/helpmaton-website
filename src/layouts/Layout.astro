@@ -24,7 +24,7 @@ const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html-theme">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -34,7 +34,7 @@ const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
@@ -113,8 +113,9 @@ const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro
       })();
     </script>
   </head>
-  <body>
+  <body class="bg-[var(--bg-page)] text-[var(--text-primary)]">
     <slot />
+    <div class="noise-overlay fixed inset-0 pointer-events-none z-[100]" aria-hidden="true" />
     <CookieConsent />
     <script>
       (function () {

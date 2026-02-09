@@ -290,19 +290,16 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
 
 <section
   id="use-cases"
-  class="bg-gradient-to-b from-neutral-100 to-neutral-50 p-8 py-20"
+  class="section-dark p-8 py-20"
 >
   <div class="max-w-6xl mx-auto">
     <div class="mb-16 text-center">
-      <div
-        class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4"
-      >
-        Use Cases
-      </div>
-      <h2 class="text-display-2 font-display text-neutral-900 mb-4">
-        See how teams use <span class="text-primary-600">Helpmaton</span>
+      <p class="section-label font-mono mb-2">Use Cases</p>
+      <div class="section-divider mb-4" aria-hidden="true" />
+      <h2 class="text-display-2 font-display text-neutral-100 mb-4">
+        See how teams use <span class="text-neon-magenta">Helpmaton</span>
       </h2>
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+      <p class="text-lg text-neutral-400 max-w-2xl mx-auto">
         Pick the workflow that fits and expand when you need more ideas
       </p>
     </div>
@@ -311,38 +308,35 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
       {
         coreUseCases.map((useCase, index) => (
           <div
-            class="reveal-item group bg-white p-6 rounded-xl shadow-soft hover:shadow-large hover:shadow-glow transition-all border border-neutral-200 hover:border-accent-400 hover:-translate-y-1 relative overflow-hidden"
+            class="reveal-item card-cyber card-tilt group p-6 hover:-translate-y-1 relative overflow-hidden transition-all"
             data-reveal
             style={`animation-delay: ${index * 60}ms`}
           >
-            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-accent-500 rounded-l-xl" aria-hidden="true" />
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div class="card-accent-bar" aria-hidden="true" />
             <div class="relative z-10 pl-1">
               <div class="flex items-center gap-3 mb-4">
                 <div class="relative inline-block">
-                  <span class="absolute inset-0 bg-accent-500/20 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                  <span class="relative transform group-hover:scale-110 transition-transform">
+                  <span class="relative transform group-hover:scale-110 transition-transform block">
                     <Icon
                       name={useCase.icon}
-                      class="w-10 h-10 text-accent-600"
+                      class="w-10 h-10 text-neon-magenta group-hover:drop-shadow-[0_0_8px_rgba(176,38,255,0.5)] transition-all"
                       aria-hidden="true"
                     />
                   </span>
                 </div>
-                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent" />
               </div>
-              <h3 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-accent-600 transition-colors">
+              <h3 class="text-xl font-semibold text-neutral-100 mb-3 group-hover:text-neon-magenta transition-colors">
                 {useCase.title}
               </h3>
               <div
-                class="text-base text-neutral-600 leading-relaxed mb-4 [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
+                class="text-base text-neutral-400 leading-relaxed mb-4 [&_strong]:text-neon-cyan [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
                 set:html={useCase.description}
               />
-              <div class="pt-4 mt-4 border-t border-neutral-200 group-hover:border-accent-200 transition-colors">
+              <div class="pt-4 mt-4 border-t border-neon-cyan/20">
                 <div class="flex items-center gap-2">
-                  <span class="text-accent-500">▸</span>
-                  <p class="text-xs text-accent-600 font-semibold uppercase tracking-wide">
+                  <span class="text-neon-magenta">▸</span>
+                  <p class="text-xs text-neon-magenta font-semibold uppercase tracking-wide font-mono">
                     {useCase.highlight}
                   </p>
                 </div>
@@ -353,62 +347,38 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
       }
       <!-- Custom Use Case Card -->
       <div
-        class="group bg-gradient-to-br from-primary-50 via-accent-50 to-primary-50 p-6 rounded-xl shadow-soft hover:shadow-large transition-all border-2 border-dashed border-primary-300 hover:border-primary-500 hover:-translate-y-1 relative overflow-hidden"
+        class="card-cyber card-tilt group p-6 border-2 border-dashed border-neon-cyan/40 hover:border-neon-cyan/70 hover:-translate-y-1 relative overflow-hidden transition-all"
       >
-        <div
-          class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity"
-        >
-        </div>
-        <div
-          class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-100"
-        >
-        </div>
+        <div class="card-accent-bar" aria-hidden="true" />
         <div class="relative z-10">
           <div class="flex items-center gap-3 mb-4">
-            <div
-              class="text-4xl transform group-hover:scale-110 transition-transform"
-            >
-              ✨
-            </div>
-            <div
-              class="h-px flex-1 bg-gradient-to-r from-transparent via-primary-300 to-transparent group-hover:via-accent-400 transition-colors"
-            >
-            </div>
+            <div class="text-4xl transform group-hover:scale-110 transition-transform">✨</div>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-cyan/40 to-transparent" />
           </div>
-          <h3
-            class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-primary-700 transition-colors"
-          >
+          <h3 class="text-xl font-semibold text-neutral-100 mb-3 group-hover:text-neon-cyan transition-colors">
             Your Custom Use Case
           </h3>
-          <div class="text-base text-neutral-700 leading-relaxed mb-4">
+          <div class="text-base text-neutral-400 leading-relaxed mb-4">
             <p class="mb-3">
-              <strong class="text-primary-700">🎯 Build what you need</strong
-              ><br />
+              <strong class="text-neon-cyan">🎯 Build what you need</strong><br />
               Create AI agents tailored to your needs and workflows.
             </p>
             <p class="mb-3">
-              <strong class="text-primary-700">🔧 Full flexibility</strong><br
-              />
+              <strong class="text-neon-cyan">🔧 Full flexibility</strong><br />
               With workspaces, memory, schedules, and integrations, you can shape it to fit.
             </p>
             <p>
-              <strong class="text-primary-700">🚀 Get started today</strong><br
-              />
+              <strong class="text-neon-cyan">🚀 Get started today</strong><br />
               Start building your custom AI setup in minutes.
             </p>
           </div>
-          <div
-            class="pt-4 mt-4 border-t border-primary-200 group-hover:border-primary-300 transition-colors"
-          >
+          <div class="pt-4 mt-4 border-t border-neon-cyan/20">
             <a
               href="https://app.helpmaton.com"
-              class="inline-flex items-center gap-2 text-sm text-primary-700 font-semibold hover:text-primary-800 transition-colors group/link"
+              class="inline-flex items-center gap-2 text-sm text-neon-cyan font-semibold hover:text-neon-cyan-dim transition-colors group/link"
             >
               <span>Create your use case</span>
-              <span
-                class="transform group-hover/link:translate-x-1 transition-transform"
-                >→</span
-              >
+              <span class="transform group-hover/link:translate-x-1 transition-transform">→</span>
             </a>
           </div>
         </div>
@@ -420,7 +390,7 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
         data-toggle-use-cases
         aria-expanded="false"
         aria-controls="more-use-cases"
-        class="inline-flex items-center gap-2 border-2 border-primary-600 text-primary-700 px-6 py-3 text-sm font-semibold rounded-xl bg-white hover:bg-primary-50 transition-all"
+        class="inline-flex items-center gap-2 border border-neon-magenta/50 text-neon-magenta px-6 py-3 text-sm font-semibold rounded-xl bg-surface-100/50 hover:bg-neon-magenta/10 hover:shadow-neon-magenta transition-all font-mono"
       >
         <span data-toggle-use-cases-label>Show More Use Cases</span>
         <span aria-hidden="true">+</span>
@@ -428,43 +398,38 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
     </div>
     <div
       id="more-use-cases"
-      class="hidden mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      class="hidden mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
     >
       {
         moreUseCases.map((useCase, index) => (
           <div
-            class="reveal-item group bg-white p-6 rounded-xl shadow-soft hover:shadow-large hover:shadow-glow transition-all border border-neutral-200 hover:border-accent-400 hover:-translate-y-1 relative overflow-hidden"
+            class="reveal-item card-cyber card-tilt group p-6 hover:-translate-y-1 relative overflow-hidden transition-all"
             data-reveal
             style={`animation-delay: ${index * 60}ms`}
           >
-            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-accent-500 rounded-l-xl" aria-hidden="true" />
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div class="card-accent-bar" aria-hidden="true" />
             <div class="relative z-10 pl-1">
               <div class="flex items-center gap-3 mb-4">
-                <div class="relative inline-block">
-                  <span class="absolute inset-0 bg-accent-500/20 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                  <span class="relative transform group-hover:scale-110 transition-transform">
-                    <Icon
-                      name={useCase.icon}
-                      class="w-10 h-10 text-accent-600"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </div>
-                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
+                <span class="relative transform group-hover:scale-110 transition-transform block">
+                  <Icon
+                    name={useCase.icon}
+                    class="w-10 h-10 text-neon-magenta group-hover:drop-shadow-[0_0_8px_rgba(176,38,255,0.5)] transition-all"
+                    aria-hidden="true"
+                  />
+                </span>
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent" />
               </div>
-              <h3 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-accent-600 transition-colors">
+              <h3 class="text-xl font-semibold text-neutral-100 mb-3 group-hover:text-neon-magenta transition-colors">
                 {useCase.title}
               </h3>
               <div
-                class="text-base text-neutral-600 leading-relaxed mb-4 [&_strong]:text-primary-700 [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
+                class="text-base text-neutral-400 leading-relaxed mb-4 [&_strong]:text-neon-cyan [&_strong]:font-semibold [&_strong]:text-base [&_br]:block [&_br]:mb-2"
                 set:html={useCase.description}
               />
-              <div class="pt-4 mt-4 border-t border-neutral-200 group-hover:border-accent-200 transition-colors">
+              <div class="pt-4 mt-4 border-t border-neon-cyan/20">
                 <div class="flex items-center gap-2">
-                  <span class="text-accent-500">▸</span>
-                  <p class="text-xs text-accent-600 font-semibold uppercase tracking-wide">
+                  <span class="text-neon-magenta">▸</span>
+                  <p class="text-xs text-neon-magenta font-semibold uppercase tracking-wide font-mono">
                     {useCase.highlight}
                   </p>
                 </div>

@@ -4,6 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
+        /* Dark theme base */
+        surface: {
+          DEFAULT: '#0a0a0f',
+          50: '#18181f',
+          100: '#1e1e28',
+          200: '#252532',
+          300: '#2d2d3a',
+          400: '#3d3d4a',
+        },
+        /* Neon palette */
+        neon: {
+          cyan: '#00f5ff',
+          'cyan-dim': '#00c4cc',
+          magenta: '#b026ff',
+          'magenta-dim': '#8a1fcc',
+          green: '#39ff14',
+          'green-dim': '#2ecc10',
+        },
         primary: {
           50: '#f0fdfa',
           100: '#ccfbf1',
@@ -93,6 +111,7 @@ export default {
           'sans-serif',
         ],
         display: [
+          '"Orbitron"',
           '"Space Grotesk"',
           'Inter',
           '-apple-system',
@@ -127,11 +146,16 @@ export default {
         'accent': '0 4px 16px rgba(124, 58, 237, 0.15), 0 2px 4px rgba(124, 58, 237, 0.1)',
         'glow': '0 0 24px rgba(45, 212, 191, 0.25), 0 0 48px rgba(45, 212, 191, 0.12)',
         'glow-hover': '0 0 32px rgba(45, 212, 191, 0.35), 0 0 64px rgba(45, 212, 191, 0.15)',
+        'neon-cyan': '0 0 20px rgba(0, 245, 255, 0.15), 0 0 40px rgba(0, 245, 255, 0.08)',
+        'neon-cyan-lg': '0 0 32px rgba(0, 245, 255, 0.25), 0 0 64px rgba(0, 245, 255, 0.12)',
+        'neon-magenta': '0 0 20px rgba(176, 38, 255, 0.15), 0 0 40px rgba(176, 38, 255, 0.08)',
+        'neon-magenta-lg': '0 0 32px rgba(176, 38, 255, 0.25), 0 0 64px rgba(176, 38, 255, 0.12)',
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #0d9488 0%, #14b8a6 100%)',
         'gradient-accent': 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)',
         'gradient-soft': 'linear-gradient(135deg, #fafaf9 0%, #f5f5f4 100%)',
+        'gradient-neon': 'linear-gradient(90deg, #00f5ff 0%, #b026ff 100%)',
       },
     },
   },

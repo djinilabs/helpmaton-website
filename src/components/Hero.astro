@@ -3,56 +3,75 @@ import Logo from "./Logo.astro";
 ---
 
 <section
-  class="hero-grid-bg min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-neutral-50 p-8 flex items-center justify-center relative overflow-hidden"
+  class="min-h-screen p-8 flex items-center justify-center relative overflow-hidden hero-section-bg"
+  id="hero-section"
 >
-  <!-- Decorative background elements -->
-  <div class="absolute inset-0 opacity-[0.07]">
+  <!-- Perspective grid -->
+  <div class="hero-perspective-wrapper absolute inset-0 overflow-hidden">
     <div
-      class="absolute top-20 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"
-    >
-    </div>
-    <div
-      class="absolute bottom-20 right-10 w-96 h-96 bg-accent-400 rounded-full blur-3xl"
-    >
-    </div>
+      class="hero-perspective-grid absolute top-0 left-0 right-0 h-[200%]"
+      aria-hidden="true"
+    />
   </div>
+
+  <!-- Glow orbs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div
+      class="hero-orb-1 absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-neon-cyan blur-[120px]"
+    />
+    <div
+      class="hero-orb-2 absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-neon-magenta blur-[100px]"
+    />
+    <div
+      class="hero-orb-3 absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-neon-cyan blur-[80px] opacity-40"
+    />
+  </div>
+
+  <!-- Scanlines -->
+  <div class="hero-scanlines absolute inset-0 z-[1]" aria-hidden="true" />
+
+  <!-- Particle field (canvas, lightweight) -->
+  <div id="hero-particles" class="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true" />
+  <!-- Cursor glow (desktop only, no reduced-motion) -->
+  <div id="cursor-glow" class="cursor-glow-el absolute inset-0 z-[1] pointer-events-none" aria-hidden="true" />
 
   <div class="max-w-5xl mx-auto text-center relative z-10 px-2">
     <div class="mb-8">
       <div class="flex items-center justify-center gap-3 sm:gap-4 mb-8 flex-wrap">
-        <Logo class="w-14 h-14 sm:w-20 sm:h-20 drop-shadow-lg flex-shrink-0" />
-        <h1
-          class="text-4xl sm:text-5xl md:text-6xl lg:text-display-1 font-display bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent min-w-0"
-        >
-          Helpmaton
+        <Logo class="w-14 h-14 sm:w-20 sm:h-20 flex-shrink-0 drop-shadow-[0_0_20px_rgba(0,245,255,0.4)]" />
+        <h1 class="hero-title-glitch relative text-4xl sm:text-5xl md:text-6xl lg:text-display-1 font-display min-w-0 inline-block">
+          <span class="hero-title-shadow-cyan absolute inset-0 text-neon-cyan opacity-80" aria-hidden="true">Helpmaton</span>
+          <span class="hero-title-shadow-magenta absolute inset-0 text-neon-magenta opacity-80" aria-hidden="true">Helpmaton</span>
+          <span class="hero-title-text relative block bg-gradient-to-r from-neon-cyan to-neon-magenta bg-clip-text text-transparent">
+            Helpmaton
+          </span>
         </h1>
       </div>
-      <p class="text-display-3 mb-6 font-display text-neutral-900">
+      <p class="hero-headline text-display-3 mb-6 font-display text-white/95">
         Stop juggling AI agents. Get
-        <span class="text-primary-600">organized</span>
-        <span class="text-accent-600">workspaces</span> that actually work.
+        <span class="text-gradient-neon animate-shimmer">organized</span>
+        <span class="text-neon-magenta">workspaces</span> that actually work.
       </p>
-      <p
-        class="text-xl text-neutral-700 mb-6 max-w-2xl mx-auto leading-relaxed font-medium"
-      >
+      <p class="hero-body text-xl text-neutral-300 mb-6 max-w-2xl mx-auto leading-relaxed font-medium">
         Create AI assistants that remember your conversations, connect to your
         tools, and run on a schedule. Launch in minutes with Gmail, Google
         Calendar, Notion, Slack, and Discord—no complex setup.
       </p>
       <div class="flex items-center justify-center gap-6 mb-8 flex-wrap">
-        <p class="text-sm text-neutral-600">
+        <p class="hero-muted text-sm text-neutral-400">
           <span
-            class="inline-flex items-center gap-2 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full border border-primary-200 font-mono text-xs"
+            class="inline-flex items-center gap-2 px-3 py-1 bg-surface-100/80 backdrop-blur-sm rounded-full border border-neon-cyan/30 font-mono text-xs text-neutral-300"
           >
-            <span class="text-primary-600">🧩</span>
+            <span class="text-neon-cyan">🧩</span>
             <span>Source-available (BSL 1.1 → Apache 2.0 on 2029-11-01)</span>
             <a
               href="https://github.com/djinilabs/helpmaton"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-primary-600 hover:text-primary-700 font-semibold underline"
-              >self-host when you need to</a
+              class="text-neon-cyan hover:text-neon-cyan-dim font-semibold underline"
             >
+              self-host when you need to
+            </a>
           </span>
         </p>
       </div>
@@ -60,17 +79,30 @@ import Logo from "./Logo.astro";
         <a
           id="hero-start-free-trial"
           href="https://app.helpmaton.com"
-          class="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-colored shadow-glow hover:shadow-large hover:shadow-glow-hover transition-all hover:scale-105 hover:from-primary-700 hover:to-primary-800 border border-primary-400/50"
+          class="btn-neon-primary inline-block text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-105"
         >
           Start Free Trial
         </a>
         <a
           id="hero-see-how-it-works"
           href="/#features"
-          class="inline-block border-2 border-primary-400 text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl bg-white/80 backdrop-blur-sm hover:bg-primary-50 hover:shadow-glow transition-all"
+          class="btn-neon-secondary inline-block text-neon-cyan px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-[1.02]"
         >
           See How It Works
         </a>
+      </div>
+      <!-- Terminal block -->
+      <div class="hero-terminal mt-10 mx-auto max-w-md text-left rounded-lg border border-neon-cyan/30 bg-surface/90 backdrop-blur-sm overflow-hidden shadow-neon-cyan">
+        <div class="px-3 py-2 border-b border-neon-cyan/20 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-neon-magenta/80" aria-hidden="true" />
+          <span class="w-2.5 h-2.5 rounded-full bg-neutral-500" aria-hidden="true" />
+          <span class="w-2.5 h-2.5 rounded-full bg-neutral-500" aria-hidden="true" />
+        </div>
+        <div class="px-4 py-3 font-mono text-sm">
+          <span class="text-neutral-500">$</span>
+          <span id="terminal-command" class="text-neon-green ml-2"></span>
+          <span id="terminal-cursor" class="terminal-cursor inline-block w-2 h-4 ml-0.5 bg-neon-cyan align-middle" aria-hidden="true" />
+        </div>
       </div>
     </div>
   </div>
@@ -94,4 +126,77 @@ import Logo from "./Logo.astro";
       window.posthog.capture('cta_clicked', { label: 'see_how_it_works' });
     }
   });
+
+  // One-time glitch on load
+  const titleGlitch = document.querySelector('.hero-title-glitch');
+  if (titleGlitch) {
+    titleGlitch.classList.add('hero-glitch-on');
+    setTimeout(() => titleGlitch.classList.remove('hero-glitch-on'), 400);
+  }
+
+  // Terminal typing effect
+  const terminalCommand = document.getElementById('terminal-command');
+  const text = 'helpmaton init';
+  if (terminalCommand && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let i = 0;
+    const type = () => {
+      if (i <= text.length) {
+        terminalCommand.textContent = text.slice(0, i);
+        i++;
+        setTimeout(type, 80 + Math.random() * 40);
+      }
+    };
+    setTimeout(type, 800);
+  } else if (terminalCommand) {
+    terminalCommand.textContent = text;
+  }
+
+  // Lightweight particle field (desktop, reduced motion check)
+  const particleRoot = document.getElementById('hero-particles');
+  if (particleRoot && typeof window !== 'undefined') {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!prefersReducedMotion && isDesktop) {
+      const count = 24;
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'absolute rounded-full bg-neon-cyan/40';
+        const size = 1 + Math.random() * 2;
+        dot.style.width = dot.style.height = `${size}px`;
+        dot.style.left = `${Math.random() * 100}%`;
+        dot.style.top = `${Math.random() * 100}%`;
+        dot.classList.add('hero-particle');
+        dot.style.animationDuration = `${6 + Math.random() * 8}s`;
+        dot.style.animationDelay = `${Math.random() * 4}s`;
+        particleRoot.appendChild(dot);
+      }
+    }
+  }
+
+  // Cursor glow: follow mouse in hero (desktop, no reduced motion)
+  const heroSection = document.getElementById('hero-section');
+  const cursorGlow = document.getElementById('cursor-glow');
+  if (heroSection && cursorGlow && typeof window !== 'undefined') {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!prefersReducedMotion && isDesktop) {
+      let rafId: number | null = null;
+      let x = 0;
+      let y = 0;
+      const updatePosition = () => {
+        cursorGlow.style.backgroundPosition = `${x}px ${y}px`;
+        rafId = null;
+      };
+      heroSection.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = heroSection.getBoundingClientRect();
+        x = e.clientX - rect.left;
+        y = e.clientY - rect.top;
+        cursorGlow.classList.add('cursor-glow-visible');
+        if (rafId === null) rafId = requestAnimationFrame(updatePosition);
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        cursorGlow.classList.remove('cursor-glow-visible');
+      });
+    }
+  }
 </script>

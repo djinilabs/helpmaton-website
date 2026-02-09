@@ -21,57 +21,59 @@ const formatDate = (date: Date) =>
 
 <Layout title="Blog - Helpmaton">
   <Header />
-  <main class="min-h-screen bg-neutral-50 p-8 py-16">
+  <main class="min-h-screen section-dark p-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-display-2 font-display text-neutral-900 mb-4">
+        <p class="section-label font-mono mb-2">Blog</p>
+        <div class="section-divider mb-4 mx-auto" aria-hidden="true" />
+        <h1 class="text-display-2 font-display text-neutral-100 mb-4">
           Blog
         </h1>
-        <p class="text-lg text-neutral-600">
+        <p class="text-lg text-neutral-400">
           Stories, product updates, and guides from the Helpmaton team.
         </p>
       </div>
 
       {sortedPosts.length === 0 ? (
-        <section class="bg-white rounded-lg shadow-soft p-6 border border-neutral-200 text-center">
-          <p class="text-neutral-600">
+        <section class="card-cyber p-8 text-center">
+          <p class="text-neutral-400">
             No posts yet. Check back soon for new updates.
           </p>
         </section>
       ) : (
         <div class="space-y-6">
           {sortedPosts.map((post) => (
-            <article class="bg-white rounded-lg shadow-soft border border-neutral-200 overflow-hidden md:flex">
+            <article class="card-cyber card-tilt overflow-hidden md:flex hover:-translate-y-0.5 transition-all group">
               <a
                 href={`/blog/${post.slug}`}
-                class="block md:w-64 md:flex-shrink-0"
+                class="block md:w-64 md:flex-shrink-0 overflow-hidden"
               >
                 <img
                   src={post.data.image}
                   alt={post.data.title}
-                  class="h-48 w-full object-cover md:h-full"
+                  class="h-48 w-full object-cover md:h-full group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </a>
               <div class="p-6 md:flex-1">
-                <div class="mb-3 text-sm text-neutral-500">
+                <div class="mb-3 text-sm text-neutral-500 font-mono">
                   {formatDate(post.data.pubDate)}
                 </div>
-                <h2 class="text-2xl font-semibold text-neutral-900 mb-2">
+                <h2 class="text-2xl font-semibold text-neutral-100 mb-2">
                   <a
                     href={`/blog/${post.slug}`}
-                    class="hover:text-primary-600 transition-colors"
+                    class="hover:text-neon-cyan transition-colors"
                   >
                     {post.data.title}
                   </a>
                 </h2>
-                <p class="text-neutral-600 mb-4">
+                <p class="text-neutral-400 mb-4">
                   {post.data.description}
                 </p>
                 {post.data.tags?.length ? (
                   <div class="flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-primary-50 text-primary-700">
+                      <span class="blog-tag text-xs font-semibold font-mono px-2 py-1 rounded-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/30">
                         {tag}
                       </span>
                     ))}
