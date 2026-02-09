@@ -310,17 +310,25 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         coreUseCases.map((useCase, index) => (
-          <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-accent-300 hover:-translate-y-1 relative overflow-hidden">
+          <div
+            class="reveal-item group bg-white p-6 rounded-xl shadow-soft hover:shadow-large hover:shadow-glow transition-all border border-neutral-200 hover:border-accent-400 hover:-translate-y-1 relative overflow-hidden"
+            data-reveal
+            style={`animation-delay: ${index * 60}ms`}
+          >
+            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-accent-500 rounded-l-xl" aria-hidden="true" />
             <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div class="relative z-10">
+            <div class="relative z-10 pl-1">
               <div class="flex items-center gap-3 mb-4">
-                <div class="transform group-hover:scale-110 transition-transform">
-                  <Icon
-                    name={useCase.icon}
-                    class="w-10 h-10 text-accent-600"
-                    aria-hidden="true"
-                  />
+                <div class="relative inline-block">
+                  <span class="absolute inset-0 bg-accent-500/20 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <span class="relative transform group-hover:scale-110 transition-transform">
+                    <Icon
+                      name={useCase.icon}
+                      class="w-10 h-10 text-accent-600"
+                      aria-hidden="true"
+                    />
+                  </span>
                 </div>
                 <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
               </div>
@@ -424,17 +432,25 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
     >
       {
         moreUseCases.map((useCase, index) => (
-          <div class="group bg-white p-6 rounded-xl shadow-soft hover:shadow-large transition-all border border-neutral-200 hover:border-accent-300 hover:-translate-y-1 relative overflow-hidden">
+          <div
+            class="reveal-item group bg-white p-6 rounded-xl shadow-soft hover:shadow-large hover:shadow-glow transition-all border border-neutral-200 hover:border-accent-400 hover:-translate-y-1 relative overflow-hidden"
+            data-reveal
+            style={`animation-delay: ${index * 60}ms`}
+          >
+            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-accent-500 rounded-l-xl" aria-hidden="true" />
             <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity" />
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div class="relative z-10">
+            <div class="relative z-10 pl-1">
               <div class="flex items-center gap-3 mb-4">
-                <div class="transform group-hover:scale-110 transition-transform">
-                  <Icon
-                    name={useCase.icon}
-                    class="w-10 h-10 text-accent-600"
-                    aria-hidden="true"
-                  />
+                <div class="relative inline-block">
+                  <span class="absolute inset-0 bg-accent-500/20 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <span class="relative transform group-hover:scale-110 transition-transform">
+                    <Icon
+                      name={useCase.icon}
+                      class="w-10 h-10 text-accent-600"
+                      aria-hidden="true"
+                    />
+                  </span>
                 </div>
                 <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent group-hover:via-accent-300 transition-colors" />
               </div>

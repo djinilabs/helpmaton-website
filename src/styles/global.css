@@ -61,6 +61,44 @@
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
   }
-  
+
+  /* Hero: subtle grid background */
+  .hero-grid-bg {
+    background-image:
+      linear-gradient(rgba(13, 148, 136, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13, 148, 136, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Scroll reveal: fade + translate up with optional stagger */
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal-item.reveal-in {
+    animation: reveal-up 0.4s ease forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-item {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-item.reveal-in {
+      animation: none;
+    }
+  }
 }
 
