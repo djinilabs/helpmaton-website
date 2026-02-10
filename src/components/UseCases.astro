@@ -302,6 +302,9 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
       <p class="text-lg text-neutral-400 max-w-2xl mx-auto">
         Pick the workflow that fits and expand when you need more ideas
       </p>
+      <p class="text-sm text-neutral-500 mt-3">
+        <a href="/demos" class="text-neutral-400 hover:text-neon-cyan transition-colors underline underline-offset-2">See it in action</a>
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -375,7 +378,7 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
           <div class="pt-4 mt-4 border-t border-neon-cyan/20">
             <a
               href="https://app.helpmaton.com"
-              class="inline-flex items-center gap-2 text-sm text-neon-cyan font-semibold hover:text-neon-cyan-dim transition-colors group/link"
+              class="use-cases-cta inline-flex items-center gap-2 text-sm text-neon-cyan font-semibold hover:text-neon-cyan-dim transition-colors group/link"
             >
               <span>Create your use case</span>
               <span class="transform group-hover/link:translate-x-1 transition-transform">→</span>
@@ -464,4 +467,15 @@ Route tasks to agents with specific domain knowledge.\n<br/><br/>
       moreUseCases.classList.toggle("grid");
     });
   }
+
+  document.querySelectorAll(".use-cases-cta").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      if (window.posthog) {
+        window.posthog.capture("cta_clicked", { label: "create_use_case", source: "use_cases" });
+      }
+      const href = (e.currentTarget as HTMLAnchorElement).href;
+      e.preventDefault();
+      setTimeout(() => { window.location.href = href; }, 150);
+    });
+  });
 </script>

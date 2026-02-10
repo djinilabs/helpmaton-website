@@ -16,6 +16,10 @@ import "../styles/global.css";
         <p class="text-lg text-[var(--text-muted)]">
           Start here to set up your first agent
         </p>
+        <p class="text-sm text-[var(--text-muted)] mt-2">
+          New to Helpmaton?{" "}
+          <a href="/demos" class="text-neutral-400 hover:text-neon-cyan transition-colors underline underline-offset-2">Watch a demo first</a>
+        </p>
       </div>
 
       <div class="space-y-6">
@@ -42,6 +46,7 @@ import "../styles/global.css";
           </ol>
           <div class="mt-4">
             <a
+              id="getting-started-signup"
               href="https://app.helpmaton.com"
               class="inline-block bg-neon-cyan text-surface px-4 py-2 font-medium rounded-lg border border-neon-cyan/50 hover:shadow-neon-cyan transition-colors text-sm"
             >
@@ -615,4 +620,17 @@ import "../styles/global.css";
     </div>
   </main>
   <Footer />
+  <script>
+    const signup = document.getElementById('getting-started-signup');
+    if (signup) {
+      signup.addEventListener('click', (e) => {
+        if (window.posthog) {
+          window.posthog.capture('cta_clicked', { label: 'sign_up_now', source: 'getting_started' });
+        }
+        const href = (e.currentTarget as HTMLAnchorElement).href;
+        e.preventDefault();
+        setTimeout(() => { window.location.href = href; }, 150);
+      });
+    }
+  </script>
 </Layout>

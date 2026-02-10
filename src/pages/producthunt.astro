@@ -68,6 +68,7 @@ import "../styles/global.css";
             Support us on Product Hunt
           </a>
           <a
+            id="ph-try-free"
             href="https://app.helpmaton.com"
             class="w-full sm:w-auto inline-flex items-center justify-center border-2 border-primary-600 text-primary-700 px-8 py-4 text-lg font-semibold rounded-xl bg-white hover:bg-primary-50 transition-all"
           >
@@ -101,4 +102,15 @@ import "../styles/global.css";
       }
     });
   });
+  const phTryFree = document.getElementById('ph-try-free');
+  if (phTryFree) {
+    phTryFree.addEventListener('click', (e) => {
+      if (window.posthog) {
+        window.posthog.capture('cta_clicked', { label: 'try_helpmaton_free', source: 'producthunt' });
+      }
+      const href = (e.currentTarget as HTMLAnchorElement).href;
+      e.preventDefault();
+      setTimeout(() => { window.location.href = href; }, 150);
+    });
+  }
 </script>

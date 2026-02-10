@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const demos = [
+  {
+    videoId: "0dyoCgN9C3Y",
+    title: "Stop Managing AI Agents. Start Organizing AI Operations.",
+    description: "Meet Helpmaton, the workspace-based platform designed to turn cool bots into a structured workforce. See how to create workspaces, use long-term memory and documents, connect Google Workspace and Notion, and deploy agents as Slack or Discord bots.",
+    url: "https://www.youtube.com/watch?v=0dyoCgN9C3Y",
+  },
+  {
+    videoId: "G0e-ni-MaJc",
+    title: "Stop Repeating Yourself: Master AI Agent Memory in Helpmaton",
+    description: "See how Agent Memory in Helpmaton lets you build assistants that learn from your conversations—remembering important facts, people, and events so they give better, more personalized answers.",
+    url: "https://www.youtube.com/watch?v=G0e-ni-MaJc",
+  },
+];
+---
+
+<Layout title="Demos - Helpmaton" description="Watch Helpmaton demos on YouTube">
+  <Header />
+  <main class="min-h-screen p-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <p class="mb-8">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neon-cyan transition-colors font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] rounded"
+          aria-label="Back to home"
+        >
+          <span aria-hidden="true">←</span>
+          Back to home
+        </a>
+      </p>
+
+      <div class="mb-12 text-center">
+        <h1 class="text-display-2 font-display text-[var(--text-primary)] mb-4">
+          Demos
+        </h1>
+        <p class="text-lg text-[var(--text-muted)]">
+          Watch Helpmaton in action
+        </p>
+      </div>
+
+      <ul class="space-y-10">
+        {demos.map((demo) => (
+          <li>
+            <a
+              href={demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block rounded-xl border border-neon-cyan/20 bg-surface-100/80 overflow-hidden hover:border-neon-cyan/40 hover:shadow-neon-cyan transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+              aria-label={`${demo.title} – Watch on YouTube (opens in new tab)`}
+            >
+              <div class="aspect-video w-full bg-surface relative overflow-hidden">
+                <img
+                  src={`/images/demos/${demo.videoId}.jpg`}
+                  alt={demo.title}
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h2 class="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-neon-cyan transition-colors">
+                  {demo.title}
+                </h2>
+                <p class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed">
+                  {demo.description}
+                </p>
+                <span class="inline-flex items-center gap-2 text-sm font-medium text-neon-cyan group-hover:underline">
+                  Watch on YouTube
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <section
+        class="mt-16 text-center rounded-xl border border-neon-cyan/20 bg-surface-100/80 p-8"
+        aria-labelledby="demos-cta-heading"
+      >
+        <h2 id="demos-cta-heading" class="text-xl font-semibold text-[var(--text-primary)] mb-2">
+          Ready to try it yourself?
+        </h2>
+        <p class="text-sm text-[var(--text-muted)] mb-6 max-w-xl mx-auto">
+          Start free—no credit card required. Create workspaces, connect your tools, and run AI agents in minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            id="demos-cta-start-trial"
+            href="https://app.helpmaton.com"
+            class="btn-neon-primary inline-block text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="/#pricing"
+            class="btn-neon-secondary inline-block text-neon-cyan px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+          >
+            View Pricing
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+  <script>
+    const cta = document.getElementById('demos-cta-start-trial');
+    if (cta) {
+      cta.addEventListener('click', (e) => {
+        if (window.posthog) {
+          window.posthog.capture('cta_clicked', { label: 'start_free_trial', source: 'demos' });
+        }
+        const href = (e.currentTarget as HTMLAnchorElement).href;
+        e.preventDefault();
+        setTimeout(() => { window.location.href = href; }, 150);
+      });
+    }
+    const viewPricing = document.querySelector('a[href="/#pricing"]');
+    if (viewPricing && viewPricing.closest('section[aria-labelledby="demos-cta-heading"]')) {
+      viewPricing.addEventListener('click', () => {
+        if (window.posthog) {
+          window.posthog.capture('cta_clicked', { label: 'view_pricing', source: 'demos' });
+        }
+      });
+    }
+  </script>
+</Layout>

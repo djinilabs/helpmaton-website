@@ -20,7 +20,7 @@ import Logo from "./Logo.astro";
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1">
+      <nav class="hidden lg:flex flex-wrap items-center gap-1">
         <a
           href="/#use-cases"
           class="nav-link px-4 py-2 text-sm font-semibold text-neutral-300 hover:text-neon-cyan transition-colors rounded-lg hover:shadow-neon-cyan"
@@ -46,14 +46,20 @@ import Logo from "./Logo.astro";
           Blog
         </a>
         <a
-          class="header-login px-5 py-2 text-sm font-semibold text-surface bg-neon-cyan text-surface rounded-lg border border-neon-cyan/50 hover:shadow-neon-cyan-lg hover:border-neon-cyan transition-all hover:scale-105"
+          href="/demos"
+          class="nav-link px-4 py-2 text-sm font-semibold text-neutral-300 hover:text-neon-cyan transition-colors rounded-lg hover:shadow-neon-cyan"
+        >
+          Demos
+        </a>
+        <a
+          class="header-login px-5 py-2 text-sm font-semibold text-surface bg-neon-cyan rounded-lg border border-neon-cyan/50 hover:shadow-neon-cyan-lg hover:border-neon-cyan transition-all hover:scale-105"
           href="https://app.helpmaton.com"
         >
           Login
         </a>
       </nav>
 
-      <div class="flex md:hidden items-center gap-2">
+      <div class="flex lg:hidden items-center gap-2">
         <button
           type="button"
           class="flex items-center justify-center w-10 h-10 rounded-lg text-neutral-300 hover:bg-neon-cyan/10 hover:text-neon-cyan transition-colors"
@@ -74,7 +80,7 @@ import Logo from "./Logo.astro";
     <div
       id="mobile-menu"
       role="navigation"
-      class="mobile-menu-panel md:hidden overflow-hidden max-h-0 transition-all duration-200 ease-in-out border-t border-neon-cyan/20 -mx-4 sm:-mx-8 px-4 sm:px-8 bg-surface-100/95 backdrop-blur-md"
+      class="mobile-menu-panel lg:hidden overflow-hidden max-h-0 transition-all duration-200 ease-in-out border-t border-neon-cyan/20 -mx-4 sm:-mx-8 px-4 sm:px-8 bg-surface-100/95 backdrop-blur-md"
     >
       <nav class="flex flex-col py-4 gap-1">
         <a href="/#use-cases" class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-300 hover:text-neon-cyan rounded-lg hover:bg-neon-cyan/10">
@@ -88,6 +94,9 @@ import Logo from "./Logo.astro";
         </a>
         <a href="/blog" class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-300 hover:text-neon-cyan rounded-lg hover:bg-neon-cyan/10">
           Blog
+        </a>
+        <a href="/demos" class="mobile-menu-link px-4 py-3 text-sm font-semibold text-neutral-300 hover:text-neon-cyan rounded-lg hover:bg-neon-cyan/10">
+          Demos
         </a>
         <a
           class="header-login mobile-menu-link block text-center px-5 py-3 text-sm font-semibold text-surface bg-neon-cyan border border-neon-cyan/50 rounded-lg mt-2 hover:shadow-neon-cyan"
