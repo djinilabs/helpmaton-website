@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+
+const whyHelpmaton = [
+  { title: "Freedom of choice", desc: "Use any AI model—OpenAI, Anthropic, Google, or others. Bring your own API keys, use credits, or self-host when you need to. No vendor lock-in.", icon: "heroicons:key", tag: "No lock-in" },
+  { title: "Memory that sticks", desc: "Agents remember key details from conversations. Configurable summaries by day, week, month, or quarter. Answers get sharper the more you use them.", icon: "heroicons:bookmark-square", tag: "Context that sticks" },
+  { title: "Budget you control", desc: "Set daily, monthly, or yearly limits per agent. Spending stops at your cap so you never get surprised. Predictable costs from day one.", icon: "heroicons:calculator", tag: "Predictable spend" },
+  { title: "Quality you can measure", desc: "Judge evals score conversations, catch regressions, and let you sample traffic to control cost. Ship with confidence.", icon: "heroicons:check-badge", tag: "Ship with confidence" },
+  { title: "Workspaces that scale", desc: "Keep projects and teams separate. Roles and access control built in. No permission chaos as you add agents and people.", icon: "heroicons:squares-2x2", tag: "Clear access control" },
+  { title: "Integrations in minutes", desc: "Connect Gmail, Google Calendar, Drive, Notion, Slack, and Discord with a few clicks. No complex setup—your agents get to work right away.", icon: "heroicons:puzzle-piece", tag: "Connect in minutes" },
+];
+---
+
+<section id="why-helpmaton" class="section-dark p-8 py-20">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="section-label font-mono mb-2">Why Helpmaton</p>
+      <div class="section-divider mb-4" aria-hidden="true" />
+      <h2 class="text-display-2 font-display text-neutral-100 mb-4">Built for teams who want control and speed</h2>
+      <p class="text-neutral-400 max-w-xl mx-auto">Freedom of choice, memory that sticks, and quality you can measure—without the chaos.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        whyHelpmaton.map((w, index) => (
+          <div class="reveal-item card-cyber card-tilt group p-6 hover:-translate-y-1 relative overflow-hidden transition-all" data-reveal style={`animation-delay: ${index * 60}ms`}>
+            <div class="card-accent-bar" aria-hidden="true" />
+            <div class="relative z-10 pl-1">
+              <Icon name={w.icon} class="w-9 h-9 text-neon-cyan mb-3 group-hover:drop-shadow-[0_0_8px_rgba(0,245,255,0.5)] transition-all" aria-hidden="true" />
+              <h3 class="font-semibold text-neutral-100 mb-2 group-hover:text-neon-cyan transition-colors">{w.title}</h3>
+              <p class="text-sm text-neutral-400 mb-3 leading-relaxed">{w.desc}</p>
+              <span class="text-xs font-semibold text-neon-cyan uppercase tracking-wide font-mono">{w.tag}</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
