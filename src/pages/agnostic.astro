@@ -117,14 +117,9 @@ const description =
       const el = document.getElementById(id);
       if (!el) return;
       const label = id === 'agnostic-login' ? 'login' : id === 'agnostic-cta' ? 'get_2_months_free' : 'learn_more';
-      el.addEventListener('click', (e) => {
+      el.addEventListener('click', () => {
         if (window.posthog) {
           window.posthog.capture('cta_clicked', { label, source: 'agnostic' });
-        }
-        const href = (e.currentTarget as HTMLAnchorElement).href;
-        if (href && href.includes('app.helpmaton.com')) {
-          e.preventDefault();
-          setTimeout(() => { window.location.href = href; }, 150);
         }
       });
     });

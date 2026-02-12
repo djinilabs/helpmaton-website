@@ -117,6 +117,52 @@ const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro
     <slot />
     <div class="noise-overlay fixed inset-0 pointer-events-none z-[100]" aria-hidden="true" />
     <CookieConsent />
+    <script is:inline>
+      window.gtag_report_conversion = function(url) {
+        var navigated = false;
+        var navigate = function() {
+          if (navigated) return;
+          navigated = true;
+          if (typeof url !== 'undefined') {
+            window.location = url;
+          }
+        };
+        var callback = function() { navigate(); };
+        if (typeof window.gtag === 'function') {
+          var tid = 'conv_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-17940032985/8QJyCJKfp_cbENnbvOpC',
+            'transaction_id': tid,
+            'event_callback': callback
+          });
+          setTimeout(callback, 3000);
+        } else {
+          navigate();
+        }
+        return false;
+      };
+    </script>
+    <script>
+      document.addEventListener('click', function(e) {
+        var el = e.target;
+        if (!el) return;
+        if (el.nodeType !== 1) el = el.parentElement;
+        if (!el || typeof el.closest !== 'function') return;
+        var link = el.closest('a[href*="app.helpmaton.com"]');
+        if (!link || !link.href || link.hasAttribute('data-no-conversion')) return;
+        if (link.target === '_blank') {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-17940032985/8QJyCJKfp_cbENnbvOpC',
+              'transaction_id': 'conv_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9)
+            });
+          }
+          return;
+        }
+        e.preventDefault();
+        window.gtag_report_conversion(link.href);
+      }, true);
+    </script>
     <script>
       (function () {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -333,11 +333,6 @@ const plansSummary = [
           const props = { label, ...(source && { source }), ...(plan && { plan }) };
           window.posthog.capture('cta_clicked', props);
         }
-        const href = (e.currentTarget as HTMLAnchorElement).href;
-        if (href && href.includes('app.helpmaton.com')) {
-          e.preventDefault();
-          setTimeout(() => { window.location.href = href; }, 150);
-        }
       });
     });
   </script>
