@@ -115,6 +115,7 @@ import "../styles/global.css";
             <li>Creating your first agent</li>
             <li>Setting agent tone and instructions</li>
             <li>Enabling tools and integrations</li>
+            <li>Enabling skills for effective tool usage</li>
             <li>Scheduling recurring work</li>
             <li>Delegating tasks to other agents</li>
             <li>Reviewing quality with evals</li>
@@ -431,6 +432,47 @@ import "../styles/global.css";
               </ul>
             </div>
           </div>
+        </section>
+
+        <section
+          class="doc-card rounded-xl p-6 border border-neon-cyan/20 bg-surface-100/80 backdrop-blur-sm"
+        >
+          <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">
+            Agent Skills
+          </h2>
+          <p class="mb-4 text-[var(--text-muted)]">
+            Agent Skills are optional instruction blocks appended to an agent's
+            system prompt. They teach agents how to use their tools effectively
+            with step-by-step guidance, examples, and edge-case handling for
+            specific workflows.
+          </p>
+          <div class="mb-4 space-y-4 text-sm text-[var(--text-muted)]">
+            <div>
+              <h3 class="font-semibold text-[var(--text-primary)] mb-2">
+                How it works
+              </h3>
+              <p class="mb-2">
+                Enable tools (MCP servers or built-in tools like document search,
+                web search, email) for your agent, then pick from available
+                skills that match those tools. Each skill is only available when
+                all its required tools are enabled and connected.
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--text-primary)] mb-2">
+                Benefits
+              </h3>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Better tool usage: agents follow structured instructions instead of guessing</li>
+                <li>Domain expertise: skills include examples, edge cases, and tool-specific guidance</li>
+                <li>Easy configuration: enable skills per agent from Agent detail → External tools → Skills</li>
+                <li>Export/import: skills are included in workspace export for reproducible setups</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-[var(--text-muted)] mt-3">
+            See the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/agent-skills.md" target="_blank" rel="noopener noreferrer" class="doc-link underline">Agent Skills documentation</a> for the full catalog and tool requirements.
+          </p>
         </section>
 
         <section

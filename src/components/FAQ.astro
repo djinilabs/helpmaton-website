@@ -113,6 +113,16 @@ Yes. You can set per-agent prompts for each time grain (daily, weekly, monthly, 
 Yes. You can set cron-based schedules so agents run automatically for reports, monitoring, and recurring tasks.<br/><br/>
 <strong>Use cases</strong> - Weekly summaries, daily monitoring, and proactive alerts.`,
   },
+  {
+    category: "Agents",
+    question: "What are Agent Skills?",
+    answer: `<strong>Agent Skills explained</strong><br/>
+Agent Skills are optional instruction blocks that teach your agents how to use their tools effectively. They provide step-by-step guidance, examples, and edge-case handling for specific workflows.<br/><br/>
+<strong>How it works</strong> - Enable tools (MCP servers or built-in tools like document search, web search, email) for your agent, then pick from available skills that match those tools. Each skill is only available when all its required tools are enabled and connected.<br/><br/>
+<strong>What they cover</strong> - Skills cover analytics (PostHog, HubSpot), support (Zendesk, Intercom), project management (Linear, Notion, Todoist), e-commerce (Shopify), CRM (Salesforce), and more.<br/><br/>
+<strong>Where to enable</strong> - Agent detail page → External tools → Skills.<br/><br/>
+Learn more in the <a href="https://github.com/djinilabs/helpmaton/blob/main/docs/agent-skills.md" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-cyan-dim underline">Agent Skills documentation</a>.`,
+  },
 
   // Evaluation & Quality
   {
