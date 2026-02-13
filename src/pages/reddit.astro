@@ -1,0 +1,448 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Logo from "../components/Logo.astro";
+import Footer from "../components/Footer.astro";
+import ContactSalesModal from "../components/ContactSalesModal.astro";
+import WhyHelpmatonCards from "../components/WhyHelpmatonCards.astro";
+import { Icon } from "astro-icon/components";
+import "../styles/global.css";
+
+const appUrl = "https://app.helpmaton.com?promo=REDDIT2026";
+
+const featureHighlights = [
+  { title: "Workspaces", desc: "Keep projects and teams separate so access, budgets, and agents never collide. Invite teammates, set roles, and scale without permission chaos.", icon: "heroicons:squares-2x2", tag: "Keep projects separate" },
+  { title: "Agent Memory", desc: "Agents remember key details from conversations so answers get sharper over time. Configure summaries by day, week, month, or quarter.", icon: "heroicons:bookmark-square", tag: "Context that sticks" },
+  { title: "Budget Control", desc: "Set daily, monthly, or yearly limits per agent. Spending stops at your cap so you avoid surprise bills. Predictable costs from day one.", icon: "heroicons:calculator", tag: "Predictable costs" },
+  { title: "Quick Integrations", desc: "Connect Gmail, Google Calendar, Drive, Notion, Slack, and Discord in minutes. No complex setup—agents get to work right away.", icon: "heroicons:puzzle-piece", tag: "Connect in minutes" },
+  { title: "Judge Evals", desc: "Score conversations, validate behavior, and catch regressions with built-in evals. Sample traffic to control cost while keeping quality visible.", icon: "heroicons:check-badge", tag: "Quality you can measure" },
+  { title: "Schedules & Automation", desc: "Run agents on a schedule for recurring reports, monitoring, and background work. Cron-based prompts keep workflows moving without you.", icon: "heroicons:clock", tag: "Automate recurring work" },
+];
+
+const useCaseHighlights = [
+  { title: "Customer Support", desc: "Stop repeating answers. Deploy agents in Slack or Discord with your docs so they reply consistently.", outcome: "Faster responses and fewer repetitive tickets.", link: "/#use-cases" },
+  { title: "Research & Reports", desc: "Reduce manual research. Gather info and run scheduled reports automatically.", outcome: "Share insights quickly without context switching.", link: "/#use-cases" },
+  { title: "Team Chat Bots", desc: "Help inside chat. Let teams ask questions directly in Slack or Discord.", outcome: "Faster answers without leaving chat.", link: "/#use-cases" },
+];
+
+const plansSummary = [
+  { name: "Free", price: "$0", cta: "Get Started" },
+  { name: "Starter", price: "$29/mo", cta: "Start Trial" },
+  { name: "Pro", price: "$99/mo", cta: "Start Trial", popular: true },
+  { name: "Enterprise", price: "Custom", cta: "Contact Sales" },
+];
+---
+
+<Layout title="Helpmaton for Reddit - 2 Months Free with REDDIT2026" description="AI agents that remember, connect, and run on your terms. Reddit exclusive: use code REDDIT2026 for 2 months free. Start free in minutes.">
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="min-h-[70vh] p-8 flex items-center justify-center relative overflow-hidden hero-section-bg" id="reddit-hero-section">
+      <div class="hero-perspective-wrapper absolute inset-0 overflow-hidden">
+        <div class="hero-perspective-grid absolute top-0 left-0 right-0 h-[200%]" aria-hidden="true" />
+      </div>
+      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div class="hero-orb-1 absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-neon-cyan blur-[120px]" />
+        <div class="hero-orb-2 absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-neon-magenta blur-[100px]" />
+        <div class="hero-orb-3 absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-neon-cyan blur-[80px] opacity-40" />
+      </div>
+      <div class="hero-scanlines absolute inset-0 z-[1]" aria-hidden="true" />
+      <div class="max-w-4xl mx-auto text-center relative z-10 px-2">
+        <!-- Reddit promo badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-surface-100/90 backdrop-blur-sm rounded-full border-2 border-neon-magenta/50 font-mono text-sm text-neutral-200">
+          <span class="text-neon-magenta font-bold">r/Helpmaton</span>
+          <span class="text-neutral-500">·</span>
+          <span>Use code <strong class="text-neon-cyan">REDDIT2026</strong> for <strong class="text-neon-cyan">2 months free</strong></span>
+        </div>
+
+        <div class="flex items-center justify-center gap-3 sm:gap-4 mb-8 flex-wrap">
+          <Logo class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 drop-shadow-[0_0_20px_rgba(0,245,255,0.4)]" />
+          <h1 class="hero-title-glitch relative text-3xl sm:text-4xl md:text-5xl font-display min-w-0 inline-block">
+            <span class="hero-title-shadow-cyan absolute inset-0 text-neon-cyan opacity-80" aria-hidden="true">Helpmaton</span>
+            <span class="hero-title-shadow-magenta absolute inset-0 text-neon-magenta opacity-80" aria-hidden="true">Helpmaton</span>
+            <span class="hero-title-text relative block bg-gradient-to-r from-neon-cyan to-neon-magenta bg-clip-text text-transparent font-bold">Helpmaton</span>
+          </h1>
+        </div>
+        <p class="text-display-3 font-display text-white/95 mb-4">
+          AI agents that <span class="text-gradient-neon animate-shimmer">remember</span>, connect, and run on your terms.
+        </p>
+        <p class="text-lg text-neutral-300 mb-4 max-w-2xl mx-auto leading-relaxed">
+          Welcome, Reddit! Create assistants that remember context, connect to Gmail, Calendar, Notion, Slack, and Discord, and run on a schedule—no complex setup. Launch in minutes.
+        </p>
+        <p class="text-sm text-neutral-400 mb-4 max-w-xl mx-auto">
+          Memory that sticks · Integrations in minutes · Budget control · Quality you can measure
+        </p>
+
+        <!-- Promo code callout -->
+        <div class="mb-8 p-4 rounded-xl bg-neon-cyan/10 border-2 border-neon-cyan/40 max-w-md mx-auto">
+          <p class="text-sm text-neutral-400 mb-2">Reddit exclusive offer</p>
+          <p class="font-mono text-xl font-bold text-neon-cyan mb-1">REDDIT2026</p>
+          <p class="text-sm text-neutral-300">2 months free on paid plans · Apply at checkout</p>
+        </div>
+
+        <p class="mb-8">
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-surface-100/80 backdrop-blur-sm rounded-full border border-neon-cyan/30 font-mono text-xs text-neutral-300">
+            <span class="text-neon-cyan">🧩</span>
+            Source-available (BSL 1.1 → Apache 2.0). <a href="https://github.com/djinilabs/helpmaton" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-cyan-dim font-semibold underline">Self-host when you need to</a>
+          </span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href={appUrl}
+            data-track-cta="start_free_trial"
+            data-track-source="reddit-hero"
+            class="btn-neon-primary inline-block text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-105"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="/#features"
+            data-track-cta="see_how_it_works"
+            data-track-source="reddit-hero"
+            class="btn-neon-secondary inline-block text-neon-cyan px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-[1.02]"
+          >
+            See How It Works
+          </a>
+        </div>
+        <p class="text-sm text-neutral-500 mt-4">
+          <a href="/demos" class="text-neutral-400 hover:text-neon-cyan transition-colors underline underline-offset-2">Watch a demo</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Helpmaton differentiators -->
+    <WhyHelpmatonCards />
+
+    <!-- Features summary -->
+    <section id="features" class="section-dark p-8 py-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="section-label font-mono mb-2">Features</p>
+          <div class="section-divider mb-4" aria-hidden="true" />
+          <h2 class="text-display-2 font-display text-neutral-100 mb-4">Everything you need to run <span class="text-neon-cyan">AI agents</span> at scale</h2>
+          <p class="text-neutral-400 max-w-xl mx-auto">Workspaces, memory, budget control, and integrations—without the chaos.</p>
+          <p class="text-sm text-neutral-500 mt-3">
+            <a href="/demos" class="text-neutral-500 hover:text-neon-cyan transition-colors underline underline-offset-2">See it in action</a>
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {
+            featureHighlights.map((f, index) => (
+              <div class="reveal-item card-cyber card-tilt group p-6 hover:-translate-y-1 relative overflow-hidden transition-all" data-reveal style={`animation-delay: ${index * 60}ms`}>
+                <div class="card-accent-bar" aria-hidden="true" />
+                <div class="relative z-10 pl-1">
+                  <Icon name={f.icon} class="w-9 h-9 text-neon-cyan mb-3 group-hover:drop-shadow-[0_0_8px_rgba(0,245,255,0.5)] transition-all" aria-hidden="true" />
+                  <h3 class="font-semibold text-neutral-100 mb-2 group-hover:text-neon-cyan transition-colors">{f.title}</h3>
+                  <p class="text-sm text-neutral-400 mb-3 leading-relaxed">{f.desc}</p>
+                  {f.tag && <span class="text-xs font-semibold text-neon-cyan uppercase tracking-wide font-mono">{f.tag}</span>}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-center text-sm">
+          <a href="/#features" class="inline-flex items-center gap-2 text-neon-cyan hover:text-neon-cyan-dim font-semibold">
+            See all features <span aria-hidden="true">→</span>
+          </a>
+          <span class="mx-2 text-neutral-600">·</span>
+          <a href="/demos" class="text-neutral-500 hover:text-neon-cyan transition-colors underline underline-offset-2">Watch a demo</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Use cases summary -->
+    <section id="use-cases" class="section-dark p-8 py-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="section-label font-mono mb-2">Use Cases</p>
+          <div class="section-divider mb-4" aria-hidden="true" />
+          <h2 class="text-display-2 font-display text-neutral-100 mb-4">See how teams use <span class="text-neon-magenta">Helpmaton</span></h2>
+          <p class="text-neutral-400 max-w-xl mx-auto">Support bots, research assistants, scheduled reports, and more.</p>
+          <p class="text-sm text-neutral-500 mt-3">
+            <a href="/demos" class="text-neutral-500 hover:text-neon-cyan transition-colors underline underline-offset-2">See it in action</a>
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {
+            useCaseHighlights.map((u, index) => (
+              <a href={u.link} class="reveal-item card-cyber card-tilt group p-6 hover:-translate-y-1 relative overflow-hidden transition-all block" data-reveal style={`animation-delay: ${index * 60}ms`}>
+                <div class="card-accent-bar" aria-hidden="true" />
+                <div class="relative z-10 pl-1">
+                  <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent mb-4" aria-hidden="true" />
+                  <h3 class="font-semibold text-neutral-100 mb-2 group-hover:text-neon-magenta transition-colors">{u.title}</h3>
+                  <p class="text-sm text-neutral-400 mb-2 leading-relaxed">{u.desc}</p>
+                  <p class="text-xs font-semibold text-neon-magenta mb-3 font-mono"><span class="text-neutral-500 font-normal">Outcome: </span>{u.outcome}</p>
+                  <span class="text-sm text-neon-cyan font-semibold">Learn more →</span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+        <p class="text-center text-sm">
+          <a href="/#use-cases" class="inline-flex items-center gap-2 text-neon-cyan hover:text-neon-cyan-dim font-semibold">
+            Explore all use cases <span aria-hidden="true">→</span>
+          </a>
+          <span class="mx-2 text-neutral-600">·</span>
+          <a href="/demos" class="text-neutral-500 hover:text-neon-cyan transition-colors underline underline-offset-2">Watch a demo</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Provider-agnostic callout -->
+    <section class="section-dark py-10 px-4 sm:px-8 border-t border-neon-cyan/15">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-base text-neutral-300 mb-2">
+          Use any AI model you want—OpenAI, Anthropic, Google, or others. Bring your own API keys, use credits, or self-host when you need to. <strong class="text-neon-cyan">No lock-in.</strong>
+        </p>
+        <a href="/agnostic" class="text-sm font-semibold text-neon-cyan hover:text-neon-cyan-dim underline">Learn about provider choice →</a>
+      </div>
+    </section>
+
+    <!-- Why Helpmaton: comparison with others -->
+    <section id="compare" class="section-dark p-8 py-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="section-label font-mono mb-2">Compare</p>
+          <div class="section-divider mb-4" aria-hidden="true" />
+          <h2 class="text-display-2 font-display text-neutral-100 mb-4">A simpler way to run AI agents</h2>
+          <p class="text-neutral-400 max-w-2xl mx-auto mb-2">
+            See how Helpmaton compares to building it yourself or using other platforms. You get <strong class="text-neon-cyan">freedom of choice</strong>, built-in evals, <strong class="text-neon-cyan">agent memory</strong> that actually sticks, and workspaces—without the chaos.
+          </p>
+          <p class="text-sm text-neutral-500 max-w-xl mx-auto">
+            No lock-in. Bring your own API keys, use credits, or self-host when you need to.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-neon-cyan/25 overflow-hidden">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-neon-cyan/30 bg-surface-100 text-sm text-neutral-400 font-mono">
+                <th scope="col" class="py-3 px-4 font-semibold text-neutral-200">What matters</th>
+                <th scope="col" class="py-3 px-4 font-semibold text-neon-cyan">Helpmaton</th>
+                <th scope="col" class="py-3 px-4 font-semibold text-neutral-400">Build it yourself</th>
+                <th scope="col" class="py-3 px-4 font-semibold text-neutral-400">Other agent platforms</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-neutral-400">
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Time to launch</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Minutes</td>
+                <td class="py-3 px-4 font-mono">Weeks or months</td>
+                <td class="py-3 px-4 font-mono">Hours to days</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Freedom of choice</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Your API keys or credits; self-host when needed (source-available)</td>
+                <td class="py-3 px-4 font-mono">You build it</td>
+                <td class="py-3 px-4 font-mono">Often vendor lock-in; their billing only</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Judge evals & quality</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Built-in: score conversations, catch regressions, sample traffic to control cost</td>
+                <td class="py-3 px-4 font-mono">Custom build</td>
+                <td class="py-3 px-4 font-mono">Rare or basic</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Agent memory & summaries</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Included: detailed memory + configurable summaries (day/week/month/quarter)</td>
+                <td class="py-3 px-4 font-mono">Custom build</td>
+                <td class="py-3 px-4 font-mono">Basic or limited</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Workspaces & access</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Built in: teams, roles, clear access control</td>
+                <td class="py-3 px-4 font-mono">Custom build</td>
+                <td class="py-3 px-4 font-mono">Often limited</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Budget control</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Agent-level limits (daily/monthly/yearly); predictable spend</td>
+                <td class="py-3 px-4 font-mono">Custom build</td>
+                <td class="py-3 px-4 font-mono">Often missing</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Integrations</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Gmail, Calendar, Drive, Notion, Slack, Discord—connect in minutes</td>
+                <td class="py-3 px-4 font-mono">Build each one</td>
+                <td class="py-3 px-4 font-mono">Limited set</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Schedules & automation</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Built in: recurring reports, monitoring, simple rules</td>
+                <td class="py-3 px-4 font-mono">Custom build</td>
+                <td class="py-3 px-4 font-mono">Often missing</td>
+              </tr>
+              <tr class="border-b border-neon-cyan/15">
+                <td class="py-3 px-4 font-semibold text-neutral-200">Ongoing upkeep</td>
+                <td class="py-3 px-4 font-mono bg-neon-cyan/10 border-l-2 border-neon-cyan text-neon-cyan-dim">Managed platform; you focus on outcomes</td>
+                <td class="py-3 px-4 font-mono">You maintain everything</td>
+                <td class="py-3 px-4 font-mono">Partial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-8 text-center text-neutral-500 mb-6">
+          Get the control of a custom build with the speed of a platform—and keep your choice of providers and billing.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href={appUrl}
+            data-track-cta="start_free_trial"
+            data-track-source="reddit-comparison"
+            class="btn-neon-primary inline-block text-white px-6 py-3 font-semibold rounded-xl transition-all hover:scale-105"
+          >
+            Start Free Trial
+          </a>
+          <a href="/#compare" class="btn-neon-secondary inline-block text-neon-cyan px-6 py-3 font-semibold rounded-xl transition-all" data-track-cta="full_comparison" data-track-source="reddit-comparison">
+            Full comparison on homepage
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing summary -->
+    <section id="pricing" class="section-dark p-8 py-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="section-label font-mono mb-2">Pricing</p>
+          <div class="section-divider mb-4" aria-hidden="true" />
+          <h2 class="text-display-2 font-display text-neutral-100 mb-4">Plans that <span class="text-neon-cyan">scale</span> with you</h2>
+          <p class="text-neutral-400 max-w-xl mx-auto mb-4">Start free. Upgrade when you need more.</p>
+          <p class="text-sm text-neon-cyan font-semibold font-mono">Use code <strong>REDDIT2026</strong> for 2 months free on paid plans</p>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {
+            plansSummary.map((plan) => (
+              <div
+                class={`rounded-xl p-6 text-center transition-all card-tilt ${
+                  plan.popular
+                    ? "card-cyber border-2 border-neon-cyan shadow-neon-cyan relative overflow-hidden"
+                    : "card-cyber"
+                }`}
+              >
+                {plan.popular && <div class="absolute top-0 right-0 w-24 h-24 bg-neon-cyan/20 rounded-full blur-xl" aria-hidden="true" />}
+                <div class="relative z-10">
+                  {plan.popular && <span class="block text-xs font-bold text-neon-cyan mb-2 font-mono">Most Popular</span>}
+                  <h3 class={`text-lg font-bold mb-1 ${plan.popular ? "text-neutral-100" : "text-neutral-100"}`}>{plan.name}</h3>
+                  <p class="text-2xl font-bold mb-4 font-mono text-neutral-100">{plan.price}</p>
+                  {plan.cta === "Contact Sales" ? (
+                    <button
+                      data-open-sales-modal
+                      data-source="reddit-pricing"
+                      class={`w-full py-3 font-semibold rounded-xl transition-all ${plan.popular ? "btn-neon-primary text-white" : "btn-neon-secondary text-neon-cyan"}`}
+                    >
+                      {plan.cta}
+                    </button>
+                  ) : (
+                    <a
+                      href={appUrl}
+                      data-track-cta="get_started"
+                      data-track-source="reddit-pricing"
+                      data-track-plan={plan.name}
+                      class={`block w-full py-3 font-semibold rounded-xl text-center transition-all ${plan.popular ? "btn-neon-primary text-white" : "btn-neon-secondary text-neon-cyan"}`}
+                    >
+                      {plan.cta}
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-center text-sm">
+          <a href="/#pricing" class="inline-flex items-center gap-2 text-neon-cyan hover:text-neon-cyan-dim font-semibold">
+            View full pricing & features <span aria-hidden="true">→</span>
+          </a>
+          <span class="mx-2 text-neutral-600">·</span>
+          <a href="/demos" class="text-neutral-500 hover:text-neon-cyan transition-colors underline underline-offset-2">See demos</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Trust / Social proof -->
+    <section class="section-dark py-12 px-4 sm:px-8 border-t border-neon-cyan/15">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-center text-sm font-semibold text-neon-cyan mb-6 font-mono">Why teams choose Helpmaton</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card-cyber p-6 text-center">
+            <p class="text-2xl font-bold text-neutral-100 mb-2 font-mono">Minutes</p>
+            <p class="text-sm text-neutral-400">Average time to connect core tools and launch an agent</p>
+          </div>
+          <div class="card-cyber p-6 text-center">
+            <p class="text-2xl font-bold text-neutral-100 mb-2 font-mono">Predictable</p>
+            <p class="text-sm text-neutral-400">Budget controls keep spending within defined limits</p>
+          </div>
+          <div class="card-cyber p-6 text-center">
+            <p class="text-2xl font-bold text-neutral-100 mb-2 font-mono">Shared</p>
+            <p class="text-sm text-neutral-400">Workspaces keep teams aligned with clear access and ownership</p>
+          </div>
+        </div>
+        <p class="text-center mt-6 text-sm text-neutral-500">Source-available · Self-host when needed · No lock-in</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-dark py-16 px-4 sm:px-8 border-t border-neon-cyan/20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 via-transparent to-neon-magenta/5 pointer-events-none" aria-hidden="true" />
+      <div class="max-w-3xl mx-auto text-center relative z-10">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-neutral-100 mb-4">Ready to get organized?</h2>
+        <p class="text-neutral-300 mb-2">Start your free trial in minutes.</p>
+        <p class="text-sm text-neon-cyan font-mono font-semibold mb-4">Reddit exclusive: use code <strong>REDDIT2026</strong> for 2 months free</p>
+        <p class="text-sm text-neutral-500 mb-8">No credit card required for the Free plan. Source-available—self-host when you need to.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href={appUrl}
+            data-track-cta="start_free_trial"
+            data-track-source="reddit-final"
+            class="btn-neon-primary inline-block text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all hover:scale-105"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="/documentation"
+            data-track-cta="read_documentation"
+            data-track-source="reddit-final"
+            class="btn-neon-secondary inline-block text-neon-cyan px-8 py-4 text-lg font-semibold rounded-xl transition-all"
+          >
+            Read Documentation
+          </a>
+          <button
+            data-open-sales-modal
+            data-source="reddit-final"
+            class="btn-neon-secondary inline-block text-neon-cyan px-8 py-4 text-lg font-semibold rounded-xl transition-all border border-neon-cyan/40"
+          >
+            Contact Sales
+          </button>
+        </div>
+        <p class="mt-6 text-sm text-neutral-500">
+          <a href="/faq" class="text-neutral-400 hover:text-neon-cyan underline underline-offset-2">FAQ</a>
+          <span class="mx-2">·</span>
+          <a href="/getting-started" class="text-neutral-400 hover:text-neon-cyan underline underline-offset-2">Getting Started</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ContactSalesModal />
+  <script>
+    document.querySelectorAll('[data-track-cta]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        const label = (e.currentTarget as HTMLElement).getAttribute('data-track-cta');
+        const source = (e.currentTarget as HTMLElement).getAttribute('data-track-source');
+        const plan = (e.currentTarget as HTMLElement).getAttribute('data-track-plan');
+        if (window.posthog && label) {
+          const props = { label, ...(source && { source }), ...(plan && { plan }) };
+          window.posthog.capture('cta_clicked', props);
+        }
+      });
+    });
+
+    // One-time glitch on load for Reddit hero title
+    const redditHeroTitle = document.querySelector('#reddit-hero-section .hero-title-glitch');
+    if (redditHeroTitle) {
+      redditHeroTitle.classList.add('hero-glitch-on');
+      setTimeout(() => redditHeroTitle.classList.remove('hero-glitch-on'), 400);
+    }
+  </script>
+</Layout>
