@@ -1,0 +1,179 @@
+---
+import AdLayout from "../../layouts/AdLayout.astro";
+
+const ctaUrl = "https://helpmaton.com?utm_source=ads&utm_medium=embed&utm_campaign=beyond-chat";
+---
+
+<AdLayout title="What if your AI did the work while you sleep? - Helpmaton" description="Beyond chat: webhooks, integrations, real work.">
+  <section class="ad-tech ad-tech-beyond min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-10">
+    <div class="ad-shapes" aria-hidden="true">
+      <div class="ad-skew-bar ad-skew-1"></div>
+      <div class="ad-skew-bar ad-skew-2"></div>
+      <div class="ad-skew-bar ad-skew-3"></div>
+      <div class="ad-arrow-right ad-arrow-1"></div>
+      <div class="ad-arrow-right ad-arrow-2"></div>
+      <div class="ad-zigzag"></div>
+    </div>
+    <div class="ad-grid ad-grid-rose" aria-hidden="true"></div>
+    <div class="ad-scanlines" aria-hidden="true"></div>
+    <div class="ad-noise" aria-hidden="true"></div>
+
+    <p class="ad-ai-agents-badge relative z-10" aria-hidden="true">AI Agents</p>
+    <div class="ad-text-cycle relative z-10">
+      <p class="ad-cycle-line ad-cycle-line-1" data-cycle>AI agents that do the work.</p>
+      <p class="ad-cycle-line ad-cycle-line-2" data-cycle>While you sleep.</p>
+      <p class="ad-cycle-line ad-cycle-line-3" data-cycle>Webhooks. Integrations. Done.</p>
+    </div>
+
+    <a href={ctaUrl} target="_top" rel="noopener noreferrer" class="ad-cta ad-cta-tech ad-cta-beyond mt-10 relative z-10">
+      Try Helpmaton free
+    </a>
+  </section>
+
+  <style>
+    .ad-tech-beyond {
+      background: linear-gradient(155deg, #0a0506 0%, #1a0a0c 45%, #080405 100%);
+    }
+    .ad-shapes { position: absolute; inset: 0; pointer-events: none; }
+    .ad-skew-bar {
+      position: absolute;
+      width: 8px;
+      height: 140%;
+      background: linear-gradient(180deg, transparent, rgba(251, 113, 133, 0.25), rgba(249, 115, 22, 0.2), transparent);
+      transform: rotate(-22deg);
+      animation: ad-skew-wild 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .ad-skew-1 { top: -20%; left: 15%; animation-delay: 0s; }
+    .ad-skew-2 { top: -20%; left: 35%; animation-delay: 0.15s; animation-duration: 1.4s; }
+    .ad-skew-3 { top: -20%; left: 55%; animation-delay: 0.3s; animation-duration: 1s; }
+    .ad-arrow-right {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 40px solid rgba(251, 113, 133, 0.3);
+      animation: ad-arrow-wild 1s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+    .ad-arrow-1 { top: 30%; right: 25%; animation-delay: 0s; }
+    .ad-arrow-2 { bottom: 35%; right: 15%; animation-delay: -0.5s; opacity: 0.7; }
+    .ad-zigzag {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      width: 80%;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, rgba(251, 113, 133, 0.4) 0px, rgba(251, 113, 133, 0.4) 20px, transparent 20px, transparent 40px);
+      transform: skewY(-5deg);
+      animation: ad-zigzag-wild 0.6s linear infinite;
+    }
+    @keyframes ad-skew-wild {
+      0%, 100% { opacity: 0.3; transform: rotate(-22deg) translateY(-25%) translateX(0); }
+      25% { opacity: 0.9; transform: rotate(-28deg) translateY(5%) translateX(20px); }
+      50% { opacity: 0.5; transform: rotate(-18deg) translateY(25%) translateX(-15px); }
+      75% { opacity: 1; transform: rotate(-25deg) translateY(-10%) translateX(10px); }
+    }
+    @keyframes ad-arrow-wild {
+      0%, 100% { opacity: 0.5; transform: translateX(0) scale(1); }
+      50% { opacity: 1; transform: translateX(40px) scale(1.2); }
+    }
+    @keyframes ad-zigzag-wild {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 0; }
+    }
+    .ad-grid-rose {
+      background-image: linear-gradient(rgba(251, 113, 133, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 113, 133, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+      animation: ad-grid-rose-pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes ad-grid-rose-pulse {
+      0%, 100% { opacity: 0.6; filter: brightness(1); }
+      50% { opacity: 1; filter: brightness(1.2); }
+    }
+    .ad-scanlines {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.18) 2px, rgba(0, 0, 0, 0.18) 4px);
+      pointer-events: none;
+    }
+    .ad-noise {
+      position: absolute; inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .ad-ai-agents-badge {
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #ffe4e6;
+      margin: 0 0 0.75rem 0;
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(251, 113, 133, 0.4);
+      display: inline-block;
+    }
+    .ad-text-cycle {
+      position: relative;
+      width: 100%;
+      max-width: 36rem;
+      min-height: 4rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .ad-cycle-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(1.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ffe4e6;
+      text-shadow: 0 0 25px rgba(251, 113, 133, 0.35), 0 2px 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      animation: ad-cycle 15s ease-in-out infinite;
+    }
+    .ad-cycle-line-1 { animation-delay: 0s; }
+    .ad-cycle-line-2 { animation-delay: -5s; }
+    .ad-cycle-line-3 { animation-delay: -10s; }
+    @keyframes ad-cycle {
+      0%, 5% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(24px); }
+      8%, 30% { opacity: 1; visibility: visible; transform: translate(-50%, -50%) translateY(0); }
+      33%, 100% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(-24px); }
+    }
+    .ad-cta-tech {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    }
+    .ad-cta:hover { transform: scale(1.05); }
+    .ad-cta-beyond {
+      background: linear-gradient(135deg, #fb7185, #f97316);
+      color: #fff;
+      border: 1px solid rgba(251, 113, 133, 0.5);
+      box-shadow: 0 0 30px rgba(251, 113, 133, 0.3);
+    }
+    .ad-cta-beyond:hover { box-shadow: 0 0 50px rgba(251, 113, 133, 0.45); }
+    @media (prefers-reduced-motion: reduce) {
+      .ad-skew-bar, .ad-arrow-right, .ad-zigzag, .ad-grid-rose { animation: none; }
+      .ad-cycle-line { animation: none; }
+      .ad-cycle-line-1 { opacity: 1; visibility: visible; }
+      .ad-cycle-line-2, .ad-cycle-line-3 { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</AdLayout>

@@ -1,0 +1,160 @@
+---
+import AdLayout from "../../layouts/AdLayout.astro";
+
+const ctaUrl = "https://helpmaton.com?utm_source=ads&utm_medium=embed&utm_campaign=notion-for-agents";
+---
+
+<AdLayout title="Helpmaton is the Notion for AI Agents - Helpmaton" description="The Notion for AI Agents. Workspaces for your AI agents—organized in one place.">
+  <section class="ad-tech ad-tech-notion min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-10">
+    <div class="ad-shapes" aria-hidden="true">
+      <div class="ad-notion-block ad-block-1"></div>
+      <div class="ad-notion-block ad-block-2"></div>
+      <div class="ad-notion-block ad-block-3"></div>
+      <div class="ad-notion-line ad-line-1"></div>
+      <div class="ad-notion-line ad-line-2"></div>
+    </div>
+    <div class="ad-grid ad-grid-slate" aria-hidden="true"></div>
+    <div class="ad-scanlines" aria-hidden="true"></div>
+
+    <p class="ad-ai-agents-badge relative z-10" aria-hidden="true">AI Agents</p>
+    <div class="ad-text-cycle relative z-10">
+      <p class="ad-cycle-line ad-cycle-line-1" data-cycle>Helpmaton is the Notion for <span class="ad-highlight">AI Agents</span>.</p>
+      <p class="ad-cycle-line ad-cycle-line-2" data-cycle>Workspaces for your <span class="ad-highlight">AI Agents</span>.</p>
+      <p class="ad-cycle-line ad-cycle-line-3" data-cycle>One place for all your <span class="ad-highlight">AI Agents</span>.</p>
+    </div>
+
+    <a href={ctaUrl} target="_top" rel="noopener noreferrer" class="ad-cta ad-cta-tech ad-cta-notion mt-10 relative z-10">
+      Try Helpmaton free
+    </a>
+  </section>
+
+  <style>
+    .ad-tech-notion {
+      background: linear-gradient(152deg, #0c0c0f 0%, #111318 35%, #0a0b0e 100%);
+    }
+    .ad-shapes { position: absolute; inset: 0; pointer-events: none; }
+    .ad-notion-block {
+      position: absolute;
+      background: linear-gradient(135deg, rgba(148, 163, 184, 0.06), rgba(71, 85, 105, 0.08));
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      animation: ad-notion-block-wild 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .ad-block-1 { width: 35%; height: 25%; top: 15%; left: 10%; animation-delay: 0s; }
+    .ad-block-2 { width: 28%; height: 20%; top: 45%; right: 15%; animation-delay: -1.2s; animation-duration: 4.5s; }
+    .ad-block-3 { width: 22%; height: 18%; bottom: 20%; left: 25%; animation-delay: -2.5s; animation-duration: 3.5s; }
+    .ad-notion-line {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.35), transparent);
+      animation: ad-notion-line-wild 2.5s ease-in-out infinite;
+    }
+    .ad-line-1 { width: 40%; top: 35%; left: 5%; animation-delay: 0s; }
+    .ad-line-2 { width: 35%; bottom: 35%; right: 10%; animation-delay: -1s; }
+    @keyframes ad-notion-block-wild {
+      0%, 100% { opacity: 0.7; transform: translate(0, 0) scale(1); }
+      25% { opacity: 1; transform: translate(15px, -10px) scale(1.02); }
+      50% { opacity: 0.85; transform: translate(-10px, 15px) scale(0.98); }
+      75% { opacity: 1; transform: translate(8px, 8px) scale(1.01); }
+    }
+    @keyframes ad-notion-line-wild {
+      0%, 100% { opacity: 0.4; transform: scaleX(0.9); }
+      50% { opacity: 0.9; transform: scaleX(1.1); }
+    }
+    .ad-grid-slate {
+      background-image: linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      animation: ad-grid-slate-pulse 3s ease-in-out infinite;
+    }
+    @keyframes ad-grid-slate-pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.9; }
+    }
+    .ad-scanlines {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px);
+      pointer-events: none;
+    }
+    .ad-ai-agents-badge {
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #e2e8f0;
+      margin: 0 0 0.75rem 0;
+      text-align: center;
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: inline-block;
+      border-radius: 0;
+    }
+    .ad-highlight {
+      color: #94a3b8;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(148, 163, 184, 0.5);
+    }
+    .ad-text-cycle {
+      position: relative;
+      width: 100%;
+      max-width: 40rem;
+      min-height: 4rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .ad-cycle-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(1.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #e2e8f0;
+      text-shadow: 0 0 25px rgba(148, 163, 184, 0.2), 0 2px 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      animation: ad-cycle 15s ease-in-out infinite;
+    }
+    .ad-cycle-line-1 { animation-delay: 0s; }
+    .ad-cycle-line-2 { animation-delay: -5s; }
+    .ad-cycle-line-3 { animation-delay: -10s; }
+    @keyframes ad-cycle {
+      0%, 5% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(30px) scale(0.95); }
+      8%, 30% { opacity: 1; visibility: visible; transform: translate(-50%, -50%) translateY(0) scale(1); }
+      33%, 100% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(-30px) scale(0.95); }
+    }
+    .ad-cta-tech {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .ad-cta:hover { transform: scale(1.05); }
+    .ad-cta-notion {
+      background: linear-gradient(135deg, #64748b, #475569);
+      color: #fff;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 0 30px rgba(71, 85, 105, 0.25);
+    }
+    .ad-cta-notion:hover { box-shadow: 0 0 50px rgba(71, 85, 105, 0.4); }
+    @media (prefers-reduced-motion: reduce) {
+      .ad-notion-block, .ad-notion-line, .ad-grid-slate { animation: none; }
+      .ad-cycle-line { animation: none; }
+      .ad-cycle-line-1 { opacity: 1; visibility: visible; }
+      .ad-cycle-line-2, .ad-cycle-line-3 { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</AdLayout>

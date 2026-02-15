@@ -1,0 +1,41 @@
+---
+import AdLayout from "../../layouts/AdLayout.astro";
+
+const ads = [
+  { path: "/ads/memory", title: "Memory", description: "Tired of repeating yourself? Agents that remember." },
+  { path: "/ads/automation", title: "Automation", description: "Same research every morning? Agents that run on a schedule." },
+  { path: "/ads/support", title: "Support", description: "Great docs, same questions? Support agents in Slack and Discord." },
+  { path: "/ads/beyond-chat", title: "Beyond chat", description: "What if your AI did the work while you sleep?" },
+  { path: "/ads/choose-any-ai", title: "Choose any AI", description: "One AI forever? Or the best for each job? Provider-agnostic." },
+  { path: "/ads/notion-for-agents", title: "Notion for AI Agents", description: "Helpmaton is the Notion for AI Agents. Workspaces, agents, organized." },
+];
+---
+
+<AdLayout title="Embeddable ads - Helpmaton" description="List of embeddable ad pages for Helpmaton.">
+  <section class="min-h-screen hero-section-bg px-6 py-16">
+    <div class="max-w-2xl mx-auto">
+      <a href="https://helpmaton.com" class="inline-flex items-center gap-2 text-neutral-400 hover:text-neon-cyan transition-colors mb-10" aria-label="Helpmaton">
+        <img src="/images/logo.svg" alt="" class="w-8 h-8" aria-hidden="true" />
+        <span class="font-display font-semibold text-sm">Helpmaton</span>
+      </a>
+      <h1 class="text-2xl font-display font-bold text-neutral-100 mb-2">Embeddable ads</h1>
+      <p class="text-neutral-400 mb-10">Use these URLs in ad platforms or embed in iframes.</p>
+      <ul class="space-y-4">
+        {
+          ads.map((ad) => (
+            <li>
+              <a
+                href={ad.path}
+                class="block p-4 rounded-xl card-cyber hover:border-neon-cyan/50 transition-colors group"
+              >
+                <span class="font-semibold text-neutral-100 group-hover:text-neon-cyan transition-colors">{ad.title}</span>
+                <p class="text-sm text-neutral-400 mt-1">{ad.description}</p>
+                <p class="text-xs font-mono text-neutral-500 mt-2">{ad.path}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</AdLayout>

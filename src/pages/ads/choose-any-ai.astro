@@ -1,0 +1,201 @@
+---
+import AdLayout from "../../layouts/AdLayout.astro";
+
+const ctaUrl = "https://helpmaton.com?utm_source=ads&utm_medium=embed&utm_campaign=choose-any-ai";
+---
+
+<AdLayout title="One AI forever? Or the best for each job? - Helpmaton" description="Provider-agnostic. Your keys, any model.">
+  <section class="ad-tech ad-tech-choose min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-10">
+    <div class="ad-shapes" aria-hidden="true">
+      <div class="ad-oblique-strip ad-strip-1"></div>
+      <div class="ad-oblique-strip ad-strip-2"></div>
+      <div class="ad-oblique-strip ad-strip-3"></div>
+      <div class="ad-cube-face ad-cube-1"></div>
+      <div class="ad-cube-face ad-cube-2"></div>
+      <div class="ad-cube-face ad-cube-3"></div>
+      <div class="ad-x-mark"></div>
+    </div>
+    <div class="ad-grid ad-grid-violet" aria-hidden="true"></div>
+    <div class="ad-scanlines" aria-hidden="true"></div>
+
+    <p class="ad-ai-agents-badge relative z-10" aria-hidden="true">AI Agents</p>
+    <div class="ad-text-cycle relative z-10">
+      <p class="ad-cycle-line ad-cycle-line-1" data-cycle>One AI? Or the best for each job?</p>
+      <p class="ad-cycle-line ad-cycle-line-2" data-cycle>Any model for your AI agents.</p>
+      <p class="ad-cycle-line ad-cycle-line-3" data-cycle>No lock-in.</p>
+    </div>
+
+    <a href={ctaUrl} target="_top" rel="noopener noreferrer" class="ad-cta ad-cta-tech ad-cta-choose mt-10 relative z-10">
+      Try Helpmaton free
+    </a>
+  </section>
+
+  <style>
+    .ad-tech-choose {
+      background: linear-gradient(145deg, #0a0512 0%, #150a28 40%, #08040d 100%);
+    }
+    .ad-shapes { position: absolute; inset: 0; pointer-events: none; }
+    .ad-oblique-strip {
+      position: absolute;
+      width: 3px;
+      height: 150%;
+      background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.5), rgba(168, 85, 247, 0.4), transparent);
+      transform: rotate(-15deg);
+      animation: ad-strip-wild 2s ease-in-out infinite;
+    }
+    .ad-strip-1 { left: 20%; top: -25%; animation-delay: 0s; }
+    .ad-strip-2 { left: 45%; top: -25%; animation-delay: -0.4s; animation-duration: 2.3s; }
+    .ad-strip-3 { left: 70%; top: -25%; animation-delay: -0.8s; animation-duration: 1.8s; }
+    .ad-cube-face {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(168, 85, 247, 0.06));
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      transform: skewX(-10deg) skewY(5deg);
+      animation: ad-cube-wild 2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+    .ad-cube-1 { top: 20%; right: 25%; animation-delay: 0s; }
+    .ad-cube-2 { bottom: 25%; left: 20%; transform: skewX(12deg) skewY(-8deg); animation-delay: -0.6s; animation-name: ad-cube-wild-2; }
+    .ad-cube-3 { top: 50%; left: 50%; width: 35px; height: 35px; transform: translate(-50%, -50%) skewX(5deg); animation-delay: -1.2s; animation-name: ad-cube-wild-3; }
+    .ad-x-mark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      opacity: 0.08;
+      animation: ad-x-pulse 1s ease-in-out infinite;
+    }
+    .ad-x-mark::before,
+    .ad-x-mark::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.6), transparent);
+      width: 4px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+    .ad-x-mark::after {
+      width: 100%;
+      height: 4px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), transparent);
+    }
+    @keyframes ad-strip-wild {
+      0%, 100% { opacity: 0.3; transform: rotate(-15deg) scaleY(0.8); }
+      50% { opacity: 1; transform: rotate(-15deg) scaleY(1.2); }
+    }
+    @keyframes ad-cube-wild {
+      0%, 100% { transform: skewX(-10deg) skewY(5deg) scale(1) rotate(0deg); opacity: 0.7; }
+      33% { transform: skewX(-15deg) skewY(10deg) scale(1.3) rotate(15deg); opacity: 1; }
+      66% { transform: skewX(-5deg) skewY(0deg) scale(0.85) rotate(-10deg); opacity: 0.9; }
+    }
+    @keyframes ad-cube-wild-2 {
+      0%, 100% { transform: skewX(12deg) skewY(-8deg) scale(1) rotate(0deg); opacity: 0.7; }
+      33% { transform: skewX(18deg) skewY(-12deg) scale(1.25) rotate(-20deg); opacity: 1; }
+      66% { transform: skewX(8deg) skewY(-5deg) scale(0.9) rotate(15deg); opacity: 0.9; }
+    }
+    @keyframes ad-cube-wild-3 {
+      0%, 100% { transform: translate(-50%, -50%) skewX(5deg) scale(1); opacity: 0.7; }
+      50% { transform: translate(-50%, -50%) skewX(5deg) scale(1.4); opacity: 1; }
+    }
+    @keyframes ad-x-pulse {
+      0%, 100% { opacity: 0.06; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+      50% { opacity: 0.15; transform: translate(-50%, -50%) rotate(45deg) scale(1.1); }
+    }
+    .ad-grid-violet {
+      background-image: linear-gradient(rgba(139, 92, 246, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.045) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: ad-grid-violet-wild 3s ease-in-out infinite;
+    }
+    @keyframes ad-grid-violet-wild {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .ad-scanlines {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.12) 2px, rgba(0, 0, 0, 0.12) 4px);
+      pointer-events: none;
+    }
+    .ad-ai-agents-badge {
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #ede9fe;
+      margin: 0 0 0.75rem 0;
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      display: inline-block;
+    }
+    .ad-text-cycle {
+      position: relative;
+      width: 100%;
+      max-width: 36rem;
+      min-height: 4rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .ad-cycle-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(1.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ede9fe;
+      text-shadow: 0 0 25px rgba(139, 92, 246, 0.35), 0 2px 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      animation: ad-cycle 15s ease-in-out infinite;
+    }
+    .ad-cycle-line-1 { animation-delay: 0s; }
+    .ad-cycle-line-2 { animation-delay: -5s; }
+    .ad-cycle-line-3 { animation-delay: -10s; }
+    @keyframes ad-cycle {
+      0%, 5% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(24px); }
+      8%, 30% { opacity: 1; visibility: visible; transform: translate(-50%, -50%) translateY(0); }
+      33%, 100% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(-24px); }
+    }
+    .ad-cta-tech {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
+    }
+    .ad-cta:hover { transform: scale(1.05); }
+    .ad-cta-choose {
+      background: linear-gradient(135deg, #8b5cf6, #a855f7);
+      color: #fff;
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+    .ad-cta-choose:hover { box-shadow: 0 0 50px rgba(139, 92, 246, 0.45); }
+    @media (prefers-reduced-motion: reduce) {
+      .ad-oblique-strip, .ad-cube-face, .ad-x-mark, .ad-grid-violet { animation: none; }
+      .ad-cycle-line { animation: none; }
+      .ad-cycle-line-1 { opacity: 1; visibility: visible; }
+      .ad-cycle-line-2, .ad-cycle-line-3 { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</AdLayout>

@@ -1,0 +1,179 @@
+---
+import AdLayout from "../../layouts/AdLayout.astro";
+
+const ctaUrl = "https://helpmaton.com?utm_source=ads&utm_medium=embed&utm_campaign=automation";
+---
+
+<AdLayout title="Same research every morning? - Helpmaton" description="Agents that run on a schedule.">
+  <section class="ad-tech ad-tech-automation min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-10">
+    <div class="ad-shapes" aria-hidden="true">
+      <div class="ad-trap ad-trap-1"></div>
+      <div class="ad-trap ad-trap-2"></div>
+      <div class="ad-trap ad-trap-3"></div>
+      <div class="ad-hex-shape ad-hex-1"></div>
+      <div class="ad-hex-shape ad-hex-2"></div>
+      <div class="ad-line-burst"></div>
+    </div>
+    <div class="ad-grid ad-grid-teal" aria-hidden="true"></div>
+    <div class="ad-scanlines" aria-hidden="true"></div>
+
+    <p class="ad-ai-agents-badge relative z-10" aria-hidden="true">AI Agents</p>
+    <div class="ad-text-cycle relative z-10">
+      <p class="ad-cycle-line ad-cycle-line-1" data-cycle>Same research every morning?</p>
+      <p class="ad-cycle-line ad-cycle-line-2" data-cycle>AI agents that run on schedule.</p>
+      <p class="ad-cycle-line ad-cycle-line-3" data-cycle>Set it once. It runs.</p>
+    </div>
+
+    <a href={ctaUrl} target="_top" rel="noopener noreferrer" class="ad-cta ad-cta-tech ad-cta-automation mt-10 relative z-10">
+      Try Helpmaton free
+    </a>
+  </section>
+
+  <style>
+    .ad-tech-automation {
+      background: linear-gradient(150deg, #030a08 0%, #051a14 40%, #040c0a 100%);
+    }
+    .ad-shapes { position: absolute; inset: 0; pointer-events: none; }
+    .ad-trap {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent 40%, rgba(16, 185, 129, 0.06) 100%);
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+      animation: ad-trap-wild 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .ad-trap-1 { top: 0; left: -10%; animation-delay: 0s; }
+    .ad-trap-2 { top: 0; right: -15%; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 90%); background: linear-gradient(60deg, rgba(13, 148, 136, 0.07) 0%, transparent 60%); animation-delay: -1s; animation-name: ad-trap-wild-2; }
+    .ad-trap-3 { bottom: -20%; left: 20%; width: 60%; height: 50%; clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%); animation-delay: -2s; background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.05)); animation-duration: 4s; }
+    .ad-hex-shape {
+      position: absolute;
+      width: 60px;
+      height: 70px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      animation: ad-hex-wild 2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+    .ad-hex-1 { top: 20%; right: 25%; animation-delay: 0s; }
+    .ad-hex-2 { bottom: 30%; left: 20%; width: 40px; height: 46px; animation-delay: -1s; animation-duration: 1.8s; }
+    .ad-line-burst {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 200%;
+      background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.4), transparent);
+      transform: translate(-50%, -50%) rotate(-25deg);
+      animation: ad-burst-wild 1.5s linear infinite;
+    }
+    @keyframes ad-trap-wild {
+      0%, 100% { opacity: 0.6; transform: translateX(0) translateY(0) rotate(0deg); }
+      25% { opacity: 1; transform: translateX(50px) translateY(-20px) rotate(2deg); }
+      50% { opacity: 0.8; transform: translateX(-30px) translateY(15px) rotate(-1deg); }
+      75% { opacity: 1; transform: translateX(25px) translateY(25px) rotate(1deg); }
+    }
+    @keyframes ad-trap-wild-2 {
+      0%, 100% { opacity: 0.7; transform: translateX(0) translateY(0); }
+      33% { opacity: 1; transform: translateX(-60px) translateY(20px); }
+      66% { opacity: 0.8; transform: translateX(40px) translateY(-25px); }
+    }
+    @keyframes ad-hex-wild {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+      33% { transform: scale(1.35) rotate(120deg); opacity: 1; }
+      66% { transform: scale(0.9) rotate(240deg); opacity: 0.9; }
+    }
+    @keyframes ad-burst-wild {
+      0% { opacity: 0.1; transform: translate(-50%, -50%) rotate(-25deg); }
+      50% { opacity: 0.9; transform: translate(-50%, -50%) rotate(155deg); }
+      100% { opacity: 0.1; transform: translate(-50%, -50%) rotate(335deg); }
+    }
+    .ad-grid-teal {
+      background-image: linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      animation: ad-grid-slide 8s linear infinite;
+    }
+    @keyframes ad-grid-slide {
+      0% { background-position: 0 0; }
+      100% { background-position: 28px 28px; }
+    }
+    .ad-scanlines {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.12) 2px, rgba(0, 0, 0, 0.12) 4px);
+      pointer-events: none;
+    }
+    .ad-ai-agents-badge {
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #a7f3d0;
+      margin: 0 0 0.75rem 0;
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      display: inline-block;
+    }
+    .ad-text-cycle {
+      position: relative;
+      width: 100%;
+      max-width: 36rem;
+      min-height: 4rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .ad-cycle-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: clamp(1.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #a7f3d0;
+      text-shadow: 0 0 25px rgba(16, 185, 129, 0.35), 0 2px 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      animation: ad-cycle 15s ease-in-out infinite;
+    }
+    .ad-cycle-line-1 { animation-delay: 0s; }
+    .ad-cycle-line-2 { animation-delay: -5s; }
+    .ad-cycle-line-3 { animation-delay: -10s; }
+    @keyframes ad-cycle {
+      0%, 5% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(24px); }
+      8%, 30% { opacity: 1; visibility: visible; transform: translate(-50%, -50%) translateY(0); }
+      33%, 100% { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) translateY(-24px); }
+    }
+    .ad-cta-tech {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    }
+    .ad-cta:hover { transform: scale(1.05); }
+    .ad-cta-automation {
+      background: linear-gradient(135deg, #10b981, #0d9488);
+      color: #fff;
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.25);
+    }
+    .ad-cta-automation:hover { box-shadow: 0 0 50px rgba(16, 185, 129, 0.4); }
+    @media (prefers-reduced-motion: reduce) {
+      .ad-trap, .ad-hex-shape, .ad-line-burst, .ad-grid-teal { animation: none; }
+      .ad-cycle-line { animation: none; }
+      .ad-cycle-line-1 { opacity: 1; visibility: visible; }
+      .ad-cycle-line-2, .ad-cycle-line-3 { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</AdLayout>
