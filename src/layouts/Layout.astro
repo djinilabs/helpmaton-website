@@ -1,7 +1,7 @@
 ---
 import CookieConsent from "../components/CookieConsent.astro";
 const DEFAULT_DESCRIPTION = "Helpmaton—simple workspaces for creating and managing AI agents. Build assistants with memory, connect to Slack, Discord, and Notion, automate with schedules, and choose any AI provider. Start free in minutes.";
-const DEFAULT_IMAGE = "/images/hero.jpg";
+const DEFAULT_IMAGE = "/images/Helpmaton_Logo.png";
 
 interface Props {
   title: string;
@@ -20,7 +20,10 @@ const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, imageWi
 
 const imagePath = image.startsWith("http") ? image : image.startsWith("/") ? image : `/${image}`;
 const imageUrl = Astro.site ? new URL(imagePath, Astro.site).href : null;
-const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+// Normalize path (no trailing slash except for root) so canonical is consistent
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const canonicalUrl = Astro.url && Astro.site ? new URL(pathname, Astro.site).href : null;
+const sitemapUrl = Astro.site ? new URL("sitemap.xml", Astro.site).href : null;
 ---
 
 <!doctype html>
@@ -28,6 +31,8 @@ const canonicalUrl = Astro.url && Astro.site ? new URL(Astro.url.pathname, Astro
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {sitemapUrl && <link rel="sitemap" type="application/xml" title="Sitemap" href={sitemapUrl} />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
