@@ -47,10 +47,13 @@ import Logo from "./Logo.astro";
           </span>
         </h1>
       </div>
-      <p class="hero-headline text-display-3 mb-6 font-display text-white/95">
-        Stop juggling AI agents. Get
-        <span class="text-gradient-neon animate-shimmer">organized</span>
-        <span class="text-neon-magenta">workspaces</span> that actually work.
+      <p
+        class="hero-headline text-display-3 mb-6 font-display text-white/95 min-h-[1.2em]"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <span id="hero-headline-text"></span>
+        <span id="hero-headline-cursor" class="terminal-cursor inline-block w-0.5 h-[1em] ml-0.5 bg-neon-cyan align-middle" aria-hidden="true"></span>
       </p>
       <p class="hero-body text-xl text-neutral-300 mb-6 max-w-2xl mx-auto leading-relaxed font-medium">
         Create AI assistants that remember your conversations, connect to your
@@ -139,6 +142,75 @@ import Logo from "./Logo.astro";
   if (titleGlitch) {
     titleGlitch.classList.add('hero-glitch-on');
     setTimeout(() => titleGlitch.classList.remove('hero-glitch-on'), 400);
+  }
+
+  // Rotating typewriter headlines
+  const HEADLINES = [
+    "Your AI agents finally have a corner office.",
+    "The operating system for your digital workforce.",
+    "Turn your AI scripts into a high-performing department.",
+    "Give your AI a promotion from 'chatbot' to 'employee'.",
+    "AI agents that remember, collaborate, and actually get the job done.",
+    "Stop managing scripts. Start leading an AI workforce.",
+    "Professional-grade organization for the AI-first team.",
+    "The brain for your AI agents: persistent memory, total control.",
+    "Helpmaton: Because your AI shouldn't have amnesia.",
+    "The missing layer between your API keys and your actual work.",
+    "Notion for your AI agents. Sanity for your team.",
+    "Hire AI agents. Manage them with Helpmaton.",
+    "The infrastructure layer for stateful, reliable AI workflows.",
+    "Workspace-based management for a multi-agent world.",
+    "Build, deploy, and govern AI agents with persistent multi-layered memory.",
+  ];
+  const headlineTextEl = document.getElementById('hero-headline-text');
+  const headlineCursorEl = document.getElementById('hero-headline-cursor');
+  const prefersReducedMotionHeadline = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (headlineTextEl && HEADLINES.length > 0) {
+    if (prefersReducedMotionHeadline) {
+      headlineTextEl.textContent = HEADLINES[Math.floor(Math.random() * HEADLINES.length)];
+      if (headlineCursorEl) headlineCursorEl.style.display = 'none';
+    } else {
+      const TYPING_MS_MIN = 40;
+      const TYPING_MS_MAX = 80;
+      const READ_PAUSE_MS = 5000;
+      let lastIndex = -1;
+      function pickRandomHeadline(): string {
+        if (HEADLINES.length === 1) return HEADLINES[0];
+        let idx = Math.floor(Math.random() * HEADLINES.length);
+        while (idx === lastIndex && HEADLINES.length > 1) {
+          idx = Math.floor(Math.random() * HEADLINES.length);
+        }
+        lastIndex = idx;
+        return HEADLINES[idx];
+      }
+      function runTypewriter() {
+        if (!headlineTextEl) return;
+        const el = headlineTextEl;
+        const line = pickRandomHeadline();
+        el.textContent = '';
+        if (headlineCursorEl) headlineCursorEl.style.visibility = 'visible';
+        let i = 0;
+        function type() {
+          if (i <= line.length) {
+            el.textContent = line.slice(0, i);
+            i++;
+            setTimeout(type, TYPING_MS_MIN + Math.random() * (TYPING_MS_MAX - TYPING_MS_MIN));
+          } else {
+            if (headlineCursorEl) headlineCursorEl.style.visibility = 'hidden';
+            setTimeout(() => {
+              el.textContent = '';
+              if (headlineCursorEl) headlineCursorEl.style.visibility = 'visible';
+              setTimeout(runTypewriter, 300);
+            }, READ_PAUSE_MS);
+          }
+        }
+        type();
+      }
+      setTimeout(runTypewriter, 600);
+    }
+  } else if (headlineTextEl) {
+    headlineTextEl.textContent = "Stop juggling AI agents. Get organized workspaces that actually work.";
+    if (headlineCursorEl) headlineCursorEl.style.display = 'none';
   }
 
   // Terminal typing effect
