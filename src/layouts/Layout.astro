@@ -14,9 +14,11 @@ interface Props {
   /** Alt text for the OG image (accessibility and some platforms) */
   imageAlt?: string;
   type?: string;
+  /** Load Mermaid.js for client-side diagram rendering (e.g. blog posts) */
+  loadMermaid?: boolean;
 }
 
-const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, imageWidth = 1200, imageHeight = 630, imageAlt, type = "website" } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, imageWidth = 1200, imageHeight = 630, imageAlt, type = "website", loadMermaid = false } = Astro.props;
 
 const imagePath = image.startsWith("http") ? image : image.startsWith("/") ? image : `/${image}`;
 const imageUrl = Astro.site ? new URL(imagePath, Astro.site).href : null;
@@ -185,6 +187,25 @@ const sitemapUrl = Astro.site ? new URL("sitemap.xml", Astro.site).href : null;
         document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
       })();
     </script>
+    {loadMermaid && (
+      <>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" />
+        <script is:inline>
+          (function () {
+            function initMermaid() {
+              if (typeof mermaid === 'undefined') return;
+              mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+              mermaid.run({ querySelector: 'pre.mermaid', suppressErrors: true });
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', initMermaid);
+            } else {
+              initMermaid();
+            }
+          })();
+        </script>
+      </>
+    )}
   </body>
 </html>
 

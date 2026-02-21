@@ -18,7 +18,7 @@ export default defineConfig({
       [
         rehypeMermaid,
         {
-          strategy: 'inline-svg',
+          strategy: 'pre-mermaid',
           mermaidConfig: { theme: 'dark' },
         },
       ],
