@@ -68,7 +68,7 @@ const formatDate = (date: Date) =>
           </div>
         </header>
 
-        <div class="blog-content text-neutral-300 leading-relaxed text-lg">
+        <div class="blog-content text-neutral-200 leading-relaxed text-lg">
           <Content />
         </div>
       </article>
@@ -97,7 +97,7 @@ const formatDate = (date: Date) =>
   .blog-content :global(p) {
     margin: 1.25rem 0;
     line-height: 1.8;
-    color: #b8b5b0;
+    color: #d4d1cc;
   }
 
   .blog-content :global(ul),
@@ -105,7 +105,7 @@ const formatDate = (date: Date) =>
     margin: 1rem 0;
     padding-left: 1.5rem;
     line-height: 1.8;
-    color: #b8b5b0;
+    color: #d4d1cc;
   }
 
   .blog-content :global(ul) {
@@ -130,7 +130,7 @@ const formatDate = (date: Date) =>
     border-left: 3px solid #00f5ff;
     padding-left: 1rem;
     margin: 1.5rem 0;
-    color: #b8b5b0;
+    color: #d4d1cc;
     font-style: italic;
   }
 
@@ -173,5 +173,15 @@ const formatDate = (date: Date) =>
     max-width: 100%;
     height: auto;
     border: 1px solid rgba(0, 245, 255, 0.15);
+  }
+
+  .blog-content :global(svg) {
+    margin: 2rem 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    overflow: auto;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.06);
   }
 </style>
